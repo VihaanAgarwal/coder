@@ -344,7 +344,7 @@ SET
 WHERE
     id = @id::uuid;
 
--- name: GetChatMessageByIDRaw :one
+-- name: GetChatMessageByID :one
 SELECT
     id,
     chat_id,
@@ -375,7 +375,7 @@ WHERE
     id = @id::bigint
     AND deleted = false;
 
--- name: GetChatMessagesByChatIDRaw :many
+-- name: GetChatMessagesByChatID :many
 SELECT
     id,
     chat_id,
@@ -410,7 +410,7 @@ WHERE
 ORDER BY
     created_at ASC;
 
--- name: GetChatMessagesByRevisionForStreamRaw :many
+-- name: GetChatMessagesByRevisionForStream :many
 SELECT
     id,
     chat_id,
@@ -444,7 +444,7 @@ WHERE
 ORDER BY
     created_at ASC, id ASC;
 
--- name: GetChatMessagesByChatIDAscPaginatedRaw :many
+-- name: GetChatMessagesByChatIDAscPaginated :many
 SELECT
     id,
     chat_id,
@@ -481,7 +481,7 @@ ORDER BY
 LIMIT
     COALESCE(NULLIF(@limit_val::int, 0), 50);
 
--- name: GetChatMessagesByChatIDDescPaginatedRaw :many
+-- name: GetChatMessagesByChatIDDescPaginated :many
 SELECT
     id,
     chat_id,
@@ -557,7 +557,7 @@ ORDER BY
 LIMIT
     COALESCE(NULLIF(@limit_val::int, 0), 500);
 
--- name: GetChatMessagesForPromptByChatIDRaw :many
+-- name: GetChatMessagesForPromptByChatID :many
 WITH latest_compressed_summary AS (
     SELECT
         id
@@ -924,7 +924,7 @@ chats_expanded AS (
 SELECT *
 FROM chats_expanded;
 
--- name: InsertChatMessagesRaw :many
+-- name: InsertChatMessages :many
 WITH batch AS (
     SELECT
         (
@@ -1963,7 +1963,7 @@ SET created_at = (
 )
 WHERE target.id = @target_id AND target.chat_id = @chat_id;
 
--- name: GetLastChatMessageByRoleRaw :one
+-- name: GetLastChatMessageByRole :one
 SELECT
     id,
     chat_id,
