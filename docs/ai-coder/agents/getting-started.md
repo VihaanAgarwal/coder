@@ -333,5 +333,3 @@ Your input directly influences product direction during Beta.
   create agent-friendly templates with network boundaries and scoped
   credentials.
 - [Chats API](../../reference/api/chats.md): build programmatic integrations.
-
-<!-- docs-preview demo: temporary marker, reverted after screenshot -->
