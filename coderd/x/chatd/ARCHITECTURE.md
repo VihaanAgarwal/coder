@@ -827,12 +827,16 @@ The generation goroutine supports:
 
 ##### Context report gate
 
-A workspace-bound turn treats the agent's context report as a hard precondition. During generation preparation, before the pinned workspace context is read:
+A workspace-bound turn waits for the agent's context report but never fails over it. During generation preparation, before the pinned workspace context is read:
 
 - The chat's agent binding is resolved and, when the workspace has a newer start-transition build than the one the chat is bound to, rebound to the latest build's selected agent. Rebinding re-pins the chat's context (clearing it when the new agent has not pushed a snapshot yet). When the latest build is a stop or delete transition, the existing binding and pinned context are kept.
 - A chat whose context is already pinned proceeds immediately; agent resolution errors are swallowed on that path so pinned chats on stopped (zero-agent) workspaces keep working from their pinned context.
 - An unpinned chat waits on a 1-second poll loop, re-resolving the agent and checking for a pushed snapshot each tick. A push that arrives mid-wait is picked up on the next tick; the gate then pins the chat to it and the turn proceeds with that context. The wait is bounded by a 15-minute ceiling.
-- The gate fails fast, without burning the ceiling, when the workspace's latest build is not a start transition or when the bound agent connected with an Agent API below 2.10 (the context-push minimum). Ceiling expiry and fast-fail conditions are terminal: the prepare phase does not retry them, and the message lands in the chat's persisted `last_error` as the visible error state. Context cancellation propagates unchanged so interrupts keep working during the wait.
+- The gate degrades fast, without burning the ceiling, when a report provably cannot arrive: the workspace's latest build is not a start transition, the bound agent connected with an Agent API below 2.10 (the context-push minimum), or the agent is disconnected (a never-connected agent is not disconnected; the workspace is still starting, so the gate keeps waiting).
+- Degrading never puts the chat in an error state. The reason is recorded on `chats.context_error` (leaving the pinned hash NULL), a `context_error` watch event is published, and the turn runs without workspace context: empty instruction, no workspace skills, no workspace MCP tools. Ceiling expiry degrades the same way.
+- Degrade memory: an unpinned chat whose `context_error` is already non-empty degrades immediately on later turns, keeping the message. An unpinned chat can only carry a non-empty `context_error` from a previous gate degrade (hydration and repin always set the hash and error together), and the rebind-repin clears it on new builds, so the memory is per-build and prevents every message from re-stalling the full ceiling against a wedged agent.
+- Self-heal: because a degrade leaves the pinned hash NULL, a later agent push still hydrates the chat, overwrites the context error, and publishes `context_ready`; subsequent turns proceed pinned.
+- Context cancellation propagates unchanged so interrupts keep working during the wait; an interrupt is not a degrade.
 
 ##### Reasoning effort
 

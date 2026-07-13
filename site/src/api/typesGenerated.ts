@@ -3373,6 +3373,7 @@ export interface ChatWatchEvent {
 export type ChatWatchEventKind =
 	| "action_required"
 	| "context_dirty"
+	| "context_error"
 	| "context_ready"
 	| "created"
 	| "deleted"
@@ -3384,6 +3385,7 @@ export type ChatWatchEventKind =
 export const ChatWatchEventKinds: ChatWatchEventKind[] = [
 	"action_required",
 	"context_dirty",
+	"context_error",
 	"context_ready",
 	"created",
 	"deleted",

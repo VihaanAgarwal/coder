@@ -98,6 +98,15 @@ export const MockChatContextWaiting: ChatContext = {
 	dirty: false,
 };
 
+// A workspace-bound chat whose turn degraded: the agent's context report is
+// unavailable, so turns run without workspace context. The chat is still
+// unpinned (waiting) and the degrade reason is recorded on error.
+export const MockChatContextDegraded: ChatContext = {
+	state: "waiting",
+	dirty: false,
+	error: "workspace agent is not connected, so it cannot report chat context",
+};
+
 export const MockMCPServerConfig: MCPServerConfig = {
 	id: "mcp-1",
 	display_name: "MCP Server",

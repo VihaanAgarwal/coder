@@ -243,6 +243,10 @@ export const ContextUsageIndicator: FC<{
 	const isWaiting = context?.state === "waiting";
 	const contextError = context?.error ?? "";
 	const hasContextError = contextError !== "";
+	// A waiting chat with a context error is degraded: the agent's report
+	// is unavailable, so turns run without workspace context until a later
+	// report heals the chat. Rendered as an error, not as an ongoing wait.
+	const isDegraded = isWaiting && hasContextError;
 	const pinnedResources = context?.resources;
 
 	// Drive the listed context from the chat's pinned resources.
@@ -330,22 +334,31 @@ export const ContextUsageIndicator: FC<{
 	const fileGroups = groupByDirectory(fileItems);
 	const skillGroups = groupByDirectory(skillItems);
 
-	const ariaStateSuffix = isWaiting
-		? " Waiting for workspace context."
-		: isDirty
-			? " Context changed."
-			: "";
+	const ariaStateSuffix = isDegraded
+		? " Workspace context unavailable."
+		: isWaiting
+			? " Waiting for workspace context."
+			: isDirty
+				? " Context changed."
+				: "";
 	const ariaLabel = hasPercent
 		? `Context usage ${percentLabel}. ${formatTokenCount(usedTokens)} of ${formatTokenCount(contextLimitTokens)} tokens used.${ariaStateSuffix}`
 		: `Context usage${ariaStateSuffix ? `.${ariaStateSuffix}` : ""}`;
 
 	const panelContent = (
 		<div className="text-xs text-content-primary">
-			{isWaiting && (
-				<div className="mb-2 flex items-center gap-1.5 text-content-secondary">
-					<Spinner loading size="sm" className="size-3 shrink-0" />
-					<span>Waiting for workspace context</span>
+			{isDegraded ? (
+				<div className="mb-2 flex items-center gap-1.5 font-medium text-content-destructive">
+					<TriangleAlertIcon className="size-3 shrink-0" />
+					<span>Workspace context unavailable</span>
 				</div>
+			) : (
+				isWaiting && (
+					<div className="mb-2 flex items-center gap-1.5 text-content-secondary">
+						<Spinner loading size="sm" className="size-3 shrink-0" />
+						<span>Waiting for workspace context</span>
+					</div>
+				)
 			)}
 			{hasPercent
 				? `${percentLabel} - ${formatTokenCountCompact(usedTokens)} / ${formatTokenCountCompact(contextLimitTokens)} context used`
@@ -582,7 +595,7 @@ export const ContextUsageIndicator: FC<{
 				progressClassName="stroke-current"
 				className={cn("size-icon-sm", toneClassName)}
 			/>
-			{isWaiting && (
+			{isWaiting && !isDegraded && (
 				<Spinner
 					loading
 					size="sm"

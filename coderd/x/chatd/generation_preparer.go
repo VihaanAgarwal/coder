@@ -223,13 +223,15 @@ func (server *Server) prepareGeneration(
 	promptRows = server.sanitizeForeignProviderExecutedToolRows(ctx, logger, promptRows, modelConfig.ID)
 
 	if chat.WorkspaceID.Valid {
-		// A workspace turn must not run before the chat's agent has
-		// reported its context snapshot. awaitChatContextReported resolves
-		// the agent (rebinding stale bindings to the latest start build,
-		// which also re-pins the chat's context), proceeds immediately when
-		// the chat is already pinned, and otherwise blocks until the bound
-		// agent has a snapshot, pinning the chat to it before returning.
-		// Terminal gate failures surface as the chat's visible error state.
+		// A workspace turn waits for the chat's agent to report its context
+		// snapshot. awaitChatContextReported resolves the agent (rebinding
+		// stale bindings to the latest start build, which also re-pins the
+		// chat's context), proceeds immediately when the chat is already
+		// pinned, and otherwise blocks until the bound agent has a snapshot,
+		// pinning the chat to it before returning. When the report is
+		// unavailable the turn degrades instead of failing: the reason is
+		// recorded on chats.context_error and the turn runs with the
+		// zero-value agent and no workspace context.
 		agent, gateErr := server.awaitChatContextReported(ctx, &workspaceCtx, logger)
 		if gateErr != nil {
 			cleanup()

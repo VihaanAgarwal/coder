@@ -619,7 +619,8 @@ const AgentsPage: FC = () => {
 						}
 						if (
 							chatEvent.kind === "context_dirty" ||
-							chatEvent.kind === "context_ready"
+							chatEvent.kind === "context_ready" ||
+							chatEvent.kind === "context_error"
 						) {
 							// The watch payload carries only the lightweight
 							// context flags (the merge above applies them);

@@ -1842,6 +1842,11 @@ const (
 	// workspace context drifted from the agent's latest pushed snapshot.
 	// The chat stays usable; a refresh re-pins it to the latest snapshot.
 	ChatWatchEventKindContextDirty ChatWatchEventKind = "context_dirty"
+	// ChatWatchEventKindContextError signals that a turn degraded because
+	// the workspace agent's context report is unavailable; the chat's
+	// Context.Error carries the reason. The chat stays usable and runs
+	// without workspace context until a later report heals it.
+	ChatWatchEventKindContextError ChatWatchEventKind = "context_error"
 )
 
 // ChatWatchEvent represents an event from the global chat watch stream.

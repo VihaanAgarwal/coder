@@ -11,7 +11,6 @@ import (
 	"github.com/coder/coder/v2/apiversion"
 	"github.com/coder/coder/v2/coderd/database"
 	"github.com/coder/coder/v2/coderd/database/dbauthz"
-	"github.com/coder/coder/v2/coderd/x/chatd/chaterror"
 	"github.com/coder/coder/v2/codersdk"
 )
 
@@ -21,8 +20,8 @@ const (
 	// while a turn waits for the agent's first context report.
 	contextReportPollInterval = time.Second
 	// defaultContextReportTimeout bounds how long a turn waits for the
-	// workspace agent to report its context snapshot before failing the
-	// turn with a visible error.
+	// workspace agent to report its context snapshot before the turn
+	// degrades and runs without workspace context.
 	defaultContextReportTimeout = 15 * time.Minute
 
 	contextReportTickerTag     = "context-report-tick"
@@ -36,29 +35,19 @@ const (
 	contextReportMinAPIMinor = 10
 )
 
-var (
-	errChatContextWorkspaceNotStarted = newChatContextGateError(
-		"workspace must be started to report chat context")
-	errChatContextAgentTooOld = newChatContextGateError(
-		"workspace agent is too old to report chat context; " +
-			"update Coder and rebuild the workspace")
+// Degrade messages recorded on chats.context_error when the gate cannot
+// obtain a context report. They are user-visible in the UI's context
+// indicator, so they name the condition and the remedy where one exists.
+const (
+	chatContextErrWorkspaceNotStarted = "workspace must be started to report chat context"
+	chatContextErrAgentTooOld         = "workspace agent is too old to report chat context; " +
+		"update Coder and rebuild the workspace"
+	chatContextErrAgentDisconnected = "workspace agent is not connected, " +
+		"so it cannot report chat context"
 )
 
-// newChatContextGateError builds a context-gate error whose text survives
-// chaterror classification, so the exact message lands in the chat's
-// persisted last_error instead of a generic fallback.
-func newChatContextGateError(message string) error {
-	return chaterror.WithClassification(
-		xerrors.New(message),
-		chaterror.ClassifiedError{
-			Message: message,
-			Kind:    codersdk.ChatErrorKindGeneric,
-		},
-	)
-}
-
-// awaitChatContextReported enforces that a workspace-bound turn does not run
-// before the chat's agent has reported a context snapshot. A chat whose
+// awaitChatContextReported gives a workspace-bound turn its context report,
+// degrading instead of failing when the report is unavailable. A chat whose
 // current snapshot is already pinned proceeds immediately; agent resolution
 // errors are swallowed on that path so pinned chats on stopped (zero-agent)
 // workspaces keep working. An unpinned chat waits on a poll loop that
@@ -66,12 +55,13 @@ func newChatContextGateError(message string) error {
 // stale) and exits as soon as the bound agent has any snapshot row, then pins
 // the chat to it.
 //
-// The wait fails fast, without burning the ceiling, when the workspace's
-// latest build is not a start transition or when the bound agent connected
-// with an Agent API too old to push context. Context cancellation propagates
-// unchanged so interrupts keep working. Terminal failures are wrapped with
-// terminalGeneration so the prepare phase does not retry them and the message
-// surfaces as the chat's visible error state.
+// The gate never fails the turn over an unavailable report. When a report
+// provably cannot arrive (the latest build is not a start transition, the
+// agent connected with an Agent API too old to push context, or the agent is
+// disconnected), or when the wait ceiling elapses, the turn degrades: the
+// reason is recorded on chats.context_error, a context_error watch event is
+// published, and the turn runs without workspace context. Context
+// cancellation propagates unchanged so interrupts keep working.
 func (server *Server) awaitChatContextReported(
 	ctx context.Context,
 	workspaceCtx *turnWorkspaceContext,
@@ -108,9 +98,24 @@ func (server *Server) awaitChatContextReported(
 		return database.WorkspaceAgent{}, ctx.Err()
 	}
 
-	agent, done, err := server.checkChatContextReported(ctx, workspaceCtx, logger)
+	// Degrade memory: an unpinned chat can only carry a non-empty
+	// context_error from a previous gate degrade, because hydration and
+	// repin always set the hash and error together and the rebind-repin
+	// clears the error on new builds. The memory is therefore per-build:
+	// once a turn degraded, later turns on the same build degrade
+	// immediately (keeping/refreshing the message) instead of re-stalling
+	// the full ceiling against a wedged agent.
+	if workspaceCtx.currentChatSnapshot().ContextError != "" {
+		return server.degradeChatContext(ctx, workspaceCtx, logger,
+			workspaceCtx.currentChatSnapshot().ContextError)
+	}
+
+	agent, done, degradeReason, err := server.checkChatContextReported(ctx, workspaceCtx, logger)
 	if err != nil {
 		return database.WorkspaceAgent{}, err
+	}
+	if degradeReason != "" {
+		return server.degradeChatContext(ctx, workspaceCtx, logger, degradeReason)
 	}
 	if done {
 		return agent, nil
@@ -130,13 +135,16 @@ func (server *Server) awaitChatContextReported(
 		case <-ctx.Done():
 			return database.WorkspaceAgent{}, ctx.Err()
 		case <-timeout.C:
-			return database.WorkspaceAgent{}, terminalGeneration(newChatContextGateError(
-				"workspace agent did not report chat context within " +
-					server.contextReportTimeout.String()))
+			return server.degradeChatContext(ctx, workspaceCtx, logger,
+				"workspace agent did not report chat context within "+
+					server.contextReportTimeout.String())
 		case <-ticker.C:
-			agent, done, err := server.checkChatContextReported(ctx, workspaceCtx, logger)
+			agent, done, degradeReason, err := server.checkChatContextReported(ctx, workspaceCtx, logger)
 			if err != nil {
 				return database.WorkspaceAgent{}, err
+			}
+			if degradeReason != "" {
+				return server.degradeChatContext(ctx, workspaceCtx, logger, degradeReason)
 			}
 			if done {
 				return agent, nil
@@ -145,35 +153,74 @@ func (server *Server) awaitChatContextReported(
 	}
 }
 
+// degradeChatContext records why this turn runs without workspace context on
+// chats.context_error, publishes a context_error watch event with the fresh
+// chat row, and returns the zero-value agent with a nil error so the prepare
+// phase proceeds exactly like the pre-gate code did (empty instruction, no
+// workspace skills, no workspace MCP tools). The pinned hash is left NULL, so
+// a later agent push still hydrates the chat, overwrites the error, and
+// publishes context_ready; the degrade self-heals.
+func (server *Server) degradeChatContext(
+	ctx context.Context,
+	workspaceCtx *turnWorkspaceContext,
+	logger slog.Logger,
+	message string,
+) (database.WorkspaceAgent, error) {
+	chatSnapshot := workspaceCtx.currentChatSnapshot()
+	//nolint:gocritic // Chatd records context degrades on chats it does not own as the daemon subject.
+	err := server.db.UpdateChatContextError(dbauthz.AsChatd(ctx), database.UpdateChatContextErrorParams{
+		ID:           chatSnapshot.ID,
+		ContextError: message,
+	})
+	if err != nil {
+		return database.WorkspaceAgent{}, xerrors.Errorf(
+			"record chat context error: %w", err)
+	}
+	fresh, err := workspaceCtx.loadChatSnapshot(ctx, chatSnapshot.ID)
+	if err != nil {
+		return database.WorkspaceAgent{}, xerrors.Errorf(
+			"reload chat after context degrade: %w", err)
+	}
+	workspaceCtx.setCurrentChat(fresh)
+	server.publishChatPubsubEvents(
+		[]database.Chat{fresh}, codersdk.ChatWatchEventKindContextError)
+	logger.Warn(ctx, "context gate: turn degrades to run without workspace context",
+		slog.F("chat_id", chatSnapshot.ID),
+		slog.F("reason", message))
+	return database.WorkspaceAgent{}, nil
+}
+
 // checkChatContextReported performs one context-gate poll: it re-resolves
-// (and possibly rebinds) the chat's agent, applies the fast-fail conditions,
-// and reports done=true once the bound agent has a pushed snapshot, at which
-// point the chat is pinned to it. done=false with a nil error means "keep
-// waiting".
+// (and possibly rebinds) the chat's agent, applies the fast-degrade
+// conditions, and reports done=true once the bound agent has a pushed
+// snapshot, at which point the chat is pinned to it. A non-empty
+// degradeReason means the report provably cannot arrive and the caller must
+// degrade the turn. done=false with an empty degradeReason and a nil error
+// means "keep waiting".
 func (server *Server) checkChatContextReported(
 	ctx context.Context,
 	workspaceCtx *turnWorkspaceContext,
 	logger slog.Logger,
-) (database.WorkspaceAgent, bool, error) {
+) (agent database.WorkspaceAgent, done bool, degradeReason string, err error) {
 	chatSnapshot, agent, err := workspaceCtx.refreshWorkspaceAgent(ctx)
 	if err != nil {
 		if ctx.Err() != nil {
-			return database.WorkspaceAgent{}, false, ctx.Err()
+			return database.WorkspaceAgent{}, false, "", ctx.Err()
 		}
 		if !xerrors.Is(err, errChatHasNoWorkspaceAgent) {
-			return database.WorkspaceAgent{}, false, err
+			return database.WorkspaceAgent{}, false, "", err
 		}
 		// The latest build has no agent rows. A start build that is still
 		// provisioning will grow them, so keep waiting; any other
-		// transition never will, so fail fast.
+		// transition never will, so degrade immediately.
 		started, buildErr := server.latestBuildIsStart(ctx, chatSnapshot.WorkspaceID)
 		if buildErr != nil {
-			return database.WorkspaceAgent{}, false, buildErr
+			return database.WorkspaceAgent{}, false, "", buildErr
 		}
 		if !started {
-			return database.WorkspaceAgent{}, false, terminalGeneration(errChatContextWorkspaceNotStarted)
+			return database.WorkspaceAgent{}, false, chatContextErrWorkspaceNotStarted, nil
 		}
-		return database.WorkspaceAgent{}, false, nil
+		return database.WorkspaceAgent{}, false, "", nil
 	}
 
 	// A resolved binding is kept as-is when the latest build is not a
@@ -181,30 +228,41 @@ func (server *Server) checkChatContextReported(
 	// otherwise wait the full ceiling for a push that cannot arrive.
 	started, buildErr := server.latestBuildIsStart(ctx, chatSnapshot.WorkspaceID)
 	if buildErr != nil {
-		return database.WorkspaceAgent{}, false, buildErr
+		return database.WorkspaceAgent{}, false, "", buildErr
 	}
 	if !started {
-		return database.WorkspaceAgent{}, false, terminalGeneration(errChatContextWorkspaceNotStarted)
+		return database.WorkspaceAgent{}, false, chatContextErrWorkspaceNotStarted, nil
 	}
 
 	if agentTooOldForContextReport(ctx, agent, logger) {
-		return database.WorkspaceAgent{}, false, terminalGeneration(errChatContextAgentTooOld)
+		return database.WorkspaceAgent{}, false, chatContextErrAgentTooOld, nil
+	}
+
+	// A disconnected agent cannot push, so waiting on it burns the ceiling
+	// for nothing. This reuses the dial path's disconnect derivation:
+	// agentDisconnectedFor only reports disconnected for agents that
+	// connected at least once, so a never-connected agent (workspace still
+	// starting) remains waitable.
+	if _, disconnected := agentDisconnectedFor(
+		server.clock.Now(), agent, server.agentInactiveDisconnectTimeout,
+	); disconnected {
+		return database.WorkspaceAgent{}, false, chatContextErrAgentDisconnected, nil
 	}
 
 	//nolint:gocritic // Chatd reads the agent's snapshot as the daemon subject.
 	_, _, hasSnapshot, err := latestAgentSnapshot(dbauthz.AsChatd(ctx), server.db, agent.ID)
 	if err != nil {
-		return database.WorkspaceAgent{}, false, err
+		return database.WorkspaceAgent{}, false, "", err
 	}
 	if !hasSnapshot {
-		return database.WorkspaceAgent{}, false, nil
+		return database.WorkspaceAgent{}, false, "", nil
 	}
 
 	// The snapshot may have hydrated the chat mid-wait (pushes stamp bound
 	// NULL-hash chats), so reload the row before pinning.
 	fresh, err := workspaceCtx.loadChatSnapshot(ctx, chatSnapshot.ID)
 	if err != nil {
-		return database.WorkspaceAgent{}, false, xerrors.Errorf(
+		return database.WorkspaceAgent{}, false, "", xerrors.Errorf(
 			"reload chat after context report: %w", err)
 	}
 	if !chatContextPinned(fresh) {
@@ -223,13 +281,13 @@ func (server *Server) checkChatContextReported(
 			if err := database.ReadModifyUpdate(server.db, func(tx database.Store) error {
 				return repinChatContext(repinCtx, tx, fresh.ID, fresh.AgentID)
 			}); err != nil {
-				return database.WorkspaceAgent{}, false, xerrors.Errorf(
+				return database.WorkspaceAgent{}, false, "", xerrors.Errorf(
 					"pin chat to reported context: %w", err)
 			}
 		}
 		fresh, err = workspaceCtx.loadChatSnapshot(ctx, chatSnapshot.ID)
 		if err != nil {
-			return database.WorkspaceAgent{}, false, xerrors.Errorf(
+			return database.WorkspaceAgent{}, false, "", xerrors.Errorf(
 				"reload chat after context pin: %w", err)
 		}
 		// The pin committed here (not on the push path, whose own hydrate
@@ -241,7 +299,7 @@ func (server *Server) checkChatContextReported(
 		}
 	}
 	workspaceCtx.setCurrentChat(fresh)
-	return agent, true, nil
+	return agent, true, "", nil
 }
 
 // chatContextPinned reports whether the chat carries a meaningful pinned

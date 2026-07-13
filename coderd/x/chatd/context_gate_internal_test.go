@@ -31,15 +31,17 @@ import (
 // newGateServer builds a minimal Server for exercising the context-report
 // gate directly against a real database, with a caller-provided clock and
 // wait ceiling. The pubsub carries the context_ready watch events the gate
-// publishes at gate-exit pinning.
+// publishes at gate-exit pinning and the context_error events it publishes
+// when a turn degrades.
 func newGateServer(t *testing.T, fix rebindFixture, clk quartz.Clock, ceiling time.Duration) *Server {
 	t.Helper()
 	return &Server{
-		db:                   fix.db,
-		pubsub:               fix.ps,
-		logger:               slogtest.Make(t, &slogtest.Options{IgnoreErrors: true}),
-		clock:                clk,
-		contextReportTimeout: ceiling,
+		db:                             fix.db,
+		pubsub:                         fix.ps,
+		logger:                         slogtest.Make(t, &slogtest.Options{IgnoreErrors: true}),
+		clock:                          clk,
+		contextReportTimeout:           ceiling,
+		agentInactiveDisconnectTimeout: 10 * time.Minute,
 	}
 }
 
@@ -73,6 +75,34 @@ func newGateTurnContext(t *testing.T, server *Server, chat database.Chat) *turnW
 	}
 	t.Cleanup(wc.close)
 	return wc
+}
+
+// requireChatDegraded asserts the degrade contract on the chat row: the
+// reason is recorded on context_error, the pinned hash stays NULL (so a
+// later push can still hydrate), and the chat is not in an error state.
+func requireChatDegraded(t *testing.T, fix rebindFixture, chatID uuid.UUID, message string) {
+	t.Helper()
+	post, err := fix.db.GetChatByID(fix.ctx, chatID)
+	require.NoError(t, err)
+	require.Contains(t, post.ContextError, message,
+		"the degrade reason must land on chats.context_error")
+	require.Nil(t, post.ContextAggregateHash,
+		"a degrade must leave the pinned hash NULL so a later push still hydrates")
+	require.NotEqual(t, database.ChatStatusError, post.Status,
+		"a degrade must not put the chat in an error state")
+}
+
+// requireContextErrorEvent asserts the degrade published a context_error
+// watch event carrying the degraded chat's waiting state and error.
+func requireContextErrorEvent(t *testing.T, fix rebindFixture, events <-chan codersdk.ChatWatchEvent, chatID uuid.UUID, message string) {
+	t.Helper()
+	event := testutil.RequireReceive(fix.ctx, t, events)
+	require.Equal(t, codersdk.ChatWatchEventKindContextError, event.Kind,
+		"a degrade publishes a context_error event")
+	require.Equal(t, chatID, event.Chat.ID)
+	require.NotNil(t, event.Chat.Context)
+	require.Equal(t, codersdk.ChatContextStateWaiting, event.Chat.Context.State)
+	require.Contains(t, event.Chat.Context.Error, message)
 }
 
 type gateAwaitResult struct {
@@ -242,9 +272,11 @@ func TestAwaitChatContextReported(t *testing.T) {
 	})
 
 	// StopBuildUnpinned: an unpinned chat cannot receive a context report
-	// from a workspace whose latest build is not a start, so the gate fails
-	// immediately with the actionable started-workspace error, both when the
-	// old agent binding still resolves and when no agent is bound at all.
+	// from a workspace whose latest build is not a start, so the gate
+	// degrades immediately: the turn proceeds without error, the reason is
+	// recorded on chats.context_error, and a context_error watch event is
+	// published. Covered both when the old agent binding still resolves and
+	// when no agent is bound at all.
 	t.Run("StopBuildUnpinned", func(t *testing.T) {
 		t.Parallel()
 		for _, bound := range []bool{true, false} {
@@ -264,19 +296,24 @@ func TestAwaitChatContextReported(t *testing.T) {
 				}
 				chat := gateChat(t, fix, agentID, buildID)
 				seedStopBuild(t, fix.db, fix)
+				events := subscribeChatWatchEvents(t, fix)
 
 				wc := newGateTurnContext(t, server, chat)
-				_, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
-				require.ErrorIs(t, err, errChatContextWorkspaceNotStarted)
-				require.ErrorIs(t, err, errTerminalGeneration, "the prepare phase must not retry the gate failure")
-				require.ErrorContains(t, err, "workspace must be started to report chat context")
+				agent, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
+				require.NoError(t, err, "the gate must not fail the turn")
+				require.Equal(t, uuid.Nil, agent.ID, "a degraded turn runs with the zero-value agent")
+
+				requireChatDegraded(t, fix, chat.ID,
+					"workspace must be started to report chat context")
+				requireContextErrorEvent(t, fix, events, chat.ID,
+					"workspace must be started to report chat context")
 			})
 		}
 	})
 
 	// AgentTooOld: an agent that connected with an Agent API below 2.10 can
-	// never push context, so the gate fails immediately instead of waiting
-	// out the ceiling.
+	// never push context, so the gate degrades immediately instead of
+	// waiting out the ceiling.
 	t.Run("AgentTooOld", func(t *testing.T) {
 		t.Parallel()
 		fix := newRebindFixture(t)
@@ -288,12 +325,128 @@ func TestAwaitChatContextReported(t *testing.T) {
 			Subsystems: []database.WorkspaceAgentSubsystem{},
 		}))
 		chat := gateChat(t, fix, fix.agentNoSnap, fix.buildID)
+		events := subscribeChatWatchEvents(t, fix)
+
+		wc := newGateTurnContext(t, server, chat)
+		agent, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
+		require.NoError(t, err, "the gate must not fail the turn")
+		require.Equal(t, uuid.Nil, agent.ID)
+
+		requireChatDegraded(t, fix, chat.ID,
+			"workspace agent is too old to report chat context")
+		requireContextErrorEvent(t, fix, events, chat.ID,
+			"workspace agent is too old to report chat context")
+	})
+
+	// DisconnectedAgentDegradesImmediately: an agent that connected once and
+	// then disconnected cannot push, so the gate degrades immediately
+	// instead of waiting out the ceiling. This mirrors the dial path's
+	// disconnect derivation; a never-connected agent stays waitable.
+	t.Run("DisconnectedAgentDegradesImmediately", func(t *testing.T) {
+		t.Parallel()
+		fix := newRebindFixture(t)
+		server := newGateServer(t, fix, quartz.NewMock(t), defaultContextReportTimeout)
+		connectedAt := dbtime.Now().Add(-time.Hour)
+		require.NoError(t, fix.db.UpdateWorkspaceAgentConnectionByID(fix.ctx, database.UpdateWorkspaceAgentConnectionByIDParams{
+			ID:               fix.agentNoSnap,
+			FirstConnectedAt: sql.NullTime{Valid: true, Time: connectedAt},
+			LastConnectedAt:  sql.NullTime{Valid: true, Time: connectedAt},
+			DisconnectedAt:   sql.NullTime{Valid: true, Time: connectedAt.Add(time.Minute)},
+			UpdatedAt:        dbtime.Now(),
+		}))
+		chat := gateChat(t, fix, fix.agentNoSnap, fix.buildID)
+		events := subscribeChatWatchEvents(t, fix)
+
+		wc := newGateTurnContext(t, server, chat)
+		agent, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
+		require.NoError(t, err, "the gate must not fail the turn")
+		require.Equal(t, uuid.Nil, agent.ID)
+
+		requireChatDegraded(t, fix, chat.ID,
+			"workspace agent is not connected, so it cannot report chat context")
+		requireContextErrorEvent(t, fix, events, chat.ID,
+			"workspace agent is not connected, so it cannot report chat context")
+	})
+
+	// DegradeMemorySkipsWait: an unpinned chat whose context_error is
+	// already non-empty degraded on a previous turn (that is the only way an
+	// unpinned chat gains one), so the gate degrades again immediately,
+	// keeping the message, without any ticker interaction (the mock clock is
+	// never advanced).
+	t.Run("DegradeMemorySkipsWait", func(t *testing.T) {
+		t.Parallel()
+		fix := newRebindFixture(t)
+		server := newGateServer(t, fix, quartz.NewMock(t), defaultContextReportTimeout)
+		chat := gateChat(t, fix, fix.agentNoSnap, fix.buildID)
+		require.NoError(t, fix.db.UpdateChatContextError(fix.ctx, database.UpdateChatContextErrorParams{
+			ID:           chat.ID,
+			ContextError: "workspace agent did not report chat context within 15m0s",
+		}))
+		chat, err := fix.db.GetChatByID(fix.ctx, chat.ID)
+		require.NoError(t, err)
+		events := subscribeChatWatchEvents(t, fix)
+
+		// The workspace is started and the agent is waitable, so without
+		// the degrade memory this call would stall on the ticker; the mock
+		// clock is never advanced, so an immediate return proves the memory
+		// short-circuits the wait.
+		wc := newGateTurnContext(t, server, chat)
+		agent, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
+		require.NoError(t, err, "the gate must not fail the turn")
+		require.Equal(t, uuid.Nil, agent.ID)
+
+		requireChatDegraded(t, fix, chat.ID,
+			"workspace agent did not report chat context within 15m0s")
+		requireContextErrorEvent(t, fix, events, chat.ID,
+			"workspace agent did not report chat context within 15m0s")
+	})
+
+	// PushAfterDegradeHydratesAndClearsError: a degrade leaves the pinned
+	// hash NULL, so a later agent push still hydrates the chat, overwrites
+	// the context error, and the next gate call proceeds pinned. This is the
+	// self-heal path.
+	t.Run("PushAfterDegradeHydratesAndClearsError", func(t *testing.T) {
+		t.Parallel()
+		fix := newRebindFixture(t)
+		server := newGateServer(t, fix, quartz.NewMock(t), defaultContextReportTimeout)
+		// A too-old agent degrades the first turn immediately.
+		require.NoError(t, fix.db.UpdateWorkspaceAgentStartupByID(fix.ctx, database.UpdateWorkspaceAgentStartupByIDParams{
+			ID:         fix.agentNoSnap,
+			Version:    "v2.0.0",
+			APIVersion: "2.0",
+			Subsystems: []database.WorkspaceAgentSubsystem{},
+		}))
+		chat := gateChat(t, fix, fix.agentNoSnap, fix.buildID)
 
 		wc := newGateTurnContext(t, server, chat)
 		_, err := server.awaitChatContextReported(fix.ctx, wc, server.logger)
-		require.ErrorIs(t, err, errChatContextAgentTooOld)
-		require.ErrorIs(t, err, errTerminalGeneration)
-		require.ErrorContains(t, err, "workspace agent is too old to report chat context")
+		require.NoError(t, err)
+		requireChatDegraded(t, fix, chat.ID,
+			"workspace agent is too old to report chat context")
+
+		// The agent's push arrives later: the NULL-gated hydrate stamps the
+		// hash and replaces the degrade error in one statement.
+		hash := []byte{0xee}
+		seedAgentContext(fix.ctx, t, fix.db, fix.agentNoSnap, "/home/coder/AGENTS.md", hash,
+			database.WorkspaceAgentContextBodyKindInstructionFile,
+			json.RawMessage(`{"instruction_file":{"content":"healed"}}`))
+		hydrated, err := fix.db.HydrateAgentChatsContext(fix.ctx, database.HydrateAgentChatsContextParams{
+			AgentID:       fix.agentNoSnap,
+			AggregateHash: hash,
+		})
+		require.NoError(t, err)
+		require.Contains(t, hydrated, chat.ID, "the degraded chat is still NULL-hash hydratable")
+
+		post, err := fix.db.GetChatByID(fix.ctx, chat.ID)
+		require.NoError(t, err)
+		require.Equal(t, hash, post.ContextAggregateHash, "the push pins the chat")
+		require.Empty(t, post.ContextError, "the push overwrites the degrade error")
+
+		// The next gate call proceeds pinned, with the agent resolved.
+		wc2 := newGateTurnContext(t, server, post)
+		agent, err := server.awaitChatContextReported(fix.ctx, wc2, server.logger)
+		require.NoError(t, err)
+		require.Equal(t, fix.agentNoSnap, agent.ID)
 	})
 
 	// WaitsForPush: an unpinned chat whose agent has not pushed waits on the
@@ -338,10 +491,10 @@ func TestAwaitChatContextReported(t *testing.T) {
 		require.Equal(t, hash, post.ContextAggregateHash, "gate exit pins the mid-wait push")
 	})
 
-	// CeilingElapses: an agent that never reports fails the turn with a
-	// visible error naming the wait once the ceiling passes. The ceiling is
-	// deliberately not a multiple of the poll interval so the timeout fires
-	// alone.
+	// CeilingElapses: an agent that never reports degrades the turn once
+	// the ceiling passes: the turn proceeds without error and the wait is
+	// named in the recorded context error. The ceiling is deliberately not
+	// a multiple of the poll interval so the timeout fires alone.
 	t.Run("CeilingElapses", func(t *testing.T) {
 		t.Parallel()
 		fix := newRebindFixture(t)
@@ -351,6 +504,7 @@ func TestAwaitChatContextReported(t *testing.T) {
 		ceiling := 2500 * time.Millisecond
 		server := newGateServer(t, fix, mClock, ceiling)
 		chat := gateChat(t, fix, fix.agentNoSnap, fix.buildID)
+		events := subscribeChatWatchEvents(t, fix)
 
 		wc := newGateTurnContext(t, server, chat)
 		results := awaitGateAsync(fix.ctx, server, wc)
@@ -361,14 +515,18 @@ func TestAwaitChatContextReported(t *testing.T) {
 		mClock.Advance(ceiling - 2*contextReportPollInterval).MustWait(fix.ctx)
 
 		res := testutil.RequireReceive(fix.ctx, t, results)
-		require.ErrorIs(t, res.err, errTerminalGeneration)
-		require.ErrorContains(t, res.err, "workspace agent did not report chat context within 2.5s")
+		require.NoError(t, res.err, "the gate must not fail the turn")
+		require.Equal(t, uuid.Nil, res.agent.ID)
+
+		requireChatDegraded(t, fix, chat.ID,
+			"workspace agent did not report chat context within 2.5s")
+		requireContextErrorEvent(t, fix, events, chat.ID,
+			"workspace agent did not report chat context within 2.5s")
 	})
 
 	// InterruptDuringWait: canceling the turn context mid-wait propagates
 	// the cancellation unchanged so the interrupt path sees a plain context
-	// error, not a terminal gate error that would pollute the chat's error
-	// state.
+	// error, not a degrade that would pollute the chat's context state.
 	t.Run("InterruptDuringWait", func(t *testing.T) {
 		t.Parallel()
 		fix := newRebindFixture(t)
@@ -386,7 +544,10 @@ func TestAwaitChatContextReported(t *testing.T) {
 		cancel()
 		res := testutil.RequireReceive(fix.ctx, t, results)
 		require.ErrorIs(t, res.err, context.Canceled)
-		require.NotErrorIs(t, res.err, errTerminalGeneration)
+
+		post, err := fix.db.GetChatByID(fix.ctx, chat.ID)
+		require.NoError(t, err)
+		require.Empty(t, post.ContextError, "an interrupt is not a degrade")
 	})
 
 	// RebindOnNewStartBuild: a pinned chat bound to a previous build's agent

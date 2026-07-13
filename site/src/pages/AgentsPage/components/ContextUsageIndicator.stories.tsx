@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, waitFor, within } from "storybook/test";
 import {
 	MockChatContextClean,
+	MockChatContextDegraded,
 	MockChatContextDirty,
 	MockChatContextWaiting,
 } from "#/testHelpers/chatEntities";
@@ -227,6 +228,37 @@ export const Waiting: Story = {
 			expect(body.getByText("Waiting for workspace context")).toBeVisible(),
 		);
 		expect(body.queryByRole("button", { name: "Refresh context" })).toBeNull();
+	},
+};
+
+// Degraded pin: the chat is still waiting (unpinned) but a turn degraded
+// because the agent's context report is unavailable, so the indicator
+// renders an error treatment instead of an ongoing wait and the popover
+// surfaces the degrade reason.
+export const Degraded: Story = {
+	args: {
+		usage: {
+			context: MockChatContextDegraded,
+		},
+	},
+	play: async ({ canvasElement }) => {
+		const button = within(canvasElement).getByRole("button");
+		expect(button.getAttribute("aria-label") ?? "").toContain(
+			"Workspace context unavailable",
+		);
+
+		await userEvent.hover(button);
+		const body = within(document.body);
+		await waitFor(() =>
+			expect(body.getByText("Workspace context unavailable")).toBeVisible(),
+		);
+		// The degrade reason is visible, replacing the misleading wait line.
+		expect(
+			body.getByText(
+				"workspace agent is not connected, so it cannot report chat context",
+			),
+		).toBeVisible();
+		expect(body.queryByText("Waiting for workspace context")).toBeNull();
 	},
 };
 

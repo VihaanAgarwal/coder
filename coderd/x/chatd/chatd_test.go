@@ -4863,15 +4863,12 @@ func TestCreateWorkspaceTool_EndToEnd(t *testing.T) {
 	require.True(t, foundToolResultInSecondCall, "expected second streamed model call to include create_workspace tool output")
 }
 
-// TestStoppedWorkspaceUnpinnedChatSurfacesContextGateError covers the
-// context-report gate end to end through the chat worker: a chat bound to a
-// stopped workspace that never reported context cannot run a turn, and the
-// gate's actionable error surfaces as the chat's visible error state instead
-// of an opaque retry loop. Before the gate, this flow ran the turn and let
-// the model call start_workspace; the started-workspace requirement now
-// front-runs the model call, and the start_workspace tool behavior itself is
-// covered by chattool's tests.
-func TestStoppedWorkspaceUnpinnedChatSurfacesContextGateError(t *testing.T) {
+// TestStartWorkspaceTool_EndToEnd covers the start_workspace tool through
+// the chat worker on a chat bound to a stopped workspace. The context gate
+// cannot obtain a report from the stopped workspace, so the turn degrades
+// (recording the reason on the chat's context error) and still runs, letting
+// the model call start_workspace.
+func TestStartWorkspaceTool_EndToEnd(t *testing.T) {
 	t.Parallel()
 
 	ctx := testutil.Context(t, testutil.WaitSuperLong)
@@ -4891,8 +4888,11 @@ func TestStoppedWorkspaceUnpinnedChatSurfacesContextGateError(t *testing.T) {
 	coderdtest.AwaitTemplateVersionJobCompleted(t, client, version.ID)
 	template := coderdtest.CreateTemplate(t, client, user.OrganizationID, version.ID)
 
-	// Create a workspace, then stop it. No agent ever connects or pushes
-	// context, so a chat bound to it has no pinned context to run from.
+	// Create a workspace, then stop it so start_workspace has
+	// something to start. We intentionally skip starting a test
+	// agent. The echo provisioner creates new agent rows for each
+	// build, so an agent started for build 1 cannot serve build 3.
+	// The tool handles the no-agent case gracefully.
 	workspace := coderdtest.CreateWorkspace(t, client, template.ID)
 	coderdtest.AwaitWorkspaceBuildJobCompleted(t, client, workspace.LatestBuild.ID)
 	workspace = coderdtest.MustTransitionWorkspace(
@@ -4900,12 +4900,26 @@ func TestStoppedWorkspaceUnpinnedChatSurfacesContextGateError(t *testing.T) {
 		codersdk.WorkspaceTransitionStart, codersdk.WorkspaceTransitionStop,
 	)
 
+	var streamedCallCount atomic.Int32
+	var streamedCallsMu sync.Mutex
+	streamedCalls := make([][]chattest.OpenAIMessage, 0, 2)
+
 	openAIURL := chattest.NewOpenAI(t, func(req *chattest.OpenAIRequest) chattest.OpenAIResponse {
 		if !req.Stream {
 			return chattest.OpenAINonStreamingResponse("Start workspace test")
 		}
+
+		streamedCallsMu.Lock()
+		streamedCalls = append(streamedCalls, append([]chattest.OpenAIMessage(nil), req.Messages...))
+		streamedCallsMu.Unlock()
+
+		if streamedCallCount.Add(1) == 1 {
+			return chattest.OpenAIStreamingResponse(
+				chattest.OpenAIToolCallChunk("start_workspace", "{}"),
+			)
+		}
 		return chattest.OpenAIStreamingResponse(
-			chattest.OpenAITextChunks("This turn must not run.")...,
+			chattest.OpenAITextChunks("Workspace started and ready.")...,
 		)
 	})
 
@@ -4934,11 +4948,76 @@ func TestStoppedWorkspaceUnpinnedChatSurfacesContextGateError(t *testing.T) {
 		return got.Status == codersdk.ChatStatusWaiting || got.Status == codersdk.ChatStatusError
 	}, testutil.WaitSuperLong, testutil.IntervalFast)
 
-	require.Equal(t, codersdk.ChatStatusError, chatResult.Status,
-		"an unpinned chat on a stopped workspace must fail the turn visibly")
-	require.NotNil(t, chatResult.LastError)
-	require.Contains(t, chatResult.LastError.Message,
-		"workspace must be started to report chat context")
+	if chatResult.Status == codersdk.ChatStatusError {
+		lastError := ""
+		if chatResult.LastError != nil {
+			lastError = chatResult.LastError.Message
+		}
+		require.FailNowf(t, "chat run failed", "last_error=%q", lastError)
+	}
+
+	// The gate degraded the turn instead of failing it: the stopped-workspace
+	// reason is recorded on the chat's context (populated on single-chat GET).
+	require.NotNil(t, chatResult.Context)
+	require.Equal(t, "workspace must be started to report chat context",
+		chatResult.Context.Error,
+		"the degrade reason must surface on the chat's context error")
+
+	// Verify the workspace was started.
+	require.NotNil(t, chatResult.WorkspaceID)
+	updatedWorkspace, err := client.Workspace(ctx, workspace.ID)
+	require.NoError(t, err)
+	require.Equal(t, codersdk.WorkspaceTransitionStart, updatedWorkspace.LatestBuild.Transition)
+
+	chatMsgs, err := expClient.GetChatMessages(ctx, chat.ID, nil)
+	require.NoError(t, err)
+
+	// Verify start_workspace tool result exists in the chat messages.
+	var foundStartWorkspaceResult bool
+	for _, message := range chatMsgs.Messages {
+		if message.Role != codersdk.ChatMessageRoleTool {
+			continue
+		}
+		for _, part := range message.Content {
+			if part.Type != codersdk.ChatMessagePartTypeToolResult || part.ToolName != "start_workspace" {
+				continue
+			}
+			var result map[string]any
+			require.NoError(t, json.Unmarshal(part.Result, &result))
+			started, ok := result["started"].(bool)
+			require.True(t, ok)
+			require.True(t, started)
+			foundStartWorkspaceResult = true
+		}
+	}
+	require.True(t, foundStartWorkspaceResult, "expected start_workspace tool result message")
+
+	// Verify the LLM received the tool result in its second call.
+	require.GreaterOrEqual(t, streamedCallCount.Load(), int32(2))
+	streamedCallsMu.Lock()
+	recordedStreamCalls := append([][]chattest.OpenAIMessage(nil), streamedCalls...)
+	streamedCallsMu.Unlock()
+	require.GreaterOrEqual(t, len(recordedStreamCalls), 2)
+
+	var foundToolResultInSecondCall bool
+	for _, message := range recordedStreamCalls[1] {
+		if message.Role != "tool" {
+			continue
+		}
+		if !json.Valid([]byte(message.Content)) {
+			continue
+		}
+		var result map[string]any
+		if err := json.Unmarshal([]byte(message.Content), &result); err != nil {
+			continue
+		}
+		started, ok := result["started"].(bool)
+		if ok && started {
+			foundToolResultInSecondCall = true
+			break
+		}
+	}
+	require.True(t, foundToolResultInSecondCall, "expected second streamed model call to include start_workspace tool output")
 }
 
 func TestStoppedWorkspaceWithPersistedAgentBindingDoesNotBlockChat(t *testing.T) {

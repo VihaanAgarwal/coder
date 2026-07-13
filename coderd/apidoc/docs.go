@@ -17958,7 +17958,8 @@ const docTemplate = `{
                 "diff_status_change",
                 "action_required",
                 "context_ready",
-                "context_dirty"
+                "context_dirty",
+                "context_error"
             ],
             "x-enum-varnames": [
                 "ChatWatchEventKindStatusChange",
@@ -17969,7 +17970,8 @@ const docTemplate = `{
                 "ChatWatchEventKindDiffStatusChange",
                 "ChatWatchEventKindActionRequired",
                 "ChatWatchEventKindContextReady",
-                "ChatWatchEventKindContextDirty"
+                "ChatWatchEventKindContextDirty",
+                "ChatWatchEventKindContextError"
             ]
         },
         "codersdk.ClusterConfig": {
