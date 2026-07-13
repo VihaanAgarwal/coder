@@ -1656,7 +1656,7 @@ func TestMigration000542ChatReasoningEffortBackfill(t *testing.T) {
 	require.Equal(t, sql.NullString{}, got["bedrock:anthropic.invalid-effort"])
 }
 
-func TestMigration000543ChatHistoryAPIKeyConstraints(t *testing.T) {
+func TestMigration000544ChatHistoryAPIKeyConstraints(t *testing.T) {
 	t.Parallel()
 
 	const priorMigrationVersion = 542
@@ -1691,13 +1691,13 @@ func TestMigration000543ChatHistoryAPIKeyConstraints(t *testing.T) {
 		}
 	}
 
-	upSQL, err := os.ReadFile("000543_chat_synthetic_api_keys.up.sql")
+	upSQL, err := os.ReadFile("000544_drop_chat_history_api_key_fks.up.sql")
 	require.NoError(t, err)
 	_, err = sqlDB.ExecContext(ctx, string(upSQL))
 	require.NoError(t, err)
 	assertConstraintCount(t, 0)
 
-	downSQL, err := os.ReadFile("000543_chat_synthetic_api_keys.down.sql")
+	downSQL, err := os.ReadFile("000544_drop_chat_history_api_key_fks.down.sql")
 	require.NoError(t, err)
 	_, err = sqlDB.ExecContext(ctx, string(downSQL))
 	require.NoError(t, err)

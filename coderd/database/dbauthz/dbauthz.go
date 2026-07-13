@@ -3320,6 +3320,10 @@ func (q *querier) GetChatFilesByIDs(ctx context.Context, ids []uuid.UUID) ([]dat
 	return files, nil
 }
 
+func (q *querier) GetChatGatewayAPIKey(ctx context.Context, arg database.GetChatGatewayAPIKeyParams) (database.APIKey, error) {
+	return fetch(q.log, q.auth, q.db.GetChatGatewayAPIKey)(ctx, arg)
+}
+
 func (q *querier) GetChatGeneralModelOverride(ctx context.Context) (string, error) {
 	if err := q.authorizeContext(ctx, policy.ActionRead, rbac.ResourceDeploymentConfig); err != nil {
 		return "", err
@@ -3497,13 +3501,6 @@ func (q *querier) GetChatStreamSyncRows(ctx context.Context, ids []uuid.UUID) ([
 		return nil, err
 	}
 	return q.db.GetChatStreamSyncRows(ctx, ids)
-}
-
-func (q *querier) GetChatSyntheticAPIKeyByUserID(ctx context.Context, userID uuid.UUID) (database.ChatSyntheticApiKey, error) {
-	if err := q.authorizeContext(ctx, policy.ActionRead, rbac.ResourceApiKey.WithOwner(userID.String())); err != nil {
-		return database.ChatSyntheticApiKey{}, err
-	}
-	return q.db.GetChatSyntheticAPIKeyByUserID(ctx, userID)
 }
 
 func (q *querier) GetChatSystemPrompt(ctx context.Context) (string, error) {
@@ -6017,13 +6014,6 @@ func (q *querier) InsertChatQueuedMessageWithCreator(ctx context.Context, arg da
 	return q.db.InsertChatQueuedMessageWithCreator(ctx, arg)
 }
 
-func (q *querier) InsertChatSyntheticAPIKey(ctx context.Context, arg database.InsertChatSyntheticAPIKeyParams) (int64, error) {
-	if err := q.authorizeContext(ctx, policy.ActionCreate, rbac.ResourceApiKey.WithOwner(arg.UserID.String())); err != nil {
-		return 0, err
-	}
-	return q.db.InsertChatSyntheticAPIKey(ctx, arg)
-}
-
 func (q *querier) InsertCryptoKey(ctx context.Context, arg database.InsertCryptoKeyParams) (database.CryptoKey, error) {
 	if err := q.authorizeContext(ctx, policy.ActionCreate, rbac.ResourceCryptoKey); err != nil {
 		return database.CryptoKey{}, err
@@ -7406,13 +7396,6 @@ func (q *querier) UpdateChatStatus(ctx context.Context, arg database.UpdateChatS
 		return database.Chat{}, err
 	}
 	return q.db.UpdateChatStatus(ctx, arg)
-}
-
-func (q *querier) UpdateChatSyntheticAPIKey(ctx context.Context, arg database.UpdateChatSyntheticAPIKeyParams) (int64, error) {
-	if err := q.authorizeContext(ctx, policy.ActionUpdate, rbac.ResourceApiKey.WithOwner(arg.UserID.String())); err != nil {
-		return 0, err
-	}
-	return q.db.UpdateChatSyntheticAPIKey(ctx, arg)
 }
 
 func (q *querier) UpdateChatTitleByID(ctx context.Context, arg database.UpdateChatTitleByIDParams) (database.Chat, error) {
