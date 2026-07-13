@@ -76,3 +76,5 @@ To log in to an existing Coder deployment:
 ```sh
 coder login https://coder.example.com
 ```
+
+<!-- docs-preview demo: temporary marker, reverted after screenshot -->

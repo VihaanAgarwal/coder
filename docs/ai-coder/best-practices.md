@@ -55,3 +55,5 @@ LLMs and agents can be dangerous if not run with proper boundaries. Be sure not 
 ## Keep it Simple
 
 Today's LLMs and AI agents are not going to refactor entire codebases with production-grade code on their own! Using coding agents can be extremely fun and productive, but it is important to keep the scope of your use cases small and simple, and grow them over time.
+
+<!-- docs-preview demo: temporary marker, reverted after screenshot -->

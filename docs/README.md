@@ -185,3 +185,5 @@ See the [templates documentation](./admin/templates/index.md) for details.
 - [Templates](./admin/templates/index.md)
 - [Installing Coder](./install/index.md)
 - [Quickstart tutorial](./get-started/index.md)
+
+<!-- docs-preview demo: temporary marker, reverted after screenshot -->

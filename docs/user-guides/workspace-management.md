@@ -191,3 +191,5 @@ Coder stores macOS and Linux logs at the following locations:
 
 > [!NOTE]
 > Logs are truncated once they reach 5MB in size.
+
+<!-- docs-preview demo: temporary marker, reverted after screenshot -->
