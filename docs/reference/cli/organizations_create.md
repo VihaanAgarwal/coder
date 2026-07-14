@@ -1,5 +1,6 @@
 ---
 title: organizations create
+description: Create a new organization.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

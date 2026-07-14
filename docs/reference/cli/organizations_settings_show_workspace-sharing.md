@@ -1,5 +1,6 @@
 ---
 title: organizations settings show workspace-sharing
+description: Workspace sharing settings for the organization.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

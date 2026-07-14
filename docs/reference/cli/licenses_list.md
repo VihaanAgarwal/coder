@@ -1,5 +1,6 @@
 ---
 title: licenses list
+description: "List licenses (including expired)"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

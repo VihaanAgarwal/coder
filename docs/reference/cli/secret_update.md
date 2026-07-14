@@ -1,5 +1,6 @@
 ---
 title: secret update
+description: Update a secret
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

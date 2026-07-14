@@ -1,5 +1,6 @@
 ---
 title: dotfiles
+description: Personalize your workspace by applying a canonical dotfiles repository
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

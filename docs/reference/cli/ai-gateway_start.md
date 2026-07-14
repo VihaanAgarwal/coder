@@ -1,5 +1,6 @@
 ---
 title: ai-gateway start
+description: Run a standalone AI Gateway server
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

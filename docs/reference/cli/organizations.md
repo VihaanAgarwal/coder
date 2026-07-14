@@ -1,5 +1,6 @@
 ---
 title: organizations
+description: Organization related commands
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: ai-gateway
+description: Manage AI Gateway
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: favorite
+description: Add a workspace to your favorites
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

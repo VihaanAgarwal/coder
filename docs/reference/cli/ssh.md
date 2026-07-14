@@ -1,5 +1,6 @@
 ---
 title: ssh
+description: Start a shell into a workspace or run a command
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

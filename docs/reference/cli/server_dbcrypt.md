@@ -1,5 +1,6 @@
 ---
 title: server dbcrypt
+description: Manage database encryption.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

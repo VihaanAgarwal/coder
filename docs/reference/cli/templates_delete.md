@@ -1,5 +1,6 @@
 ---
 title: templates delete
+description: Delete templates
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: users show
+description: "Show a single user. Use 'me' to indicate the currently authenticated user."
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

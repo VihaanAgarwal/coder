@@ -1,5 +1,6 @@
 ---
 title: templates list
+description: List all the templates available for the organization
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

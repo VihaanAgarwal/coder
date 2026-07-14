@@ -1,5 +1,6 @@
 ---
 title: organizations members edit-roles
+description: "Edit organization member's roles"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

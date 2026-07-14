@@ -1,5 +1,6 @@
 ---
 title: provisioner start
+description: Run a provisioner daemon
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: provisioner keys create
+description: Create a new provisioner key
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

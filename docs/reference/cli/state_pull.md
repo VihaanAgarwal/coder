@@ -1,5 +1,6 @@
 ---
 title: state pull
+description: Pull a Terraform state file from a workspace.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: delete
+description: Delete a workspace
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

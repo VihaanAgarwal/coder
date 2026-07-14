@@ -1,5 +1,6 @@
 ---
 title: external-workspaces
+description: Create or manage external workspaces
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

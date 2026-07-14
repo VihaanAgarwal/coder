@@ -1,5 +1,6 @@
 ---
 title: licenses delete
+description: Delete license by ID
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

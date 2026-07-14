@@ -1,5 +1,6 @@
 ---
 title: users activate
+description: "Update a user's status to 'active'. Active users can fully interact with the platform"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

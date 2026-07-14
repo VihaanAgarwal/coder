@@ -1,5 +1,6 @@
 ---
 title: schedule
+description: Schedule automated start and stop times for workspaces
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

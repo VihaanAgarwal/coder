@@ -1,5 +1,6 @@
 ---
 title: provisioner
+description: View and manage provisioner daemons and jobs
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: templates versions unarchive
+description: "Unarchive a template version(s)."
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

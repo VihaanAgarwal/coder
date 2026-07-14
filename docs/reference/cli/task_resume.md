@@ -1,5 +1,6 @@
 ---
 title: task resume
+description: Resume a task
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

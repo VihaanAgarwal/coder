@@ -1,5 +1,6 @@
 ---
 title: task pause
+description: Pause a task
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

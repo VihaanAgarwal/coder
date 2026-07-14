@@ -1,5 +1,6 @@
 ---
 title: organizations roles
+description: Manage organization roles.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

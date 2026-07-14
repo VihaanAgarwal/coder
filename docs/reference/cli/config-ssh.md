@@ -1,5 +1,6 @@
 ---
 title: config-ssh
+description: "Add an SSH Host entry for your workspaces \"ssh workspace.coder\""
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: logout
+description: Unauthenticate your local session
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

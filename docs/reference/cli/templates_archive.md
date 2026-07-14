@@ -1,5 +1,6 @@
 ---
 title: templates archive
+description: "Archive unused or failed template versions from a given template(s)"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

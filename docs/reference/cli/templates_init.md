@@ -1,5 +1,6 @@
 ---
 title: templates init
+description: Get started with a templated template.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

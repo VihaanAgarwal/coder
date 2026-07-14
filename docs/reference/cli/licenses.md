@@ -1,5 +1,6 @@
 ---
 title: licenses
+description: "Add, delete, and list licenses"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

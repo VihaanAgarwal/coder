@@ -1,5 +1,6 @@
 ---
 title: provisioner jobs
+description: View and manage provisioner jobs
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

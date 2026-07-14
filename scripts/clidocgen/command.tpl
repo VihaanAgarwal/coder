@@ -1,5 +1,8 @@
 ---
-title: {{ fullName . }}
+title: {{ fullName . | yamlScalar }}
+{{- with .Short }}
+description: {{ . | yamlScalar }}
+{{- end }}
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

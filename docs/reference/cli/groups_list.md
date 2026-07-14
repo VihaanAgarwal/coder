@@ -1,5 +1,6 @@
 ---
 title: groups list
+description: List user groups
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

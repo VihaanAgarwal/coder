@@ -1,5 +1,6 @@
 ---
 title: support
+description: Commands for troubleshooting issues with a Coder deployment.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

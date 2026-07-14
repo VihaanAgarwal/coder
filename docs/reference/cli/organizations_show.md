@@ -1,5 +1,6 @@
 ---
 title: organizations show
+description: "Show the organization. Using \"selected\" will show the selected organization from the \"--org\" flag. Using \"me\" will show all organizations you are a member of."
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

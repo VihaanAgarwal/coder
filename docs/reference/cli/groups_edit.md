@@ -1,5 +1,6 @@
 ---
 title: groups edit
+description: Edit a user group
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

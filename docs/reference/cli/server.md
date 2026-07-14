@@ -1,5 +1,6 @@
 ---
 title: server
+description: Start a Coder server
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

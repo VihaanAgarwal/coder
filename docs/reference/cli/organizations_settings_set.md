@@ -1,5 +1,6 @@
 ---
 title: organizations settings set
+description: Update specified organization setting.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

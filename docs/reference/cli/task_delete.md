@@ -1,5 +1,6 @@
 ---
 title: task delete
+description: Delete tasks
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

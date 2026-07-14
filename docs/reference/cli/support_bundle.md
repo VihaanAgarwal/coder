@@ -1,5 +1,6 @@
 ---
 title: support bundle
+description: Generate a support bundle to troubleshoot issues connecting to a workspace.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

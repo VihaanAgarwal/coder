@@ -1,5 +1,6 @@
 ---
 title: stat mem
+description: "Show memory usage, in gigabytes."
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

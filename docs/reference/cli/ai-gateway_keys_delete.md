@@ -1,5 +1,6 @@
 ---
 title: ai-gateway keys delete
+description: Delete an AI Gateway key
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

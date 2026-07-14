@@ -1,5 +1,6 @@
 ---
 title: secret delete
+description: Delete a secret
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

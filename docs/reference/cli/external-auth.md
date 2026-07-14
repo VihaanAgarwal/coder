@@ -1,5 +1,6 @@
 ---
 title: external-auth
+description: Manage external authentication
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: stop
+description: Stop a workspace
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

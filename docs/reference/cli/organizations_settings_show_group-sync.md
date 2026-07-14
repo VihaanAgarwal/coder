@@ -1,5 +1,6 @@
 ---
 title: organizations settings show group-sync
+description: Group sync settings to sync groups from an IdP.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

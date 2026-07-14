@@ -1,5 +1,6 @@
 ---
 title: templates versions list
+description: List all the versions of the specified template
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

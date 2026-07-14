@@ -1,5 +1,6 @@
 ---
 title: provisioner list
+description: List provisioner daemons in an organization
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

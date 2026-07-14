@@ -1,5 +1,6 @@
 ---
 title: schedule start
+description: Edit workspace start schedule
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

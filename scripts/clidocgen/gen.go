@@ -2,10 +2,12 @@ package main
 
 import (
 	_ "embed"
+	"encoding/json"
 	"fmt"
 	"io"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"text/template"
 
@@ -61,6 +63,7 @@ func init() {
 			},
 			"commandURI": fmtDocFilename,
 			"fullName":   fullName,
+			"yamlScalar": yamlScalar,
 			"tableHeader": func() string {
 				return `| | |
 | --- | --- |`
@@ -85,6 +88,22 @@ func fullName(cmd *serpent.Command) string {
 		return "coder"
 	}
 	return strings.TrimPrefix(cmd.FullName(), "coder ")
+}
+
+var safeScalarRegex = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9 ._/-]*$`)
+
+// yamlScalar renders s as a YAML scalar suitable for a front matter value.
+// Simple values are emitted verbatim; anything else is JSON-encoded, which is
+// valid YAML and safely quotes and escapes special characters.
+func yamlScalar(s string) string {
+	if safeScalarRegex.MatchString(s) {
+		return s
+	}
+	b, err := json.Marshal(s)
+	if err != nil {
+		return `""`
+	}
+	return string(b)
 }
 
 func fmtDocFilename(cmd *serpent.Command) string {

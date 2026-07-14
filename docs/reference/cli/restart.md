@@ -1,5 +1,6 @@
 ---
 title: restart
+description: Restart a workspace
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

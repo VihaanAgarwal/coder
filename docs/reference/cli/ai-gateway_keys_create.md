@@ -1,5 +1,6 @@
 ---
 title: ai-gateway keys create
+description: Create an AI Gateway key
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

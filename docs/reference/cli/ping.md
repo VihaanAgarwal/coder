@@ -1,5 +1,6 @@
 ---
 title: ping
+description: Ping a workspace
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

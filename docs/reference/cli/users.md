@@ -1,5 +1,6 @@
 ---
 title: users
+description: Manage users
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: logs
+description: View logs for a workspace
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

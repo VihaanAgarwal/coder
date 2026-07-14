@@ -1,5 +1,6 @@
 ---
 title: organizations list
+description: List all organizations
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: schedule show
+description: Show workspace schedules
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

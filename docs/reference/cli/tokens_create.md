@@ -1,5 +1,6 @@
 ---
 title: tokens create
+description: Create a token
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

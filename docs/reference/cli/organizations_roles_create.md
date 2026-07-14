@@ -1,5 +1,6 @@
 ---
 title: organizations roles create
+description: Create a new organization custom role
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

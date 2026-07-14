@@ -1,5 +1,6 @@
 ---
 title: provisioner jobs list
+description: List provisioner jobs
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

@@ -1,5 +1,6 @@
 ---
 title: users oidc-claims
+description: Display the OIDC claims for the authenticated user.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

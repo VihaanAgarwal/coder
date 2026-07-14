@@ -1,5 +1,6 @@
 ---
 title: provisioner keys delete
+description: Delete a provisioner key
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

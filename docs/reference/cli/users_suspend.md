@@ -1,5 +1,6 @@
 ---
 title: users suspend
+description: "Update a user's status to 'suspended'. A suspended user cannot log into the platform"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

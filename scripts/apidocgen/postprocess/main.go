@@ -61,8 +61,25 @@ var (
 
 	sectionSeparator     = []byte("<!-- APIDOCGEN: BEGIN SECTION -->\n")
 	nonAlphanumericRegex = regexp.MustCompile(`[^a-z0-9 ]+`)
-	safeTitleRegex       = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9 ._/-]*$`)
+	safeScalarRegex      = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9 ._/-]*$`)
 )
+
+// route is a docs manifest.json entry. Per-page metadata (title, description,
+// icon_path, state) is mirrored into page front matter; the structural fields
+// (path, children) stay in the manifest.
+type route struct {
+	Title       string   `json:"title,omitempty"`
+	Description string   `json:"description,omitempty"`
+	Path        string   `json:"path,omitempty"`
+	IconPath    string   `json:"icon_path,omitempty"`
+	State       []string `json:"state,omitempty"`
+	Children    []route  `json:"children,omitempty"`
+}
+
+type manifest struct {
+	Versions []string `json:"versions,omitempty"`
+	Routes   []route  `json:"routes,omitempty"`
+}
 
 func main() {
 	log.Println("Postprocess API docs")
@@ -131,8 +148,39 @@ func prepareDocsDirectory() error {
 func writeDocs(sections [][]byte) error {
 	log.Println("Write docs to destination")
 
+	manifestPath := path.Join(docsDirectory, "manifest.json")
+	manifestFile, err := os.ReadFile(manifestPath)
+	if err != nil {
+		return xerrors.Errorf("can't read manifest file: %w", err)
+	}
+	log.Printf("Read manifest file: %dB", len(manifestFile))
+
+	var m manifest
+	err = json.Unmarshal(manifestFile, &m)
+	if err != nil {
+		return xerrors.Errorf("json.Unmarshal failed: %w", err)
+	}
+
+	// Index existing REST API routes by title so their curated metadata
+	// (description, state, icon_path) flows into both the page front matter
+	// and the regenerated manifest routes.
+	existingByTitle := make(map[string]route)
+	for _, r := range m.Routes {
+		if r.Title != "Reference" {
+			continue
+		}
+		for _, child := range r.Children {
+			if child.Title != "REST API" {
+				continue
+			}
+			for _, existing := range child.Children {
+				existingByTitle[existing.Title] = existing
+			}
+		}
+	}
+
 	apiDir := path.Join(docsDirectory, apiSubdir)
-	err := atomicwrite.File(path.Join(apiDir, apiIndexFile), []byte(apiIndexContent))
+	err = atomicwrite.File(path.Join(apiDir, apiIndexFile), []byte(apiIndexContent))
 	if err != nil {
 		return xerrors.Errorf(`can't write the index file: %w`, err)
 	}
@@ -151,9 +199,13 @@ func writeDocs(sections [][]byte) error {
 		}
 		log.Printf("Write section: %s", sectionName)
 
+		// Carry the manifest route's curated metadata into the front matter.
+		r := existingByTitle[sectionName]
+		r.Title = sectionName
+
 		mdFilename := toMdFilename(sectionName)
 		docPath := path.Join(apiDir, mdFilename)
-		err = atomicwrite.File(docPath, frontMatterSection(section, sectionName))
+		err = atomicwrite.File(docPath, frontMatterSection(section, r))
 		if err != nil {
 			return xerrors.Errorf(`can't write doc file "%s": %w`, docPath, err)
 		}
@@ -175,34 +227,9 @@ func writeDocs(sections [][]byte) error {
 		return slices.IsSorted([]string{mdFiles[i].title, mdFiles[j].title})
 	})
 
-	// Update manifest.json
-	type route struct {
-		Title       string   `json:"title,omitempty"`
-		Description string   `json:"description,omitempty"`
-		Path        string   `json:"path,omitempty"`
-		IconPath    string   `json:"icon_path,omitempty"`
-		State       []string `json:"state,omitempty"`
-		Children    []route  `json:"children,omitempty"`
-	}
-
-	type manifest struct {
-		Versions []string `json:"versions,omitempty"`
-		Routes   []route  `json:"routes,omitempty"`
-	}
-
-	manifestPath := path.Join(docsDirectory, "manifest.json")
-	manifestFile, err := os.ReadFile(manifestPath)
-	if err != nil {
-		return xerrors.Errorf("can't read manifest file: %w", err)
-	}
-	log.Printf("Read manifest file: %dB", len(manifestFile))
-
-	var m manifest
-	err = json.Unmarshal(manifestFile, &m)
-	if err != nil {
-		return xerrors.Errorf("json.Unmarshal failed: %w", err)
-	}
-
+	// Update manifest.json. Generated routes overwrite Title and Path;
+	// existing state/description/icon_path are preserved (keyed by title) so
+	// callouts like `state: ["experimental"]` survive regeneration.
 	for i, r := range m.Routes {
 		if r.Title != "Reference" {
 			continue
@@ -210,14 +237,6 @@ func writeDocs(sections [][]byte) error {
 		for j, child := range r.Children {
 			if child.Title != "REST API" {
 				continue
-			}
-
-			// Preserve existing state and description on children, keyed by
-			// title, so that callouts like `state: ["experimental"]` survive
-			// regeneration. Generated routes always overwrite Title and Path.
-			existingByTitle := make(map[string]route, len(child.Children))
-			for _, existing := range child.Children {
-				existingByTitle[existing.Title] = existing
 			}
 
 			var children []route
@@ -268,25 +287,40 @@ func toMdFilename(sectionName string) string {
 }
 
 // frontMatterSection replaces the leading "# {name}" heading of a raw API
-// section with a YAML front matter block carrying the same title. The docs
-// site derives page titles from front matter, so generated Markdown no longer
-// needs a leading H1.
-func frontMatterSection(section []byte, name string) []byte {
+// section with a YAML front matter block carrying the route's metadata: the
+// title plus any description, icon_path, and state curated in the manifest.
+// The docs site derives page metadata from front matter, so generated Markdown
+// no longer needs a leading H1. Structural manifest fields (path, children)
+// are intentionally not mirrored here.
+func frontMatterSection(section []byte, r route) []byte {
 	var body []byte
 	if idx := bytes.IndexByte(section, '\n'); idx >= 0 {
 		body = section[idx+1:]
 	}
 	body = bytes.TrimLeft(body, "\r\n")
 
-	prefix := "---\ntitle: " + yamlTitle(name) + "\n---\n\n"
-	return append([]byte(prefix), body...)
+	fm := "---\ntitle: " + yamlScalar(r.Title) + "\n"
+	if r.Description != "" {
+		fm += "description: " + yamlScalar(r.Description) + "\n"
+	}
+	if r.IconPath != "" {
+		fm += "icon_path: " + yamlScalar(r.IconPath) + "\n"
+	}
+	if len(r.State) > 0 {
+		fm += "state:\n"
+		for _, s := range r.State {
+			fm += "  - " + yamlScalar(s) + "\n"
+		}
+	}
+	fm += "---\n\n"
+	return append([]byte(fm), body...)
 }
 
-// yamlTitle renders s as a YAML scalar suitable for a front matter title.
-// Simple titles are emitted verbatim; anything else is JSON-encoded, which is
+// yamlScalar renders s as a YAML scalar suitable for a front matter value.
+// Simple values are emitted verbatim; anything else is JSON-encoded, which is
 // valid YAML and safely quotes and escapes special characters.
-func yamlTitle(s string) string {
-	if safeTitleRegex.MatchString(s) {
+func yamlScalar(s string) string {
+	if safeScalarRegex.MatchString(s) {
 		return s
 	}
 	b, err := json.Marshal(s)

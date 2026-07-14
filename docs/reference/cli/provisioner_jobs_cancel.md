@@ -1,5 +1,6 @@
 ---
 title: provisioner jobs cancel
+description: Cancel a provisioner job
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

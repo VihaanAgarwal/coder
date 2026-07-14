@@ -1,5 +1,6 @@
 ---
 title: organizations roles show
+description: "Show role(s)"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

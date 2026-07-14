@@ -1,5 +1,6 @@
 ---
 title: provisioner keys list
+description: List provisioner keys in an organization
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

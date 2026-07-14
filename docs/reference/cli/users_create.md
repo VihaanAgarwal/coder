@@ -1,5 +1,6 @@
 ---
 title: users create
+description: Create a new user.
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

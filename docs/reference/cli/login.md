@@ -1,5 +1,6 @@
 ---
 title: login
+description: Authenticate with Coder deployment
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

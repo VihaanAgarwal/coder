@@ -1,5 +1,6 @@
 ---
 title: port-forward
+description: "Forward ports from a workspace to the local machine. For reverse port forwarding, use \"coder ssh -R\"."
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

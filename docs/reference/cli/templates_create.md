@@ -1,5 +1,6 @@
 ---
 title: templates create
+description: "DEPRECATED: Create a template from the current directory or as specified by flag"
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

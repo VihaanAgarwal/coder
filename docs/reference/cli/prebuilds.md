@@ -1,5 +1,6 @@
 ---
 title: prebuilds
+description: Manage Coder prebuilds
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->

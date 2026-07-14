@@ -1,5 +1,6 @@
 ---
 title: ai-gateway keys
+description: Manage AI Gateway keys
 ---
 
 <!-- DO NOT EDIT | GENERATED CONTENT -->
