@@ -1,5 +1,8 @@
+---
+title: external-workspaces agent-instructions
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# external-workspaces agent-instructions
 
 Get the instructions for an external agent
 

@@ -1,5 +1,8 @@
+---
+title: server fix-oidc-links
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# server fix-oidc-links
 
 Reset OIDC linked IDs that do not match the expected issuer, allowing users to re-authenticate.
 

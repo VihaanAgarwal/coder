@@ -1,5 +1,8 @@
+---
+title: notifications custom
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# notifications custom
 
 Send a custom notification
 

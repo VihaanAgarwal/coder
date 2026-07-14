@@ -1,5 +1,8 @@
+---
+title: stop
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# stop
 
 Stop a workspace
 

@@ -1,5 +1,8 @@
+---
+title: publickey
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# publickey
 
 Output your Coder public key used for Git operations
 

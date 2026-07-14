@@ -1,5 +1,8 @@
+---
+title: organizations delete
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# organizations delete
 
 Delete an organization
 

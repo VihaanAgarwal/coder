@@ -1,5 +1,8 @@
+---
+title: dotfiles
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# dotfiles
 
 Personalize your workspace by applying a canonical dotfiles repository
 

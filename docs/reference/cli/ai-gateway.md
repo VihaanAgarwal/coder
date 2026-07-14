@@ -1,5 +1,8 @@
+---
+title: ai-gateway
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# ai-gateway
 
 Manage AI Gateway
 

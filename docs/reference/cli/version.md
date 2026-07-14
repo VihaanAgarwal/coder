@@ -1,5 +1,8 @@
+---
+title: version
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# version
 
 Show coder version
 

@@ -1,5 +1,8 @@
+---
+title: users suspend
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# users suspend
 
 Update a user's status to 'suspended'. A suspended user cannot log into the platform
 

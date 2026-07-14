@@ -1,5 +1,8 @@
+---
+title: restart
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# restart
 
 Restart a workspace
 

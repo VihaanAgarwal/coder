@@ -1,5 +1,8 @@
+---
+title: task send
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# task send
 
 Send input to a task
 

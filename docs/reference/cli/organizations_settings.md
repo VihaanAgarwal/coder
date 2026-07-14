@@ -1,5 +1,8 @@
+---
+title: organizations settings
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# organizations settings
 
 Manage organization settings.
 

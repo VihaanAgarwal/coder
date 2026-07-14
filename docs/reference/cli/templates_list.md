@@ -1,5 +1,8 @@
+---
+title: templates list
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# templates list
 
 List all the templates available for the organization
 

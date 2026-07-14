@@ -1,5 +1,8 @@
+---
+title: organizations
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# organizations
 
 Organization related commands
 

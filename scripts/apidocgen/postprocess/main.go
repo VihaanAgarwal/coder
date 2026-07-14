@@ -21,7 +21,9 @@ import (
 const (
 	apiSubdir       = "reference/api"
 	apiIndexFile    = "index.md"
-	apiIndexContent = `# API
+	apiIndexContent = `---
+title: API
+---
 
 Get started with the Coder API:
 
@@ -59,6 +61,7 @@ var (
 
 	sectionSeparator     = []byte("<!-- APIDOCGEN: BEGIN SECTION -->\n")
 	nonAlphanumericRegex = regexp.MustCompile(`[^a-z0-9 ]+`)
+	safeTitleRegex       = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9 ._/-]*$`)
 )
 
 func main() {
@@ -150,7 +153,7 @@ func writeDocs(sections [][]byte) error {
 
 		mdFilename := toMdFilename(sectionName)
 		docPath := path.Join(apiDir, mdFilename)
-		err = atomicwrite.File(docPath, section)
+		err = atomicwrite.File(docPath, frontMatterSection(section, sectionName))
 		if err != nil {
 			return xerrors.Errorf(`can't write doc file "%s": %w`, docPath, err)
 		}
@@ -262,4 +265,33 @@ func extractSectionName(section []byte) (string, error) {
 
 func toMdFilename(sectionName string) string {
 	return nonAlphanumericRegex.ReplaceAllLiteralString(strings.ReplaceAll(strings.ToLower(sectionName), " ", ""), "-") + ".md"
+}
+
+// frontMatterSection replaces the leading "# {name}" heading of a raw API
+// section with a YAML front matter block carrying the same title. The docs
+// site derives page titles from front matter, so generated Markdown no longer
+// needs a leading H1.
+func frontMatterSection(section []byte, name string) []byte {
+	var body []byte
+	if idx := bytes.IndexByte(section, '\n'); idx >= 0 {
+		body = section[idx+1:]
+	}
+	body = bytes.TrimLeft(body, "\r\n")
+
+	prefix := "---\ntitle: " + yamlTitle(name) + "\n---\n\n"
+	return append([]byte(prefix), body...)
+}
+
+// yamlTitle renders s as a YAML scalar suitable for a front matter title.
+// Simple titles are emitted verbatim; anything else is JSON-encoded, which is
+// valid YAML and safely quotes and escapes special characters.
+func yamlTitle(s string) string {
+	if safeTitleRegex.MatchString(s) {
+		return s
+	}
+	b, err := json.Marshal(s)
+	if err != nil {
+		return `""`
+	}
+	return string(b)
 }

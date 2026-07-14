@@ -1,5 +1,8 @@
+---
+title: stat disk
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# stat disk
 
 Show disk usage, in gigabytes.
 

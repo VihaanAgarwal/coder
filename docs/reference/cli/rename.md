@@ -1,5 +1,8 @@
+---
+title: rename
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# rename
 
 Rename a workspace
 

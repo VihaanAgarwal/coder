@@ -1,5 +1,8 @@
+---
+title: schedule stop
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# schedule stop
 
 Edit workspace stop schedule
 

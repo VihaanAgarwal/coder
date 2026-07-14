@@ -1,5 +1,8 @@
+---
+title: external-workspaces list
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# external-workspaces list
 
 List external workspaces
 

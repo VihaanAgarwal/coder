@@ -1,5 +1,8 @@
+---
+title: templates versions list
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# templates versions list
 
 List all the versions of the specified template
 

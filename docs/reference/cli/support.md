@@ -1,5 +1,8 @@
+---
+title: support
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# support
 
 Commands for troubleshooting issues with a Coder deployment.
 

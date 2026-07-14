@@ -1,5 +1,8 @@
+---
+title: licenses add
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# licenses add
 
 Add license to Coder deployment
 

@@ -1,5 +1,8 @@
+---
+title: task
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# task
 
 Manage tasks
 

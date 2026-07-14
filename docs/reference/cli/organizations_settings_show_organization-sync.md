@@ -1,5 +1,8 @@
+---
+title: organizations settings show organization-sync
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# organizations settings show organization-sync
 
 Organization sync settings to sync organization memberships from an IdP.
 

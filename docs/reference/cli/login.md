@@ -1,5 +1,8 @@
+---
+title: login
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# login
 
 Authenticate with Coder deployment
 

@@ -1,5 +1,8 @@
+---
+title: server dbcrypt rotate
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# server dbcrypt rotate
 
 Rotate database encryption keys.
 

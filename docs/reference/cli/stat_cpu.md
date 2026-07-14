@@ -1,5 +1,8 @@
+---
+title: stat cpu
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# stat cpu
 
 Show CPU usage, in cores.
 

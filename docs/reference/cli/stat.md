@@ -1,5 +1,8 @@
+---
+title: stat
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# stat
 
 Show resource usage for the current workspace.
 

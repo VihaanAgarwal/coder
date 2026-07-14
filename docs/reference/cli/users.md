@@ -1,5 +1,8 @@
+---
+title: users
+---
+
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# users
 
 Manage users
 
