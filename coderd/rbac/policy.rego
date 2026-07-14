@@ -107,34 +107,79 @@ default scope_org := 0
 
 scope_org := check_org_permissions([input.subject.scope], "org")
 
+# org_allow_ids is the set of orgs where the subject has a matching *allow*
+# (non-negated) permission for this action and object type. It is built by
+# iterating each role's own `by_org_id` entries exactly once, so the total work
+# is linear in the number of org-scoped permissions rather than quadratic. The
+# previous implementation built a per-org vote map by iterating every role for
+# every membership (O(N^2) in the number of organizations).
+org_allow_ids(roles, key) := {org_id |
+	some role in roles
+	some org_id, perms in role.by_org_id
+	some perm in perms[key]
+	perm.action in [input.action, "*"]
+	perm.resource_type in [input.object.type, "*"]
+	not perm.negate
+}
+
+# org_deny_ids is the set of orgs where the subject has a matching *deny*
+# (negated) permission. A deny wins over an allow within the same org, matching
+# `to_vote`'s "any false => -1" behavior.
+org_deny_ids(roles, key) := {org_id |
+	some role in roles
+	some org_id, perms in role.by_org_id
+	some perm in perms[key]
+	perm.action in [input.action, "*"]
+	perm.resource_type in [input.object.type, "*"]
+	perm.negate
+}
+
+# org_vote resolves a single org's vote from the precomputed allow and deny
+# sets, reproducing `to_vote`'s deny-wins semantics:
+#   -1 (deny)    if the org is in the deny set,
+#    1 (allow)   if the org is in the allow set and not the deny set,
+#    0 (abstain) otherwise.
+# All three arguments are known during partial evaluation (the object's org id
+# is not involved here), so this does no work against unknown values.
+org_vote(org_id, _, deny) := -1 if {
+	org_id in deny
+}
+
+org_vote(org_id, allow, deny) := 1 if {
+	not org_id in deny
+	org_id in allow
+}
+
+org_vote(org_id, allow, deny) := 0 if {
+	not org_id in deny
+	not org_id in allow
+}
+
 # check_all_org_permissions creates a map from org ids to votes at each org
 # level, for each org that the subject is a member of. It doesn't actually check
 # if the object is in the same org. Instead we look up the correct vote from
 # this map based on the object's org id in `check_org_permissions`.
-# For example, the `org_map` will look something like this:
+# For example, the map will look something like this:
 #
 #   {"<org_id_a>": 1, "<org_id_b>": 0, "<org_id_c>": -1}
 #
 # The caller then uses `output[input.object.org_owner]` to get the correct vote.
 #
 # We have to create this map, rather than just getting the vote of the object's
-# org id because the org id _might_ be unknown. In order to make sure that this
+# org id, because the org id _might_ be unknown. In order to make sure that this
 # policy compresses down to simple queries we need to keep unknown values out of
 # comprehensions.
-check_all_org_permissions(roles, key) := {org_id: vote |
-	org_id := org_memberships[_]
-	allow := {is_allowed |
-		# Iterate over all site permissions in all roles, and check which ones match
-		# the action and object type.
-		perm := roles[_].by_org_id[org_id][key][_]
-		perm.action in [input.action, "*"]
-		perm.resource_type in [input.object.type, "*"]
-
-		# If a negative matching permission was found, then we vote to disallow it.
-		# If the permission is not negative, then we vote to allow it.
-		is_allowed := bool_flip(perm.negate)
+#
+# The allow and deny sets are computed once (each linear in the number of
+# org-scoped permissions), then the map is built by iterating the membership set
+# once with O(1) set lookups per org. This keeps the whole map construction
+# linear in the number of organizations rather than quadratic.
+check_all_org_permissions(roles, key) := vote_map if {
+	allow := org_allow_ids(roles, key)
+	deny := org_deny_ids(roles, key)
+	vote_map := {org_id: org_vote(org_id, allow, deny) |
+		some org_id in org_memberships
 	}
-	vote := to_vote(allow)
 }
 
 # This check handles the case where the org id is known.
