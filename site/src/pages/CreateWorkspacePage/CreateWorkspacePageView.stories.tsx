@@ -21,6 +21,7 @@ const meta: Meta<typeof CreateWorkspacePageView> = {
 		mode: "form",
 		parameters: [],
 		permissions: {
+			createWorkspaceForUserID: true,
 			createWorkspaceForAny: true,
 			canUpdateTemplate: false,
 		},
