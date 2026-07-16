@@ -1,4 +1,6 @@
-# Secrets
+---
+title: Secrets
+---
 
 ## List user secrets
 
@@ -15,9 +17,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/secrets \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description              |
-|--------|------|--------|----------|--------------------------|
-| `user` | path | string | true     | User ID, username, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
 
 ### Example responses
 
@@ -39,24 +41,24 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/secrets \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                        |
-|--------|---------------------------------------------------------|-------------|---------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.UserSecret](schemas.md#codersdkusersecret) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.UserSecret](schemas.md#codersdkusersecret)|
 
 <h3 id="list-user-secrets-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name            | Type              | Required | Restrictions | Description |
-|-----------------|-------------------|----------|--------------|-------------|
-| `[array item]`  | array             | false    |              |             |
-| `» created_at`  | string(date-time) | false    |              |             |
-| `» description` | string            | false    |              |             |
-| `» env_name`    | string            | false    |              |             |
-| `» file_path`   | string            | false    |              |             |
-| `» id`          | string(uuid)      | false    |              |             |
-| `» name`        | string            | false    |              |             |
-| `» updated_at`  | string(date-time) | false    |              |             |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» created_at`|string(date-time)|false|||
+|`» description`|string|false|||
+|`» env_name`|string|false|||
+|`» file_path`|string|false|||
+|`» id`|string(uuid)|false|||
+|`» name`|string|false|||
+|`» updated_at`|string(date-time)|false|||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -88,10 +90,10 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/secrets \
 
 ### Parameters
 
-| Name   | In   | Type                                                                           | Required | Description              |
-|--------|------|--------------------------------------------------------------------------------|----------|--------------------------|
-| `user` | path | string                                                                         | true     | User ID, username, or me |
-| `body` | body | [codersdk.CreateUserSecretRequest](schemas.md#codersdkcreateusersecretrequest) | true     | Create secret request    |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
+|`body`|body|[codersdk.CreateUserSecretRequest](schemas.md#codersdkcreateusersecretrequest)|true|Create secret request|
 
 ### Example responses
 
@@ -111,9 +113,9 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/secrets \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                               |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.UserSecret](schemas.md#codersdkusersecret) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.UserSecret](schemas.md#codersdkusersecret)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -132,10 +134,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/secrets/{name} \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description              |
-|--------|------|--------|----------|--------------------------|
-| `user` | path | string | true     | User ID, username, or me |
-| `name` | path | string | true     | Secret name              |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
+|`name`|path|string|true|Secret name|
 
 ### Example responses
 
@@ -155,9 +157,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/secrets/{name} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                               |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserSecret](schemas.md#codersdkusersecret) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserSecret](schemas.md#codersdkusersecret)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -175,16 +177,16 @@ curl -X DELETE http://coder-server:8080/api/v2/users/{user}/secrets/{name} \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description              |
-|--------|------|--------|----------|--------------------------|
-| `user` | path | string | true     | User ID, username, or me |
-| `name` | path | string | true     | Secret name              |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
+|`name`|path|string|true|Secret name|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -215,11 +217,11 @@ curl -X PATCH http://coder-server:8080/api/v2/users/{user}/secrets/{name} \
 
 ### Parameters
 
-| Name   | In   | Type                                                                           | Required | Description              |
-|--------|------|--------------------------------------------------------------------------------|----------|--------------------------|
-| `user` | path | string                                                                         | true     | User ID, username, or me |
-| `name` | path | string                                                                         | true     | Secret name              |
-| `body` | body | [codersdk.UpdateUserSecretRequest](schemas.md#codersdkupdateusersecretrequest) | true     | Update secret request    |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
+|`name`|path|string|true|Secret name|
+|`body`|body|[codersdk.UpdateUserSecretRequest](schemas.md#codersdkupdateusersecretrequest)|true|Update secret request|
 
 ### Example responses
 
@@ -239,8 +241,9 @@ curl -X PATCH http://coder-server:8080/api/v2/users/{user}/secrets/{name} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                               |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserSecret](schemas.md#codersdkusersecret) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserSecret](schemas.md#codersdkusersecret)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
+

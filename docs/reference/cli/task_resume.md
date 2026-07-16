@@ -1,16 +1,20 @@
+---
+title: task resume
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# task resume
+
 
 Resume a task
 
-## Usage
 
+
+
+## Usage
 ```console
 coder task resume [flags] <task>
 ```
 
 ## Description
-
 ```console
   - Resume a task by name:
 
@@ -25,20 +29,19 @@ coder task resume [flags] <task>
      $ coder task resume my-task --yes
 ```
 
+
 ## Options
-
 ### --no-wait
-
-|      |                   |
-|------|-------------------|
+ 
+| | |
+| --- | --- |
 | Type | <code>bool</code> |
 
 Return immediately after resuming the task.
-
 ### -y, --yes
-
-|      |                   |
-|------|-------------------|
+ 
+| | |
+| --- | --- |
 | Type | <code>bool</code> |
 
 Bypass confirmation prompts.

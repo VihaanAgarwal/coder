@@ -1,10 +1,16 @@
+---
+title: prebuilds pause
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# prebuilds pause
+
 
 Pause prebuilds
 
-## Usage
 
+
+
+## Usage
 ```console
 coder prebuilds pause
 ```
+

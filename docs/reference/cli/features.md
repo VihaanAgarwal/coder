@@ -1,20 +1,23 @@
+---
+title: features
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# features
+
 
 List Enterprise features
 
-Aliases:
 
+
+
+Aliases:
 * feature
 
 ## Usage
-
 ```console
 coder features
 ```
 
 ## Subcommands
-
-| Name                                    | Purpose |
-|-----------------------------------------|---------|
-| [<code>list</code>](./features_list.md) |         |
+| Name |   Purpose |
+| ---- |   ----- |
+| [<code>list</code>](./features_list.md) |  |

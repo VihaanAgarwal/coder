@@ -1,20 +1,23 @@
+---
+title: secret
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# secret
+
 
 Manage secrets
 
-Aliases:
 
+
+
+Aliases:
 * secrets
 
 ## Usage
-
 ```console
 coder secret
 ```
 
 ## Description
-
 ```console
   - Create a secret:
 
@@ -38,10 +41,9 @@ coder secret
 ```
 
 ## Subcommands
-
-| Name                                      | Purpose                           |
-|-------------------------------------------|-----------------------------------|
-| [<code>create</code>](./secret_create.md) | Create a secret                   |
-| [<code>update</code>](./secret_update.md) | Update a secret                   |
-| [<code>list</code>](./secret_list.md)     | List secrets, or show one by name |
-| [<code>delete</code>](./secret_delete.md) | Delete a secret                   |
+| Name |   Purpose |
+| ---- |   ----- |
+| [<code>create</code>](./secret_create.md) | Create a secret |
+| [<code>update</code>](./secret_update.md) | Update a secret |
+| [<code>list</code>](./secret_list.md) | List secrets, or show one by name |
+| [<code>delete</code>](./secret_delete.md) | Delete a secret |

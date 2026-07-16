@@ -1,16 +1,20 @@
+---
+title: task pause
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# task pause
+
 
 Pause a task
 
-## Usage
 
+
+
+## Usage
 ```console
 coder task pause [flags] <task>
 ```
 
 ## Description
-
 ```console
   - Pause a task by name:
 
@@ -25,12 +29,12 @@ coder task pause [flags] <task>
      $ coder task pause my-task --yes
 ```
 
+
 ## Options
-
 ### -y, --yes
-
-|      |                   |
-|------|-------------------|
+ 
+| | |
+| --- | --- |
 | Type | <code>bool</code> |
 
 Bypass confirmation prompts.

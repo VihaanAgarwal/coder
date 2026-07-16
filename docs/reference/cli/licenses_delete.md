@@ -1,15 +1,20 @@
+---
+title: licenses delete
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# licenses delete
+
 
 Delete license by ID
 
-Aliases:
 
+
+
+Aliases:
 * del
 * rm
 
 ## Usage
-
 ```console
 coder licenses delete <id>
 ```
+

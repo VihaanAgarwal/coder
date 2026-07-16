@@ -1,4 +1,6 @@
-# Authorization
+---
+title: Authorization
+---
 
 ## List API key scopes
 
@@ -26,9 +28,9 @@ curl -X GET http://coder-server:8080/api/v2/auth/scopes \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                   |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.ExternalAPIKeyScopes](schemas.md#codersdkexternalapikeyscopes) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.ExternalAPIKeyScopes](schemas.md#codersdkexternalapikeyscopes)|
 
 ## Check authorization
 
@@ -75,9 +77,9 @@ curl -X POST http://coder-server:8080/api/v2/authcheck \
 
 ### Parameters
 
-| Name   | In   | Type                                                                     | Required | Description           |
-|--------|------|--------------------------------------------------------------------------|----------|-----------------------|
-| `body` | body | [codersdk.AuthorizationRequest](schemas.md#codersdkauthorizationrequest) | true     | Authorization request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.AuthorizationRequest](schemas.md#codersdkauthorizationrequest)|true|Authorization request|
 
 ### Example responses
 
@@ -92,9 +94,9 @@ curl -X POST http://coder-server:8080/api/v2/authcheck \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                     |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AuthorizationResponse](schemas.md#codersdkauthorizationresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AuthorizationResponse](schemas.md#codersdkauthorizationresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -122,9 +124,9 @@ curl -X POST http://coder-server:8080/api/v2/users/login \
 
 ### Parameters
 
-| Name   | In   | Type                                                                             | Required | Description   |
-|--------|------|----------------------------------------------------------------------------------|----------|---------------|
-| `body` | body | [codersdk.LoginWithPasswordRequest](schemas.md#codersdkloginwithpasswordrequest) | true     | Login request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.LoginWithPasswordRequest](schemas.md#codersdkloginwithpasswordrequest)|true|Login request|
 
 ### Example responses
 
@@ -138,9 +140,9 @@ curl -X POST http://coder-server:8080/api/v2/users/login \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                                             |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.LoginWithPasswordResponse](schemas.md#codersdkloginwithpasswordresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.LoginWithPasswordResponse](schemas.md#codersdkloginwithpasswordresponse)|
 
 ## Change password with a one-time passcode
 
@@ -166,15 +168,15 @@ curl -X POST http://coder-server:8080/api/v2/users/otp/change-password \
 
 ### Parameters
 
-| Name   | In   | Type                                                                                                             | Required | Description             |
-|--------|------|------------------------------------------------------------------------------------------------------------------|----------|-------------------------|
-| `body` | body | [codersdk.ChangePasswordWithOneTimePasscodeRequest](schemas.md#codersdkchangepasswordwithonetimepasscoderequest) | true     | Change password request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.ChangePasswordWithOneTimePasscodeRequest](schemas.md#codersdkchangepasswordwithonetimepasscoderequest)|true|Change password request|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 ## Request one-time passcode
 
@@ -198,15 +200,15 @@ curl -X POST http://coder-server:8080/api/v2/users/otp/request \
 
 ### Parameters
 
-| Name   | In   | Type                                                                                       | Required | Description               |
-|--------|------|--------------------------------------------------------------------------------------------|----------|---------------------------|
-| `body` | body | [codersdk.RequestOneTimePasscodeRequest](schemas.md#codersdkrequestonetimepasscoderequest) | true     | One-time passcode request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.RequestOneTimePasscodeRequest](schemas.md#codersdkrequestonetimepasscoderequest)|true|One-time passcode request|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 ## Validate user password
 
@@ -232,9 +234,9 @@ curl -X POST http://coder-server:8080/api/v2/users/validate-password \
 
 ### Parameters
 
-| Name   | In   | Type                                                                                   | Required | Description                    |
-|--------|------|----------------------------------------------------------------------------------------|----------|--------------------------------|
-| `body` | body | [codersdk.ValidateUserPasswordRequest](schemas.md#codersdkvalidateuserpasswordrequest) | true     | Validate user password request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.ValidateUserPasswordRequest](schemas.md#codersdkvalidateuserpasswordrequest)|true|Validate user password request|
 
 ### Example responses
 
@@ -249,9 +251,9 @@ curl -X POST http://coder-server:8080/api/v2/users/validate-password \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.ValidateUserPasswordResponse](schemas.md#codersdkvalidateuserpasswordresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.ValidateUserPasswordResponse](schemas.md#codersdkvalidateuserpasswordresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -280,10 +282,10 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/convert-login \
 
 ### Parameters
 
-| Name   | In   | Type                                                                   | Required | Description          |
-|--------|------|------------------------------------------------------------------------|----------|----------------------|
-| `user` | path | string                                                                 | true     | User ID, name, or me |
-| `body` | body | [codersdk.ConvertLoginRequest](schemas.md#codersdkconvertloginrequest) | true     | Convert request      |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.ConvertLoginRequest](schemas.md#codersdkconvertloginrequest)|true|Convert request|
 
 ### Example responses
 
@@ -300,8 +302,9 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/convert-login \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                                         |
-|--------|--------------------------------------------------------------|-------------|--------------------------------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.OAuthConversionResponse](schemas.md#codersdkoauthconversionresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.OAuthConversionResponse](schemas.md#codersdkoauthconversionresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
+

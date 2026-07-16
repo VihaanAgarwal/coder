@@ -1,4 +1,6 @@
-# Users
+---
+title: Users
+---
 
 ## Get users
 
@@ -15,12 +17,12 @@ curl -X GET http://coder-server:8080/api/v2/users \
 
 ### Parameters
 
-| Name       | In    | Type         | Required | Description  |
-|------------|-------|--------------|----------|--------------|
-| `q`        | query | string       | false    | Search query |
-| `after_id` | query | string(uuid) | false    | After ID     |
-| `limit`    | query | integer      | false    | Page limit   |
-| `offset`   | query | integer      | false    | Page offset  |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`q`|query|string|false|Search query|
+|`after_id`|query|string(uuid)|false|After ID|
+|`limit`|query|integer|false|Page limit|
+|`offset`|query|integer|false|Page offset|
 
 ### Example responses
 
@@ -61,9 +63,9 @@ curl -X GET http://coder-server:8080/api/v2/users \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                           |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.GetUsersResponse](schemas.md#codersdkgetusersresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.GetUsersResponse](schemas.md#codersdkgetusersresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -103,9 +105,9 @@ curl -X POST http://coder-server:8080/api/v2/users \
 
 ### Parameters
 
-| Name   | In   | Type                                                                               | Required | Description         |
-|--------|------|------------------------------------------------------------------------------------|----------|---------------------|
-| `body` | body | [codersdk.CreateUserRequestWithOrgs](schemas.md#codersdkcreateuserrequestwithorgs) | true     | Create user request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.CreateUserRequestWithOrgs](schemas.md#codersdkcreateuserrequestwithorgs)|true|Create user request|
 
 ### Example responses
 
@@ -141,9 +143,9 @@ curl -X POST http://coder-server:8080/api/v2/users \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                   |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -184,9 +186,9 @@ curl -X GET http://coder-server:8080/api/v2/users/authmethods \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                 |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AuthMethods](schemas.md#codersdkauthmethods) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AuthMethods](schemas.md#codersdkauthmethods)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -222,9 +224,9 @@ curl -X GET http://coder-server:8080/api/v2/users/first \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                           |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Response](schemas.md#codersdkresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Response](schemas.md#codersdkresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -269,9 +271,9 @@ curl -X POST http://coder-server:8080/api/v2/users/first \
 
 ### Parameters
 
-| Name   | In   | Type                                                                         | Required | Description        |
-|--------|------|------------------------------------------------------------------------------|----------|--------------------|
-| `body` | body | [codersdk.CreateFirstUserRequest](schemas.md#codersdkcreatefirstuserrequest) | true     | First user request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.CreateFirstUserRequest](schemas.md#codersdkcreatefirstuserrequest)|true|First user request|
 
 ### Example responses
 
@@ -286,9 +288,9 @@ curl -X POST http://coder-server:8080/api/v2/users/first \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                                         |
-|--------|--------------------------------------------------------------|-------------|--------------------------------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.CreateFirstUserResponse](schemas.md#codersdkcreatefirstuserresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.CreateFirstUserResponse](schemas.md#codersdkcreatefirstuserresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -324,9 +326,9 @@ curl -X POST http://coder-server:8080/api/v2/users/logout \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                           |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Response](schemas.md#codersdkresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Response](schemas.md#codersdkresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -344,13 +346,13 @@ curl -X GET http://coder-server:8080/api/v2/users/oauth2/github/callback \
 
 ### Responses
 
-| Status | Meaning                                                                 | Description        | Schema |
-|--------|-------------------------------------------------------------------------|--------------------|--------|
-| 307    | [Temporary Redirect](https://tools.ietf.org/html/rfc7231#section-6.4.7) | Temporary Redirect |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|307|[Temporary Redirect](https://tools.ietf.org/html/rfc7231#section-6.4.7)|Temporary Redirect||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
-## Get Github device auth
+## Get Github device auth.
 
 ### Code samples
 
@@ -379,9 +381,9 @@ curl -X GET http://coder-server:8080/api/v2/users/oauth2/github/device \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                               |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.ExternalAuthDevice](schemas.md#codersdkexternalauthdevice) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.ExternalAuthDevice](schemas.md#codersdkexternalauthdevice)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -410,9 +412,9 @@ curl -X GET http://coder-server:8080/api/v2/users/oidc-claims \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                               |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.OIDCClaimsResponse](schemas.md#codersdkoidcclaimsresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.OIDCClaimsResponse](schemas.md#codersdkoidcclaimsresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -430,9 +432,9 @@ curl -X GET http://coder-server:8080/api/v2/users/oidc/callback \
 
 ### Responses
 
-| Status | Meaning                                                                 | Description        | Schema |
-|--------|-------------------------------------------------------------------------|--------------------|--------|
-| 307    | [Temporary Redirect](https://tools.ietf.org/html/rfc7231#section-6.4.7) | Temporary Redirect |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|307|[Temporary Redirect](https://tools.ietf.org/html/rfc7231#section-6.4.7)|Temporary Redirect||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -451,9 +453,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user} \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description              |
-|--------|------|--------|----------|--------------------------|
-| `user` | path | string | true     | User ID, username, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
 
 ### Example responses
 
@@ -489,9 +491,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -509,15 +511,15 @@ curl -X DELETE http://coder-server:8080/api/v2/users/{user} \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema |
-|--------|---------------------------------------------------------|-------------|--------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -536,9 +538,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/appearance \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -556,9 +558,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/appearance \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                       |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserAppearanceSettings](schemas.md#codersdkuserappearancesettings) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserAppearanceSettings](schemas.md#codersdkuserappearancesettings)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -590,10 +592,10 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/appearance \
 
 ### Parameters
 
-| Name   | In   | Type                                                                                                   | Required | Description             |
-|--------|------|--------------------------------------------------------------------------------------------------------|----------|-------------------------|
-| `user` | path | string                                                                                                 | true     | User ID, name, or me    |
-| `body` | body | [codersdk.UpdateUserAppearanceSettingsRequest](schemas.md#codersdkupdateuserappearancesettingsrequest) | true     | New appearance settings |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.UpdateUserAppearanceSettingsRequest](schemas.md#codersdkupdateuserappearancesettingsrequest)|true|New appearance settings|
 
 ### Example responses
 
@@ -611,9 +613,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/appearance \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                       |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserAppearanceSettings](schemas.md#codersdkuserappearancesettings) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserAppearanceSettings](schemas.md#codersdkuserappearancesettings)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -632,10 +634,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/autofill-parameters?tem
 
 ### Parameters
 
-| Name          | In    | Type   | Required | Description              |
-|---------------|-------|--------|----------|--------------------------|
-| `user`        | path  | string | true     | User ID, username, or me |
-| `template_id` | query | string | true     | Template ID              |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, username, or me|
+|`template_id`|query|string|true|Template ID|
 
 ### Example responses
 
@@ -652,19 +654,19 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/autofill-parameters?tem
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                              |
-|--------|---------------------------------------------------------|-------------|---------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.UserParameter](schemas.md#codersdkuserparameter) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.UserParameter](schemas.md#codersdkuserparameter)|
 
 <h3 id="get-autofill-build-parameters-for-user-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name           | Type   | Required | Restrictions | Description |
-|----------------|--------|----------|--------------|-------------|
-| `[array item]` | array  | false    |              |             |
-| `» name`       | string | false    |              |             |
-| `» value`      | string | false    |              |             |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» name`|string|false|||
+|`» value`|string|false|||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -683,9 +685,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/gitsshkey \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -702,9 +704,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/gitsshkey \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                             |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.GitSSHKey](schemas.md#codersdkgitsshkey) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.GitSSHKey](schemas.md#codersdkgitsshkey)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -723,9 +725,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/gitsshkey \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -742,9 +744,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/gitsshkey \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                             |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.GitSSHKey](schemas.md#codersdkgitsshkey) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.GitSSHKey](schemas.md#codersdkgitsshkey)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -763,9 +765,9 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/keys \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -779,9 +781,9 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/keys \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                                       |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.GenerateAPIKeyResponse](schemas.md#codersdkgenerateapikeyresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.GenerateAPIKeyResponse](schemas.md#codersdkgenerateapikeyresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -800,10 +802,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/tokens \
 
 ### Parameters
 
-| Name              | In    | Type    | Required | Description                        |
-|-------------------|-------|---------|----------|------------------------------------|
-| `user`            | path  | string  | true     | User ID, name, or me               |
-| `include_expired` | query | boolean | false    | Include expired tokens in the list |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`include_expired`|query|boolean|false|Include expired tokens in the list|
 
 ### Example responses
 
@@ -837,39 +839,39 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/tokens \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                |
-|--------|---------------------------------------------------------|-------------|-------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.APIKey](schemas.md#codersdkapikey) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.APIKey](schemas.md#codersdkapikey)|
 
 <h3 id="get-user-tokens-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name                 | Type                                                     | Required | Restrictions | Description                     |
-|----------------------|----------------------------------------------------------|----------|--------------|---------------------------------|
-| `[array item]`       | array                                                    | false    |              |                                 |
-| `» allow_list`       | array                                                    | false    |              |                                 |
-| `»» id`              | string                                                   | false    |              |                                 |
-| `»» type`            | [codersdk.RBACResource](schemas.md#codersdkrbacresource) | false    |              |                                 |
-| `» created_at`       | string(date-time)                                        | true     |              |                                 |
-| `» expires_at`       | string(date-time)                                        | true     |              |                                 |
-| `» id`               | string                                                   | true     |              |                                 |
-| `» last_used`        | string(date-time)                                        | true     |              |                                 |
-| `» lifetime_seconds` | integer                                                  | true     |              |                                 |
-| `» login_type`       | [codersdk.LoginType](schemas.md#codersdklogintype)       | true     |              |                                 |
-| `» scope`            | [codersdk.APIKeyScope](schemas.md#codersdkapikeyscope)   | false    |              | Deprecated: use Scopes instead. |
-| `» scopes`           | array                                                    | false    |              |                                 |
-| `» token_name`       | string                                                   | true     |              |                                 |
-| `» updated_at`       | string(date-time)                                        | true     |              |                                 |
-| `» user_id`          | string(uuid)                                             | true     |              |                                 |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» allow_list`|array|false|||
+|`»» id`|string|false|||
+|`»» type`|[codersdk.RBACResource](schemas.md#codersdkrbacresource)|false|||
+|`» created_at`|string(date-time)|true|||
+|`» expires_at`|string(date-time)|true|||
+|`» id`|string|true|||
+|`» last_used`|string(date-time)|true|||
+|`» lifetime_seconds`|integer|true|||
+|`» login_type`|[codersdk.LoginType](schemas.md#codersdklogintype)|true|||
+|`» scope`|[codersdk.APIKeyScope](schemas.md#codersdkapikeyscope)|false||Deprecated: use Scopes instead.|
+|`» scopes`|array|false|||
+|`» token_name`|string|true|||
+|`» updated_at`|string(date-time)|true|||
+|`» user_id`|string(uuid)|true|||
 
 #### Enumerated Values
 
-| Property     | Value(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`       | `*`, `ai_gateway_key`, `ai_model_price`, `ai_provider`, `ai_seat`, `aibridge_interception`, `api_key`, `assign_org_role`, `assign_role`, `audit_log`, `boundary_log`, `boundary_usage`, `chat`, `connection_log`, `crypto_key`, `debug_info`, `deployment_config`, `deployment_stats`, `file`, `group`, `group_member`, `idpsync_settings`, `inbox_notification`, `license`, `notification_message`, `notification_preference`, `notification_template`, `oauth2_app`, `oauth2_app_code_token`, `oauth2_app_secret`, `organization`, `organization_member`, `prebuilt_workspace`, `provisioner_daemon`, `provisioner_jobs`, `replicas`, `system`, `tailnet_coordinator`, `task`, `template`, `usage_event`, `user`, `user_secret`, `user_skill`, `webpush_subscription`, `workspace`, `workspace_agent_devcontainers`, `workspace_agent_resource_monitor`, `workspace_build_orchestration`, `workspace_dormant`, `workspace_proxy` |
-| `login_type` | `github`, `oidc`, `password`, `token`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `scope`      | `all`, `application_connect`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|Property|Value(s)|
+|---|---|
+|`type`|`*`, `ai_gateway_key`, `ai_model_price`, `ai_provider`, `ai_seat`, `aibridge_interception`, `api_key`, `assign_org_role`, `assign_role`, `audit_log`, `boundary_log`, `boundary_usage`, `chat`, `connection_log`, `crypto_key`, `debug_info`, `deployment_config`, `deployment_stats`, `file`, `group`, `group_member`, `idpsync_settings`, `inbox_notification`, `license`, `notification_message`, `notification_preference`, `notification_template`, `oauth2_app`, `oauth2_app_code_token`, `oauth2_app_secret`, `organization`, `organization_member`, `prebuilt_workspace`, `provisioner_daemon`, `provisioner_jobs`, `replicas`, `system`, `tailnet_coordinator`, `task`, `template`, `usage_event`, `user`, `user_secret`, `user_skill`, `webpush_subscription`, `workspace`, `workspace_agent_devcontainers`, `workspace_agent_resource_monitor`, `workspace_build_orchestration`, `workspace_dormant`, `workspace_proxy`|
+|`login_type`|`github`, `oidc`, `password`, `token`|
+|`scope`|`all`, `application_connect`|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -908,10 +910,10 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/keys/tokens \
 
 ### Parameters
 
-| Name   | In   | Type                                                                 | Required | Description          |
-|--------|------|----------------------------------------------------------------------|----------|----------------------|
-| `user` | path | string                                                               | true     | User ID, name, or me |
-| `body` | body | [codersdk.CreateTokenRequest](schemas.md#codersdkcreatetokenrequest) | true     | Create token request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.CreateTokenRequest](schemas.md#codersdkcreatetokenrequest)|true|Create token request|
 
 ### Example responses
 
@@ -925,9 +927,9 @@ curl -X POST http://coder-server:8080/api/v2/users/{user}/keys/tokens \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                                       |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.GenerateAPIKeyResponse](schemas.md#codersdkgenerateapikeyresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.GenerateAPIKeyResponse](schemas.md#codersdkgenerateapikeyresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -946,10 +948,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/tokens/{keyname} \
 
 ### Parameters
 
-| Name      | In   | Type           | Required | Description          |
-|-----------|------|----------------|----------|----------------------|
-| `user`    | path | string         | true     | User ID, name, or me |
-| `keyname` | path | string(string) | true     | Key Name             |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`keyname`|path|string(string)|true|Key Name|
 
 ### Example responses
 
@@ -981,9 +983,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/tokens/{keyname} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                       |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.APIKey](schemas.md#codersdkapikey) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.APIKey](schemas.md#codersdkapikey)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1002,10 +1004,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/{keyid} \
 
 ### Parameters
 
-| Name    | In   | Type           | Required | Description          |
-|---------|------|----------------|----------|----------------------|
-| `user`  | path | string         | true     | User ID, name, or me |
-| `keyid` | path | string(string) | true     | Key ID               |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`keyid`|path|string(string)|true|Key ID|
 
 ### Example responses
 
@@ -1037,9 +1039,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/keys/{keyid} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                       |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.APIKey](schemas.md#codersdkapikey) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.APIKey](schemas.md#codersdkapikey)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1057,16 +1059,16 @@ curl -X DELETE http://coder-server:8080/api/v2/users/{user}/keys/{keyid} \
 
 ### Parameters
 
-| Name    | In   | Type           | Required | Description          |
-|---------|------|----------------|----------|----------------------|
-| `user`  | path | string         | true     | User ID, name, or me |
-| `keyid` | path | string(string) | true     | Key ID               |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`keyid`|path|string(string)|true|Key ID|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1085,10 +1087,10 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/keys/{keyid}/expire \
 
 ### Parameters
 
-| Name    | In   | Type           | Required | Description          |
-|---------|------|----------------|----------|----------------------|
-| `user`  | path | string         | true     | User ID, name, or me |
-| `keyid` | path | string(string) | true     | Key ID               |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`keyid`|path|string(string)|true|Key ID|
 
 ### Example responses
 
@@ -1096,11 +1098,11 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/keys/{keyid}/expire \
 
 ### Responses
 
-| Status | Meaning                                                                    | Description           | Schema                                           |
-|--------|----------------------------------------------------------------------------|-----------------------|--------------------------------------------------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)            | No Content            |                                                  |
-| 404    | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)             | Not Found             | [codersdk.Response](schemas.md#codersdkresponse) |
-| 500    | [Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1) | Internal Server Error | [codersdk.Response](schemas.md#codersdkresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[codersdk.Response](schemas.md#codersdkresponse)|
+|500|[Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1)|Internal Server Error|[codersdk.Response](schemas.md#codersdkresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1119,9 +1121,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/login-type \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1135,9 +1137,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/login-type \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                     |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserLoginType](schemas.md#codersdkuserlogintype) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserLoginType](schemas.md#codersdkuserlogintype)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1156,9 +1158,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/organizations \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1184,26 +1186,26 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/organizations \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                            |
-|--------|---------------------------------------------------------|-------------|-------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.Organization](schemas.md#codersdkorganization)|
 
 <h3 id="get-organizations-by-user-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name                         | Type              | Required | Restrictions | Description                                                                                                                                     |
-|------------------------------|-------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| `[array item]`               | array             | false    |              |                                                                                                                                                 |
-| `» created_at`               | string(date-time) | true     |              |                                                                                                                                                 |
-| `» default_org_member_roles` | array             | false    |              | Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request. |
-| `» description`              | string            | false    |              |                                                                                                                                                 |
-| `» display_name`             | string            | false    |              |                                                                                                                                                 |
-| `» icon`                     | string            | false    |              |                                                                                                                                                 |
-| `» id`                       | string(uuid)      | true     |              |                                                                                                                                                 |
-| `» is_default`               | boolean           | true     |              |                                                                                                                                                 |
-| `» name`                     | string            | false    |              |                                                                                                                                                 |
-| `» updated_at`               | string(date-time) | true     |              |                                                                                                                                                 |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» created_at`|string(date-time)|true|||
+|`» default_org_member_roles`|array|false||Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request.|
+|`» description`|string|false|||
+|`» display_name`|string|false|||
+|`» icon`|string|false|||
+|`» id`|string(uuid)|true|||
+|`» is_default`|boolean|true|||
+|`» name`|string|false|||
+|`» updated_at`|string(date-time)|true|||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1222,10 +1224,10 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/organizations/{organiza
 
 ### Parameters
 
-| Name               | In   | Type   | Required | Description          |
-|--------------------|------|--------|----------|----------------------|
-| `user`             | path | string | true     | User ID, name, or me |
-| `organizationname` | path | string | true     | Organization name    |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`organizationname`|path|string|true|Organization name|
 
 ### Example responses
 
@@ -1249,9 +1251,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/organizations/{organiza
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                   |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Organization](schemas.md#codersdkorganization)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1279,16 +1281,16 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/password \
 
 ### Parameters
 
-| Name   | In   | Type                                                                               | Required | Description             |
-|--------|------|------------------------------------------------------------------------------------|----------|-------------------------|
-| `user` | path | string                                                                             | true     | User ID, name, or me    |
-| `body` | body | [codersdk.UpdateUserPasswordRequest](schemas.md#codersdkupdateuserpasswordrequest) | true     | Update password request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.UpdateUserPasswordRequest](schemas.md#codersdkupdateuserpasswordrequest)|true|Update password request|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1307,9 +1309,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/preferences \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1327,9 +1329,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/preferences \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                       |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserPreferenceSettings](schemas.md#codersdkuserpreferencesettings) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserPreferenceSettings](schemas.md#codersdkuserpreferencesettings)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1361,10 +1363,10 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/preferences \
 
 ### Parameters
 
-| Name   | In   | Type                                                                                                   | Required | Description             |
-|--------|------|--------------------------------------------------------------------------------------------------------|----------|-------------------------|
-| `user` | path | string                                                                                                 | true     | User ID, name, or me    |
-| `body` | body | [codersdk.UpdateUserPreferenceSettingsRequest](schemas.md#codersdkupdateuserpreferencesettingsrequest) | true     | New preference settings |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.UpdateUserPreferenceSettingsRequest](schemas.md#codersdkupdateuserpreferencesettingsrequest)|true|New preference settings|
 
 ### Example responses
 
@@ -1382,9 +1384,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/preferences \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                       |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.UserPreferenceSettings](schemas.md#codersdkuserpreferencesettings) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.UserPreferenceSettings](schemas.md#codersdkuserpreferencesettings)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1414,10 +1416,10 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/profile \
 
 ### Parameters
 
-| Name   | In   | Type                                                                             | Required | Description          |
-|--------|------|----------------------------------------------------------------------------------|----------|----------------------|
-| `user` | path | string                                                                           | true     | User ID, name, or me |
-| `body` | body | [codersdk.UpdateUserProfileRequest](schemas.md#codersdkupdateuserprofilerequest) | true     | Updated profile      |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.UpdateUserProfileRequest](schemas.md#codersdkupdateuserprofilerequest)|true|Updated profile|
 
 ### Example responses
 
@@ -1453,9 +1455,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/profile \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1474,9 +1476,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/roles \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1512,9 +1514,9 @@ curl -X GET http://coder-server:8080/api/v2/users/{user}/roles \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1544,10 +1546,10 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/roles \
 
 ### Parameters
 
-| Name   | In   | Type                                                   | Required | Description          |
-|--------|------|--------------------------------------------------------|----------|----------------------|
-| `user` | path | string                                                 | true     | User ID, name, or me |
-| `body` | body | [codersdk.UpdateRoles](schemas.md#codersdkupdateroles) | true     | Update roles request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
+|`body`|body|[codersdk.UpdateRoles](schemas.md#codersdkupdateroles)|true|Update roles request|
 
 ### Example responses
 
@@ -1583,9 +1585,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/roles \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1604,9 +1606,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/status/activate \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1642,9 +1644,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/status/activate \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -1663,9 +1665,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/status/suspend \
 
 ### Parameters
 
-| Name   | In   | Type   | Required | Description          |
-|--------|------|--------|----------|----------------------|
-| `user` | path | string | true     | User ID, name, or me |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`user`|path|string|true|User ID, name, or me|
 
 ### Example responses
 
@@ -1701,8 +1703,9 @@ curl -X PUT http://coder-server:8080/api/v2/users/{user}/status/suspend \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                   |
-|--------|---------------------------------------------------------|-------------|------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.User](schemas.md#codersdkuser) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.User](schemas.md#codersdkuser)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
+

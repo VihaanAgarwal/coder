@@ -1,4 +1,6 @@
-# AI Providers
+---
+title: AI Providers
+---
 
 ## List AI providers
 
@@ -43,37 +45,37 @@ curl -X GET http://coder-server:8080/api/v2/ai/providers \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                        |
-|--------|---------------------------------------------------------|-------------|---------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.AIProvider](schemas.md#codersdkaiprovider) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.AIProvider](schemas.md#codersdkaiprovider)|
 
 <h3 id="list-ai-providers-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name             | Type                                                                 | Required | Restrictions | Description |
-|------------------|----------------------------------------------------------------------|----------|--------------|-------------|
-| `[array item]`   | array                                                                | false    |              |             |
-| `» api_keys`     | array                                                                | false    |              |             |
-| `»» created_at`  | string(date-time)                                                    | false    |              |             |
-| `»» id`          | string(uuid)                                                         | false    |              |             |
-| `»» masked`      | string                                                               | false    |              |             |
-| `» base_url`     | string                                                               | false    |              |             |
-| `» created_at`   | string(date-time)                                                    | false    |              |             |
-| `» display_name` | string                                                               | false    |              |             |
-| `» enabled`      | boolean                                                              | false    |              |             |
-| `» icon`         | string                                                               | false    |              |             |
-| `» id`           | string(uuid)                                                         | false    |              |             |
-| `» name`         | string                                                               | false    |              |             |
-| `» settings`     | [codersdk.AIProviderSettings](schemas.md#codersdkaiprovidersettings) | false    |              |             |
-| `» type`         | [codersdk.AIProviderType](schemas.md#codersdkaiprovidertype)         | false    |              |             |
-| `» updated_at`   | string(date-time)                                                    | false    |              |             |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» api_keys`|array|false|||
+|`»» created_at`|string(date-time)|false|||
+|`»» id`|string(uuid)|false|||
+|`»» masked`|string|false|||
+|`» base_url`|string|false|||
+|`» created_at`|string(date-time)|false|||
+|`» display_name`|string|false|||
+|`» enabled`|boolean|false|||
+|`» icon`|string|false|||
+|`» id`|string(uuid)|false|||
+|`» name`|string|false|||
+|`» settings`|[codersdk.AIProviderSettings](schemas.md#codersdkaiprovidersettings)|false|||
+|`» type`|[codersdk.AIProviderType](schemas.md#codersdkaiprovidertype)|false|||
+|`» updated_at`|string(date-time)|false|||
 
 #### Enumerated Values
 
-| Property | Value(s)                                                                                                |
-|----------|---------------------------------------------------------------------------------------------------------|
-| `type`   | `anthropic`, `azure`, `bedrock`, `copilot`, `google`, `openai`, `openai-compat`, `openrouter`, `vercel` |
+|Property|Value(s)|
+|---|---|
+|`type`|`anthropic`, `azure`, `bedrock`, `copilot`, `google`, `openai`, `openai-compat`, `openrouter`, `vercel`|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -110,9 +112,9 @@ curl -X POST http://coder-server:8080/api/v2/ai/providers \
 
 ### Parameters
 
-| Name   | In   | Type                                                                           | Required | Description                |
-|--------|------|--------------------------------------------------------------------------------|----------|----------------------------|
-| `body` | body | [codersdk.CreateAIProviderRequest](schemas.md#codersdkcreateaiproviderrequest) | true     | Create AI provider request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.CreateAIProviderRequest](schemas.md#codersdkcreateaiproviderrequest)|true|Create AI provider request|
 
 ### Example responses
 
@@ -142,9 +144,9 @@ curl -X POST http://coder-server:8080/api/v2/ai/providers \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                               |
-|--------|--------------------------------------------------------------|-------------|------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.AIProvider](schemas.md#codersdkaiprovider) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.AIProvider](schemas.md#codersdkaiprovider)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -163,9 +165,9 @@ curl -X GET http://coder-server:8080/api/v2/ai/providers/{idOrName} \
 
 ### Parameters
 
-| Name       | In   | Type   | Required | Description         |
-|------------|------|--------|----------|---------------------|
-| `idOrName` | path | string | true     | Provider ID or name |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`idOrName`|path|string|true|Provider ID or name|
 
 ### Example responses
 
@@ -195,9 +197,9 @@ curl -X GET http://coder-server:8080/api/v2/ai/providers/{idOrName} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                               |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AIProvider](schemas.md#codersdkaiprovider) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AIProvider](schemas.md#codersdkaiprovider)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -215,15 +217,15 @@ curl -X DELETE http://coder-server:8080/api/v2/ai/providers/{idOrName} \
 
 ### Parameters
 
-| Name       | In   | Type   | Required | Description         |
-|------------|------|--------|----------|---------------------|
-| `idOrName` | path | string | true     | Provider ID or name |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`idOrName`|path|string|true|Provider ID or name|
 
 ### Responses
 
-| Status | Meaning                                                         | Description | Schema |
-|--------|-----------------------------------------------------------------|-------------|--------|
-| 204    | [No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5) | No Content  |        |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -261,10 +263,10 @@ curl -X PATCH http://coder-server:8080/api/v2/ai/providers/{idOrName} \
 
 ### Parameters
 
-| Name       | In   | Type                                                                           | Required | Description                |
-|------------|------|--------------------------------------------------------------------------------|----------|----------------------------|
-| `idOrName` | path | string                                                                         | true     | Provider ID or name        |
-| `body`     | body | [codersdk.UpdateAIProviderRequest](schemas.md#codersdkupdateaiproviderrequest) | true     | Update AI provider request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`idOrName`|path|string|true|Provider ID or name|
+|`body`|body|[codersdk.UpdateAIProviderRequest](schemas.md#codersdkupdateaiproviderrequest)|true|Update AI provider request|
 
 ### Example responses
 
@@ -294,8 +296,9 @@ curl -X PATCH http://coder-server:8080/api/v2/ai/providers/{idOrName} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                               |
-|--------|---------------------------------------------------------|-------------|------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AIProvider](schemas.md#codersdkaiprovider) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AIProvider](schemas.md#codersdkaiprovider)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
+

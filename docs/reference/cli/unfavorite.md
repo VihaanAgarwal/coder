@@ -1,15 +1,20 @@
+---
+title: unfavorite
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# unfavorite
+
 
 Remove a workspace from your favorites
 
-Aliases:
 
+
+
+Aliases:
 * unfav
 * unfavourite
 
 ## Usage
-
 ```console
 coder unfavorite <workspace>
 ```
+

@@ -1,4 +1,6 @@
-# Organizations
+---
+title: Organizations
+---
 
 ## Get organizations
 
@@ -37,26 +39,26 @@ curl -X GET http://coder-server:8080/api/v2/organizations \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                            |
-|--------|---------------------------------------------------------|-------------|-------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.Organization](schemas.md#codersdkorganization)|
 
 <h3 id="get-organizations-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name                         | Type              | Required | Restrictions | Description                                                                                                                                     |
-|------------------------------|-------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| `[array item]`               | array             | false    |              |                                                                                                                                                 |
-| `» created_at`               | string(date-time) | true     |              |                                                                                                                                                 |
-| `» default_org_member_roles` | array             | false    |              | Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request. |
-| `» description`              | string            | false    |              |                                                                                                                                                 |
-| `» display_name`             | string            | false    |              |                                                                                                                                                 |
-| `» icon`                     | string            | false    |              |                                                                                                                                                 |
-| `» id`                       | string(uuid)      | true     |              |                                                                                                                                                 |
-| `» is_default`               | boolean           | true     |              |                                                                                                                                                 |
-| `» name`                     | string            | false    |              |                                                                                                                                                 |
-| `» updated_at`               | string(date-time) | true     |              |                                                                                                                                                 |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» created_at`|string(date-time)|true|||
+|`» default_org_member_roles`|array|false||Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request.|
+|`» description`|string|false|||
+|`» display_name`|string|false|||
+|`» icon`|string|false|||
+|`» id`|string(uuid)|true|||
+|`» is_default`|boolean|true|||
+|`» name`|string|false|||
+|`» updated_at`|string(date-time)|true|||
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -87,9 +89,9 @@ curl -X POST http://coder-server:8080/api/v2/organizations \
 
 ### Parameters
 
-| Name   | In   | Type                                                                               | Required | Description                 |
-|--------|------|------------------------------------------------------------------------------------|----------|-----------------------------|
-| `body` | body | [codersdk.CreateOrganizationRequest](schemas.md#codersdkcreateorganizationrequest) | true     | Create organization request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`body`|body|[codersdk.CreateOrganizationRequest](schemas.md#codersdkcreateorganizationrequest)|true|Create organization request|
 
 ### Example responses
 
@@ -113,9 +115,9 @@ curl -X POST http://coder-server:8080/api/v2/organizations \
 
 ### Responses
 
-| Status | Meaning                                                      | Description | Schema                                                   |
-|--------|--------------------------------------------------------------|-------------|----------------------------------------------------------|
-| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2) | Created     | [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.Organization](schemas.md#codersdkorganization)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -134,9 +136,9 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Parameters
 
-| Name           | In   | Type         | Required | Description     |
-|----------------|------|--------------|----------|-----------------|
-| `organization` | path | string(uuid) | true     | Organization ID |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`organization`|path|string(uuid)|true|Organization ID|
 
 ### Example responses
 
@@ -160,9 +162,9 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                   |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Organization](schemas.md#codersdkorganization)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -181,9 +183,9 @@ curl -X DELETE http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Parameters
 
-| Name           | In   | Type   | Required | Description             |
-|----------------|------|--------|----------|-------------------------|
-| `organization` | path | string | true     | Organization ID or name |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`organization`|path|string|true|Organization ID or name|
 
 ### Example responses
 
@@ -204,9 +206,9 @@ curl -X DELETE http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                           |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Response](schemas.md#codersdkresponse) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Response](schemas.md#codersdkresponse)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -240,10 +242,10 @@ curl -X PATCH http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Parameters
 
-| Name           | In   | Type                                                                               | Required | Description                |
-|----------------|------|------------------------------------------------------------------------------------|----------|----------------------------|
-| `organization` | path | string                                                                             | true     | Organization ID or name    |
-| `body`         | body | [codersdk.UpdateOrganizationRequest](schemas.md#codersdkupdateorganizationrequest) | true     | Patch organization request |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`organization`|path|string|true|Organization ID or name|
+|`body`|body|[codersdk.UpdateOrganizationRequest](schemas.md#codersdkupdateorganizationrequest)|true|Patch organization request|
 
 ### Example responses
 
@@ -267,9 +269,9 @@ curl -X PATCH http://coder-server:8080/api/v2/organizations/{organization} \
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                   |
-|--------|---------------------------------------------------------|-------------|----------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.Organization](schemas.md#codersdkorganization) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.Organization](schemas.md#codersdkorganization)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -288,20 +290,20 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization}/provisi
 
 ### Parameters
 
-| Name           | In    | Type         | Required | Description                                                                          |
-|----------------|-------|--------------|----------|--------------------------------------------------------------------------------------|
-| `organization` | path  | string(uuid) | true     | Organization ID                                                                      |
-| `limit`        | query | integer      | false    | Page limit                                                                           |
-| `ids`          | query | array(uuid)  | false    | Filter results by job IDs                                                            |
-| `status`       | query | string       | false    | Filter results by status                                                             |
-| `tags`         | query | object       | false    | Provisioner tags to filter by (JSON of the form `{'tag1':'value1','tag2':'value2'}`) |
-| `initiator`    | query | string(uuid) | false    | Filter results by initiator                                                          |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`organization`|path|string(uuid)|true|Organization ID|
+|`limit`|query|integer|false|Page limit|
+|`ids`|query|array(uuid)|false|Filter results by job IDs|
+|`status`|query|string|false|Filter results by status|
+|`tags`|query|object|false|Provisioner tags to filter by (JSON of the form `{'tag1':'value1','tag2':'value2'}`)|
+|`initiator`|query|string(uuid)|false|Filter results by initiator|
 
 #### Enumerated Values
 
-| Parameter | Value(s)                                                                        |
-|-----------|---------------------------------------------------------------------------------|
-| `status`  | `canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`, `unknown` |
+|Parameter|Value(s)|
+|---|---|
+|`status`|`canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`, `unknown`|
 
 ### Example responses
 
@@ -355,59 +357,59 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization}/provisi
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                                |
-|--------|---------------------------------------------------------|-------------|-----------------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of [codersdk.ProvisionerJob](schemas.md#codersdkprovisionerjob) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of [codersdk.ProvisionerJob](schemas.md#codersdkprovisionerjob)|
 
 <h3 id="get-provisioner-jobs-responseschema">Response Schema</h3>
 
 Status Code **200**
 
-| Name                            | Type                                                                         | Required | Restrictions | Description |
-|---------------------------------|------------------------------------------------------------------------------|----------|--------------|-------------|
-| `[array item]`                  | array                                                                        | false    |              |             |
-| `» available_workers`           | array                                                                        | false    |              |             |
-| `» canceled_at`                 | string(date-time)                                                            | false    |              |             |
-| `» completed_at`                | string(date-time)                                                            | false    |              |             |
-| `» created_at`                  | string(date-time)                                                            | false    |              |             |
-| `» error`                       | string                                                                       | false    |              |             |
-| `» error_code`                  | [codersdk.JobErrorCode](schemas.md#codersdkjoberrorcode)                     | false    |              |             |
-| `» file_id`                     | string(uuid)                                                                 | false    |              |             |
-| `» id`                          | string(uuid)                                                                 | false    |              |             |
-| `» initiator_id`                | string(uuid)                                                                 | false    |              |             |
-| `» input`                       | [codersdk.ProvisionerJobInput](schemas.md#codersdkprovisionerjobinput)       | false    |              |             |
-| `»» error`                      | string                                                                       | false    |              |             |
-| `»» template_version_id`        | string(uuid)                                                                 | false    |              |             |
-| `»» workspace_build_id`         | string(uuid)                                                                 | false    |              |             |
-| `» logs_overflowed`             | boolean                                                                      | false    |              |             |
-| `» metadata`                    | [codersdk.ProvisionerJobMetadata](schemas.md#codersdkprovisionerjobmetadata) | false    |              |             |
-| `»» template_display_name`      | string                                                                       | false    |              |             |
-| `»» template_icon`              | string                                                                       | false    |              |             |
-| `»» template_id`                | string(uuid)                                                                 | false    |              |             |
-| `»» template_name`              | string                                                                       | false    |              |             |
-| `»» template_version_name`      | string                                                                       | false    |              |             |
-| `»» workspace_build_transition` | [codersdk.WorkspaceTransition](schemas.md#codersdkworkspacetransition)       | false    |              |             |
-| `»» workspace_id`               | string(uuid)                                                                 | false    |              |             |
-| `»» workspace_name`             | string                                                                       | false    |              |             |
-| `» organization_id`             | string(uuid)                                                                 | false    |              |             |
-| `» queue_position`              | integer                                                                      | false    |              |             |
-| `» queue_size`                  | integer                                                                      | false    |              |             |
-| `» started_at`                  | string(date-time)                                                            | false    |              |             |
-| `» status`                      | [codersdk.ProvisionerJobStatus](schemas.md#codersdkprovisionerjobstatus)     | false    |              |             |
-| `» tags`                        | object                                                                       | false    |              |             |
-| `»» [any property]`             | string                                                                       | false    |              |             |
-| `» type`                        | [codersdk.ProvisionerJobType](schemas.md#codersdkprovisionerjobtype)         | false    |              |             |
-| `» worker_id`                   | string(uuid)                                                                 | false    |              |             |
-| `» worker_name`                 | string                                                                       | false    |              |             |
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|`[array item]`|array|false|||
+|`» available_workers`|array|false|||
+|`» canceled_at`|string(date-time)|false|||
+|`» completed_at`|string(date-time)|false|||
+|`» created_at`|string(date-time)|false|||
+|`» error`|string|false|||
+|`» error_code`|[codersdk.JobErrorCode](schemas.md#codersdkjoberrorcode)|false|||
+|`» file_id`|string(uuid)|false|||
+|`» id`|string(uuid)|false|||
+|`» initiator_id`|string(uuid)|false|||
+|`» input`|[codersdk.ProvisionerJobInput](schemas.md#codersdkprovisionerjobinput)|false|||
+|`»» error`|string|false|||
+|`»» template_version_id`|string(uuid)|false|||
+|`»» workspace_build_id`|string(uuid)|false|||
+|`» logs_overflowed`|boolean|false|||
+|`» metadata`|[codersdk.ProvisionerJobMetadata](schemas.md#codersdkprovisionerjobmetadata)|false|||
+|`»» template_display_name`|string|false|||
+|`»» template_icon`|string|false|||
+|`»» template_id`|string(uuid)|false|||
+|`»» template_name`|string|false|||
+|`»» template_version_name`|string|false|||
+|`»» workspace_build_transition`|[codersdk.WorkspaceTransition](schemas.md#codersdkworkspacetransition)|false|||
+|`»» workspace_id`|string(uuid)|false|||
+|`»» workspace_name`|string|false|||
+|`» organization_id`|string(uuid)|false|||
+|`» queue_position`|integer|false|||
+|`» queue_size`|integer|false|||
+|`» started_at`|string(date-time)|false|||
+|`» status`|[codersdk.ProvisionerJobStatus](schemas.md#codersdkprovisionerjobstatus)|false|||
+|`» tags`|object|false|||
+|`»» [any property]`|string|false|||
+|`» type`|[codersdk.ProvisionerJobType](schemas.md#codersdkprovisionerjobtype)|false|||
+|`» worker_id`|string(uuid)|false|||
+|`» worker_name`|string|false|||
 
 #### Enumerated Values
 
-| Property                     | Value(s)                                                                 |
-|------------------------------|--------------------------------------------------------------------------|
-| `error_code`                 | `INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES`                      |
-| `workspace_build_transition` | `delete`, `start`, `stop`                                                |
-| `status`                     | `canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`     |
-| `type`                       | `template_version_dry_run`, `template_version_import`, `workspace_build` |
+|Property|Value(s)|
+|---|---|
+|`error_code`|`INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES`|
+|`workspace_build_transition`|`delete`, `start`, `stop`|
+|`status`|`canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`|
+|`type`|`template_version_dry_run`, `template_version_import`, `workspace_build`|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -426,10 +428,10 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization}/provisi
 
 ### Parameters
 
-| Name           | In   | Type         | Required | Description     |
-|----------------|------|--------------|----------|-----------------|
-| `organization` | path | string(uuid) | true     | Organization ID |
-| `job`          | path | string(uuid) | true     | Job ID          |
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|`organization`|path|string(uuid)|true|Organization ID|
+|`job`|path|string(uuid)|true|Job ID|
 
 ### Example responses
 
@@ -481,8 +483,9 @@ curl -X GET http://coder-server:8080/api/v2/organizations/{organization}/provisi
 
 ### Responses
 
-| Status | Meaning                                                 | Description | Schema                                                       |
-|--------|---------------------------------------------------------|-------------|--------------------------------------------------------------|
-| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.ProvisionerJob](schemas.md#codersdkprovisionerjob) |
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.ProvisionerJob](schemas.md#codersdkprovisionerjob)|
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
+

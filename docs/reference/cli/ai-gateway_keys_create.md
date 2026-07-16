@@ -1,10 +1,16 @@
+---
+title: ai-gateway keys create
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# ai-gateway keys create
+
 
 Create an AI Gateway key
 
-## Usage
 
+
+
+## Usage
 ```console
 coder ai-gateway keys create <name>
 ```
+

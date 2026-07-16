@@ -1,5 +1,7 @@
+---
+title: {{ fullName . }}
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# {{ fullName . }}
 
 {{ with .Short }}
 {{ . }}

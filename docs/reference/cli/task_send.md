@@ -1,16 +1,20 @@
+---
+title: task send
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# task send
+
 
 Send input to a task
 
-## Usage
 
+
+
+## Usage
 ```console
 coder task send [flags] <task> [<input> | --stdin]
 ```
 
 ## Description
-
 ```console
 Send input to a task. If the task is paused, it will be automatically resumed before input is sent. If the task is initializing, it will wait for the task to become ready.
   - Send direct input to a task:
@@ -22,12 +26,12 @@ Send input to a task. If the task is paused, it will be automatically resumed be
      $ echo "Please also add unit tests" | coder task send task1 --stdin
 ```
 
+
 ## Options
-
 ### --stdin
-
-|      |                   |
-|------|-------------------|
+ 
+| | |
+| --- | --- |
 | Type | <code>bool</code> |
 
 Reads the input from stdin.

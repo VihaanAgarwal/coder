@@ -21,7 +21,9 @@ import (
 const (
 	apiSubdir       = "reference/api"
 	apiIndexFile    = "index.md"
-	apiIndexContent = `# API
+	apiIndexContent = `---
+title: API
+---
 
 Get started with the Coder API:
 
@@ -252,12 +254,39 @@ func writeDocs(sections [][]byte) error {
 
 func extractSectionName(section []byte) (string, error) {
 	scanner := bufio.NewScanner(bytes.NewReader(section))
-	if !scanner.Scan() {
-		return "", xerrors.Errorf("section header was expected")
+
+	// Skip leading blank lines.
+	for scanner.Scan() {
+		if strings.TrimSpace(scanner.Text()) != "" {
+			break
+		}
 	}
 
-	header := scanner.Text()[2:] // Skip #<space>
-	return strings.TrimSpace(header), nil
+	// Parse front-matter block: --- ... title: <value> ... ---
+	if scanner.Text() == "---" {
+		for scanner.Scan() {
+			line := scanner.Text()
+			if line == "---" {
+				break // closing delimiter reached without finding title
+			}
+			if after, ok := strings.CutPrefix(line, "title:"); ok {
+				title := strings.TrimSpace(after)
+				// Strip optional surrounding YAML quotes.
+				title = strings.Trim(title, `"'`)
+				if title != "" {
+					return title, nil
+				}
+			}
+		}
+	} else {
+		// Fallback: legacy "# Name" header.
+		header := scanner.Text()
+		if strings.HasPrefix(header, "# ") {
+			return strings.TrimSpace(header[2:]), nil
+		}
+	}
+
+	return "", xerrors.Errorf("section header was expected (front matter title: or # heading)")
 }
 
 func toMdFilename(sectionName string) string {

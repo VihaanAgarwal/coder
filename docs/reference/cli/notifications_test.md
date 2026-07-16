@@ -1,10 +1,16 @@
+---
+title: notifications test
+---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
-# notifications test
+
 
 Send a test notification
 
-## Usage
 
+
+
+## Usage
 ```console
 coder notifications test
 ```
+
