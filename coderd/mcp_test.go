@@ -677,6 +677,66 @@ func TestMCPServerConfigsOAuth2Disconnect(t *testing.T) {
 
 		requireTokenDeleted(t, db, configID, memberID)
 	})
+
+	t.Run("OnlyDisconnectsCallingUser", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := testutil.Context(t, testutil.WaitLong)
+		providerKeys := coderdtest.FakeOpenAICompatProviderAPIKeys(t)
+		adminClient, db := coderdtest.NewWithDatabase(t, &coderdtest.Options{
+			DeploymentValues:    mcpDeploymentValues(t),
+			ChatProviderAPIKeys: &providerKeys,
+		})
+		firstUser := coderdtest.CreateFirstUser(t, adminClient)
+		memberClient, member := coderdtest.CreateAnotherUser(t, adminClient, firstUser.OrganizationID)
+		otherClient, other := coderdtest.CreateAnotherUser(t, adminClient, firstUser.OrganizationID)
+
+		created, err := adminClient.CreateMCPServerConfig(ctx, codersdk.CreateMCPServerConfigRequest{
+			DisplayName:    "OAuth Disconnect Isolation",
+			Slug:           "disc-isolation",
+			Transport:      "streamable_http",
+			URL:            "https://mcp.example.com/disc-isolation",
+			AuthType:       "oauth2",
+			OAuth2ClientID: "cid",
+			OAuth2AuthURL:  "https://auth.example.com/authorize",
+			OAuth2TokenURL: "https://auth.example.com/token",
+			Availability:   "default_on",
+			Enabled:        true,
+			ToolAllowList:  []string{},
+			ToolDenyList:   []string{},
+		})
+		require.NoError(t, err)
+
+		for _, userID := range []uuid.UUID{member.ID, other.ID} {
+			//nolint:gocritic // Seeding test state requires system access.
+			_, err = db.UpsertMCPServerUserToken(dbauthz.AsSystemRestricted(ctx), database.UpsertMCPServerUserTokenParams{
+				MCPServerConfigID: created.ID,
+				UserID:            userID,
+				AccessToken:       "valid-access",
+				TokenType:         "Bearer",
+				Expiry:            sql.NullTime{Time: time.Now().Add(time.Hour), Valid: true},
+			})
+			require.NoError(t, err)
+		}
+
+		requireAuthConnected := func(client *codersdk.Client, want bool) {
+			t.Helper()
+			configs, err := client.MCPServerConfigs(ctx)
+			require.NoError(t, err)
+			require.Len(t, configs, 1)
+			require.Equal(t, want, configs[0].AuthConnected)
+		}
+		requireAuthConnected(memberClient, true)
+		requireAuthConnected(otherClient, true)
+
+		_, err = memberClient.MCPServerOAuth2Disconnect(ctx, created.ID)
+		require.NoError(t, err)
+		requireAuthConnected(memberClient, false)
+		requireAuthConnected(otherClient, true)
+
+		_, err = memberClient.MCPServerOAuth2Disconnect(ctx, created.ID)
+		require.NoError(t, err)
+	})
 }
 
 func TestMCPServerConfigsOAuth2AutoDiscovery(t *testing.T) {
