@@ -50,7 +50,9 @@ chats_expanded AS (
         updated_chats.context_aggregate_hash,
         updated_chats.context_dirty_since,
         updated_chats.context_dirty_resources,
-        updated_chats.context_error
+        updated_chats.context_error,
+        updated_chats.compaction_requested_at,
+        updated_chats.compaction_requested_by_api_key_id
     FROM
         updated_chats
     LEFT JOIN chats root ON root.id = COALESCE(updated_chats.root_chat_id, updated_chats.parent_chat_id)
@@ -117,7 +119,9 @@ chats_expanded AS (
         updated_chats.context_aggregate_hash,
         updated_chats.context_dirty_since,
         updated_chats.context_dirty_resources,
-        updated_chats.context_error
+        updated_chats.context_error,
+        updated_chats.compaction_requested_at,
+        updated_chats.compaction_requested_by_api_key_id
     FROM
         updated_chats
     LEFT JOIN chats root ON root.id = COALESCE(updated_chats.root_chat_id, updated_chats.parent_chat_id)
@@ -849,7 +853,9 @@ chats_expanded AS (
         inserted_chat.context_aggregate_hash,
         inserted_chat.context_dirty_since,
         inserted_chat.context_dirty_resources,
-        inserted_chat.context_error
+        inserted_chat.context_error,
+        inserted_chat.compaction_requested_at,
+        inserted_chat.compaction_requested_by_api_key_id
     FROM
         inserted_chat
     LEFT JOIN chats root ON root.id = COALESCE(inserted_chat.root_chat_id, inserted_chat.parent_chat_id)
@@ -992,7 +998,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1059,7 +1067,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1124,7 +1134,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1189,7 +1201,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1254,7 +1268,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1318,7 +1334,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1382,7 +1400,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1464,7 +1484,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1666,7 +1688,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM
         updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
@@ -1943,7 +1967,9 @@ chats_expanded AS (
         locked_chat.context_aggregate_hash,
         locked_chat.context_dirty_since,
         locked_chat.context_dirty_resources,
-        locked_chat.context_error
+        locked_chat.context_error,
+        locked_chat.compaction_requested_at,
+        locked_chat.compaction_requested_by_api_key_id
     FROM
         locked_chat
     LEFT JOIN chats root ON root.id = COALESCE(locked_chat.root_chat_id, locked_chat.parent_chat_id)
@@ -2004,7 +2030,9 @@ chats_expanded AS (
         shared_chat.context_aggregate_hash,
         shared_chat.context_dirty_since,
         shared_chat.context_dirty_resources,
-        shared_chat.context_error
+        shared_chat.context_error,
+        shared_chat.compaction_requested_at,
+        shared_chat.compaction_requested_by_api_key_id
     FROM
         shared_chat
     LEFT JOIN chats root ON root.id = COALESCE(shared_chat.root_chat_id, shared_chat.parent_chat_id)
@@ -2678,7 +2706,9 @@ chats_expanded AS (
         bumped_chat.context_aggregate_hash,
         bumped_chat.context_dirty_since,
         bumped_chat.context_dirty_resources,
-        bumped_chat.context_error
+        bumped_chat.context_error,
+        bumped_chat.compaction_requested_at,
+        bumped_chat.compaction_requested_by_api_key_id
     FROM bumped_chat
     LEFT JOIN chats root ON root.id = COALESCE(bumped_chat.root_chat_id, bumped_chat.parent_chat_id)
     JOIN visible_users owner ON owner.id = bumped_chat.owner_id
@@ -2688,9 +2718,10 @@ FROM chats_expanded;
 
 -- name: UpdateChatExecutionState :one
 -- Atomically updates the execution-state-managed fields on a chat:
--- status, archived, last_error, ownership identifiers, and the
--- requires-action deadline. Callers compose this with transition
--- mutations inside a single ChatMachine.Update transaction.
+-- status, archived, last_error, ownership identifiers, the
+-- requires-action deadline, and the manual compaction request marker.
+-- Callers compose this with transition mutations inside a single
+-- ChatMachine.Update transaction.
 WITH updated_chat AS (
     UPDATE chats
     SET
@@ -2700,6 +2731,8 @@ WITH updated_chat AS (
         runner_id = sqlc.narg('runner_id')::uuid,
         last_error = sqlc.narg('last_error')::jsonb,
         requires_action_deadline_at = sqlc.narg('requires_action_deadline_at')::timestamptz,
+        compaction_requested_at = sqlc.narg('compaction_requested_at')::timestamptz,
+        compaction_requested_by_api_key_id = sqlc.narg('compaction_requested_by_api_key_id')::text,
         pin_order = CASE WHEN @archived::boolean THEN 0 ELSE pin_order END,
         updated_at = NOW()
     WHERE id = @id::uuid
@@ -2750,7 +2783,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
     JOIN visible_users owner ON owner.id = updated_chat.owner_id
@@ -2814,7 +2849,9 @@ chats_expanded AS (
         updated_chat.context_aggregate_hash,
         updated_chat.context_dirty_since,
         updated_chat.context_dirty_resources,
-        updated_chat.context_error
+        updated_chat.context_error,
+        updated_chat.compaction_requested_at,
+        updated_chat.compaction_requested_by_api_key_id
     FROM updated_chat
     LEFT JOIN chats root ON root.id = COALESCE(updated_chat.root_chat_id, updated_chat.parent_chat_id)
     JOIN visible_users owner ON owner.id = updated_chat.owner_id

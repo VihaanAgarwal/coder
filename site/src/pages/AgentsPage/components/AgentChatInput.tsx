@@ -72,6 +72,7 @@ import {
 	chatAttachmentAcceptAttribute,
 	isChatAttachmentFile,
 } from "../utils/chatAttachments";
+import type { ChatSlashCommand } from "../utils/slashCommands";
 import { AgentSetupNotice } from "./AgentSetupNotice";
 import {
 	AttachmentPreview,
@@ -203,6 +204,9 @@ interface AgentChatInputProps {
 	// AI Gateway is disabled deployment-wide, independent of provider/model
 	// configuration. Forces the setup notice regardless of the counts above.
 	aiGatewayDisabled?: boolean;
+	// Built-in commands offered by the "/" trigger menu ahead of
+	// personal skills.
+	slashCommands?: readonly ChatSlashCommand[];
 }
 
 export interface AttachedWorkspaceInfo {
@@ -409,6 +413,7 @@ export const AgentChatInput: FC<AgentChatInputProps> = ({
 	modelCount,
 	unsupportedProviderNames = [],
 	aiGatewayDisabled,
+	slashCommands,
 }) => {
 	const [chatFullWidth] = useChatFullWidth();
 	const showAgentSetupNotice =
@@ -1211,6 +1216,7 @@ export const AgentChatInput: FC<AgentChatInputProps> = ({
 					sendShortcut={sendShortcut}
 					disabled={isDisabled || isLoading}
 					autoFocus
+					slashCommands={slashCommands}
 				/>
 				{/* Warn about invisible Unicode in the message text.
 				 * Unlike the admin/user prompt textareas (which strip
