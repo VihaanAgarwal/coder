@@ -52,8 +52,9 @@ type secretEntry struct {
 // CreateUserSecretRequests in source order. It does structural parsing
 // and intra-file duplicate detection only; per-entry validation is left
 // to ValidateCreateUserSecretRequest. Every format maps each KEY:VALUE
-// to {Name: KEY, EnvName: KEY, Value: VALUE}, so one duplicate-KEY check
-// covers duplicate names, env_names, and file_paths at once.
+// to {Name: KEY, Value: VALUE}, so one duplicate-KEY check covers
+// duplicate names and file_paths at once. EnvName is set only when KEY
+// passes env-name validation (best-effort; see below).
 func ParseSecretsFile(format SecretsFileFormat, content string) ([]CreateUserSecretRequest, error) {
 	// Reject oversized content before parsing so a malicious or
 	// accidental huge upload cannot drive the parser at all.
@@ -103,19 +104,25 @@ func ParseSecretsFile(format SecretsFileFormat, content string) ([]CreateUserSec
 
 	reqs := make([]CreateUserSecretRequest, 0, len(entries))
 	for _, e := range entries {
-		reqs = append(reqs, CreateUserSecretRequest{
-			Name:    e.key,
-			EnvName: e.key,
-			Value:   e.value,
-		})
+		req := CreateUserSecretRequest{Name: e.key, Value: e.value}
+		// Best-effort env injection: only set EnvName when the key is a
+		// valid POSIX env variable name and not reserved. Keys such as
+		// "MY-TOKEN" (hyphens) or "PATH" (reserved) are silently imported
+		// without env injection rather than failing the entire batch.
+		// The env_name uniqueness index is a partial index
+		// (WHERE env_name != ''), so multiple empty env_names are fine.
+		if UserSecretEnvNameValid(e.key) == nil {
+			req.EnvName = e.key
+		}
+		reqs = append(reqs, req)
 	}
 	return reqs, nil
 }
 
 // detectDuplicateKeys scans for repeated keys in source order. Because
-// the flat mapping sets Name == EnvName == KEY, catching duplicates
-// here gives a clear up-front error (citing the line for env files)
-// instead of a later per-row uniqueness violation.
+// the flat mapping sets Name == KEY (and EnvName == KEY when valid),
+// catching duplicates here gives a clear up-front error (citing the
+// line for env files) instead of a later per-row uniqueness violation.
 func detectDuplicateKeys(entries []secretEntry) error {
 	seen := make(map[string]struct{}, len(entries))
 	for _, e := range entries {
