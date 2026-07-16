@@ -48,9 +48,9 @@ curl -X GET http://coder-server:8080/api/v2/templatebuilder/bases \
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.TemplateBuilderBasesResponse](schemas.md#codersdktemplatebuilderbasesresponse)|
+| Status | Meaning                                                 | Description | Schema                                                                                   |
+|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.TemplateBuilderBasesResponse](schemas.md#codersdktemplatebuilderbasesresponse) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -90,15 +90,15 @@ curl -X POST http://coder-server:8080/api/v2/templatebuilder/compose \
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`body`|body|[codersdk.TemplateBuilderComposeRequest](schemas.md#codersdktemplatebuildercomposerequest)|true|Compose request|
+| Name   | In   | Type                                                                                       | Required | Description     |
+|--------|------|--------------------------------------------------------------------------------------------|----------|-----------------|
+| `body` | body | [codersdk.TemplateBuilderComposeRequest](schemas.md#codersdktemplatebuildercomposerequest) | true     | Compose request |
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK||
+| Status | Meaning                                                 | Description | Schema |
+|--------|---------------------------------------------------------|-------------|--------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          |        |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -148,9 +148,9 @@ curl -X POST http://coder-server:8080/api/v2/templatebuilder/compose/template \
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`body`|body|[codersdk.TemplateBuilderCreateTemplateRequest](schemas.md#codersdktemplatebuildercreatetemplaterequest)|true|Create template request|
+| Name   | In   | Type                                                                                                     | Required | Description             |
+|--------|------|----------------------------------------------------------------------------------------------------------|----------|-------------------------|
+| `body` | body | [codersdk.TemplateBuilderCreateTemplateRequest](schemas.md#codersdktemplatebuildercreatetemplaterequest) | true     | Create template request |
 
 ### Example responses
 
@@ -219,13 +219,13 @@ curl -X POST http://coder-server:8080/api/v2/templatebuilder/compose/template \
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[codersdk.TemplateBuilderCreateTemplateResponse](schemas.md#codersdktemplatebuildercreatetemplateresponse)|
-|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|[codersdk.Response](schemas.md#codersdkresponse)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[codersdk.Response](schemas.md#codersdkresponse)|
-|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[codersdk.Response](schemas.md#codersdkresponse)|
-|504|[Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5)|Gateway Timeout|[codersdk.Response](schemas.md#codersdkresponse)|
+| Status | Meaning                                                               | Description     | Schema                                                                                                     |
+|--------|-----------------------------------------------------------------------|-----------------|------------------------------------------------------------------------------------------------------------|
+| 201    | [Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)          | Created         | [codersdk.TemplateBuilderCreateTemplateResponse](schemas.md#codersdktemplatebuildercreatetemplateresponse) |
+| 400    | [Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)      | Bad Request     | [codersdk.Response](schemas.md#codersdkresponse)                                                           |
+| 404    | [Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)        | Not Found       | [codersdk.Response](schemas.md#codersdkresponse)                                                           |
+| 409    | [Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)         | Conflict        | [codersdk.Response](schemas.md#codersdkresponse)                                                           |
+| 504    | [Gateway Time-out](https://tools.ietf.org/html/rfc7231#section-6.6.5) | Gateway Timeout | [codersdk.Response](schemas.md#codersdkresponse)                                                           |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -244,9 +244,9 @@ curl -X GET http://coder-server:8080/api/v2/templatebuilder/modules \
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`base`|query|string|false|Base template example ID for OS-compatibility filtering|
+| Name   | In    | Type   | Required | Description                                             |
+|--------|-------|--------|----------|---------------------------------------------------------|
+| `base` | query | string | false    | Base template example ID for OS-compatibility filtering |
 
 ### Example responses
 
@@ -287,9 +287,8 @@ curl -X GET http://coder-server:8080/api/v2/templatebuilder/modules \
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.TemplateBuilderModulesResponse](schemas.md#codersdktemplatebuildermodulesresponse)|
+| Status | Meaning                                                 | Description | Schema                                                                                       |
+|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.TemplateBuilderModulesResponse](schemas.md#codersdktemplatebuildermodulesresponse) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
-

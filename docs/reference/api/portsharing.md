@@ -17,9 +17,9 @@ curl -X GET http://coder-server:8080/api/v2/workspaces/{workspace}/port-share \
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`workspace`|path|string(uuid)|true|Workspace ID|
+| Name        | In   | Type         | Required | Description  |
+|-------------|------|--------------|----------|--------------|
+| `workspace` | path | string(uuid) | true     | Workspace ID |
 
 ### Example responses
 
@@ -41,9 +41,9 @@ curl -X GET http://coder-server:8080/api/v2/workspaces/{workspace}/port-share \
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.WorkspaceAgentPortShares](schemas.md#codersdkworkspaceagentportshares)|
+| Status | Meaning                                                 | Description | Schema                                                                           |
+|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.WorkspaceAgentPortShares](schemas.md#codersdkworkspaceagentportshares) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -74,10 +74,10 @@ curl -X POST http://coder-server:8080/api/v2/workspaces/{workspace}/port-share \
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`workspace`|path|string(uuid)|true|Workspace ID|
-|`body`|body|[codersdk.UpsertWorkspaceAgentPortShareRequest](schemas.md#codersdkupsertworkspaceagentportsharerequest)|true|Upsert port sharing level request|
+| Name        | In   | Type                                                                                                     | Required | Description                       |
+|-------------|------|----------------------------------------------------------------------------------------------------------|----------|-----------------------------------|
+| `workspace` | path | string(uuid)                                                                                             | true     | Workspace ID                      |
+| `body`      | body | [codersdk.UpsertWorkspaceAgentPortShareRequest](schemas.md#codersdkupsertworkspaceagentportsharerequest) | true     | Upsert port sharing level request |
 
 ### Example responses
 
@@ -95,9 +95,9 @@ curl -X POST http://coder-server:8080/api/v2/workspaces/{workspace}/port-share \
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.WorkspaceAgentPortShare](schemas.md#codersdkworkspaceagentportshare)|
+| Status | Meaning                                                 | Description | Schema                                                                         |
+|--------|---------------------------------------------------------|-------------|--------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.WorkspaceAgentPortShare](schemas.md#codersdkworkspaceagentportshare) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -125,16 +125,15 @@ curl -X DELETE http://coder-server:8080/api/v2/workspaces/{workspace}/port-share
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`workspace`|path|string(uuid)|true|Workspace ID|
-|`body`|body|[codersdk.DeleteWorkspaceAgentPortShareRequest](schemas.md#codersdkdeleteworkspaceagentportsharerequest)|true|Delete port sharing level request|
+| Name        | In   | Type                                                                                                     | Required | Description                       |
+|-------------|------|----------------------------------------------------------------------------------------------------------|----------|-----------------------------------|
+| `workspace` | path | string(uuid)                                                                                             | true     | Workspace ID                      |
+| `body`      | body | [codersdk.DeleteWorkspaceAgentPortShareRequest](schemas.md#codersdkdeleteworkspaceagentportsharerequest) | true     | Delete port sharing level request |
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK||
+| Status | Meaning                                                 | Description | Schema |
+|--------|---------------------------------------------------------|-------------|--------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          |        |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
-

@@ -29,9 +29,9 @@ Alias: also available at /api/v2/aibridge/clients for backward compatibility.
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of string|
+| Status | Meaning                                                 | Description | Schema          |
+|--------|---------------------------------------------------------|-------------|-----------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of string |
 
 <h3 id="list-ai-gateway-clients-responseschema">Response Schema</h3>
 
@@ -64,9 +64,9 @@ Alias: also available at /api/v2/aibridge/models for backward compatibility.
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|array of string|
+| Status | Meaning                                                 | Description | Schema          |
+|--------|---------------------------------------------------------|-------------|-----------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | array of string |
 
 <h3 id="list-ai-gateway-models-responseschema">Response Schema</h3>
 
@@ -89,12 +89,12 @@ Alias: also available at /api/v2/aibridge/sessions for backward compatibility.
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`q`|query|string|false|Search query in the format `key:value`. Available keys are: initiator, provider, provider_name, model, client, session_id, started_after, started_before.|
-|`limit`|query|integer|false|Page limit|
-|`after_session_id`|query|string|false|Cursor pagination after session ID (cannot be used with offset)|
-|`offset`|query|integer|false|Offset pagination (cannot be used with after_session_id)|
+| Name               | In    | Type    | Required | Description                                                                                                                                               |
+|--------------------|-------|---------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `q`                | query | string  | false    | Search query in the format `key:value`. Available keys are: initiator, provider, provider_name, model, client, session_id, started_after, started_before. |
+| `limit`            | query | integer | false    | Page limit                                                                                                                                                |
+| `after_session_id` | query | string  | false    | Cursor pagination after session ID (cannot be used with offset)                                                                                           |
+| `offset`           | query | integer | false    | Offset pagination (cannot be used with after_session_id)                                                                                                  |
 
 ### Example responses
 
@@ -141,9 +141,9 @@ Alias: also available at /api/v2/aibridge/sessions for backward compatibility.
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AIBridgeListSessionsResponse](schemas.md#codersdkaibridgelistsessionsresponse)|
+| Status | Meaning                                                 | Description | Schema                                                                                   |
+|--------|---------------------------------------------------------|-------------|------------------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AIBridgeListSessionsResponse](schemas.md#codersdkaibridgelistsessionsresponse) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
 
@@ -164,12 +164,12 @@ Alias: also available at /api/v2/aibridge/sessions/{session_id} for backward com
 
 ### Parameters
 
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|`session_id`|path|string|true|Session ID (client_session_id or interception UUID)|
-|`after_id`|query|string|false|Thread pagination cursor (forward/older)|
-|`before_id`|query|string|false|Thread pagination cursor (backward/newer)|
-|`limit`|query|integer|false|Number of threads per page (default 50)|
+| Name         | In    | Type    | Required | Description                                         |
+|--------------|-------|---------|----------|-----------------------------------------------------|
+| `session_id` | path  | string  | true     | Session ID (client_session_id or interception UUID) |
+| `after_id`   | query | string  | false    | Thread pagination cursor (forward/older)            |
+| `before_id`  | query | string  | false    | Thread pagination cursor (backward/newer)           |
+| `limit`      | query | integer | false    | Number of threads per page (default 50)             |
 
 ### Example responses
 
@@ -276,9 +276,8 @@ Alias: also available at /api/v2/aibridge/sessions/{session_id} for backward com
 
 ### Responses
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[codersdk.AIBridgeSessionThreadsResponse](schemas.md#codersdkaibridgesessionthreadsresponse)|
+| Status | Meaning                                                 | Description | Schema                                                                                       |
+|--------|---------------------------------------------------------|-------------|----------------------------------------------------------------------------------------------|
+| 200    | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | OK          | [codersdk.AIBridgeSessionThreadsResponse](schemas.md#codersdkaibridgesessionthreadsresponse) |
 
 To perform this operation, you must be authenticated. [Learn more](authentication.md).
-

@@ -14,11 +14,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false||Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified.|
-|`document`|string|true|||
-|`signature`|string|true|||
+| Name         | Type   | Required | Restrictions | Description                                                                                                                                      |
+|--------------|--------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_name` | string | false    |              | Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified. |
+| `document`   | string | true     |              |                                                                                                                                                  |
+| `signature`  | string | true     |              |                                                                                                                                                  |
 
 ## agentsdk.AuthenticateResponse
 
@@ -30,9 +30,9 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`session_token`|string|false|||
+| Name            | Type   | Required | Restrictions | Description |
+|-----------------|--------|----------|--------------|-------------|
+| `session_token` | string | false    |              |             |
 
 ## agentsdk.AzureInstanceIdentityToken
 
@@ -46,11 +46,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false||Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified.|
-|`encoding`|string|true|||
-|`signature`|string|true|||
+| Name         | Type   | Required | Restrictions | Description                                                                                                                                      |
+|--------------|--------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_name` | string | false    |              | Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified. |
+| `encoding`   | string | true     |              |                                                                                                                                                  |
+| `signature`  | string | true     |              |                                                                                                                                                  |
 
 ## agentsdk.ExternalAuthResponse
 
@@ -68,15 +68,15 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_token`|string|false|||
-|`expires_at`|string|false||Expires at is the time the token expires, normalized to UTC (for example, "2024-06-01T15:04:05Z"). Zero value means no expiry.|
-|`password`|string|false|||
-|`token_extra`|object|false|||
-|`type`|string|false|||
-|`url`|string|false|||
-|`username`|string|false||Deprecated: Only supported on `/workspaceagents/me/gitauth` for backwards compatibility.|
+| Name           | Type   | Required | Restrictions | Description                                                                                                                    |
+|----------------|--------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `access_token` | string | false    |              |                                                                                                                                |
+| `expires_at`   | string | false    |              | Expires at is the time the token expires, normalized to UTC (for example, "2024-06-01T15:04:05Z"). Zero value means no expiry. |
+| `password`     | string | false    |              |                                                                                                                                |
+| `token_extra`  | object | false    |              |                                                                                                                                |
+| `type`         | string | false    |              |                                                                                                                                |
+| `url`          | string | false    |              |                                                                                                                                |
+| `username`     | string | false    |              | Deprecated: Only supported on `/workspaceagents/me/gitauth` for backwards compatibility.                                       |
 
 ## agentsdk.GitSSHKey
 
@@ -89,10 +89,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`private_key`|string|false|||
-|`public_key`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `private_key` | string | false    |              |             |
+| `public_key`  | string | false    |              |             |
 
 ## agentsdk.GoogleInstanceIdentityToken
 
@@ -105,10 +105,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false||Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified.|
-|`json_web_token`|string|true|||
+| Name             | Type   | Required | Restrictions | Description                                                                                                                                      |
+|------------------|--------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_name`     | string | false    |              | Agent name optionally selects a specific agent when multiple agents share the same instance identity. An empty string is treated as unspecified. |
+| `json_web_token` | string | true     |              |                                                                                                                                                  |
 
 ## agentsdk.Log
 
@@ -122,11 +122,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`level`|[codersdk.LogLevel](#codersdkloglevel)|false|||
-|`output`|string|false|||
+| Name         | Type                                   | Required | Restrictions | Description |
+|--------------|----------------------------------------|----------|--------------|-------------|
+| `created_at` | string                                 | false    |              |             |
+| `level`      | [codersdk.LogLevel](#codersdkloglevel) | false    |              |             |
+| `output`     | string                                 | false    |              |             |
 
 ## agentsdk.PatchAppStatus
 
@@ -143,14 +143,14 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`app_slug`|string|false|||
-|`icon`|string|false||Deprecated: this field is unused and will be removed in a future version.|
-|`message`|string|false|||
-|`needs_user_attention`|boolean|false||Deprecated: this field is unused and will be removed in a future version.|
-|`state`|[codersdk.WorkspaceAppStatusState](#codersdkworkspaceappstatusstate)|false|||
-|`uri`|string|false|||
+| Name                   | Type                                                                 | Required | Restrictions | Description                                                               |
+|------------------------|----------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------|
+| `app_slug`             | string                                                               | false    |              |                                                                           |
+| `icon`                 | string                                                               | false    |              | Deprecated: this field is unused and will be removed in a future version. |
+| `message`              | string                                                               | false    |              |                                                                           |
+| `needs_user_attention` | boolean                                                              | false    |              | Deprecated: this field is unused and will be removed in a future version. |
+| `state`                | [codersdk.WorkspaceAppStatusState](#codersdkworkspaceappstatusstate) | false    |              |                                                                           |
+| `uri`                  | string                                                               | false    |              |                                                                           |
 
 ## agentsdk.PatchLogs
 
@@ -169,10 +169,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`log_source_id`|string|false|||
-|`logs`|array of [agentsdk.Log](#agentsdklog)|false|||
+| Name            | Type                                  | Required | Restrictions | Description |
+|-----------------|---------------------------------------|----------|--------------|-------------|
+| `log_source_id` | string                                | false    |              |             |
+| `logs`          | array of [agentsdk.Log](#agentsdklog) | false    |              |             |
 
 ## agentsdk.PostLogSourceRequest
 
@@ -186,11 +186,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false||ID is a unique identifier for the log source. It is scoped to a workspace agent, and can be statically defined inside code to prevent duplicate sources from being created for the same agent.|
+| Name           | Type   | Required | Restrictions | Description                                                                                                                                                                                    |
+|----------------|--------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `display_name` | string | false    |              |                                                                                                                                                                                                |
+| `icon`         | string | false    |              |                                                                                                                                                                                                |
+| `id`           | string | false    |              | ID is a unique identifier for the log source. It is scoped to a workspace agent, and can be statically defined inside code to prevent duplicate sources from being created for the same agent. |
 
 ## agentsdk.ReinitializationEvent
 
@@ -204,11 +204,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`owner_id`|string|false|||
-|`reason`|[agentsdk.ReinitializationReason](#agentsdkreinitializationreason)|false|||
-|`workspace_id`|string|false|||
+| Name           | Type                                                               | Required | Restrictions | Description |
+|----------------|--------------------------------------------------------------------|----------|--------------|-------------|
+| `owner_id`     | string                                                             | false    |              |             |
+| `reason`       | [agentsdk.ReinitializationReason](#agentsdkreinitializationreason) | false    |              |             |
+| `workspace_id` | string                                                             | false    |              |             |
 
 ## agentsdk.ReinitializationReason
 
@@ -220,9 +220,9 @@ title: Schemas
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`prebuild_claimed`|
+| Value(s)           |
+|--------------------|
+| `prebuild_claimed` |
 
 ## coderd.cspViolation
 
@@ -234,9 +234,9 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`csp-report`|object|false|||
+| Name         | Type   | Required | Restrictions | Description |
+|--------------|--------|----------|--------------|-------------|
+| `csp-report` | object | false    |              |             |
 
 ## codersdk.ACLAvailable
 
@@ -293,10 +293,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`groups`|array of [codersdk.Group](#codersdkgroup)|false|||
-|`users`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
+| Name     | Type                                                  | Required | Restrictions | Description |
+|----------|-------------------------------------------------------|----------|--------------|-------------|
+| `groups` | array of [codersdk.Group](#codersdkgroup)             | false    |              |             |
+| `users`  | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |             |
 
 ## codersdk.AIBridgeAgenticAction
 
@@ -339,12 +339,12 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`model`|string|false|||
-|`thinking`|array of [codersdk.AIBridgeModelThought](#codersdkaibridgemodelthought)|false|||
-|`token_usage`|[codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage)|false|||
-|`tool_calls`|array of [codersdk.AIBridgeToolCall](#codersdkaibridgetoolcall)|false|||
+| Name          | Type                                                                                   | Required | Restrictions | Description |
+|---------------|----------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `model`       | string                                                                                 | false    |              |             |
+| `thinking`    | array of [codersdk.AIBridgeModelThought](#codersdkaibridgemodelthought)                | false    |              |             |
+| `token_usage` | [codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage) | false    |              |             |
+| `tool_calls`  | array of [codersdk.AIBridgeToolCall](#codersdkaibridgetoolcall)                        | false    |              |             |
 
 ## codersdk.AIBridgeAnthropicConfig
 
@@ -357,10 +357,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`base_url`|string|false|||
-|`key`|string|false|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `base_url` | string | false    |              |             |
+| `key`      | string | false    |              |             |
 
 ## codersdk.AIBridgeBedrockConfig
 
@@ -377,14 +377,14 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_key`|string|false|||
-|`access_key_secret`|string|false|||
-|`base_url`|string|false|||
-|`model`|string|false|||
-|`region`|string|false|||
-|`small_fast_model`|string|false|||
+| Name                | Type   | Required | Restrictions | Description |
+|---------------------|--------|----------|--------------|-------------|
+| `access_key`        | string | false    |              |             |
+| `access_key_secret` | string | false    |              |             |
+| `base_url`          | string | false    |              |             |
+| `model`             | string | false    |              |             |
+| `region`            | string | false    |              |             |
+| `small_fast_model`  | string | false    |              |             |
 
 ## codersdk.AIBridgeConfig
 
@@ -437,28 +437,28 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_byok`|boolean|false|||
-|`anthropic`|[codersdk.AIBridgeAnthropicConfig](#codersdkaibridgeanthropicconfig)|false||Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.|
-|`api_dump_dir`|string|false||Api dump dir is the base directory under which each provider's request/response dumps are written, in a subdirectory named after the provider. Empty disables dumping.|
-|`bedrock`|[codersdk.AIBridgeBedrockConfig](#codersdkaibridgebedrockconfig)|false||Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.|
-|`budget_period`|string|false|||
-|`budget_policy`|string|false||Budget settings for AI Governance cost controls.|
-|`circuit_breaker_enabled`|boolean|false||Circuit breaker protects against cascading failures from upstream AI provider overload (503, 529).|
-|`circuit_breaker_failure_threshold`|integer|false|||
-|`circuit_breaker_interval`|integer|false|||
-|`circuit_breaker_max_requests`|integer|false|||
-|`circuit_breaker_timeout`|integer|false|||
-|`enabled`|boolean|false|||
-|`inject_coder_mcp_tools`|boolean|false||Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.|
-|`max_concurrency`|integer|false|||
-|`openai`|[codersdk.AIBridgeOpenAIConfig](#codersdkaibridgeopenaiconfig)|false||Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.|
-|`providers`|array of [codersdk.AIProviderConfig](#codersdkaiproviderconfig)|false||Providers holds provider instances populated from `CODER_AI_GATEWAY_PROVIDER_<N>_<KEY>` env vars and/or the deprecated LegacyOpenAI/LegacyAnthropic/LegacyBedrock fields above.|
-|`rate_limit`|integer|false|||
-|`retention`|integer|false|||
-|`send_actor_headers`|boolean|false|||
-|`structured_logging`|boolean|false|||
+| Name                                | Type                                                                 | Required | Restrictions | Description                                                                                                                                                                     |
+|-------------------------------------|----------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `allow_byok`                        | boolean                                                              | false    |              |                                                                                                                                                                                 |
+| `anthropic`                         | [codersdk.AIBridgeAnthropicConfig](#codersdkaibridgeanthropicconfig) | false    |              | Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.                                                                                      |
+| `api_dump_dir`                      | string                                                               | false    |              | Api dump dir is the base directory under which each provider's request/response dumps are written, in a subdirectory named after the provider. Empty disables dumping.          |
+| `bedrock`                           | [codersdk.AIBridgeBedrockConfig](#codersdkaibridgebedrockconfig)     | false    |              | Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.                                                                                      |
+| `budget_period`                     | string                                                               | false    |              |                                                                                                                                                                                 |
+| `budget_policy`                     | string                                                               | false    |              | Budget settings for AI Governance cost controls.                                                                                                                                |
+| `circuit_breaker_enabled`           | boolean                                                              | false    |              | Circuit breaker protects against cascading failures from upstream AI provider overload (503, 529).                                                                              |
+| `circuit_breaker_failure_threshold` | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `circuit_breaker_interval`          | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `circuit_breaker_max_requests`      | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `circuit_breaker_timeout`           | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `enabled`                           | boolean                                                              | false    |              |                                                                                                                                                                                 |
+| `inject_coder_mcp_tools`            | boolean                                                              | false    |              | Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.                                                                                    |
+| `max_concurrency`                   | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `openai`                            | [codersdk.AIBridgeOpenAIConfig](#codersdkaibridgeopenaiconfig)       | false    |              | Deprecated: Use Providers with indexed `CODER_AI_GATEWAY_PROVIDER_<N>_*` env vars instead.                                                                                      |
+| `providers`                         | array of [codersdk.AIProviderConfig](#codersdkaiproviderconfig)      | false    |              | Providers holds provider instances populated from `CODER_AI_GATEWAY_PROVIDER_<N>_<KEY>` env vars and/or the deprecated LegacyOpenAI/LegacyAnthropic/LegacyBedrock fields above. |
+| `rate_limit`                        | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `retention`                         | integer                                                              | false    |              |                                                                                                                                                                                 |
+| `send_actor_headers`                | boolean                                                              | false    |              |                                                                                                                                                                                 |
+| `structured_logging`                | boolean                                                              | false    |              |                                                                                                                                                                                 |
 
 ## codersdk.AIBridgeListSessionsResponse
 
@@ -503,10 +503,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`sessions`|array of [codersdk.AIBridgeSession](#codersdkaibridgesession)|false|||
+| Name       | Type                                                          | Required | Restrictions | Description |
+|------------|---------------------------------------------------------------|----------|--------------|-------------|
+| `count`    | integer                                                       | false    |              |             |
+| `sessions` | array of [codersdk.AIBridgeSession](#codersdkaibridgesession) | false    |              |             |
 
 ## codersdk.AIBridgeModelThought
 
@@ -518,9 +518,9 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`text`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `text` | string | false    |              |             |
 
 ## codersdk.AIBridgeOpenAIConfig
 
@@ -533,10 +533,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`base_url`|string|false|||
-|`key`|string|false|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `base_url` | string | false    |              |             |
+| `key`      | string | false    |              |             |
 
 ## codersdk.AIBridgeProxyConfig
 
@@ -563,20 +563,20 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allowed_private_cidrs`|array of string|false|||
-|`api_dump_dir`|string|false|||
-|`cert_file`|string|false|||
-|`domain_allowlist`|array of string|false|||
-|`enabled`|boolean|false|||
-|`key_file`|string|false|||
-|`listen_addr`|string|false|||
-|`target`|string|false|||
-|`tls_cert_file`|string|false|||
-|`tls_key_file`|string|false|||
-|`upstream_proxy`|string|false|||
-|`upstream_proxy_ca`|string|false|||
+| Name                    | Type            | Required | Restrictions | Description |
+|-------------------------|-----------------|----------|--------------|-------------|
+| `allowed_private_cidrs` | array of string | false    |              |             |
+| `api_dump_dir`          | string          | false    |              |             |
+| `cert_file`             | string          | false    |              |             |
+| `domain_allowlist`      | array of string | false    |              |             |
+| `enabled`               | boolean         | false    |              |             |
+| `key_file`              | string          | false    |              |             |
+| `listen_addr`           | string          | false    |              |             |
+| `target`                | string          | false    |              |             |
+| `tls_cert_file`         | string          | false    |              |             |
+| `tls_key_file`          | string          | false    |              |             |
+| `upstream_proxy`        | string          | false    |              |             |
+| `upstream_proxy_ca`     | string          | false    |              |             |
 
 ## codersdk.AIBridgeSession
 
@@ -616,21 +616,21 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client`|string|false|||
-|`ended_at`|string|false|||
-|`id`|string|false|||
-|`initiator`|[codersdk.MinimalUser](#codersdkminimaluser)|false|||
-|`last_active_at`|string|false|||
-|`last_prompt`|string|false|||
-|`metadata`|object|false|||
-|» `[any property]`|any|false|||
-|`models`|array of string|false|||
-|`providers`|array of string|false|||
-|`started_at`|string|false|||
-|`threads`|integer|false|||
-|`token_usage_summary`|[codersdk.AIBridgeSessionTokenUsageSummary](#codersdkaibridgesessiontokenusagesummary)|false|||
+| Name                  | Type                                                                                   | Required | Restrictions | Description |
+|-----------------------|----------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `client`              | string                                                                                 | false    |              |             |
+| `ended_at`            | string                                                                                 | false    |              |             |
+| `id`                  | string                                                                                 | false    |              |             |
+| `initiator`           | [codersdk.MinimalUser](#codersdkminimaluser)                                           | false    |              |             |
+| `last_active_at`      | string                                                                                 | false    |              |             |
+| `last_prompt`         | string                                                                                 | false    |              |             |
+| `metadata`            | object                                                                                 | false    |              |             |
+| » `[any property]`    | any                                                                                    | false    |              |             |
+| `models`              | array of string                                                                        | false    |              |             |
+| `providers`           | array of string                                                                        | false    |              |             |
+| `started_at`          | string                                                                                 | false    |              |             |
+| `threads`             | integer                                                                                | false    |              |             |
+| `token_usage_summary` | [codersdk.AIBridgeSessionTokenUsageSummary](#codersdkaibridgesessiontokenusagesummary) | false    |              |             |
 
 ## codersdk.AIBridgeSessionThreadsResponse
 
@@ -735,21 +735,21 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client`|string|false|||
-|`ended_at`|string|false|||
-|`id`|string|false|||
-|`initiator`|[codersdk.MinimalUser](#codersdkminimaluser)|false|||
-|`metadata`|object|false|||
-|» `[any property]`|any|false|||
-|`models`|array of string|false|||
-|`page_ended_at`|string|false|||
-|`page_started_at`|string|false|||
-|`providers`|array of string|false|||
-|`started_at`|string|false|||
-|`threads`|array of [codersdk.AIBridgeThread](#codersdkaibridgethread)|false|||
-|`token_usage_summary`|[codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage)|false|||
+| Name                  | Type                                                                                   | Required | Restrictions | Description |
+|-----------------------|----------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `client`              | string                                                                                 | false    |              |             |
+| `ended_at`            | string                                                                                 | false    |              |             |
+| `id`                  | string                                                                                 | false    |              |             |
+| `initiator`           | [codersdk.MinimalUser](#codersdkminimaluser)                                           | false    |              |             |
+| `metadata`            | object                                                                                 | false    |              |             |
+| » `[any property]`    | any                                                                                    | false    |              |             |
+| `models`              | array of string                                                                        | false    |              |             |
+| `page_ended_at`       | string                                                                                 | false    |              |             |
+| `page_started_at`     | string                                                                                 | false    |              |             |
+| `providers`           | array of string                                                                        | false    |              |             |
+| `started_at`          | string                                                                                 | false    |              |             |
+| `threads`             | array of [codersdk.AIBridgeThread](#codersdkaibridgethread)                            | false    |              |             |
+| `token_usage_summary` | [codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage) | false    |              |             |
 
 ## codersdk.AIBridgeSessionThreadsTokenUsage
 
@@ -768,14 +768,14 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`cache_read_input_tokens`|integer|false|||
-|`cache_write_input_tokens`|integer|false|||
-|`input_tokens`|integer|false|||
-|`metadata`|object|false|||
-|» `[any property]`|any|false|||
-|`output_tokens`|integer|false|||
+| Name                       | Type    | Required | Restrictions | Description |
+|----------------------------|---------|----------|--------------|-------------|
+| `cache_read_input_tokens`  | integer | false    |              |             |
+| `cache_write_input_tokens` | integer | false    |              |             |
+| `input_tokens`             | integer | false    |              |             |
+| `metadata`                 | object  | false    |              |             |
+| » `[any property]`         | any     | false    |              |             |
+| `output_tokens`            | integer | false    |              |             |
 
 ## codersdk.AIBridgeSessionTokenUsageSummary
 
@@ -790,12 +790,12 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`cache_read_input_tokens`|integer|false|||
-|`cache_write_input_tokens`|integer|false|||
-|`input_tokens`|integer|false|||
-|`output_tokens`|integer|false|||
+| Name                       | Type    | Required | Restrictions | Description |
+|----------------------------|---------|----------|--------------|-------------|
+| `cache_read_input_tokens`  | integer | false    |              |             |
+| `cache_write_input_tokens` | integer | false    |              |             |
+| `input_tokens`             | integer | false    |              |             |
+| `output_tokens`            | integer | false    |              |             |
 
 ## codersdk.AIBridgeThread
 
@@ -864,22 +864,22 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_firewall_sequence_number`|integer|false||Agent firewall sequence number is the firewall sequence number from the root interception. Used to determine the position of this LLM request in the firewall event stream. Nil when the request did not pass through the agent firewall.|
-|`agent_firewall_session_id`|string|false||Agent firewall session ID links this thread to an agent firewall confinement session. Nil when the request did not pass through the agent firewall.|
-|`agentic_actions`|array of [codersdk.AIBridgeAgenticAction](#codersdkaibridgeagenticaction)|false|||
-|`credential_hint`|string|false|||
-|`credential_kind`|string|false|||
-|`ended_at`|string|false|||
-|`error_message`|string|false||Error message is the raw terminal upstream error message from the root interception. Nil when the interception succeeded.|
-|`error_type`|string|false||Error type is the categorized terminal upstream error from the root interception, or nil when the interception succeeded. See the aibridge_interception_error_type enum for possible values.|
-|`id`|string|false|||
-|`model`|string|false|||
-|`prompt`|string|false|||
-|`provider`|string|false|||
-|`started_at`|string|false|||
-|`token_usage`|[codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage)|false|||
+| Name                             | Type                                                                                   | Required | Restrictions | Description                                                                                                                                                                                                                               |
+|----------------------------------|----------------------------------------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_firewall_sequence_number` | integer                                                                                | false    |              | Agent firewall sequence number is the firewall sequence number from the root interception. Used to determine the position of this LLM request in the firewall event stream. Nil when the request did not pass through the agent firewall. |
+| `agent_firewall_session_id`      | string                                                                                 | false    |              | Agent firewall session ID links this thread to an agent firewall confinement session. Nil when the request did not pass through the agent firewall.                                                                                       |
+| `agentic_actions`                | array of [codersdk.AIBridgeAgenticAction](#codersdkaibridgeagenticaction)              | false    |              |                                                                                                                                                                                                                                           |
+| `credential_hint`                | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `credential_kind`                | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `ended_at`                       | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `error_message`                  | string                                                                                 | false    |              | Error message is the raw terminal upstream error message from the root interception. Nil when the interception succeeded.                                                                                                                 |
+| `error_type`                     | string                                                                                 | false    |              | Error type is the categorized terminal upstream error from the root interception, or nil when the interception succeeded. See the aibridge_interception_error_type enum for possible values.                                              |
+| `id`                             | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `model`                          | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `prompt`                         | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `provider`                       | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `started_at`                     | string                                                                                 | false    |              |                                                                                                                                                                                                                                           |
+| `token_usage`                    | [codersdk.AIBridgeSessionThreadsTokenUsage](#codersdkaibridgesessionthreadstokenusage) | false    |              |                                                                                                                                                                                                                                           |
 
 ## codersdk.AIBridgeToolCall
 
@@ -902,18 +902,18 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`injected`|boolean|false|||
-|`input`|string|false|||
-|`interception_id`|string|false|||
-|`metadata`|object|false|||
-|» `[any property]`|any|false|||
-|`provider_response_id`|string|false|||
-|`server_url`|string|false|||
-|`tool`|string|false|||
+| Name                   | Type    | Required | Restrictions | Description |
+|------------------------|---------|----------|--------------|-------------|
+| `created_at`           | string  | false    |              |             |
+| `id`                   | string  | false    |              |             |
+| `injected`             | boolean | false    |              |             |
+| `input`                | string  | false    |              |             |
+| `interception_id`      | string  | false    |              |             |
+| `metadata`             | object  | false    |              |             |
+| » `[any property]`     | any     | false    |              |             |
+| `provider_response_id` | string  | false    |              |             |
+| `server_url`           | string  | false    |              |             |
+| `tool`                 | string  | false    |              |             |
 
 ## codersdk.AIBudgetLimitSource
 
@@ -925,9 +925,9 @@ title: Schemas
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`group`, `user_override`|
+| Value(s)                 |
+|--------------------------|
+| `group`, `user_override` |
 
 ## codersdk.AIConfig
 
@@ -1004,11 +1004,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`aibridge_proxy`|[codersdk.AIBridgeProxyConfig](#codersdkaibridgeproxyconfig)|false|||
-|`bridge`|[codersdk.AIBridgeConfig](#codersdkaibridgeconfig)|false|||
-|`chat`|[codersdk.ChatConfig](#codersdkchatconfig)|false|||
+| Name             | Type                                                         | Required | Restrictions | Description |
+|------------------|--------------------------------------------------------------|----------|--------------|-------------|
+| `aibridge_proxy` | [codersdk.AIBridgeProxyConfig](#codersdkaibridgeproxyconfig) | false    |              |             |
+| `bridge`         | [codersdk.AIBridgeConfig](#codersdkaibridgeconfig)           | false    |              |             |
+| `chat`           | [codersdk.ChatConfig](#codersdkchatconfig)                   | false    |              |             |
 
 ## codersdk.AIGatewayKey
 
@@ -1024,13 +1024,13 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`key_prefix`|string|false|||
-|`last_heartbeat_at`|string|false|||
-|`name`|string|false|||
+| Name                | Type   | Required | Restrictions | Description |
+|---------------------|--------|----------|--------------|-------------|
+| `created_at`        | string | false    |              |             |
+| `id`                | string | false    |              |             |
+| `key_prefix`        | string | false    |              |             |
+| `last_heartbeat_at` | string | false    |              |             |
+| `name`              | string | false    |              |             |
 
 ## codersdk.AIProvider
 
@@ -1058,19 +1058,19 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_keys`|array of [codersdk.AIProviderKey](#codersdkaiproviderkey)|false|||
-|`base_url`|string|false|||
-|`created_at`|string|false|||
-|`display_name`|string|false|||
-|`enabled`|boolean|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`settings`|[codersdk.AIProviderSettings](#codersdkaiprovidersettings)|false|||
-|`type`|[codersdk.AIProviderType](#codersdkaiprovidertype)|false|||
-|`updated_at`|string|false|||
+| Name           | Type                                                       | Required | Restrictions | Description |
+|----------------|------------------------------------------------------------|----------|--------------|-------------|
+| `api_keys`     | array of [codersdk.AIProviderKey](#codersdkaiproviderkey)  | false    |              |             |
+| `base_url`     | string                                                     | false    |              |             |
+| `created_at`   | string                                                     | false    |              |             |
+| `display_name` | string                                                     | false    |              |             |
+| `enabled`      | boolean                                                    | false    |              |             |
+| `icon`         | string                                                     | false    |              |             |
+| `id`           | string                                                     | false    |              |             |
+| `name`         | string                                                     | false    |              |             |
+| `settings`     | [codersdk.AIProviderSettings](#codersdkaiprovidersettings) | false    |              |             |
+| `type`         | [codersdk.AIProviderType](#codersdkaiprovidertype)         | false    |              |             |
+| `updated_at`   | string                                                     | false    |              |             |
 
 ## codersdk.AIProviderConfig
 
@@ -1087,14 +1087,14 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`base_url`|string|false||Base URL is the base URL of the upstream provider API.|
-|`bedrock_model`|string|false|||
-|`bedrock_region`|string|false|||
-|`bedrock_small_fast_model`|string|false|||
-|`name`|string|false||Name is the unique instance identifier used for routing. Defaults to Type if not provided.|
-|`type`|string|false||Type is the provider type. Valid values are: "openai", "anthropic", "azure", "bedrock", "google", "openai-compat", "openrouter", "vercel", "copilot".|
+| Name                       | Type   | Required | Restrictions | Description                                                                                                                                           |
+|----------------------------|--------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `base_url`                 | string | false    |              | Base URL is the base URL of the upstream provider API.                                                                                                |
+| `bedrock_model`            | string | false    |              |                                                                                                                                                       |
+| `bedrock_region`           | string | false    |              |                                                                                                                                                       |
+| `bedrock_small_fast_model` | string | false    |              |                                                                                                                                                       |
+| `name`                     | string | false    |              | Name is the unique instance identifier used for routing. Defaults to Type if not provided.                                                            |
+| `type`                     | string | false    |              | Type is the provider type. Valid values are: "openai", "anthropic", "azure", "bedrock", "google", "openai-compat", "openrouter", "vercel", "copilot". |
 
 ## codersdk.AIProviderKey
 
@@ -1108,11 +1108,11 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`masked`|string|false|||
+| Name         | Type   | Required | Restrictions | Description |
+|--------------|--------|----------|--------------|-------------|
+| `created_at` | string | false    |              |             |
+| `id`         | string | false    |              |             |
+| `masked`     | string | false    |              |             |
 
 ## codersdk.AIProviderKeyMutation
 
@@ -1125,10 +1125,10 @@ title: Schemas
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_key`|string|false|||
-|`id`|string|false|||
+| Name      | Type   | Required | Restrictions | Description |
+|-----------|--------|----------|--------------|-------------|
+| `api_key` | string | false    |              |             |
+| `id`      | string | false    |              |             |
 
 ## codersdk.AIProviderSettings
 
@@ -1150,9 +1150,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`anthropic`, `azure`, `bedrock`, `copilot`, `google`, `openai`, `openai-compat`, `openrouter`, `vercel`|
+| Value(s)                                                                                                |
+|---------------------------------------------------------------------------------------------------------|
+| `anthropic`, `azure`, `bedrock`, `copilot`, `google`, `openai`, `openai-compat`, `openrouter`, `vercel` |
 
 ## codersdk.APIAllowListTarget
 
@@ -1165,10 +1165,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|false|||
-|`type`|[codersdk.RBACResource](#codersdkrbacresource)|false|||
+| Name   | Type                                           | Required | Restrictions | Description |
+|--------|------------------------------------------------|----------|--------------|-------------|
+| `id`   | string                                         | false    |              |             |
+| `type` | [codersdk.RBACResource](#codersdkrbacresource) | false    |              |             |
 
 ## codersdk.APIKey
 
@@ -1198,27 +1198,27 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_list`|array of [codersdk.APIAllowListTarget](#codersdkapiallowlisttarget)|false|||
-|`created_at`|string|true|||
-|`expires_at`|string|true|||
-|`id`|string|true|||
-|`last_used`|string|true|||
-|`lifetime_seconds`|integer|true|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|true|||
-|`scope`|[codersdk.APIKeyScope](#codersdkapikeyscope)|false||Deprecated: use Scopes instead.|
-|`scopes`|array of [codersdk.APIKeyScope](#codersdkapikeyscope)|false|||
-|`token_name`|string|true|||
-|`updated_at`|string|true|||
-|`user_id`|string|true|||
+| Name               | Type                                                                | Required | Restrictions | Description                     |
+|--------------------|---------------------------------------------------------------------|----------|--------------|---------------------------------|
+| `allow_list`       | array of [codersdk.APIAllowListTarget](#codersdkapiallowlisttarget) | false    |              |                                 |
+| `created_at`       | string                                                              | true     |              |                                 |
+| `expires_at`       | string                                                              | true     |              |                                 |
+| `id`               | string                                                              | true     |              |                                 |
+| `last_used`        | string                                                              | true     |              |                                 |
+| `lifetime_seconds` | integer                                                             | true     |              |                                 |
+| `login_type`       | [codersdk.LoginType](#codersdklogintype)                            | true     |              |                                 |
+| `scope`            | [codersdk.APIKeyScope](#codersdkapikeyscope)                        | false    |              | Deprecated: use Scopes instead. |
+| `scopes`           | array of [codersdk.APIKeyScope](#codersdkapikeyscope)               | false    |              |                                 |
+| `token_name`       | string                                                              | true     |              |                                 |
+| `updated_at`       | string                                                              | true     |              |                                 |
+| `user_id`          | string                                                              | true     |              |                                 |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`login_type`|`github`, `oidc`, `password`, `token`|
-|`scope`|`all`, `application_connect`|
+| Property     | Value(s)                              |
+|--------------|---------------------------------------|
+| `login_type` | `github`, `oidc`, `password`, `token` |
+| `scope`      | `all`, `application_connect`          |
 
 ## codersdk.APIKeyScope
 
@@ -1230,9 +1230,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`ai_gateway_key:*`, `ai_gateway_key:create`, `ai_gateway_key:delete`, `ai_gateway_key:read`, `ai_gateway_key:update`, `ai_model_price:*`, `ai_model_price:read`, `ai_model_price:update`, `ai_provider:*`, `ai_provider:create`, `ai_provider:delete`, `ai_provider:read`, `ai_provider:update`, `ai_seat:*`, `ai_seat:create`, `ai_seat:read`, `aibridge_interception:*`, `aibridge_interception:create`, `aibridge_interception:read`, `aibridge_interception:update`, `all`, `api_key:*`, `api_key:create`, `api_key:delete`, `api_key:read`, `api_key:update`, `application_connect`, `assign_org_role:*`, `assign_org_role:assign`, `assign_org_role:create`, `assign_org_role:delete`, `assign_org_role:read`, `assign_org_role:unassign`, `assign_org_role:update`, `assign_role:*`, `assign_role:assign`, `assign_role:read`, `assign_role:unassign`, `audit_log:*`, `audit_log:create`, `audit_log:read`, `boundary_log:*`, `boundary_log:create`, `boundary_log:delete`, `boundary_log:read`, `boundary_usage:*`, `boundary_usage:delete`, `boundary_usage:read`, `boundary_usage:update`, `chat:*`, `chat:create`, `chat:delete`, `chat:read`, `chat:share`, `chat:update`, `coder:all`, `coder:apikeys.manage_self`, `coder:application_connect`, `coder:templates.author`, `coder:templates.build`, `coder:workspaces.access`, `coder:workspaces.create`, `coder:workspaces.delete`, `coder:workspaces.operate`, `connection_log:*`, `connection_log:read`, `connection_log:update`, `crypto_key:*`, `crypto_key:create`, `crypto_key:delete`, `crypto_key:read`, `crypto_key:update`, `debug_info:*`, `debug_info:read`, `deployment_config:*`, `deployment_config:read`, `deployment_config:update`, `deployment_stats:*`, `deployment_stats:read`, `file:*`, `file:create`, `file:read`, `group:*`, `group:create`, `group:delete`, `group:read`, `group:update`, `group_member:*`, `group_member:read`, `idpsync_settings:*`, `idpsync_settings:read`, `idpsync_settings:update`, `inbox_notification:*`, `inbox_notification:create`, `inbox_notification:read`, `inbox_notification:update`, `license:*`, `license:create`, `license:delete`, `license:read`, `notification_message:*`, `notification_message:create`, `notification_message:delete`, `notification_message:read`, `notification_message:update`, `notification_preference:*`, `notification_preference:read`, `notification_preference:update`, `notification_template:*`, `notification_template:read`, `notification_template:update`, `oauth2_app:*`, `oauth2_app:create`, `oauth2_app:delete`, `oauth2_app:read`, `oauth2_app:update`, `oauth2_app_code_token:*`, `oauth2_app_code_token:create`, `oauth2_app_code_token:delete`, `oauth2_app_code_token:read`, `oauth2_app_secret:*`, `oauth2_app_secret:create`, `oauth2_app_secret:delete`, `oauth2_app_secret:read`, `oauth2_app_secret:update`, `organization:*`, `organization:create`, `organization:delete`, `organization:read`, `organization:update`, `organization_member:*`, `organization_member:create`, `organization_member:delete`, `organization_member:read`, `organization_member:update`, `prebuilt_workspace:*`, `prebuilt_workspace:delete`, `prebuilt_workspace:update`, `provisioner_daemon:*`, `provisioner_daemon:create`, `provisioner_daemon:delete`, `provisioner_daemon:read`, `provisioner_daemon:update`, `provisioner_jobs:*`, `provisioner_jobs:create`, `provisioner_jobs:read`, `provisioner_jobs:update`, `replicas:*`, `replicas:read`, `system:*`, `system:create`, `system:delete`, `system:read`, `system:update`, `tailnet_coordinator:*`, `tailnet_coordinator:create`, `tailnet_coordinator:delete`, `tailnet_coordinator:read`, `tailnet_coordinator:update`, `task:*`, `task:create`, `task:delete`, `task:read`, `task:update`, `template:*`, `template:create`, `template:delete`, `template:read`, `template:update`, `template:use`, `template:view_insights`, `usage_event:*`, `usage_event:create`, `usage_event:read`, `usage_event:update`, `user:*`, `user:create`, `user:delete`, `user:read`, `user:read_personal`, `user:update`, `user:update_personal`, `user_secret:*`, `user_secret:create`, `user_secret:delete`, `user_secret:read`, `user_secret:update`, `user_skill:*`, `user_skill:create`, `user_skill:delete`, `user_skill:read`, `user_skill:update`, `webpush_subscription:*`, `webpush_subscription:create`, `webpush_subscription:delete`, `webpush_subscription:read`, `workspace:*`, `workspace:application_connect`, `workspace:create`, `workspace:create_agent`, `workspace:delete`, `workspace:delete_agent`, `workspace:read`, `workspace:share`, `workspace:ssh`, `workspace:start`, `workspace:stop`, `workspace:update`, `workspace:update_agent`, `workspace_agent_devcontainers:*`, `workspace_agent_devcontainers:create`, `workspace_agent_resource_monitor:*`, `workspace_agent_resource_monitor:create`, `workspace_agent_resource_monitor:read`, `workspace_agent_resource_monitor:update`, `workspace_build_orchestration:*`, `workspace_build_orchestration:create`, `workspace_build_orchestration:delete`, `workspace_build_orchestration:read`, `workspace_build_orchestration:update`, `workspace_dormant:*`, `workspace_dormant:application_connect`, `workspace_dormant:create`, `workspace_dormant:create_agent`, `workspace_dormant:delete`, `workspace_dormant:delete_agent`, `workspace_dormant:read`, `workspace_dormant:share`, `workspace_dormant:ssh`, `workspace_dormant:start`, `workspace_dormant:stop`, `workspace_dormant:update`, `workspace_dormant:update_agent`, `workspace_proxy:*`, `workspace_proxy:create`, `workspace_proxy:delete`, `workspace_proxy:read`, `workspace_proxy:update`|
+| Value(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ai_gateway_key:*`, `ai_gateway_key:create`, `ai_gateway_key:delete`, `ai_gateway_key:read`, `ai_gateway_key:update`, `ai_model_price:*`, `ai_model_price:read`, `ai_model_price:update`, `ai_provider:*`, `ai_provider:create`, `ai_provider:delete`, `ai_provider:read`, `ai_provider:update`, `ai_seat:*`, `ai_seat:create`, `ai_seat:read`, `aibridge_interception:*`, `aibridge_interception:create`, `aibridge_interception:read`, `aibridge_interception:update`, `all`, `api_key:*`, `api_key:create`, `api_key:delete`, `api_key:read`, `api_key:update`, `application_connect`, `assign_org_role:*`, `assign_org_role:assign`, `assign_org_role:create`, `assign_org_role:delete`, `assign_org_role:read`, `assign_org_role:unassign`, `assign_org_role:update`, `assign_role:*`, `assign_role:assign`, `assign_role:read`, `assign_role:unassign`, `audit_log:*`, `audit_log:create`, `audit_log:read`, `boundary_log:*`, `boundary_log:create`, `boundary_log:delete`, `boundary_log:read`, `boundary_usage:*`, `boundary_usage:delete`, `boundary_usage:read`, `boundary_usage:update`, `chat:*`, `chat:create`, `chat:delete`, `chat:read`, `chat:share`, `chat:update`, `coder:all`, `coder:apikeys.manage_self`, `coder:application_connect`, `coder:templates.author`, `coder:templates.build`, `coder:workspaces.access`, `coder:workspaces.create`, `coder:workspaces.delete`, `coder:workspaces.operate`, `connection_log:*`, `connection_log:read`, `connection_log:update`, `crypto_key:*`, `crypto_key:create`, `crypto_key:delete`, `crypto_key:read`, `crypto_key:update`, `debug_info:*`, `debug_info:read`, `deployment_config:*`, `deployment_config:read`, `deployment_config:update`, `deployment_stats:*`, `deployment_stats:read`, `file:*`, `file:create`, `file:read`, `group:*`, `group:create`, `group:delete`, `group:read`, `group:update`, `group_member:*`, `group_member:read`, `idpsync_settings:*`, `idpsync_settings:read`, `idpsync_settings:update`, `inbox_notification:*`, `inbox_notification:create`, `inbox_notification:read`, `inbox_notification:update`, `license:*`, `license:create`, `license:delete`, `license:read`, `notification_message:*`, `notification_message:create`, `notification_message:delete`, `notification_message:read`, `notification_message:update`, `notification_preference:*`, `notification_preference:read`, `notification_preference:update`, `notification_template:*`, `notification_template:read`, `notification_template:update`, `oauth2_app:*`, `oauth2_app:create`, `oauth2_app:delete`, `oauth2_app:read`, `oauth2_app:update`, `oauth2_app_code_token:*`, `oauth2_app_code_token:create`, `oauth2_app_code_token:delete`, `oauth2_app_code_token:read`, `oauth2_app_secret:*`, `oauth2_app_secret:create`, `oauth2_app_secret:delete`, `oauth2_app_secret:read`, `oauth2_app_secret:update`, `organization:*`, `organization:create`, `organization:delete`, `organization:read`, `organization:update`, `organization_member:*`, `organization_member:create`, `organization_member:delete`, `organization_member:read`, `organization_member:update`, `prebuilt_workspace:*`, `prebuilt_workspace:delete`, `prebuilt_workspace:update`, `provisioner_daemon:*`, `provisioner_daemon:create`, `provisioner_daemon:delete`, `provisioner_daemon:read`, `provisioner_daemon:update`, `provisioner_jobs:*`, `provisioner_jobs:create`, `provisioner_jobs:read`, `provisioner_jobs:update`, `replicas:*`, `replicas:read`, `system:*`, `system:create`, `system:delete`, `system:read`, `system:update`, `tailnet_coordinator:*`, `tailnet_coordinator:create`, `tailnet_coordinator:delete`, `tailnet_coordinator:read`, `tailnet_coordinator:update`, `task:*`, `task:create`, `task:delete`, `task:read`, `task:update`, `template:*`, `template:create`, `template:delete`, `template:read`, `template:update`, `template:use`, `template:view_insights`, `usage_event:*`, `usage_event:create`, `usage_event:read`, `usage_event:update`, `user:*`, `user:create`, `user:delete`, `user:read`, `user:read_personal`, `user:update`, `user:update_personal`, `user_secret:*`, `user_secret:create`, `user_secret:delete`, `user_secret:read`, `user_secret:update`, `user_skill:*`, `user_skill:create`, `user_skill:delete`, `user_skill:read`, `user_skill:update`, `webpush_subscription:*`, `webpush_subscription:create`, `webpush_subscription:delete`, `webpush_subscription:read`, `workspace:*`, `workspace:application_connect`, `workspace:create`, `workspace:create_agent`, `workspace:delete`, `workspace:delete_agent`, `workspace:read`, `workspace:share`, `workspace:ssh`, `workspace:start`, `workspace:stop`, `workspace:update`, `workspace:update_agent`, `workspace_agent_devcontainers:*`, `workspace_agent_devcontainers:create`, `workspace_agent_resource_monitor:*`, `workspace_agent_resource_monitor:create`, `workspace_agent_resource_monitor:read`, `workspace_agent_resource_monitor:update`, `workspace_build_orchestration:*`, `workspace_build_orchestration:create`, `workspace_build_orchestration:delete`, `workspace_build_orchestration:read`, `workspace_build_orchestration:update`, `workspace_dormant:*`, `workspace_dormant:application_connect`, `workspace_dormant:create`, `workspace_dormant:create_agent`, `workspace_dormant:delete`, `workspace_dormant:delete_agent`, `workspace_dormant:read`, `workspace_dormant:share`, `workspace_dormant:ssh`, `workspace_dormant:start`, `workspace_dormant:stop`, `workspace_dormant:update`, `workspace_dormant:update_agent`, `workspace_proxy:*`, `workspace_proxy:create`, `workspace_proxy:delete`, `workspace_proxy:read`, `workspace_proxy:update` |
 
 ## codersdk.AddLicenseRequest
 
@@ -1244,9 +1244,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`license`|string|true|||
+| Name      | Type   | Required | Restrictions | Description |
+|-----------|--------|----------|--------------|-------------|
+| `license` | string | true     |              |             |
 
 ## codersdk.AgentChatSendShortcut
 
@@ -1258,9 +1258,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`enter`, `modifier_enter`|
+| Value(s)                  |
+|---------------------------|
+| `enter`, `modifier_enter` |
 
 ## codersdk.AgentConnectionTiming
 
@@ -1276,13 +1276,13 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`ended_at`|string|false|||
-|`stage`|[codersdk.TimingStage](#codersdktimingstage)|false|||
-|`started_at`|string|false|||
-|`workspace_agent_id`|string|false|||
-|`workspace_agent_name`|string|false|||
+| Name                   | Type                                         | Required | Restrictions | Description |
+|------------------------|----------------------------------------------|----------|--------------|-------------|
+| `ended_at`             | string                                       | false    |              |             |
+| `stage`                | [codersdk.TimingStage](#codersdktimingstage) | false    |              |             |
+| `started_at`           | string                                       | false    |              |             |
+| `workspace_agent_id`   | string                                       | false    |              |             |
+| `workspace_agent_name` | string                                       | false    |              |             |
 
 ## codersdk.AgentDisplayMode
 
@@ -1294,9 +1294,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`always_collapsed`, `always_expanded`, `auto`|
+| Value(s)                                      |
+|-----------------------------------------------|
+| `always_collapsed`, `always_expanded`, `auto` |
 
 ## codersdk.AgentFirewallLog
 
@@ -1317,18 +1317,18 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allowed`|boolean|false|||
-|`captured_at`|string|false|||
-|`created_at`|string|false|||
-|`detail`|string|false|||
-|`id`|string|false|||
-|`matched_rule`|string|false|||
-|`method`|string|false|||
-|`proto`|string|false|||
-|`sequence_number`|integer|false|||
-|`session_id`|string|false|||
+| Name              | Type    | Required | Restrictions | Description |
+|-------------------|---------|----------|--------------|-------------|
+| `allowed`         | boolean | false    |              |             |
+| `captured_at`     | string  | false    |              |             |
+| `created_at`      | string  | false    |              |             |
+| `detail`          | string  | false    |              |             |
+| `id`              | string  | false    |              |             |
+| `matched_rule`    | string  | false    |              |             |
+| `method`          | string  | false    |              |             |
+| `proto`           | string  | false    |              |             |
+| `sequence_number` | integer | false    |              |             |
+| `session_id`      | string  | false    |              |             |
 
 ## codersdk.AgentFirewallSession
 
@@ -1344,13 +1344,13 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`confined_process`|string|false|||
-|`id`|string|false|||
-|`owner_id`|string|false|||
-|`started_at`|string|false|||
-|`workspace_id`|string|false|||
+| Name               | Type   | Required | Restrictions | Description |
+|--------------------|--------|----------|--------------|-------------|
+| `confined_process` | string | false    |              |             |
+| `id`               | string | false    |              |             |
+| `owner_id`         | string | false    |              |             |
+| `started_at`       | string | false    |              |             |
+| `workspace_id`     | string | false    |              |             |
 
 ## codersdk.AgentFirewallSessionLogsResponse
 
@@ -1375,9 +1375,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`results`|array of [codersdk.AgentFirewallLog](#codersdkagentfirewalllog)|false|||
+| Name      | Type                                                            | Required | Restrictions | Description |
+|-----------|-----------------------------------------------------------------|----------|--------------|-------------|
+| `results` | array of [codersdk.AgentFirewallLog](#codersdkagentfirewalllog) | false    |              |             |
 
 ## codersdk.AgentScriptTiming
 
@@ -1396,16 +1396,16 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`ended_at`|string|false|||
-|`exit_code`|integer|false|||
-|`stage`|[codersdk.TimingStage](#codersdktimingstage)|false|||
-|`started_at`|string|false|||
-|`status`|string|false|||
-|`workspace_agent_id`|string|false|||
-|`workspace_agent_name`|string|false|||
+| Name                   | Type                                         | Required | Restrictions | Description |
+|------------------------|----------------------------------------------|----------|--------------|-------------|
+| `display_name`         | string                                       | false    |              |             |
+| `ended_at`             | string                                       | false    |              |             |
+| `exit_code`            | integer                                      | false    |              |             |
+| `stage`                | [codersdk.TimingStage](#codersdktimingstage) | false    |              |             |
+| `started_at`           | string                                       | false    |              |             |
+| `status`               | string                                       | false    |              |             |
+| `workspace_agent_id`   | string                                       | false    |              |             |
+| `workspace_agent_name` | string                                       | false    |              |             |
 
 ## codersdk.AgentSubsystem
 
@@ -1417,9 +1417,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`envbox`, `envbuilder`, `exectrace`|
+| Value(s)                            |
+|-------------------------------------|
+| `envbox`, `envbuilder`, `exectrace` |
 
 ## codersdk.AppHostResponse
 
@@ -1431,9 +1431,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`host`|string|false||Host is the externally accessible URL for the Coder instance.|
+| Name   | Type   | Required | Restrictions | Description                                                   |
+|--------|--------|----------|--------------|---------------------------------------------------------------|
+| `host` | string | false    |              | Host is the externally accessible URL for the Coder instance. |
 
 ## codersdk.AppearanceConfig
 
@@ -1467,14 +1467,14 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`announcement_banners`|array of [codersdk.BannerConfig](#codersdkbannerconfig)|false|||
-|`application_name`|string|false|||
-|`docs_url`|string|false|||
-|`logo_url`|string|false|||
-|`service_banner`|[codersdk.BannerConfig](#codersdkbannerconfig)|false||Deprecated: ServiceBanner has been replaced by AnnouncementBanners.|
-|`support_links`|array of [codersdk.LinkConfig](#codersdklinkconfig)|false|||
+| Name                   | Type                                                    | Required | Restrictions | Description                                                         |
+|------------------------|---------------------------------------------------------|----------|--------------|---------------------------------------------------------------------|
+| `announcement_banners` | array of [codersdk.BannerConfig](#codersdkbannerconfig) | false    |              |                                                                     |
+| `application_name`     | string                                                  | false    |              |                                                                     |
+| `docs_url`             | string                                                  | false    |              |                                                                     |
+| `logo_url`             | string                                                  | false    |              |                                                                     |
+| `service_banner`       | [codersdk.BannerConfig](#codersdkbannerconfig)          | false    |              | Deprecated: ServiceBanner has been replaced by AnnouncementBanners. |
+| `support_links`        | array of [codersdk.LinkConfig](#codersdklinkconfig)     | false    |              |                                                                     |
 
 ## codersdk.ArchiveTemplateVersionsRequest
 
@@ -1486,9 +1486,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`all`|boolean|false||By default, only failed versions are archived. Set this to true to archive all unused versions regardless of job status.|
+| Name  | Type    | Required | Restrictions | Description                                                                                                              |
+|-------|---------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------|
+| `all` | boolean | false    |              | By default, only failed versions are archived. Set this to true to archive all unused versions regardless of job status. |
 
 ## codersdk.AssignableRoles
 
@@ -1532,17 +1532,17 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`assignable`|boolean|false|||
-|`built_in`|boolean|false||Built in roles are immutable|
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_member_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization member permissions are specific for the organization in the field 'OrganizationID' above.|
-|`organization_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization permissions are specific for the organization in the field 'OrganizationID' above.|
-|`site_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
-|`user_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
+| Name                              | Type                                                | Required | Restrictions | Description                                                                                            |
+|-----------------------------------|-----------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------|
+| `assignable`                      | boolean                                             | false    |              |                                                                                                        |
+| `built_in`                        | boolean                                             | false    |              | Built in roles are immutable                                                                           |
+| `display_name`                    | string                                              | false    |              |                                                                                                        |
+| `name`                            | string                                              | false    |              |                                                                                                        |
+| `organization_id`                 | string                                              | false    |              |                                                                                                        |
+| `organization_member_permissions` | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization member permissions are specific for the organization in the field 'OrganizationID' above. |
+| `organization_permissions`        | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization permissions are specific for the organization in the field 'OrganizationID' above.        |
+| `site_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                                        |
+| `user_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                                        |
 
 ## codersdk.AuditAction
 
@@ -1554,9 +1554,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`close`, `connect`, `create`, `delete`, `disconnect`, `login`, `logout`, `open`, `register`, `request_password_reset`, `start`, `stop`, `write`|
+| Value(s)                                                                                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `close`, `connect`, `create`, `delete`, `disconnect`, `login`, `logout`, `open`, `register`, `request_password_reset`, `start`, `stop`, `write` |
 
 ## codersdk.AuditDiff
 
@@ -1577,9 +1577,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`[any property]`|[codersdk.AuditDiffField](#codersdkauditdifffield)|false|||
+| Name             | Type                                               | Required | Restrictions | Description |
+|------------------|----------------------------------------------------|----------|--------------|-------------|
+| `[any property]` | [codersdk.AuditDiffField](#codersdkauditdifffield) | false    |              |             |
 
 ## codersdk.AuditDiffField
 
@@ -1593,11 +1593,11 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`new`|any|false|||
-|`old`|any|false|||
-|`secret`|boolean|false|||
+| Name     | Type    | Required | Restrictions | Description |
+|----------|---------|----------|--------------|-------------|
+| `new`    | any     | false    |              |             |
+| `old`    | any     | false    |              |             |
+| `secret` | boolean | false    |              |             |
 
 ## codersdk.AuditLog
 
@@ -1667,27 +1667,27 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action`|[codersdk.AuditAction](#codersdkauditaction)|false|||
-|`additional_fields`|object|false|||
-|`description`|string|false|||
-|`diff`|[codersdk.AuditDiff](#codersdkauditdiff)|false|||
-|`id`|string|false|||
-|`ip`|string|false|||
-|`is_deleted`|boolean|false|||
-|`organization`|[codersdk.MinimalOrganization](#codersdkminimalorganization)|false|||
-|`organization_id`|string|false||Deprecated: Use 'organization.id' instead.|
-|`request_id`|string|false|||
-|`resource_icon`|string|false|||
-|`resource_id`|string|false|||
-|`resource_link`|string|false|||
-|`resource_target`|string|false||Resource target is the name of the resource.|
-|`resource_type`|[codersdk.ResourceType](#codersdkresourcetype)|false|||
-|`status_code`|integer|false|||
-|`time`|string|false|||
-|`user`|[codersdk.User](#codersdkuser)|false|||
-|`user_agent`|string|false|||
+| Name                | Type                                                         | Required | Restrictions | Description                                  |
+|---------------------|--------------------------------------------------------------|----------|--------------|----------------------------------------------|
+| `action`            | [codersdk.AuditAction](#codersdkauditaction)                 | false    |              |                                              |
+| `additional_fields` | object                                                       | false    |              |                                              |
+| `description`       | string                                                       | false    |              |                                              |
+| `diff`              | [codersdk.AuditDiff](#codersdkauditdiff)                     | false    |              |                                              |
+| `id`                | string                                                       | false    |              |                                              |
+| `ip`                | string                                                       | false    |              |                                              |
+| `is_deleted`        | boolean                                                      | false    |              |                                              |
+| `organization`      | [codersdk.MinimalOrganization](#codersdkminimalorganization) | false    |              |                                              |
+| `organization_id`   | string                                                       | false    |              | Deprecated: Use 'organization.id' instead.   |
+| `request_id`        | string                                                       | false    |              |                                              |
+| `resource_icon`     | string                                                       | false    |              |                                              |
+| `resource_id`       | string                                                       | false    |              |                                              |
+| `resource_link`     | string                                                       | false    |              |                                              |
+| `resource_target`   | string                                                       | false    |              | Resource target is the name of the resource. |
+| `resource_type`     | [codersdk.ResourceType](#codersdkresourcetype)               | false    |              |                                              |
+| `status_code`       | integer                                                      | false    |              |                                              |
+| `time`              | string                                                       | false    |              |                                              |
+| `user`              | [codersdk.User](#codersdkuser)                               | false    |              |                                              |
+| `user_agent`        | string                                                       | false    |              |                                              |
 
 ## codersdk.AuditLogResponse
 
@@ -1763,11 +1763,11 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`audit_logs`|array of [codersdk.AuditLog](#codersdkauditlog)|false|||
-|`count`|integer|false|||
-|`count_cap`|integer|false|||
+| Name         | Type                                            | Required | Restrictions | Description |
+|--------------|-------------------------------------------------|----------|--------------|-------------|
+| `audit_logs` | array of [codersdk.AuditLog](#codersdkauditlog) | false    |              |             |
+| `count`      | integer                                         | false    |              |             |
+| `count_cap`  | integer                                         | false    |              |             |
 
 ## codersdk.AuthMethod
 
@@ -1779,9 +1779,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enabled`|boolean|false|||
+| Name      | Type    | Required | Restrictions | Description |
+|-----------|---------|----------|--------------|-------------|
+| `enabled` | boolean | false    |              |             |
 
 ## codersdk.AuthMethods
 
@@ -1805,12 +1805,12 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`github`|[codersdk.GithubAuthMethod](#codersdkgithubauthmethod)|false|||
-|`oidc`|[codersdk.OIDCAuthMethod](#codersdkoidcauthmethod)|false|||
-|`password`|[codersdk.AuthMethod](#codersdkauthmethod)|false|||
-|`terms_of_service_url`|string|false|||
+| Name                   | Type                                                   | Required | Restrictions | Description |
+|------------------------|--------------------------------------------------------|----------|--------------|-------------|
+| `github`               | [codersdk.GithubAuthMethod](#codersdkgithubauthmethod) | false    |              |             |
+| `oidc`                 | [codersdk.OIDCAuthMethod](#codersdkoidcauthmethod)     | false    |              |             |
+| `password`             | [codersdk.AuthMethod](#codersdkauthmethod)             | false    |              |             |
+| `terms_of_service_url` | string                                                 | false    |              |             |
 
 ## codersdk.AuthorizationCheck
 
@@ -1831,16 +1831,16 @@ AuthorizationCheck is used to check if the currently authenticated user (or the 
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action`|[codersdk.RBACAction](#codersdkrbacaction)|false|||
-|`object`|[codersdk.AuthorizationObject](#codersdkauthorizationobject)|false||Object can represent a "set" of objects, such as: all workspaces in an organization, all workspaces owned by me, and all workspaces across the entire product. When defining an object, use the most specific language when possible to produce the smallest set. Meaning to set as many fields on 'Object' as you can. Example, if you want to check if you can update all workspaces owned by 'me', try to also add an 'OrganizationID' to the settings. Omitting the 'OrganizationID' could produce the incorrect value, as workspaces have both `user` and `organization` owners.|
+| Name     | Type                                                         | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|----------|--------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `action` | [codersdk.RBACAction](#codersdkrbacaction)                   | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `object` | [codersdk.AuthorizationObject](#codersdkauthorizationobject) | false    |              | Object can represent a "set" of objects, such as: all workspaces in an organization, all workspaces owned by me, and all workspaces across the entire product. When defining an object, use the most specific language when possible to produce the smallest set. Meaning to set as many fields on 'Object' as you can. Example, if you want to check if you can update all workspaces owned by 'me', try to also add an 'OrganizationID' to the settings. Omitting the 'OrganizationID' could produce the incorrect value, as workspaces have both `user` and `organization` owners. |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`action`|`create`, `delete`, `read`, `update`|
+| Property | Value(s)                             |
+|----------|--------------------------------------|
+| `action` | `create`, `delete`, `read`, `update` |
 
 ## codersdk.AuthorizationObject
 
@@ -1858,13 +1858,13 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`any_org`|boolean|false||Any org (optional) will disregard the org_owner when checking for permissions. This cannot be set to true if the OrganizationID is set.|
-|`organization_id`|string|false||Organization ID (optional) adds the set constraint to all resources owned by a given organization.|
-|`owner_id`|string|false||Owner ID (optional) adds the set constraint to all resources owned by a given user.|
-|`resource_id`|string|false||Resource ID (optional) reduces the set to a singular resource. This assigns a resource ID to the resource type, eg: a single workspace. The rbac library will not fetch the resource from the database, so if you are using this option, you should also set the owner ID and organization ID if possible. Be as specific as possible using all the fields relevant.|
-|`resource_type`|[codersdk.RBACResource](#codersdkrbacresource)|false||Resource type is the name of the resource. `./coderd/rbac/object.go` has the list of valid resource types.|
+| Name              | Type                                           | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                          |
+|-------------------|------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `any_org`         | boolean                                        | false    |              | Any org (optional) will disregard the org_owner when checking for permissions. This cannot be set to true if the OrganizationID is set.                                                                                                                                                                                                                              |
+| `organization_id` | string                                         | false    |              | Organization ID (optional) adds the set constraint to all resources owned by a given organization.                                                                                                                                                                                                                                                                   |
+| `owner_id`        | string                                         | false    |              | Owner ID (optional) adds the set constraint to all resources owned by a given user.                                                                                                                                                                                                                                                                                  |
+| `resource_id`     | string                                         | false    |              | Resource ID (optional) reduces the set to a singular resource. This assigns a resource ID to the resource type, eg: a single workspace. The rbac library will not fetch the resource from the database, so if you are using this option, you should also set the owner ID and organization ID if possible. Be as specific as possible using all the fields relevant. |
+| `resource_type`   | [codersdk.RBACResource](#codersdkrbacresource) | false    |              | Resource type is the name of the resource. `./coderd/rbac/object.go` has the list of valid resource types.                                                                                                                                                                                                                                                           |
 
 ## codersdk.AuthorizationRequest
 
@@ -1897,10 +1897,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`checks`|object|false||Checks is a map keyed with an arbitrary string to a permission check. The key can be any string that is helpful to the caller, and allows multiple permission checks to be run in a single request. The key ensures that each permission check has the same key in the response.|
-|» `[any property]`|[codersdk.AuthorizationCheck](#codersdkauthorizationcheck)|false||It is used to check if the currently authenticated user (or the specified user) can do a given action to a given set of objects.|
+| Name               | Type                                                       | Required | Restrictions | Description                                                                                                                                                                                                                                                                      |
+|--------------------|------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `checks`           | object                                                     | false    |              | Checks is a map keyed with an arbitrary string to a permission check. The key can be any string that is helpful to the caller, and allows multiple permission checks to be run in a single request. The key ensures that each permission check has the same key in the response. |
+| » `[any property]` | [codersdk.AuthorizationCheck](#codersdkauthorizationcheck) | false    |              | It is used to check if the currently authenticated user (or the specified user) can do a given action to a given set of objects.                                                                                                                                                 |
 
 ## codersdk.AuthorizationResponse
 
@@ -1913,9 +1913,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`[any property]`|boolean|false|||
+| Name             | Type    | Required | Restrictions | Description |
+|------------------|---------|----------|--------------|-------------|
+| `[any property]` | boolean | false    |              |             |
 
 ## codersdk.AutomaticUpdates
 
@@ -1927,9 +1927,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`always`, `never`|
+| Value(s)          |
+|-------------------|
+| `always`, `never` |
 
 ## codersdk.BannerConfig
 
@@ -1943,11 +1943,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`background_color`|string|false|||
-|`enabled`|boolean|false|||
-|`message`|string|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `background_color` | string  | false    |              |             |
+| `enabled`          | boolean | false    |              |             |
+| `message`          | string  | false    |              |             |
 
 ## codersdk.BuildInfoResponse
 
@@ -1968,18 +1968,18 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_api_version`|string|false||Agent api version is the current version of the Agent API (back versions MAY still be supported).|
-|`dashboard_url`|string|false||Dashboard URL is the URL to hit the deployment's dashboard. For external workspace proxies, this is the coderd they are connected to.|
-|`deployment_id`|string|false||Deployment ID is the unique identifier for this deployment.|
-|`external_url`|string|false||External URL references the current Coder version. For production builds, this will link directly to a release. For development builds, this will link to a commit.|
-|`provisioner_api_version`|string|false||Provisioner api version is the current version of the Provisioner API|
-|`telemetry`|boolean|false||Telemetry is a boolean that indicates whether telemetry is enabled.|
-|`upgrade_message`|string|false||Upgrade message is the message displayed to users when an outdated client is detected.|
-|`version`|string|false||Version returns the semantic version of the build.|
-|`webpush_public_key`|string|false||Webpush public key is the public key for push notifications via Web Push.|
-|`workspace_proxy`|boolean|false|||
+| Name                      | Type    | Required | Restrictions | Description                                                                                                                                                         |
+|---------------------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_api_version`       | string  | false    |              | Agent api version is the current version of the Agent API (back versions MAY still be supported).                                                                   |
+| `dashboard_url`           | string  | false    |              | Dashboard URL is the URL to hit the deployment's dashboard. For external workspace proxies, this is the coderd they are connected to.                               |
+| `deployment_id`           | string  | false    |              | Deployment ID is the unique identifier for this deployment.                                                                                                         |
+| `external_url`            | string  | false    |              | External URL references the current Coder version. For production builds, this will link directly to a release. For development builds, this will link to a commit. |
+| `provisioner_api_version` | string  | false    |              | Provisioner api version is the current version of the Provisioner API                                                                                               |
+| `telemetry`               | boolean | false    |              | Telemetry is a boolean that indicates whether telemetry is enabled.                                                                                                 |
+| `upgrade_message`         | string  | false    |              | Upgrade message is the message displayed to users when an outdated client is detected.                                                                              |
+| `version`                 | string  | false    |              | Version returns the semantic version of the build.                                                                                                                  |
+| `webpush_public_key`      | string  | false    |              | Webpush public key is the public key for push notifications via Web Push.                                                                                           |
+| `workspace_proxy`         | boolean | false    |              |                                                                                                                                                                     |
 
 ## codersdk.BuildReason
 
@@ -1991,9 +1991,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`autostart`, `autostop`, `cli`, `dashboard`, `dormancy`, `initiator`, `jetbrains_connection`, `ssh_connection`, `task_auto_pause`, `task_manual_pause`, `task_resume`, `vscode_connection`|
+| Value(s)                                                                                                                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `autostart`, `autostop`, `cli`, `dashboard`, `dormancy`, `initiator`, `jetbrains_connection`, `ssh_connection`, `task_auto_pause`, `task_manual_pause`, `task_resume`, `vscode_connection` |
 
 ## codersdk.CORSBehavior
 
@@ -2005,9 +2005,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`passthru`, `simple`|
+| Value(s)             |
+|----------------------|
+| `passthru`, `simple` |
 
 ## codersdk.ChangePasswordWithOneTimePasscodeRequest
 
@@ -2021,11 +2021,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`email`|string|true|||
-|`one_time_passcode`|string|true|||
-|`password`|string|true|||
+| Name                | Type   | Required | Restrictions | Description |
+|---------------------|--------|----------|--------------|-------------|
+| `email`             | string | true     |              |             |
+| `one_time_passcode` | string | true     |              |             |
+| `password`          | string | true     |              |             |
 
 ## codersdk.Chat
 
@@ -2229,40 +2229,40 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_id`|string|false|||
-|`archived`|boolean|false|||
-|`build_id`|string|false|||
-|`children`|array of [codersdk.Chat](#codersdkchat)|false||Children holds child (subagent) chats nested under this root chat. Always initialized to an empty slice so the JSON field is present as []. Child chats cannot create their own subagents, so nesting depth is capped at 1 and this slice is always empty for child chats.|
-|`client_type`|[codersdk.ChatClientType](#codersdkchatclienttype)|false|||
-|`context`|[codersdk.ChatContext](#codersdkchatcontext)|false||Context reports the chat's pinned workspace-context state and whether it has drifted from the agent's latest pushed snapshot. Nil when the chat has no pinned context yet.|
-|`created_at`|string|false|||
-|`diff_status`|[codersdk.ChatDiffStatus](#codersdkchatdiffstatus)|false|||
-|`files`|array of [codersdk.ChatFileMetadata](#codersdkchatfilemetadata)|false|||
-|`has_unread`|boolean|false||Has unread is true when assistant messages exist beyond the owner's read cursor, which updates on stream connect and disconnect.|
-|`id`|string|false|||
-|`labels`|object|false|||
-|» `[any property]`|string|false|||
-|`last_error`|[codersdk.ChatError](#codersdkchaterror)|false|||
-|`last_model_config_id`|string|false|||
-|`last_reasoning_effort`|string|false|||
-|`last_turn_summary`|string|false|||
-|`mcp_server_ids`|array of string|false|||
-|`organization_id`|string|false|||
-|`owner_id`|string|false|||
-|`owner_name`|string|false|||
-|`owner_username`|string|false|||
-|`parent_chat_id`|string|false|||
-|`pin_order`|integer|false|||
-|`plan_mode`|[codersdk.ChatPlanMode](#codersdkchatplanmode)|false|||
-|`root_chat_id`|string|false|||
-|`shared`|boolean|false||Shared is true when this chat's root chat has explicit user or group ACL entries.|
-|`status`|[codersdk.ChatStatus](#codersdkchatstatus)|false|||
-|`title`|string|false|||
-|`updated_at`|string|false|||
-|`warnings`|array of string|false|||
-|`workspace_id`|string|false|||
+| Name                    | Type                                                            | Required | Restrictions | Description                                                                                                                                                                                                                                                                |
+|-------------------------|-----------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_id`              | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `archived`              | boolean                                                         | false    |              |                                                                                                                                                                                                                                                                            |
+| `build_id`              | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `children`              | array of [codersdk.Chat](#codersdkchat)                         | false    |              | Children holds child (subagent) chats nested under this root chat. Always initialized to an empty slice so the JSON field is present as []. Child chats cannot create their own subagents, so nesting depth is capped at 1 and this slice is always empty for child chats. |
+| `client_type`           | [codersdk.ChatClientType](#codersdkchatclienttype)              | false    |              |                                                                                                                                                                                                                                                                            |
+| `context`               | [codersdk.ChatContext](#codersdkchatcontext)                    | false    |              | Context reports the chat's pinned workspace-context state and whether it has drifted from the agent's latest pushed snapshot. Nil when the chat has no pinned context yet.                                                                                                 |
+| `created_at`            | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `diff_status`           | [codersdk.ChatDiffStatus](#codersdkchatdiffstatus)              | false    |              |                                                                                                                                                                                                                                                                            |
+| `files`                 | array of [codersdk.ChatFileMetadata](#codersdkchatfilemetadata) | false    |              |                                                                                                                                                                                                                                                                            |
+| `has_unread`            | boolean                                                         | false    |              | Has unread is true when assistant messages exist beyond the owner's read cursor, which updates on stream connect and disconnect.                                                                                                                                           |
+| `id`                    | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `labels`                | object                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| » `[any property]`      | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `last_error`            | [codersdk.ChatError](#codersdkchaterror)                        | false    |              |                                                                                                                                                                                                                                                                            |
+| `last_model_config_id`  | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `last_reasoning_effort` | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `last_turn_summary`     | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `mcp_server_ids`        | array of string                                                 | false    |              |                                                                                                                                                                                                                                                                            |
+| `organization_id`       | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `owner_id`              | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `owner_name`            | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `owner_username`        | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `parent_chat_id`        | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `pin_order`             | integer                                                         | false    |              |                                                                                                                                                                                                                                                                            |
+| `plan_mode`             | [codersdk.ChatPlanMode](#codersdkchatplanmode)                  | false    |              |                                                                                                                                                                                                                                                                            |
+| `root_chat_id`          | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `shared`                | boolean                                                         | false    |              | Shared is true when this chat's root chat has explicit user or group ACL entries.                                                                                                                                                                                          |
+| `status`                | [codersdk.ChatStatus](#codersdkchatstatus)                      | false    |              |                                                                                                                                                                                                                                                                            |
+| `title`                 | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `updated_at`            | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
+| `warnings`              | array of string                                                 | false    |              |                                                                                                                                                                                                                                                                            |
+| `workspace_id`          | string                                                          | false    |              |                                                                                                                                                                                                                                                                            |
 
 ## codersdk.ChatACL
 
@@ -2313,10 +2313,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`groups`|array of [codersdk.ChatGroup](#codersdkchatgroup)|false|||
-|`users`|array of [codersdk.ChatUser](#codersdkchatuser)|false|||
+| Name     | Type                                              | Required | Restrictions | Description |
+|----------|---------------------------------------------------|----------|--------------|-------------|
+| `groups` | array of [codersdk.ChatGroup](#codersdkchatgroup) | false    |              |             |
+| `users`  | array of [codersdk.ChatUser](#codersdkchatuser)   | false    |              |             |
 
 ## codersdk.ChatBusyBehavior
 
@@ -2328,9 +2328,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`interrupt`, `queue`|
+| Value(s)             |
+|----------------------|
+| `interrupt`, `queue` |
 
 ## codersdk.ChatClientType
 
@@ -2342,9 +2342,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`api`, `ui`|
+| Value(s)    |
+|-------------|
+| `api`, `ui` |
 
 ## codersdk.ChatConfig
 
@@ -2357,10 +2357,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`acquire_batch_size`|integer|false|||
-|`debug_logging_enabled`|boolean|false|||
+| Name                    | Type    | Required | Restrictions | Description |
+|-------------------------|---------|----------|--------------|-------------|
+| `acquire_batch_size`    | integer | false    |              |             |
+| `debug_logging_enabled` | boolean | false    |              |             |
 
 ## codersdk.ChatContext
 
@@ -2391,12 +2391,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dirty`|boolean|false||Dirty is true when the agent's latest snapshot hash differs from the chat's pinned hash.|
-|`dirty_since`|string|false||Dirty since is when drift was first detected; nil when not dirty.|
-|`error`|string|false||Error is the snapshot-level error copied from the pinned snapshot (empty when healthy).|
-|`resources`|array of [codersdk.ChatContextResource](#codersdkchatcontextresource)|false||Resources is the chat's pinned context (instruction files and skills) the prompt is built from, metadata only (no bodies). It is populated only on the single-chat GET response; list and watch payloads leave it nil to stay lightweight.|
+| Name          | Type                                                                  | Required | Restrictions | Description                                                                                                                                                                                                                                |
+|---------------|-----------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dirty`       | boolean                                                               | false    |              | Dirty is true when the agent's latest snapshot hash differs from the chat's pinned hash.                                                                                                                                                   |
+| `dirty_since` | string                                                                | false    |              | Dirty since is when drift was first detected; nil when not dirty.                                                                                                                                                                          |
+| `error`       | string                                                                | false    |              | Error is the snapshot-level error copied from the pinned snapshot (empty when healthy).                                                                                                                                                    |
+| `resources`   | array of [codersdk.ChatContextResource](#codersdkchatcontextresource) | false    |              | Resources is the chat's pinned context (instruction files and skills) the prompt is built from, metadata only (no bodies). It is populated only on the single-chat GET response; list and watch payloads leave it nil to stay lightweight. |
 
 ## codersdk.ChatContextResource
 
@@ -2420,16 +2420,16 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`error`|string|false||Error explains a non-ok Status; empty when healthy. May also carry a non-fatal warning when Status is ok.|
-|`kind`|[codersdk.ChatContextResourceKind](#codersdkchatcontextresourcekind)|false|||
-|`size_bytes`|integer|false||Size bytes is the original payload size in bytes.|
-|`skill_description`|string|false|||
-|`skill_name`|string|false||Skill name and SkillDescription are populated only for skill kinds.|
-|`source`|string|false||Source is the resource locator: the canonical file path for an instruction file, the skill directory for a skill, the file path for an MCP config, or the server name for an MCP server.|
-|`status`|[codersdk.ChatContextResourceStatus](#codersdkchatcontextresourcestatus)|false||Status is the resource's health. Non-ok resources (invalid, unreadable, oversize, excluded) are still reported so the UI can surface why a resource was dropped from the prompt instead of silently omitting it; their body-specific fields (skill name, tools) are empty.|
-|`tools`|array of [codersdk.ChatContextTool](#codersdkchatcontexttool)|false||Tools lists the tools exposed by an MCP server. Populated only for the mcp_server kind; nil otherwise.|
+| Name                | Type                                                                     | Required | Restrictions | Description                                                                                                                                                                                                                                                                |
+|---------------------|--------------------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `error`             | string                                                                   | false    |              | Error explains a non-ok Status; empty when healthy. May also carry a non-fatal warning when Status is ok.                                                                                                                                                                  |
+| `kind`              | [codersdk.ChatContextResourceKind](#codersdkchatcontextresourcekind)     | false    |              |                                                                                                                                                                                                                                                                            |
+| `size_bytes`        | integer                                                                  | false    |              | Size bytes is the original payload size in bytes.                                                                                                                                                                                                                          |
+| `skill_description` | string                                                                   | false    |              |                                                                                                                                                                                                                                                                            |
+| `skill_name`        | string                                                                   | false    |              | Skill name and SkillDescription are populated only for skill kinds.                                                                                                                                                                                                        |
+| `source`            | string                                                                   | false    |              | Source is the resource locator: the canonical file path for an instruction file, the skill directory for a skill, the file path for an MCP config, or the server name for an MCP server.                                                                                   |
+| `status`            | [codersdk.ChatContextResourceStatus](#codersdkchatcontextresourcestatus) | false    |              | Status is the resource's health. Non-ok resources (invalid, unreadable, oversize, excluded) are still reported so the UI can surface why a resource was dropped from the prompt instead of silently omitting it; their body-specific fields (skill name, tools) are empty. |
+| `tools`             | array of [codersdk.ChatContextTool](#codersdkchatcontexttool)            | false    |              | Tools lists the tools exposed by an MCP server. Populated only for the mcp_server kind; nil otherwise.                                                                                                                                                                     |
 
 ## codersdk.ChatContextResourceKind
 
@@ -2441,9 +2441,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`instruction_file`, `mcp_config`, `mcp_server`, `skill`|
+| Value(s)                                                |
+|---------------------------------------------------------|
+| `instruction_file`, `mcp_config`, `mcp_server`, `skill` |
 
 ## codersdk.ChatContextResourceStatus
 
@@ -2455,9 +2455,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`excluded`, `invalid`, `ok`, `oversize`, `unreadable`|
+| Value(s)                                              |
+|-------------------------------------------------------|
+| `excluded`, `invalid`, `ok`, `oversize`, `unreadable` |
 
 ## codersdk.ChatContextTool
 
@@ -2470,10 +2470,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false||Description is the tool's human-readable summary; may be empty.|
-|`name`|string|false||Name is the tool name with the "<server>__" prefix the agent adds stripped, so it reads as the server exposes it.|
+| Name          | Type   | Required | Restrictions | Description                                                                                                       |
+|---------------|--------|----------|--------------|-------------------------------------------------------------------------------------------------------------------|
+| `description` | string | false    |              | Description is the tool's human-readable summary; may be empty.                                                   |
+| `name`        | string | false    |              | Name is the tool name with the "<server>__" prefix the agent adds stripped, so it reads as the server exposes it. |
 
 ## codersdk.ChatDiffContents
 
@@ -2490,14 +2490,14 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`branch`|string|false|||
-|`chat_id`|string|false|||
-|`diff`|string|false|||
-|`provider`|string|false|||
-|`pull_request_url`|string|false|||
-|`remote_origin`|string|false|||
+| Name               | Type   | Required | Restrictions | Description |
+|--------------------|--------|----------|--------------|-------------|
+| `branch`           | string | false    |              |             |
+| `chat_id`          | string | false    |              |             |
+| `diff`             | string | false    |              |             |
+| `provider`         | string | false    |              |             |
+| `pull_request_url` | string | false    |              |             |
+| `remote_origin`    | string | false    |              |             |
 
 ## codersdk.ChatDiffStatus
 
@@ -2527,27 +2527,27 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`additions`|integer|false|||
-|`approved`|boolean|false|||
-|`author_avatar_url`|string|false|||
-|`author_login`|string|false|||
-|`base_branch`|string|false|||
-|`changed_files`|integer|false|||
-|`changes_requested`|boolean|false|||
-|`chat_id`|string|false|||
-|`commits`|integer|false|||
-|`deletions`|integer|false|||
-|`head_branch`|string|false|||
-|`pr_number`|integer|false|||
-|`pull_request_draft`|boolean|false|||
-|`pull_request_state`|string|false|||
-|`pull_request_title`|string|false|||
-|`refreshed_at`|string|false|||
-|`reviewer_count`|integer|false|||
-|`stale_at`|string|false|||
-|`url`|string|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `additions`          | integer | false    |              |             |
+| `approved`           | boolean | false    |              |             |
+| `author_avatar_url`  | string  | false    |              |             |
+| `author_login`       | string  | false    |              |             |
+| `base_branch`        | string  | false    |              |             |
+| `changed_files`      | integer | false    |              |             |
+| `changes_requested`  | boolean | false    |              |             |
+| `chat_id`            | string  | false    |              |             |
+| `commits`            | integer | false    |              |             |
+| `deletions`          | integer | false    |              |             |
+| `head_branch`        | string  | false    |              |             |
+| `pr_number`          | integer | false    |              |             |
+| `pull_request_draft` | boolean | false    |              |             |
+| `pull_request_state` | string  | false    |              |             |
+| `pull_request_title` | string  | false    |              |             |
+| `refreshed_at`       | string  | false    |              |             |
+| `reviewer_count`     | integer | false    |              |             |
+| `stale_at`           | string  | false    |              |             |
+| `url`                | string  | false    |              |             |
 
 ## codersdk.ChatError
 
@@ -2564,14 +2564,14 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`detail`|string|false||Detail is optional provider-specific context shown alongside the normalized error message when available.|
-|`kind`|[codersdk.ChatErrorKind](#codersdkchaterrorkind)|false||Kind classifies the error for consistent client rendering.|
-|`message`|string|false||Message is the normalized, user-facing error message.|
-|`provider`|string|false||Provider identifies the upstream model provider when known.|
-|`retryable`|boolean|false||Retryable reports whether the underlying error is transient.|
-|`status_code`|integer|false||Status code is the best-effort upstream HTTP status code.|
+| Name          | Type                                             | Required | Restrictions | Description                                                                                               |
+|---------------|--------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------|
+| `detail`      | string                                           | false    |              | Detail is optional provider-specific context shown alongside the normalized error message when available. |
+| `kind`        | [codersdk.ChatErrorKind](#codersdkchaterrorkind) | false    |              | Kind classifies the error for consistent client rendering.                                                |
+| `message`     | string                                           | false    |              | Message is the normalized, user-facing error message.                                                     |
+| `provider`    | string                                           | false    |              | Provider identifies the upstream model provider when known.                                               |
+| `retryable`   | boolean                                          | false    |              | Retryable reports whether the underlying error is transient.                                              |
+| `status_code` | integer                                          | false    |              | Status code is the best-effort upstream HTTP status code.                                                 |
 
 ## codersdk.ChatErrorKind
 
@@ -2583,9 +2583,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`auth`, `config`, `content_filter`, `generic`, `missing_key`, `overloaded`, `provider_disabled`, `rate_limit`, `stream_silence_timeout`, `timeout`, `usage_limit`|
+| Value(s)                                                                                                                                                          |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `auth`, `config`, `content_filter`, `generic`, `missing_key`, `overloaded`, `provider_disabled`, `rate_limit`, `stream_silence_timeout`, `timeout`, `usage_limit` |
 
 ## codersdk.ChatFileMetadata
 
@@ -2602,14 +2602,14 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`mime_type`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`owner_id`|string|false|||
+| Name              | Type   | Required | Restrictions | Description |
+|-------------------|--------|----------|--------------|-------------|
+| `created_at`      | string | false    |              |             |
+| `id`              | string | false    |              |             |
+| `mime_type`       | string | false    |              |             |
+| `name`            | string | false    |              |             |
+| `organization_id` | string | false    |              |             |
+| `owner_id`        | string | false    |              |             |
 
 ## codersdk.ChatGroup
 
@@ -2647,26 +2647,26 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`members`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
-|`name`|string|false|||
-|`organization_display_name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`quota_allowance`|integer|false|||
-|`role`|[codersdk.ChatRole](#codersdkchatrole)|false|||
-|`source`|[codersdk.GroupSource](#codersdkgroupsource)|false|||
-|`total_member_count`|integer|false||How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`.|
+| Name                        | Type                                                  | Required | Restrictions | Description                                                                                                                                                           |
+|-----------------------------|-------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avatar_url`                | string                                                | false    |              |                                                                                                                                                                       |
+| `display_name`              | string                                                | false    |              |                                                                                                                                                                       |
+| `id`                        | string                                                | false    |              |                                                                                                                                                                       |
+| `members`                   | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |                                                                                                                                                                       |
+| `name`                      | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_display_name` | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_id`           | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_name`         | string                                                | false    |              |                                                                                                                                                                       |
+| `quota_allowance`           | integer                                               | false    |              |                                                                                                                                                                       |
+| `role`                      | [codersdk.ChatRole](#codersdkchatrole)                | false    |              |                                                                                                                                                                       |
+| `source`                    | [codersdk.GroupSource](#codersdkgroupsource)          | false    |              |                                                                                                                                                                       |
+| `total_member_count`        | integer                                               | false    |              | How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`. |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`read`|
+| Property | Value(s) |
+|----------|----------|
+| `role`   | `read`   |
 
 ## codersdk.ChatInputPart
 
@@ -2684,15 +2684,15 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|string|false||The code content from the diff that was commented on.|
-|`end_line`|integer|false|||
-|`file_id`|string|false|||
-|`file_name`|string|false||The following fields are only set when Type is ChatInputPartTypeFileReference.|
-|`start_line`|integer|false|||
-|`text`|string|false|||
-|`type`|[codersdk.ChatInputPartType](#codersdkchatinputparttype)|false|||
+| Name         | Type                                                     | Required | Restrictions | Description                                                                    |
+|--------------|----------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------|
+| `content`    | string                                                   | false    |              | The code content from the diff that was commented on.                          |
+| `end_line`   | integer                                                  | false    |              |                                                                                |
+| `file_id`    | string                                                   | false    |              |                                                                                |
+| `file_name`  | string                                                   | false    |              | The following fields are only set when Type is ChatInputPartTypeFileReference. |
+| `start_line` | integer                                                  | false    |              |                                                                                |
+| `text`       | string                                                   | false    |              |                                                                                |
+| `type`       | [codersdk.ChatInputPartType](#codersdkchatinputparttype) | false    |              |                                                                                |
 
 ## codersdk.ChatInputPartType
 
@@ -2704,9 +2704,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`file`, `file-reference`, `text`|
+| Value(s)                         |
+|----------------------------------|
+| `file`, `file-reference`, `text` |
 
 ## codersdk.ChatMessage
 
@@ -2796,16 +2796,16 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`chat_id`|string|false|||
-|`content`|array of [codersdk.ChatMessagePart](#codersdkchatmessagepart)|false|||
-|`created_at`|string|false|||
-|`created_by`|string|false|||
-|`id`|integer|false|||
-|`model_config_id`|string|false|||
-|`role`|[codersdk.ChatMessageRole](#codersdkchatmessagerole)|false|||
-|`usage`|[codersdk.ChatMessageUsage](#codersdkchatmessageusage)|false|||
+| Name              | Type                                                          | Required | Restrictions | Description |
+|-------------------|---------------------------------------------------------------|----------|--------------|-------------|
+| `chat_id`         | string                                                        | false    |              |             |
+| `content`         | array of [codersdk.ChatMessagePart](#codersdkchatmessagepart) | false    |              |             |
+| `created_at`      | string                                                        | false    |              |             |
+| `created_by`      | string                                                        | false    |              |             |
+| `id`              | integer                                                       | false    |              |             |
+| `model_config_id` | string                                                        | false    |              |             |
+| `role`            | [codersdk.ChatMessageRole](#codersdkchatmessagerole)          | false    |              |             |
+| `usage`           | [codersdk.ChatMessageUsage](#codersdkchatmessageusage)        | false    |              |             |
 
 ## codersdk.ChatMessagePart
 
@@ -2876,47 +2876,47 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`args`|array of integer|false|||
-|`args_delta`|string|false|||
-|`completed_at`|string|false||Completed at is the time a reasoning part finished streaming, so reasoning duration can be computed as completed_at minus created_at. For interrupted reasoning, this is the interruption time. Absent when reasoning timestamp data was not recorded (e.g. messages persisted before this feature was added).|
-|`content`|string|false||The code content from the diff that was commented on.|
-|`context_file_agent_id`|[uuid.NullUUID](#uuidnulluuid)|false||Context file agent ID is the workspace agent that provided this context file. Used to detect when the agent changes (e.g. workspace rebuilt) so instruction files can be re-persisted with fresh content.|
-|`context_file_content`|string|false||Context file content holds the file content sent to the LLM. Internal only: stripped before API responses to keep payloads small. The backend reads it when building the prompt via partsToMessageParts.|
-|`context_file_directory`|string|false||Context file directory is the working directory of the workspace agent. Internal only: same purpose as ContextFileOS.|
-|`context_file_os`|string|false||Context file os is the operating system of the workspace agent. Internal only: used during prompt expansion so the LLM knows the OS even on turns where InsertSystem is not called.|
-|`context_file_path`|string|false||Context file path is the absolute path of a file loaded into the LLM context (e.g. an AGENTS.md instruction file).|
-|`context_file_skill_meta_file`|string|false||Context file skill meta file is the basename of the skill meta file (e.g. "SKILL.md") at the time of persistence. Internal only: restored on subsequent turns so the read_skill tool uses the correct filename even when the agent configured a non-default value.|
-|`context_file_truncated`|boolean|false||Context file truncated indicates the file exceeded the 64KiB instruction file limit and was truncated.|
-|`created_at`|string|false||Created at is the timestamp this part carries. The semantics depend on the part type: for tool-call and tool-result parts it is the time the call was emitted or the result was produced (tool duration is the result's created_at minus the call's created_at); for reasoning parts it is the time reasoning started streaming.|
-|`data`|array of integer|false|||
-|`end_line`|integer|false|||
-|`file_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`file_name`|string|false|||
-|`is_error`|boolean|false|||
-|`is_media`|boolean|false|||
-|`mcp_server_config_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`media_type`|string|false|||
-|`name`|string|false|||
-|`parsed_commands`|array of array|false||Parsed commands holds parsed programs from an execute tool call's shell command, one entry per simple command in source order. Each entry is [program] or [program, arg] where arg is the first non-flag positional argument. Program names are normalized to their base name (e.g. /usr/bin/go becomes go). Only populated when ToolName is "execute" and the command parses successfully; nil otherwise.|
-|`provider_executed`|boolean|false||Provider executed indicates the tool call was executed by the provider (e.g. Anthropic computer use).|
-|`provider_metadata`|array of integer|false||Provider metadata holds provider-specific response metadata (e.g. Anthropic cache control hints) as raw JSON. Internal only: stripped by db2sdk before API responses.|
-|`result`|array of integer|false|||
-|`result_delta`|string|false|||
-|`result_reset`|boolean|false|||
-|`signature`|string|false|||
-|`skill_description`|string|false||Skill description is the short description from the skill's SKILL.md frontmatter.|
-|`skill_dir`|string|false||Skill dir is the absolute path to the skill directory inside the workspace filesystem. Internal only: used by read_skill/read_skill_file tools to locate skill files.|
-|`skill_name`|string|false||Skill name is the kebab-case name of a discovered skill from the workspace's .agents/skills/ directory.|
-|`source_id`|string|false|||
-|`start_line`|integer|false|||
-|`text`|string|false|||
-|`title`|string|false|||
-|`tool_call_id`|string|false|||
-|`tool_name`|string|false|||
-|`type`|[codersdk.ChatMessagePartType](#codersdkchatmessageparttype)|false|||
-|`url`|string|false|||
+| Name                           | Type                                                         | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                                                |
+|--------------------------------|--------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `args`                         | array of integer                                             | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `args_delta`                   | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `completed_at`                 | string                                                       | false    |              | Completed at is the time a reasoning part finished streaming, so reasoning duration can be computed as completed_at minus created_at. For interrupted reasoning, this is the interruption time. Absent when reasoning timestamp data was not recorded (e.g. messages persisted before this feature was added).                                                                                             |
+| `content`                      | string                                                       | false    |              | The code content from the diff that was commented on.                                                                                                                                                                                                                                                                                                                                                      |
+| `context_file_agent_id`        | [uuid.NullUUID](#uuidnulluuid)                               | false    |              | Context file agent ID is the workspace agent that provided this context file. Used to detect when the agent changes (e.g. workspace rebuilt) so instruction files can be re-persisted with fresh content.                                                                                                                                                                                                  |
+| `context_file_content`         | string                                                       | false    |              | Context file content holds the file content sent to the LLM. Internal only: stripped before API responses to keep payloads small. The backend reads it when building the prompt via partsToMessageParts.                                                                                                                                                                                                   |
+| `context_file_directory`       | string                                                       | false    |              | Context file directory is the working directory of the workspace agent. Internal only: same purpose as ContextFileOS.                                                                                                                                                                                                                                                                                      |
+| `context_file_os`              | string                                                       | false    |              | Context file os is the operating system of the workspace agent. Internal only: used during prompt expansion so the LLM knows the OS even on turns where InsertSystem is not called.                                                                                                                                                                                                                        |
+| `context_file_path`            | string                                                       | false    |              | Context file path is the absolute path of a file loaded into the LLM context (e.g. an AGENTS.md instruction file).                                                                                                                                                                                                                                                                                         |
+| `context_file_skill_meta_file` | string                                                       | false    |              | Context file skill meta file is the basename of the skill meta file (e.g. "SKILL.md") at the time of persistence. Internal only: restored on subsequent turns so the read_skill tool uses the correct filename even when the agent configured a non-default value.                                                                                                                                         |
+| `context_file_truncated`       | boolean                                                      | false    |              | Context file truncated indicates the file exceeded the 64KiB instruction file limit and was truncated.                                                                                                                                                                                                                                                                                                     |
+| `created_at`                   | string                                                       | false    |              | Created at is the timestamp this part carries. The semantics depend on the part type: for tool-call and tool-result parts it is the time the call was emitted or the result was produced (tool duration is the result's created_at minus the call's created_at); for reasoning parts it is the time reasoning started streaming.                                                                           |
+| `data`                         | array of integer                                             | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `end_line`                     | integer                                                      | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `file_id`                      | [uuid.NullUUID](#uuidnulluuid)                               | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `file_name`                    | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `is_error`                     | boolean                                                      | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `is_media`                     | boolean                                                      | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `mcp_server_config_id`         | [uuid.NullUUID](#uuidnulluuid)                               | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `media_type`                   | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `name`                         | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `parsed_commands`              | array of array                                               | false    |              | Parsed commands holds parsed programs from an execute tool call's shell command, one entry per simple command in source order. Each entry is [program] or [program, arg] where arg is the first non-flag positional argument. Program names are normalized to their base name (e.g. /usr/bin/go becomes go). Only populated when ToolName is "execute" and the command parses successfully; nil otherwise. |
+| `provider_executed`            | boolean                                                      | false    |              | Provider executed indicates the tool call was executed by the provider (e.g. Anthropic computer use).                                                                                                                                                                                                                                                                                                      |
+| `provider_metadata`            | array of integer                                             | false    |              | Provider metadata holds provider-specific response metadata (e.g. Anthropic cache control hints) as raw JSON. Internal only: stripped by db2sdk before API responses.                                                                                                                                                                                                                                      |
+| `result`                       | array of integer                                             | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `result_delta`                 | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `result_reset`                 | boolean                                                      | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `signature`                    | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `skill_description`            | string                                                       | false    |              | Skill description is the short description from the skill's SKILL.md frontmatter.                                                                                                                                                                                                                                                                                                                          |
+| `skill_dir`                    | string                                                       | false    |              | Skill dir is the absolute path to the skill directory inside the workspace filesystem. Internal only: used by read_skill/read_skill_file tools to locate skill files.                                                                                                                                                                                                                                      |
+| `skill_name`                   | string                                                       | false    |              | Skill name is the kebab-case name of a discovered skill from the workspace's .agents/skills/ directory.                                                                                                                                                                                                                                                                                                    |
+| `source_id`                    | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `start_line`                   | integer                                                      | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `text`                         | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `title`                        | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `tool_call_id`                 | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `tool_name`                    | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `type`                         | [codersdk.ChatMessagePartType](#codersdkchatmessageparttype) | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `url`                          | string                                                       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## codersdk.ChatMessagePartType
 
@@ -2928,9 +2928,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`context-file`, `file`, `file-reference`, `reasoning`, `skill`, `source`, `text`, `tool-call`, `tool-result`|
+| Value(s)                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------|
+| `context-file`, `file`, `file-reference`, `reasoning`, `skill`, `source`, `text`, `tool-call`, `tool-result` |
 
 ## codersdk.ChatMessageRole
 
@@ -2942,9 +2942,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`assistant`, `system`, `tool`, `user`|
+| Value(s)                              |
+|---------------------------------------|
+| `assistant`, `system`, `tool`, `user` |
 
 ## codersdk.ChatMessageUsage
 
@@ -2962,15 +2962,15 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`cache_creation_tokens`|integer|false|||
-|`cache_read_tokens`|integer|false|||
-|`context_limit`|integer|false|||
-|`input_tokens`|integer|false|||
-|`output_tokens`|integer|false|||
-|`reasoning_tokens`|integer|false|||
-|`total_tokens`|integer|false|||
+| Name                    | Type    | Required | Restrictions | Description |
+|-------------------------|---------|----------|--------------|-------------|
+| `cache_creation_tokens` | integer | false    |              |             |
+| `cache_read_tokens`     | integer | false    |              |             |
+| `context_limit`         | integer | false    |              |             |
+| `input_tokens`          | integer | false    |              |             |
+| `output_tokens`         | integer | false    |              |             |
+| `reasoning_tokens`      | integer | false    |              |             |
+| `total_tokens`          | integer | false    |              |             |
 
 ## codersdk.ChatMessagesResponse
 
@@ -3137,11 +3137,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`has_more`|boolean|false|||
-|`messages`|array of [codersdk.ChatMessage](#codersdkchatmessage)|false|||
-|`queued_messages`|array of [codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage)|false|||
+| Name              | Type                                                              | Required | Restrictions | Description |
+|-------------------|-------------------------------------------------------------------|----------|--------------|-------------|
+| `has_more`        | boolean                                                           | false    |              |             |
+| `messages`        | array of [codersdk.ChatMessage](#codersdkchatmessage)             | false    |              |             |
+| `queued_messages` | array of [codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage) | false    |              |             |
 
 ## codersdk.ChatModel
 
@@ -3156,12 +3156,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`model`|string|false|||
-|`provider`|string|false|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `display_name` | string | false    |              |             |
+| `id`           | string | false    |              |             |
+| `model`        | string | false    |              |             |
+| `provider`     | string | false    |              |             |
 
 ## codersdk.ChatModelProvider
 
@@ -3183,12 +3183,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`available`|boolean|false|||
-|`models`|array of [codersdk.ChatModel](#codersdkchatmodel)|false|||
-|`provider`|string|false|||
-|`unavailable_reason`|[codersdk.ChatModelProviderUnavailableReason](#codersdkchatmodelproviderunavailablereason)|false|||
+| Name                 | Type                                                                                       | Required | Restrictions | Description |
+|----------------------|--------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `available`          | boolean                                                                                    | false    |              |             |
+| `models`             | array of [codersdk.ChatModel](#codersdkchatmodel)                                          | false    |              |             |
+| `provider`           | string                                                                                     | false    |              |             |
+| `unavailable_reason` | [codersdk.ChatModelProviderUnavailableReason](#codersdkchatmodelproviderunavailablereason) | false    |              |             |
 
 ## codersdk.ChatModelProviderUnavailableReason
 
@@ -3200,9 +3200,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`fetch_failed`, `missing_api_key`, `user_api_key_required`|
+| Value(s)                                                   |
+|------------------------------------------------------------|
+| `fetch_failed`, `missing_api_key`, `user_api_key_required` |
 
 ## codersdk.ChatModelsResponse
 
@@ -3234,10 +3234,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`providers`|array of [codersdk.ChatModelProvider](#codersdkchatmodelprovider)|false|||
-|`unsupported_providers`|array of [codersdk.ChatUnsupportedProvider](#codersdkchatunsupportedprovider)|false||Unsupported providers lists configured providers the Agents harness cannot use, so the UI can explain the empty state.|
+| Name                    | Type                                                                          | Required | Restrictions | Description                                                                                                            |
+|-------------------------|-------------------------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------|
+| `providers`             | array of [codersdk.ChatModelProvider](#codersdkchatmodelprovider)             | false    |              |                                                                                                                        |
+| `unsupported_providers` | array of [codersdk.ChatUnsupportedProvider](#codersdkchatunsupportedprovider) | false    |              | Unsupported providers lists configured providers the Agents harness cannot use, so the UI can explain the empty state. |
 
 ## codersdk.ChatPlanMode
 
@@ -3249,9 +3249,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`plan`|
+| Value(s) |
+|----------|
+| `plan`   |
 
 ## codersdk.ChatPrompt
 
@@ -3264,10 +3264,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|integer|false|||
-|`text`|string|false|||
+| Name   | Type    | Required | Restrictions | Description |
+|--------|---------|----------|--------------|-------------|
+| `id`   | integer | false    |              |             |
+| `text` | string  | false    |              |             |
 
 ## codersdk.ChatPromptsResponse
 
@@ -3284,9 +3284,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`prompts`|array of [codersdk.ChatPrompt](#codersdkchatprompt)|false|||
+| Name      | Type                                                | Required | Restrictions | Description |
+|-----------|-----------------------------------------------------|----------|--------------|-------------|
+| `prompts` | array of [codersdk.ChatPrompt](#codersdkchatprompt) | false    |              |             |
 
 ## codersdk.ChatQueuedMessage
 
@@ -3365,13 +3365,13 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`chat_id`|string|false|||
-|`content`|array of [codersdk.ChatMessagePart](#codersdkchatmessagepart)|false|||
-|`created_at`|string|false|||
-|`id`|integer|false|||
-|`model_config_id`|string|false|||
+| Name              | Type                                                          | Required | Restrictions | Description |
+|-------------------|---------------------------------------------------------------|----------|--------------|-------------|
+| `chat_id`         | string                                                        | false    |              |             |
+| `content`         | array of [codersdk.ChatMessagePart](#codersdkchatmessagepart) | false    |              |             |
+| `created_at`      | string                                                        | false    |              |             |
+| `id`              | integer                                                       | false    |              |             |
+| `model_config_id` | string                                                        | false    |              |             |
 
 ## codersdk.ChatRetentionDaysResponse
 
@@ -3383,9 +3383,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`retention_days`|integer|false|||
+| Name             | Type    | Required | Restrictions | Description |
+|------------------|---------|----------|--------------|-------------|
+| `retention_days` | integer | false    |              |             |
 
 ## codersdk.ChatRole
 
@@ -3397,9 +3397,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `read`|
+| Value(s)   |
+|------------|
+| ``, `read` |
 
 ## codersdk.ChatStatus
 
@@ -3411,9 +3411,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`error`, `interrupting`, `requires_action`, `running`, `waiting`|
+| Value(s)                                                         |
+|------------------------------------------------------------------|
+| `error`, `interrupting`, `requires_action`, `running`, `waiting` |
 
 ## codersdk.ChatStreamActionRequired
 
@@ -3431,9 +3431,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`tool_calls`|array of [codersdk.ChatStreamToolCall](#codersdkchatstreamtoolcall)|false|||
+| Name         | Type                                                                | Required | Restrictions | Description |
+|--------------|---------------------------------------------------------------------|----------|--------------|-------------|
+| `tool_calls` | array of [codersdk.ChatStreamToolCall](#codersdkchatstreamtoolcall) | false    |              |             |
 
 ## codersdk.ChatStreamEvent
 
@@ -3696,17 +3696,17 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action_required`|[codersdk.ChatStreamActionRequired](#codersdkchatstreamactionrequired)|false|||
-|`chat_id`|string|false|||
-|`error`|[codersdk.ChatError](#codersdkchaterror)|false|||
-|`message`|[codersdk.ChatMessage](#codersdkchatmessage)|false|||
-|`message_part`|[codersdk.ChatStreamMessagePart](#codersdkchatstreammessagepart)|false|||
-|`queued_messages`|array of [codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage)|false|||
-|`retry`|[codersdk.ChatStreamRetry](#codersdkchatstreamretry)|false|||
-|`status`|[codersdk.ChatStreamStatus](#codersdkchatstreamstatus)|false|||
-|`type`|[codersdk.ChatStreamEventType](#codersdkchatstreameventtype)|false|||
+| Name              | Type                                                                   | Required | Restrictions | Description |
+|-------------------|------------------------------------------------------------------------|----------|--------------|-------------|
+| `action_required` | [codersdk.ChatStreamActionRequired](#codersdkchatstreamactionrequired) | false    |              |             |
+| `chat_id`         | string                                                                 | false    |              |             |
+| `error`           | [codersdk.ChatError](#codersdkchaterror)                               | false    |              |             |
+| `message`         | [codersdk.ChatMessage](#codersdkchatmessage)                           | false    |              |             |
+| `message_part`    | [codersdk.ChatStreamMessagePart](#codersdkchatstreammessagepart)       | false    |              |             |
+| `queued_messages` | array of [codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage)      | false    |              |             |
+| `retry`           | [codersdk.ChatStreamRetry](#codersdkchatstreamretry)                   | false    |              |             |
+| `status`          | [codersdk.ChatStreamStatus](#codersdkchatstreamstatus)                 | false    |              |             |
+| `type`            | [codersdk.ChatStreamEventType](#codersdkchatstreameventtype)           | false    |              |             |
 
 ## codersdk.ChatStreamEventType
 
@@ -3718,9 +3718,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`action_required`, `error`, `history_reset`, `message`, `message_part`, `preview_reset`, `queue_update`, `retry`, `status`|
+| Value(s)                                                                                                                   |
+|----------------------------------------------------------------------------------------------------------------------------|
+| `action_required`, `error`, `history_reset`, `message`, `message_part`, `preview_reset`, `queue_update`, `retry`, `status` |
 
 ## codersdk.ChatStreamMessagePart
 
@@ -3797,13 +3797,13 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`generation_attempt`|integer|false|||
-|`history_version`|integer|false|||
-|`part`|[codersdk.ChatMessagePart](#codersdkchatmessagepart)|false|||
-|`role`|[codersdk.ChatMessageRole](#codersdkchatmessagerole)|false|||
-|`seq`|integer|false|||
+| Name                 | Type                                                 | Required | Restrictions | Description |
+|----------------------|------------------------------------------------------|----------|--------------|-------------|
+| `generation_attempt` | integer                                              | false    |              |             |
+| `history_version`    | integer                                              | false    |              |             |
+| `part`               | [codersdk.ChatMessagePart](#codersdkchatmessagepart) | false    |              |             |
+| `role`               | [codersdk.ChatMessageRole](#codersdkchatmessagerole) | false    |              |             |
+| `seq`                | integer                                              | false    |              |             |
 
 ## codersdk.ChatStreamRetry
 
@@ -3821,15 +3821,15 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`attempt`|integer|false||Attempt is the 1-indexed retry attempt number.|
-|`delay_ms`|integer|false||Delay ms is the backoff delay in milliseconds before the retry.|
-|`error`|string|false||Error is the normalized error message from the failed attempt.|
-|`kind`|[codersdk.ChatErrorKind](#codersdkchaterrorkind)|false||Kind classifies the retry reason for consistent client rendering.|
-|`provider`|string|false||Provider identifies the upstream model provider when known.|
-|`retrying_at`|string|false||Retrying at is the timestamp when the retry will be attempted.|
-|`status_code`|integer|false||Status code is the best-effort upstream HTTP status code.|
+| Name          | Type                                             | Required | Restrictions | Description                                                       |
+|---------------|--------------------------------------------------|----------|--------------|-------------------------------------------------------------------|
+| `attempt`     | integer                                          | false    |              | Attempt is the 1-indexed retry attempt number.                    |
+| `delay_ms`    | integer                                          | false    |              | Delay ms is the backoff delay in milliseconds before the retry.   |
+| `error`       | string                                           | false    |              | Error is the normalized error message from the failed attempt.    |
+| `kind`        | [codersdk.ChatErrorKind](#codersdkchaterrorkind) | false    |              | Kind classifies the retry reason for consistent client rendering. |
+| `provider`    | string                                           | false    |              | Provider identifies the upstream model provider when known.       |
+| `retrying_at` | string                                           | false    |              | Retrying at is the timestamp when the retry will be attempted.    |
+| `status_code` | integer                                          | false    |              | Status code is the best-effort upstream HTTP status code.         |
 
 ## codersdk.ChatStreamStatus
 
@@ -3841,9 +3841,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`status`|[codersdk.ChatStatus](#codersdkchatstatus)|false|||
+| Name     | Type                                       | Required | Restrictions | Description |
+|----------|--------------------------------------------|----------|--------------|-------------|
+| `status` | [codersdk.ChatStatus](#codersdkchatstatus) | false    |              |             |
 
 ## codersdk.ChatStreamToolCall
 
@@ -3857,11 +3857,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`args`|string|false|||
-|`tool_call_id`|string|false|||
-|`tool_name`|string|false|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `args`         | string | false    |              |             |
+| `tool_call_id` | string | false    |              |             |
+| `tool_name`    | string | false    |              |             |
 
 ## codersdk.ChatUnsupportedProvider
 
@@ -3874,10 +3874,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`provider`|string|false||Provider is the provider type, e.g. "copilot".|
+| Name           | Type   | Required | Restrictions | Description                                    |
+|----------------|--------|----------|--------------|------------------------------------------------|
+| `display_name` | string | false    |              |                                                |
+| `provider`     | string | false    |              | Provider is the provider type, e.g. "copilot". |
 
 ## codersdk.ChatUser
 
@@ -3893,19 +3893,19 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`id`|string|true|||
-|`name`|string|false|||
-|`role`|[codersdk.ChatRole](#codersdkchatrole)|false|||
-|`username`|string|true|||
+| Name         | Type                                   | Required | Restrictions | Description |
+|--------------|----------------------------------------|----------|--------------|-------------|
+| `avatar_url` | string                                 | false    |              |             |
+| `id`         | string                                 | true     |              |             |
+| `name`       | string                                 | false    |              |             |
+| `role`       | [codersdk.ChatRole](#codersdkchatrole) | false    |              |             |
+| `username`   | string                                 | true     |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`read`|
+| Property | Value(s) |
+|----------|----------|
+| `role`   | `read`   |
 
 ## codersdk.ChatWatchEvent
 
@@ -4023,11 +4023,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`chat`|[codersdk.Chat](#codersdkchat)|false|||
-|`kind`|[codersdk.ChatWatchEventKind](#codersdkchatwatcheventkind)|false|||
-|`tool_calls`|array of [codersdk.ChatStreamToolCall](#codersdkchatstreamtoolcall)|false|||
+| Name         | Type                                                                | Required | Restrictions | Description |
+|--------------|---------------------------------------------------------------------|----------|--------------|-------------|
+| `chat`       | [codersdk.Chat](#codersdkchat)                                      | false    |              |             |
+| `kind`       | [codersdk.ChatWatchEventKind](#codersdkchatwatcheventkind)          | false    |              |             |
+| `tool_calls` | array of [codersdk.ChatStreamToolCall](#codersdkchatstreamtoolcall) | false    |              |             |
 
 ## codersdk.ChatWatchEventKind
 
@@ -4039,9 +4039,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`action_required`, `context_dirty`, `created`, `deleted`, `diff_status_change`, `status_change`, `summary_change`, `title_change`|
+| Value(s)                                                                                                                          |
+|-----------------------------------------------------------------------------------------------------------------------------------|
+| `action_required`, `context_dirty`, `created`, `deleted`, `diff_status_change`, `status_change`, `summary_change`, `title_change` |
 
 ## codersdk.ClusterConfig
 
@@ -4053,9 +4053,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`host`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `host` | string | false    |              |             |
 
 ## codersdk.ConnectionLatency
 
@@ -4068,10 +4068,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`p50`|number|false|||
-|`p95`|number|false|||
+| Name  | Type   | Required | Restrictions | Description |
+|-------|--------|----------|--------------|-------------|
+| `p50` | number | false    |              |             |
+| `p95` | number | false    |              |             |
 
 ## codersdk.ConnectionLog
 
@@ -4133,20 +4133,20 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false|||
-|`connect_time`|string|false|||
-|`id`|string|false|||
-|`ip`|string|false|||
-|`organization`|[codersdk.MinimalOrganization](#codersdkminimalorganization)|false|||
-|`ssh_info`|[codersdk.ConnectionLogSSHInfo](#codersdkconnectionlogsshinfo)|false||Ssh info is only set when `type` is one of: - `ConnectionTypeSSH` - `ConnectionTypeReconnectingPTY` - `ConnectionTypeVSCode` - `ConnectionTypeJetBrains`|
-|`type`|[codersdk.ConnectionType](#codersdkconnectiontype)|false|||
-|`web_info`|[codersdk.ConnectionLogWebInfo](#codersdkconnectionlogwebinfo)|false||Web info is only set when `type` is one of: - `ConnectionTypePortForwarding` - `ConnectionTypeWorkspaceApp`|
-|`workspace_id`|string|false|||
-|`workspace_name`|string|false|||
-|`workspace_owner_id`|string|false|||
-|`workspace_owner_username`|string|false|||
+| Name                       | Type                                                           | Required | Restrictions | Description                                                                                                                                              |
+|----------------------------|----------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_name`               | string                                                         | false    |              |                                                                                                                                                          |
+| `connect_time`             | string                                                         | false    |              |                                                                                                                                                          |
+| `id`                       | string                                                         | false    |              |                                                                                                                                                          |
+| `ip`                       | string                                                         | false    |              |                                                                                                                                                          |
+| `organization`             | [codersdk.MinimalOrganization](#codersdkminimalorganization)   | false    |              |                                                                                                                                                          |
+| `ssh_info`                 | [codersdk.ConnectionLogSSHInfo](#codersdkconnectionlogsshinfo) | false    |              | Ssh info is only set when `type` is one of: - `ConnectionTypeSSH` - `ConnectionTypeReconnectingPTY` - `ConnectionTypeVSCode` - `ConnectionTypeJetBrains` |
+| `type`                     | [codersdk.ConnectionType](#codersdkconnectiontype)             | false    |              |                                                                                                                                                          |
+| `web_info`                 | [codersdk.ConnectionLogWebInfo](#codersdkconnectionlogwebinfo) | false    |              | Web info is only set when `type` is one of: - `ConnectionTypePortForwarding` - `ConnectionTypeWorkspaceApp`                                              |
+| `workspace_id`             | string                                                         | false    |              |                                                                                                                                                          |
+| `workspace_name`           | string                                                         | false    |              |                                                                                                                                                          |
+| `workspace_owner_id`       | string                                                         | false    |              |                                                                                                                                                          |
+| `workspace_owner_username` | string                                                         | false    |              |                                                                                                                                                          |
 
 ## codersdk.ConnectionLogResponse
 
@@ -4214,11 +4214,11 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`connection_logs`|array of [codersdk.ConnectionLog](#codersdkconnectionlog)|false|||
-|`count`|integer|false|||
-|`count_cap`|integer|false|||
+| Name              | Type                                                      | Required | Restrictions | Description |
+|-------------------|-----------------------------------------------------------|----------|--------------|-------------|
+| `connection_logs` | array of [codersdk.ConnectionLog](#codersdkconnectionlog) | false    |              |             |
+| `count`           | integer                                                   | false    |              |             |
+| `count_cap`       | integer                                                   | false    |              |             |
 
 ## codersdk.ConnectionLogSSHInfo
 
@@ -4233,12 +4233,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`connection_id`|string|false|||
-|`disconnect_reason`|string|false||Disconnect reason is omitted if a disconnect event with the same connection ID has not yet been seen.|
-|`disconnect_time`|string|false||Disconnect time is omitted if a disconnect event with the same connection ID has not yet been seen.|
-|`exit_code`|integer|false||Exit code is the exit code of the SSH session. It is omitted if a disconnect event with the same connection ID has not yet been seen.|
+| Name                | Type    | Required | Restrictions | Description                                                                                                                           |
+|---------------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `connection_id`     | string  | false    |              |                                                                                                                                       |
+| `disconnect_reason` | string  | false    |              | Disconnect reason is omitted if a disconnect event with the same connection ID has not yet been seen.                                 |
+| `disconnect_time`   | string  | false    |              | Disconnect time is omitted if a disconnect event with the same connection ID has not yet been seen.                                   |
+| `exit_code`         | integer | false    |              | Exit code is the exit code of the SSH session. It is omitted if a disconnect event with the same connection ID has not yet been seen. |
 
 ## codersdk.ConnectionLogWebInfo
 
@@ -4277,12 +4277,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`slug_or_port`|string|false|||
-|`status_code`|integer|false||Status code is the HTTP status code of the request.|
-|`user`|[codersdk.User](#codersdkuser)|false||User is omitted if the connection event was from an unauthenticated user.|
-|`user_agent`|string|false|||
+| Name           | Type                           | Required | Restrictions | Description                                                               |
+|----------------|--------------------------------|----------|--------------|---------------------------------------------------------------------------|
+| `slug_or_port` | string                         | false    |              |                                                                           |
+| `status_code`  | integer                        | false    |              | Status code is the HTTP status code of the request.                       |
+| `user`         | [codersdk.User](#codersdkuser) | false    |              | User is omitted if the connection event was from an unauthenticated user. |
+| `user_agent`   | string                         | false    |              |                                                                           |
 
 ## codersdk.ConnectionType
 
@@ -4294,9 +4294,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`jetbrains`, `port_forwarding`, `reconnecting_pty`, `ssh`, `vscode`, `workspace_app`|
+| Value(s)                                                                             |
+|--------------------------------------------------------------------------------------|
+| `jetbrains`, `port_forwarding`, `reconnecting_pty`, `ssh`, `vscode`, `workspace_app` |
 
 ## codersdk.ConvertLoginRequest
 
@@ -4309,10 +4309,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`password`|string|true|||
-|`to_type`|[codersdk.LoginType](#codersdklogintype)|true||To type is the login type to convert to.|
+| Name       | Type                                     | Required | Restrictions | Description                              |
+|------------|------------------------------------------|----------|--------------|------------------------------------------|
+| `password` | string                                   | true     |              |                                          |
+| `to_type`  | [codersdk.LoginType](#codersdklogintype) | true     |              | To type is the login type to convert to. |
 
 ## codersdk.CreateAIGatewayKeyRequest
 
@@ -4324,9 +4324,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|true|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `name` | string | true     |              |             |
 
 ## codersdk.CreateAIGatewayKeyResponse
 
@@ -4342,13 +4342,13 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`key`|string|false|||
-|`key_prefix`|string|false|||
-|`name`|string|false|||
+| Name         | Type   | Required | Restrictions | Description |
+|--------------|--------|----------|--------------|-------------|
+| `created_at` | string | false    |              |             |
+| `id`         | string | false    |              |             |
+| `key`        | string | false    |              |             |
+| `key_prefix` | string | false    |              |             |
+| `name`       | string | false    |              |             |
 
 ## codersdk.CreateAIProviderRequest
 
@@ -4369,16 +4369,16 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_keys`|array of string|false|||
-|`base_url`|string|false|||
-|`display_name`|string|false|||
-|`enabled`|boolean|false|||
-|`icon`|string|false|||
-|`name`|string|false|||
-|`settings`|[codersdk.AIProviderSettings](#codersdkaiprovidersettings)|false|||
-|`type`|[codersdk.AIProviderType](#codersdkaiprovidertype)|false|||
+| Name           | Type                                                       | Required | Restrictions | Description |
+|----------------|------------------------------------------------------------|----------|--------------|-------------|
+| `api_keys`     | array of string                                            | false    |              |             |
+| `base_url`     | string                                                     | false    |              |             |
+| `display_name` | string                                                     | false    |              |             |
+| `enabled`      | boolean                                                    | false    |              |             |
+| `icon`         | string                                                     | false    |              |             |
+| `name`         | string                                                     | false    |              |             |
+| `settings`     | [codersdk.AIProviderSettings](#codersdkaiprovidersettings) | false    |              |             |
+| `type`         | [codersdk.AIProviderType](#codersdkaiprovidertype)         | false    |              |             |
 
 ## codersdk.CreateChatMessageRequest
 
@@ -4407,20 +4407,20 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`busy_behavior`|[codersdk.ChatBusyBehavior](#codersdkchatbusybehavior)|false|||
-|`content`|array of [codersdk.ChatInputPart](#codersdkchatinputpart)|false|||
-|`mcp_server_ids`|array of string|false|||
-|`model_config_id`|string|false|||
-|`plan_mode`|[codersdk.ChatPlanMode](#codersdkchatplanmode)|false||Plan mode switches the chat's persistent plan mode. nil: no change, ptr to "plan": enable, ptr to "": clear.|
-|`reasoning_effort`|string|false|||
+| Name               | Type                                                      | Required | Restrictions | Description                                                                                                  |
+|--------------------|-----------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------|
+| `busy_behavior`    | [codersdk.ChatBusyBehavior](#codersdkchatbusybehavior)    | false    |              |                                                                                                              |
+| `content`          | array of [codersdk.ChatInputPart](#codersdkchatinputpart) | false    |              |                                                                                                              |
+| `mcp_server_ids`   | array of string                                           | false    |              |                                                                                                              |
+| `model_config_id`  | string                                                    | false    |              |                                                                                                              |
+| `plan_mode`        | [codersdk.ChatPlanMode](#codersdkchatplanmode)            | false    |              | Plan mode switches the chat's persistent plan mode. nil: no change, ptr to "plan": enable, ptr to "": clear. |
+| `reasoning_effort` | string                                                    | false    |              |                                                                                                              |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`busy_behavior`|`interrupt`, `queue`|
+| Property        | Value(s)             |
+|-----------------|----------------------|
+| `busy_behavior` | `interrupt`, `queue` |
 
 ## codersdk.CreateChatMessageResponse
 
@@ -4586,12 +4586,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|[codersdk.ChatMessage](#codersdkchatmessage)|false|||
-|`queued`|boolean|false|||
-|`queued_message`|[codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage)|false|||
-|`warnings`|array of string|false|||
+| Name             | Type                                                     | Required | Restrictions | Description |
+|------------------|----------------------------------------------------------|----------|--------------|-------------|
+| `message`        | [codersdk.ChatMessage](#codersdkchatmessage)             | false    |              |             |
+| `queued`         | boolean                                                  | false    |              |             |
+| `queued_message` | [codersdk.ChatQueuedMessage](#codersdkchatqueuedmessage) | false    |              |             |
+| `warnings`       | array of string                                          | false    |              |             |
 
 ## codersdk.CreateChatRequest
 
@@ -4636,20 +4636,20 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_type`|[codersdk.ChatClientType](#codersdkchatclienttype)|false|||
-|`content`|array of [codersdk.ChatInputPart](#codersdkchatinputpart)|false|||
-|`labels`|object|false|||
-|» `[any property]`|string|false|||
-|`mcp_server_ids`|array of string|false|||
-|`model_config_id`|string|false|||
-|`organization_id`|string|false|||
-|`plan_mode`|[codersdk.ChatPlanMode](#codersdkchatplanmode)|false|||
-|`reasoning_effort`|string|false|||
-|`system_prompt`|string|false|||
-|`unsafe_dynamic_tools`|array of [codersdk.DynamicTool](#codersdkdynamictool)|false||Unsafe dynamic tools declares client-executed tools that the LLM can invoke. This API is highly experimental and highly subject to change.|
-|`workspace_id`|string|false|||
+| Name                   | Type                                                      | Required | Restrictions | Description                                                                                                                                |
+|------------------------|-----------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `client_type`          | [codersdk.ChatClientType](#codersdkchatclienttype)        | false    |              |                                                                                                                                            |
+| `content`              | array of [codersdk.ChatInputPart](#codersdkchatinputpart) | false    |              |                                                                                                                                            |
+| `labels`               | object                                                    | false    |              |                                                                                                                                            |
+| » `[any property]`     | string                                                    | false    |              |                                                                                                                                            |
+| `mcp_server_ids`       | array of string                                           | false    |              |                                                                                                                                            |
+| `model_config_id`      | string                                                    | false    |              |                                                                                                                                            |
+| `organization_id`      | string                                                    | false    |              |                                                                                                                                            |
+| `plan_mode`            | [codersdk.ChatPlanMode](#codersdkchatplanmode)            | false    |              |                                                                                                                                            |
+| `reasoning_effort`     | string                                                    | false    |              |                                                                                                                                            |
+| `system_prompt`        | string                                                    | false    |              |                                                                                                                                            |
+| `unsafe_dynamic_tools` | array of [codersdk.DynamicTool](#codersdkdynamictool)     | false    |              | Unsafe dynamic tools declares client-executed tools that the LLM can invoke. This API is highly experimental and highly subject to change. |
+| `workspace_id`         | string                                                    | false    |              |                                                                                                                                            |
 
 ## codersdk.CreateFirstUserOnboardingInfo
 
@@ -4662,10 +4662,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`newsletter_marketing`|boolean|false|||
-|`newsletter_releases`|boolean|false|||
+| Name                   | Type    | Required | Restrictions | Description |
+|------------------------|---------|----------|--------------|-------------|
+| `newsletter_marketing` | boolean | false    |              |             |
+| `newsletter_releases`  | boolean | false    |              |             |
 
 ## codersdk.CreateFirstUserRequest
 
@@ -4694,15 +4694,15 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`email`|string|true|||
-|`name`|string|false|||
-|`onboarding_info`|[codersdk.CreateFirstUserOnboardingInfo](#codersdkcreatefirstuseronboardinginfo)|false|||
-|`password`|string|true|||
-|`trial`|boolean|false|||
-|`trial_info`|[codersdk.CreateFirstUserTrialInfo](#codersdkcreatefirstusertrialinfo)|false|||
-|`username`|string|true|||
+| Name              | Type                                                                             | Required | Restrictions | Description |
+|-------------------|----------------------------------------------------------------------------------|----------|--------------|-------------|
+| `email`           | string                                                                           | true     |              |             |
+| `name`            | string                                                                           | false    |              |             |
+| `onboarding_info` | [codersdk.CreateFirstUserOnboardingInfo](#codersdkcreatefirstuseronboardinginfo) | false    |              |             |
+| `password`        | string                                                                           | true     |              |             |
+| `trial`           | boolean                                                                          | false    |              |             |
+| `trial_info`      | [codersdk.CreateFirstUserTrialInfo](#codersdkcreatefirstusertrialinfo)           | false    |              |             |
+| `username`        | string                                                                           | true     |              |             |
 
 ## codersdk.CreateFirstUserResponse
 
@@ -4715,10 +4715,10 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`organization_id`|string|false|||
-|`user_id`|string|false|||
+| Name              | Type   | Required | Restrictions | Description |
+|-------------------|--------|----------|--------------|-------------|
+| `organization_id` | string | false    |              |             |
+| `user_id`         | string | false    |              |             |
 
 ## codersdk.CreateFirstUserTrialInfo
 
@@ -4736,15 +4736,15 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`company_name`|string|false|||
-|`country`|string|false|||
-|`developers`|string|false|||
-|`first_name`|string|false|||
-|`job_title`|string|false|||
-|`last_name`|string|false|||
-|`phone_number`|string|false|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `company_name` | string | false    |              |             |
+| `country`      | string | false    |              |             |
+| `developers`   | string | false    |              |             |
+| `first_name`   | string | false    |              |             |
+| `job_title`    | string | false    |              |             |
+| `last_name`    | string | false    |              |             |
+| `phone_number` | string | false    |              |             |
 
 ## codersdk.CreateGroupRequest
 
@@ -4759,12 +4759,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`name`|string|true|||
-|`quota_allowance`|integer|false|||
+| Name              | Type    | Required | Restrictions | Description |
+|-------------------|---------|----------|--------------|-------------|
+| `avatar_url`      | string  | false    |              |             |
+| `display_name`    | string  | false    |              |             |
+| `name`            | string  | true     |              |             |
+| `quota_allowance` | integer | false    |              |             |
 
 ## codersdk.CreateOrganizationRequest
 
@@ -4779,12 +4779,12 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`display_name`|string|false||Display name will default to the same value as `Name` if not provided.|
-|`icon`|string|false|||
-|`name`|string|true|||
+| Name           | Type   | Required | Restrictions | Description                                                            |
+|----------------|--------|----------|--------------|------------------------------------------------------------------------|
+| `description`  | string | false    |              |                                                                        |
+| `display_name` | string | false    |              | Display name will default to the same value as `Name` if not provided. |
+| `icon`         | string | false    |              |                                                                        |
+| `name`         | string | true     |              |                                                                        |
 
 ## codersdk.CreateProvisionerKeyResponse
 
@@ -4796,9 +4796,9 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`key`|string|false|||
+| Name  | Type   | Required | Restrictions | Description |
+|-------|--------|----------|--------------|-------------|
+| `key` | string | false    |              |             |
 
 ## codersdk.CreateTaskRequest
 
@@ -4814,13 +4814,13 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`input`|string|false|||
-|`name`|string|false|||
-|`template_version_id`|string|false|||
-|`template_version_preset_id`|string|false|||
+| Name                         | Type   | Required | Restrictions | Description |
+|------------------------------|--------|----------|--------------|-------------|
+| `display_name`               | string | false    |              |             |
+| `input`                      | string | false    |              |             |
+| `name`                       | string | false    |              |             |
+| `template_version_id`        | string | false    |              |             |
+| `template_version_preset_id` | string | false    |              |             |
 
 ## codersdk.CreateTemplateRequest
 
@@ -4861,27 +4861,27 @@ AuthorizationObject can represent a "set" of objects, such as: all workspaces in
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`activity_bump_ms`|integer|false||Activity bump ms allows optionally specifying the activity bump duration for all workspaces created from this template. Defaults to 1h but can be set to 0 to disable activity bumping.|
-|`allow_user_autostart`|boolean|false||Allow user autostart allows users to set a schedule for autostarting their workspace. By default this is true. This can only be disabled when using an enterprise license.|
-|`allow_user_autostop`|boolean|false||Allow user autostop allows users to set a custom workspace TTL to use in place of the template's DefaultTTL field. By default this is true. If false, the DefaultTTL will always be used. This can only be disabled when using an enterprise license.|
-|`allow_user_cancel_workspace_jobs`|boolean|false||Allow users to cancel in-progress workspace jobs. *bool as the default value is "true".|
-|`autostart_requirement`|[codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement)|false||Autostart requirement allows optionally specifying the autostart allowed days for workspaces created from this template. This is an enterprise feature.|
-|`autostop_requirement`|[codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)|false||Autostop requirement allows optionally specifying the autostop requirement for workspaces created from this template. This is an enterprise feature.|
-|`cors_behavior`|[codersdk.CORSBehavior](#codersdkcorsbehavior)|false||Cors behavior allows optionally specifying the CORS behavior for all shared ports.|
-|`default_ttl_ms`|integer|false||Default ttl ms allows optionally specifying the default TTL for all workspaces created from this template.|
-|`delete_ttl_ms`|integer|false||Delete ttl ms allows optionally specifying the max lifetime before Coder permanently deletes dormant workspaces created from this template.|
-|`description`|string|false||Description is a description of what the template contains. It must be less than 128 bytes.|
-|`disable_everyone_group_access`|boolean|false||Disable everyone group access allows optionally disabling the default behavior of granting the 'everyone' group access to use the template. If this is set to true, the template will not be available to all users, and must be explicitly granted to users or groups in the permissions settings of the template.|
-|`display_name`|string|false||Display name is the displayed name of the template.|
-|`dormant_ttl_ms`|integer|false||Dormant ttl ms allows optionally specifying the max lifetime before Coder locks inactive workspaces created from this template.|
-|`failure_ttl_ms`|integer|false||Failure ttl ms allows optionally specifying the max lifetime before Coder stops all resources for failed workspaces created from this template.|
-|`icon`|string|false||Icon is a relative path or external URL that specifies an icon to be displayed in the dashboard.|
-|`max_port_share_level`|[codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)|false||Max port share level allows optionally specifying the maximum port share level for workspaces created from the template.|
-|`name`|string|true||Name is the name of the template.|
-|`require_active_version`|boolean|false||Require active version mandates that workspaces are built with the active template version.|
-|`template_use_classic_parameter_flow`|boolean|false||Template use classic parameter flow allows optionally specifying whether the template should use the classic parameter flow. The default if unset is true, and is why `*bool` is used here. When dynamic parameters becomes the default, this will default to false.|
+| Name                                  | Type                                                                           | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                         |
+|---------------------------------------|--------------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `activity_bump_ms`                    | integer                                                                        | false    |              | Activity bump ms allows optionally specifying the activity bump duration for all workspaces created from this template. Defaults to 1h but can be set to 0 to disable activity bumping.                                                                                                                             |
+| `allow_user_autostart`                | boolean                                                                        | false    |              | Allow user autostart allows users to set a schedule for autostarting their workspace. By default this is true. This can only be disabled when using an enterprise license.                                                                                                                                          |
+| `allow_user_autostop`                 | boolean                                                                        | false    |              | Allow user autostop allows users to set a custom workspace TTL to use in place of the template's DefaultTTL field. By default this is true. If false, the DefaultTTL will always be used. This can only be disabled when using an enterprise license.                                                               |
+| `allow_user_cancel_workspace_jobs`    | boolean                                                                        | false    |              | Allow users to cancel in-progress workspace jobs. *bool as the default value is "true".                                                                                                                                                                                                                             |
+| `autostart_requirement`               | [codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement) | false    |              | Autostart requirement allows optionally specifying the autostart allowed days for workspaces created from this template. This is an enterprise feature.                                                                                                                                                             |
+| `autostop_requirement`                | [codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)   | false    |              | Autostop requirement allows optionally specifying the autostop requirement for workspaces created from this template. This is an enterprise feature.                                                                                                                                                                |
+| `cors_behavior`                       | [codersdk.CORSBehavior](#codersdkcorsbehavior)                                 | false    |              | Cors behavior allows optionally specifying the CORS behavior for all shared ports.                                                                                                                                                                                                                                  |
+| `default_ttl_ms`                      | integer                                                                        | false    |              | Default ttl ms allows optionally specifying the default TTL for all workspaces created from this template.                                                                                                                                                                                                          |
+| `delete_ttl_ms`                       | integer                                                                        | false    |              | Delete ttl ms allows optionally specifying the max lifetime before Coder permanently deletes dormant workspaces created from this template.                                                                                                                                                                         |
+| `description`                         | string                                                                         | false    |              | Description is a description of what the template contains. It must be less than 128 bytes.                                                                                                                                                                                                                         |
+| `disable_everyone_group_access`       | boolean                                                                        | false    |              | Disable everyone group access allows optionally disabling the default behavior of granting the 'everyone' group access to use the template. If this is set to true, the template will not be available to all users, and must be explicitly granted to users or groups in the permissions settings of the template. |
+| `display_name`                        | string                                                                         | false    |              | Display name is the displayed name of the template.                                                                                                                                                                                                                                                                 |
+| `dormant_ttl_ms`                      | integer                                                                        | false    |              | Dormant ttl ms allows optionally specifying the max lifetime before Coder locks inactive workspaces created from this template.                                                                                                                                                                                     |
+| `failure_ttl_ms`                      | integer                                                                        | false    |              | Failure ttl ms allows optionally specifying the max lifetime before Coder stops all resources for failed workspaces created from this template.                                                                                                                                                                     |
+| `icon`                                | string                                                                         | false    |              | Icon is a relative path or external URL that specifies an icon to be displayed in the dashboard.                                                                                                                                                                                                                    |
+| `max_port_share_level`                | [codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel) | false    |              | Max port share level allows optionally specifying the maximum port share level for workspaces created from the template.                                                                                                                                                                                            |
+| `name`                                | string                                                                         | true     |              | Name is the name of the template.                                                                                                                                                                                                                                                                                   |
+| `require_active_version`              | boolean                                                                        | false    |              | Require active version mandates that workspaces are built with the active template version.                                                                                                                                                                                                                         |
+| `template_use_classic_parameter_flow` | boolean                                                                        | false    |              | Template use classic parameter flow allows optionally specifying whether the template should use the classic parameter flow. The default if unset is true, and is why `*bool` is used here. When dynamic parameters becomes the default, this will default to false.                                                |
 |`template_version_id`|string|true||Template version ID is an in-progress or completed job to use as an initial version of the template.
 This is required on creation to enable a user-flow of validating a template works. There is no reason the data-model cannot support empty templates, but it doesn't make sense for users.|
 |`time_til_autostop_notify_ms`|integer|false||Time til autostop notify ms allows optionally specifying the duration before the autostop deadline at which a reminder notification is sent for workspaces created from this template. Defaults to 0 (disabled).|
@@ -4908,11 +4908,11 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`rich_parameter_values`|array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter)|false|||
-|`user_variable_values`|array of [codersdk.VariableValue](#codersdkvariablevalue)|false|||
-|`workspace_name`|string|false|||
+| Name                    | Type                                                                          | Required | Restrictions | Description |
+|-------------------------|-------------------------------------------------------------------------------|----------|--------------|-------------|
+| `rich_parameter_values` | array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter) | false    |              |             |
+| `user_variable_values`  | array of [codersdk.VariableValue](#codersdkvariablevalue)                     | false    |              |             |
+| `workspace_name`        | string                                                                        | false    |              |             |
 
 ## codersdk.CreateTemplateVersionRequest
 
@@ -4940,25 +4940,25 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`example_id`|string|false|||
-|`file_id`|string|false|||
-|`message`|string|false|||
-|`name`|string|false|||
-|`provisioner`|string|true|||
-|`storage_method`|[codersdk.ProvisionerStorageMethod](#codersdkprovisionerstoragemethod)|true|||
-|`tags`|object|false|||
-|» `[any property]`|string|false|||
-|`template_id`|string|false||Template ID optionally associates a version with a template.|
-|`user_variable_values`|array of [codersdk.VariableValue](#codersdkvariablevalue)|false|||
+| Name                   | Type                                                                   | Required | Restrictions | Description                                                  |
+|------------------------|------------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------|
+| `example_id`           | string                                                                 | false    |              |                                                              |
+| `file_id`              | string                                                                 | false    |              |                                                              |
+| `message`              | string                                                                 | false    |              |                                                              |
+| `name`                 | string                                                                 | false    |              |                                                              |
+| `provisioner`          | string                                                                 | true     |              |                                                              |
+| `storage_method`       | [codersdk.ProvisionerStorageMethod](#codersdkprovisionerstoragemethod) | true     |              |                                                              |
+| `tags`                 | object                                                                 | false    |              |                                                              |
+| » `[any property]`     | string                                                                 | false    |              |                                                              |
+| `template_id`          | string                                                                 | false    |              | Template ID optionally associates a version with a template. |
+| `user_variable_values` | array of [codersdk.VariableValue](#codersdkvariablevalue)              | false    |              |                                                              |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`provisioner`|`echo`, `terraform`|
-|`storage_method`|`file`|
+| Property         | Value(s)            |
+|------------------|---------------------|
+| `provisioner`    | `echo`, `terraform` |
+| `storage_method` | `file`              |
 
 ## codersdk.CreateTestAuditLogRequest
 
@@ -4979,24 +4979,24 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action`|[codersdk.AuditAction](#codersdkauditaction)|false|||
-|`additional_fields`|array of integer|false|||
-|`build_reason`|[codersdk.BuildReason](#codersdkbuildreason)|false|||
-|`organization_id`|string|false|||
-|`request_id`|string|false|||
-|`resource_id`|string|false|||
-|`resource_type`|[codersdk.ResourceType](#codersdkresourcetype)|false|||
-|`time`|string|false|||
+| Name                | Type                                           | Required | Restrictions | Description |
+|---------------------|------------------------------------------------|----------|--------------|-------------|
+| `action`            | [codersdk.AuditAction](#codersdkauditaction)   | false    |              |             |
+| `additional_fields` | array of integer                               | false    |              |             |
+| `build_reason`      | [codersdk.BuildReason](#codersdkbuildreason)   | false    |              |             |
+| `organization_id`   | string                                         | false    |              |             |
+| `request_id`        | string                                         | false    |              |             |
+| `resource_id`       | string                                         | false    |              |             |
+| `resource_type`     | [codersdk.ResourceType](#codersdkresourcetype) | false    |              |             |
+| `time`              | string                                         | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`action`|`create`, `delete`, `start`, `stop`, `write`|
-|`build_reason`|`autostart`, `autostop`, `initiator`|
-|`resource_type`|`auditable_group`, `git_ssh_key`, `template`, `template_version`, `user`, `workspace`, `workspace_build`|
+| Property        | Value(s)                                                                                                 |
+|-----------------|----------------------------------------------------------------------------------------------------------|
+| `action`        | `create`, `delete`, `start`, `stop`, `write`                                                             |
+| `build_reason`  | `autostart`, `autostop`, `initiator`                                                                     |
+| `resource_type` | `auditable_group`, `git_ssh_key`, `template`, `template_version`, `user`, `workspace`, `workspace_build` |
 
 ## codersdk.CreateTokenRequest
 
@@ -5019,13 +5019,13 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_list`|array of [codersdk.APIAllowListTarget](#codersdkapiallowlisttarget)|false|||
-|`lifetime`|integer|false|||
-|`scope`|[codersdk.APIKeyScope](#codersdkapikeyscope)|false||Deprecated: use Scopes instead.|
-|`scopes`|array of [codersdk.APIKeyScope](#codersdkapikeyscope)|false|||
-|`token_name`|string|false|||
+| Name         | Type                                                                | Required | Restrictions | Description                     |
+|--------------|---------------------------------------------------------------------|----------|--------------|---------------------------------|
+| `allow_list` | array of [codersdk.APIAllowListTarget](#codersdkapiallowlisttarget) | false    |              |                                 |
+| `lifetime`   | integer                                                             | false    |              |                                 |
+| `scope`      | [codersdk.APIKeyScope](#codersdkapikeyscope)                        | false    |              | Deprecated: use Scopes instead. |
+| `scopes`     | array of [codersdk.APIKeyScope](#codersdkapikeyscope)               | false    |              |                                 |
+| `token_name` | string                                                              | false    |              |                                 |
 
 ## codersdk.CreateUserRequestWithOrgs
 
@@ -5049,17 +5049,17 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`email`|string|false|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false||Login type defaults to LoginTypePassword.|
-|`name`|string|false|||
-|`organization_ids`|array of string|false||Organization ids is a list of organization IDs that the user should be a member of.|
-|`password`|string|false|||
-|`roles`|array of string|false||Roles is an optional list of site-level roles to assign at creation.|
-|`service_account`|boolean|false||Service accounts are admin-managed accounts that cannot login.|
-|`user_status`|[codersdk.UserStatus](#codersdkuserstatus)|false||User status defaults to UserStatusDormant.|
-|`username`|string|true|||
+| Name               | Type                                       | Required | Restrictions | Description                                                                         |
+|--------------------|--------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------|
+| `email`            | string                                     | false    |              |                                                                                     |
+| `login_type`       | [codersdk.LoginType](#codersdklogintype)   | false    |              | Login type defaults to LoginTypePassword.                                           |
+| `name`             | string                                     | false    |              |                                                                                     |
+| `organization_ids` | array of string                            | false    |              | Organization ids is a list of organization IDs that the user should be a member of. |
+| `password`         | string                                     | false    |              |                                                                                     |
+| `roles`            | array of string                            | false    |              | Roles is an optional list of site-level roles to assign at creation.                |
+| `service_account`  | boolean                                    | false    |              | Service accounts are admin-managed accounts that cannot login.                      |
+| `user_status`      | [codersdk.UserStatus](#codersdkuserstatus) | false    |              | User status defaults to UserStatusDormant.                                          |
+| `username`         | string                                     | true     |              |                                                                                     |
 
 ## codersdk.CreateUserSecretRequest
 
@@ -5075,13 +5075,13 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`env_name`|string|false|||
-|`file_path`|string|false|||
-|`name`|string|false|||
-|`value`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `description` | string | false    |              |             |
+| `env_name`    | string | false    |              |             |
+| `file_path`   | string | false    |              |             |
+| `name`        | string | false    |              |             |
+| `value`       | string | false    |              |             |
 
 ## codersdk.CreateUserSkillRequest
 
@@ -5093,9 +5093,9 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|string|false||Content must be SKILL.md-format Markdown with YAML frontmatter. The frontmatter must include name, may include description, and must be followed by a non-empty body.|
+| Name      | Type   | Required | Restrictions | Description                                                                                                                                                           |
+|-----------|--------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `content` | string | false    |              | Content must be SKILL.md-format Markdown with YAML frontmatter. The frontmatter must include name, may include description, and must be followed by a non-empty body. |
 
 ## codersdk.CreateWorkspaceBuildOnSuccessRequest
 
@@ -5115,18 +5115,18 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`rich_parameter_values`|array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter)|false||Rich parameter values are applied to the child build. Parameters not listed here fall back to their values from the previous build, matching normal build behavior.|
-|`template_version_id`|string|false||Template version ID pins the child build to a specific template version. Pinning requires permission to update the template, since the active version may change before the child build runs. When empty, the child build uses the template's active version at the time it runs.|
-|`template_version_preset_id`|string|false||Template version preset ID selects a preset for the child build. It requires TemplateVersionID to also be set.|
-|`transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|true||Transition must be "start". The parent build's transition must be "stop".|
+| Name                         | Type                                                                          | Required | Restrictions | Description                                                                                                                                                                                                                                                                       |
+|------------------------------|-------------------------------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `rich_parameter_values`      | array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter) | false    |              | Rich parameter values are applied to the child build. Parameters not listed here fall back to their values from the previous build, matching normal build behavior.                                                                                                               |
+| `template_version_id`        | string                                                                        | false    |              | Template version ID pins the child build to a specific template version. Pinning requires permission to update the template, since the active version may change before the child build runs. When empty, the child build uses the template's active version at the time it runs. |
+| `template_version_preset_id` | string                                                                        | false    |              | Template version preset ID selects a preset for the child build. It requires TemplateVersionID to also be set.                                                                                                                                                                    |
+| `transition`                 | [codersdk.WorkspaceTransition](#codersdkworkspacetransition)                  | true     |              | Transition must be "start". The parent build's transition must be "stop".                                                                                                                                                                                                         |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`transition`|`start`|
+| Property     | Value(s) |
+|--------------|----------|
+| `transition` | `start`  |
 
 ## codersdk.CreateWorkspaceBuildReason
 
@@ -5138,9 +5138,9 @@ This is required on creation to enable a user-flow of validating a template work
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`cli`, `dashboard`, `jetbrains_connection`, `ssh_connection`, `task_manual_pause`, `task_resume`, `vscode_connection`|
+| Value(s)                                                                                                              |
+|-----------------------------------------------------------------------------------------------------------------------|
+| `cli`, `dashboard`, `jetbrains_connection`, `ssh_connection`, `task_manual_pause`, `task_resume`, `vscode_connection` |
 
 ## codersdk.CreateWorkspaceBuildRequest
 
@@ -5178,26 +5178,26 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dry_run`|boolean|false|||
-|`log_level`|[codersdk.ProvisionerLogLevel](#codersdkprovisionerloglevel)|false||Log level changes the default logging verbosity of a provider ("info" if empty).|
-|`on_success`|[codersdk.CreateWorkspaceBuildOnSuccessRequest](#codersdkcreateworkspacebuildonsuccessrequest)|false||On success queues a follow-up workspace build after this build succeeds. It currently supports restarting a workspace by starting it after a successful stop build.|
-|`orphan`|boolean|false||Orphan may be set for the Destroy transition.|
-|`reason`|[codersdk.CreateWorkspaceBuildReason](#codersdkcreateworkspacebuildreason)|false||Reason sets the reason for the workspace build.|
-|`rich_parameter_values`|array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter)|false||Rich parameter values are optional. It will write params to the 'workspace' scope. This will overwrite any existing parameters with the same name. This will not delete old params not included in this list.|
-|`state`|array of integer|false|||
-|`template_version_id`|string|false|||
-|`template_version_preset_id`|string|false||Template version preset ID is the ID of the template version preset to use for the build.|
-|`transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|true|||
+| Name                         | Type                                                                                           | Required | Restrictions | Description                                                                                                                                                                                                   |
+|------------------------------|------------------------------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dry_run`                    | boolean                                                                                        | false    |              |                                                                                                                                                                                                               |
+| `log_level`                  | [codersdk.ProvisionerLogLevel](#codersdkprovisionerloglevel)                                   | false    |              | Log level changes the default logging verbosity of a provider ("info" if empty).                                                                                                                              |
+| `on_success`                 | [codersdk.CreateWorkspaceBuildOnSuccessRequest](#codersdkcreateworkspacebuildonsuccessrequest) | false    |              | On success queues a follow-up workspace build after this build succeeds. It currently supports restarting a workspace by starting it after a successful stop build.                                           |
+| `orphan`                     | boolean                                                                                        | false    |              | Orphan may be set for the Destroy transition.                                                                                                                                                                 |
+| `reason`                     | [codersdk.CreateWorkspaceBuildReason](#codersdkcreateworkspacebuildreason)                     | false    |              | Reason sets the reason for the workspace build.                                                                                                                                                               |
+| `rich_parameter_values`      | array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter)                  | false    |              | Rich parameter values are optional. It will write params to the 'workspace' scope. This will overwrite any existing parameters with the same name. This will not delete old params not included in this list. |
+| `state`                      | array of integer                                                                               | false    |              |                                                                                                                                                                                                               |
+| `template_version_id`        | string                                                                                         | false    |              |                                                                                                                                                                                                               |
+| `template_version_preset_id` | string                                                                                         | false    |              | Template version preset ID is the ID of the template version preset to use for the build.                                                                                                                     |
+| `transition`                 | [codersdk.WorkspaceTransition](#codersdkworkspacetransition)                                   | true     |              |                                                                                                                                                                                                               |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`log_level`|`debug`|
-|`reason`|`cli`, `dashboard`, `jetbrains_connection`, `ssh_connection`, `task_manual_pause`, `vscode_connection`|
-|`transition`|`delete`, `start`, `stop`|
+| Property     | Value(s)                                                                                               |
+|--------------|--------------------------------------------------------------------------------------------------------|
+| `log_level`  | `debug`                                                                                                |
+| `reason`     | `cli`, `dashboard`, `jetbrains_connection`, `ssh_connection`, `task_manual_pause`, `vscode_connection` |
+| `transition` | `delete`, `start`, `stop`                                                                              |
 
 ## codersdk.CreateWorkspaceProxyRequest
 
@@ -5211,11 +5211,11 @@ This is required on creation to enable a user-flow of validating a template work
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`name`|string|true|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `display_name` | string | false    |              |             |
+| `icon`         | string | false    |              |             |
+| `name`         | string | true     |              |             |
 
 ## codersdk.CreateWorkspaceRequest
 
@@ -5241,16 +5241,16 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`automatic_updates`|[codersdk.AutomaticUpdates](#codersdkautomaticupdates)|false|||
-|`autostart_schedule`|string|false|||
-|`name`|string|true|||
-|`rich_parameter_values`|array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter)|false||Rich parameter values allows for additional parameters to be provided during the initial provision.|
-|`template_id`|string|false||Template ID specifies which template should be used for creating the workspace.|
-|`template_version_id`|string|false||Template version ID can be used to specify a specific version of a template for creating the workspace.|
-|`template_version_preset_id`|string|false|||
-|`ttl_ms`|integer|false|||
+| Name                         | Type                                                                          | Required | Restrictions | Description                                                                                             |
+|------------------------------|-------------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------|
+| `automatic_updates`          | [codersdk.AutomaticUpdates](#codersdkautomaticupdates)                        | false    |              |                                                                                                         |
+| `autostart_schedule`         | string                                                                        | false    |              |                                                                                                         |
+| `name`                       | string                                                                        | true     |              |                                                                                                         |
+| `rich_parameter_values`      | array of [codersdk.WorkspaceBuildParameter](#codersdkworkspacebuildparameter) | false    |              | Rich parameter values allows for additional parameters to be provided during the initial provision.     |
+| `template_id`                | string                                                                        | false    |              | Template ID specifies which template should be used for creating the workspace.                         |
+| `template_version_id`        | string                                                                        | false    |              | Template version ID can be used to specify a specific version of a template for creating the workspace. |
+| `template_version_preset_id` | string                                                                        | false    |              |                                                                                                         |
+| `ttl_ms`                     | integer                                                                       | false    |              |                                                                                                         |
 
 ## codersdk.CryptoKey
 
@@ -5266,13 +5266,13 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`deletes_at`|string|false|||
-|`feature`|[codersdk.CryptoKeyFeature](#codersdkcryptokeyfeature)|false|||
-|`secret`|string|false|||
-|`sequence`|integer|false|||
-|`starts_at`|string|false|||
+| Name         | Type                                                   | Required | Restrictions | Description |
+|--------------|--------------------------------------------------------|----------|--------------|-------------|
+| `deletes_at` | string                                                 | false    |              |             |
+| `feature`    | [codersdk.CryptoKeyFeature](#codersdkcryptokeyfeature) | false    |              |             |
+| `secret`     | string                                                 | false    |              |             |
+| `sequence`   | integer                                                | false    |              |             |
+| `starts_at`  | string                                                 | false    |              |             |
 
 ## codersdk.CryptoKeyFeature
 
@@ -5284,9 +5284,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`nats_ca`, `oidc_convert`, `tailnet_resume`, `workspace_apps_api_key`, `workspace_apps_token`|
+| Value(s)                                                                                      |
+|-----------------------------------------------------------------------------------------------|
+| `nats_ca`, `oidc_convert`, `tailnet_resume`, `workspace_apps_api_key`, `workspace_apps_token` |
 
 ## codersdk.CustomNotificationContent
 
@@ -5299,10 +5299,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|string|false|||
-|`title`|string|false|||
+| Name      | Type   | Required | Restrictions | Description |
+|-----------|--------|----------|--------------|-------------|
+| `message` | string | false    |              |             |
+| `title`   | string | false    |              |             |
 
 ## codersdk.CustomNotificationRequest
 
@@ -5317,9 +5317,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|[codersdk.CustomNotificationContent](#codersdkcustomnotificationcontent)|false|||
+| Name      | Type                                                                     | Required | Restrictions | Description |
+|-----------|--------------------------------------------------------------------------|----------|--------------|-------------|
+| `content` | [codersdk.CustomNotificationContent](#codersdkcustomnotificationcontent) | false    |              |             |
 
 ## codersdk.CustomRoleRequest
 
@@ -5360,14 +5360,14 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`organization_member_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization member permissions are specific to the organization the role belongs to.|
-|`organization_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization permissions are specific to the organization the role belongs to.|
-|`site_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
-|`user_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
+| Name                              | Type                                                | Required | Restrictions | Description                                                                           |
+|-----------------------------------|-----------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------|
+| `display_name`                    | string                                              | false    |              |                                                                                       |
+| `name`                            | string                                              | false    |              |                                                                                       |
+| `organization_member_permissions` | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization member permissions are specific to the organization the role belongs to. |
+| `organization_permissions`        | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization permissions are specific to the organization the role belongs to.        |
+| `site_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                       |
+| `user_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                       |
 
 ## codersdk.DAUEntry
 
@@ -5380,10 +5380,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`amount`|integer|false|||
-|`date`|string|false||Date is a string formatted as 2024-01-31. Timezone and time information is not included.|
+| Name     | Type    | Required | Restrictions | Description                                                                              |
+|----------|---------|----------|--------------|------------------------------------------------------------------------------------------|
+| `amount` | integer | false    |              |                                                                                          |
+| `date`   | string  | false    |              | Date is a string formatted as 2024-01-31. Timezone and time information is not included. |
 
 ## codersdk.DAUsResponse
 
@@ -5401,10 +5401,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`entries`|array of [codersdk.DAUEntry](#codersdkdauentry)|false|||
-|`tz_hour_offset`|integer|false|||
+| Name             | Type                                            | Required | Restrictions | Description |
+|------------------|-------------------------------------------------|----------|--------------|-------------|
+| `entries`        | array of [codersdk.DAUEntry](#codersdkdauentry) | false    |              |             |
+| `tz_hour_offset` | integer                                         | false    |              |             |
 
 ## codersdk.DERP
 
@@ -5443,10 +5443,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`config`|[codersdk.DERPConfig](#codersdkderpconfig)|false|||
-|`server`|[codersdk.DERPServerConfig](#codersdkderpserverconfig)|false|||
+| Name     | Type                                                   | Required | Restrictions | Description |
+|----------|--------------------------------------------------------|----------|--------------|-------------|
+| `config` | [codersdk.DERPConfig](#codersdkderpconfig)             | false    |              |             |
+| `server` | [codersdk.DERPServerConfig](#codersdkderpserverconfig) | false    |              |             |
 
 ## codersdk.DERPConfig
 
@@ -5461,12 +5461,12 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`block_direct`|boolean|false|||
-|`force_websockets`|boolean|false|||
-|`path`|string|false|||
-|`url`|string|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `block_direct`     | boolean | false    |              |             |
+| `force_websockets` | boolean | false    |              |             |
+| `path`             | string  | false    |              |             |
+| `url`              | string  | false    |              |             |
 
 ## codersdk.DERPRegion
 
@@ -5479,10 +5479,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`latency_ms`|number|false|||
-|`preferred`|boolean|false|||
+| Name         | Type    | Required | Restrictions | Description |
+|--------------|---------|----------|--------------|-------------|
+| `latency_ms` | number  | false    |              |             |
+| `preferred`  | boolean | false    |              |             |
 
 ## codersdk.DERPServerConfig
 
@@ -5513,14 +5513,14 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enable`|boolean|false|||
-|`region_code`|string|false|||
-|`region_id`|integer|false|||
-|`region_name`|string|false|||
-|`relay_url`|[serpent.URL](#serpenturl)|false|||
-|`stun_addresses`|array of string|false|||
+| Name             | Type                       | Required | Restrictions | Description |
+|------------------|----------------------------|----------|--------------|-------------|
+| `enable`         | boolean                    | false    |              |             |
+| `region_code`    | string                     | false    |              |             |
+| `region_id`      | integer                    | false    |              |             |
+| `region_name`    | string                     | false    |              |             |
+| `relay_url`      | [serpent.URL](#serpenturl) | false    |              |             |
+| `stun_addresses` | array of string            | false    |              |             |
 
 ## codersdk.DangerousConfig
 
@@ -5534,11 +5534,11 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_all_cors`|boolean|false|||
-|`allow_path_app_sharing`|boolean|false|||
-|`allow_path_app_site_owner_access`|boolean|false|||
+| Name                               | Type    | Required | Restrictions | Description |
+|------------------------------------|---------|----------|--------------|-------------|
+| `allow_all_cors`                   | boolean | false    |              |             |
+| `allow_path_app_sharing`           | boolean | false    |              |             |
+| `allow_path_app_site_owner_access` | boolean | false    |              |             |
 
 ## codersdk.DeleteExternalAuthByIDResponse
 
@@ -5551,10 +5551,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`token_revocation_error`|string|false|||
-|`token_revoked`|boolean|false||Token revoked set to true if token revocation was attempted and was successful|
+| Name                     | Type    | Required | Restrictions | Description                                                                    |
+|--------------------------|---------|----------|--------------|--------------------------------------------------------------------------------|
+| `token_revocation_error` | string  | false    |              |                                                                                |
+| `token_revoked`          | boolean | false    |              | Token revoked set to true if token revocation was attempted and was successful |
 
 ## codersdk.DeleteWebpushSubscription
 
@@ -5566,9 +5566,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`endpoint`|string|false|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `endpoint` | string | false    |              |             |
 
 ## codersdk.DeleteWorkspaceAgentPortShareRequest
 
@@ -5581,10 +5581,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false|||
-|`port`|integer|false|||
+| Name         | Type    | Required | Restrictions | Description |
+|--------------|---------|----------|--------------|-------------|
+| `agent_name` | string  | false    |              |             |
+| `port`       | integer | false    |              |             |
 
 ## codersdk.DeploymentConfig
 
@@ -6153,10 +6153,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`config`|[codersdk.DeploymentValues](#codersdkdeploymentvalues)|false|||
-|`options`|array of [serpent.Option](#serpentoption)|false|||
+| Name      | Type                                                   | Required | Restrictions | Description |
+|-----------|--------------------------------------------------------|----------|--------------|-------------|
+| `config`  | [codersdk.DeploymentValues](#codersdkdeploymentvalues) | false    |              |             |
+| `options` | array of [serpent.Option](#serpentoption)              | false    |              |             |
 
 ## codersdk.DeploymentStats
 
@@ -6189,13 +6189,13 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`aggregated_from`|string|false||Aggregated from is the time in which stats are aggregated from. This might be back in time a specific duration or interval.|
-|`collected_at`|string|false||Collected at is the time in which stats are collected at.|
-|`next_update_at`|string|false||Next update at is the time when the next batch of stats will be updated.|
-|`session_count`|[codersdk.SessionCountDeploymentStats](#codersdksessioncountdeploymentstats)|false|||
-|`workspaces`|[codersdk.WorkspaceDeploymentStats](#codersdkworkspacedeploymentstats)|false|||
+| Name              | Type                                                                         | Required | Restrictions | Description                                                                                                                 |
+|-------------------|------------------------------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------|
+| `aggregated_from` | string                                                                       | false    |              | Aggregated from is the time in which stats are aggregated from. This might be back in time a specific duration or interval. |
+| `collected_at`    | string                                                                       | false    |              | Collected at is the time in which stats are collected at.                                                                   |
+| `next_update_at`  | string                                                                       | false    |              | Next update at is the time when the next batch of stats will be updated.                                                    |
+| `session_count`   | [codersdk.SessionCountDeploymentStats](#codersdksessioncountdeploymentstats) | false    |              |                                                                                                                             |
+| `workspaces`      | [codersdk.WorkspaceDeploymentStats](#codersdkworkspacedeploymentstats)       | false    |              |                                                                                                                             |
 
 ## codersdk.DeploymentValues
 
@@ -6729,83 +6729,83 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_url`|[serpent.URL](#serpenturl)|false|||
-|`additional_csp_policy`|array of string|false|||
-|`address`|[serpent.HostPort](#serpenthostport)|false||Deprecated: Use HTTPAddress or TLS.Address instead.|
-|`agent_fallback_troubleshooting_url`|[serpent.URL](#serpenturl)|false|||
-|`agent_stat_refresh_interval`|integer|false|||
-|`ai`|[codersdk.AIConfig](#codersdkaiconfig)|false|||
-|`allow_workspace_renames`|boolean|false|||
-|`autobuild_poll_interval`|integer|false|||
-|`browser_only`|boolean|false|||
-|`cache_directory`|string|false|||
-|`cli_upgrade_message`|string|false|||
-|`cluster`|[codersdk.ClusterConfig](#codersdkclusterconfig)|false|||
-|`config`|string|false|||
-|`config_ssh`|[codersdk.SSHConfig](#codersdksshconfig)|false|||
-|`dangerous`|[codersdk.DangerousConfig](#codersdkdangerousconfig)|false|||
-|`derp`|[codersdk.DERP](#codersdkderp)|false|||
-|`disable_chat_sharing`|boolean|false|||
-|`disable_owner_workspace_exec`|boolean|false|||
-|`disable_password_auth`|boolean|false|||
-|`disable_path_apps`|boolean|false|||
-|`disable_workspace_sharing`|boolean|false|||
-|`docs_url`|[serpent.URL](#serpenturl)|false|||
-|`enable_authz_recording`|boolean|false|||
-|`enable_terraform_debug_mode`|boolean|false|||
-|`ephemeral_deployment`|boolean|false|||
-|`experiments`|array of string|false|||
-|`external_auth`|[serpent.Struct-array_codersdk_ExternalAuthConfig](#serpentstruct-array_codersdk_externalauthconfig)|false|||
-|`external_auth_github_default_provider_enable`|boolean|false|||
-|`external_token_encryption_keys`|array of string|false|||
-|`healthcheck`|[codersdk.HealthcheckConfig](#codersdkhealthcheckconfig)|false|||
-|`hide_ai_tasks`|boolean|false|||
-|`http_address`|string|false||Http address is a string because it may be set to zero to disable.|
-|`http_cookies`|[codersdk.HTTPCookieConfig](#codersdkhttpcookieconfig)|false|||
-|`job_hang_detector_interval`|integer|false|||
-|`logging`|[codersdk.LoggingConfig](#codersdkloggingconfig)|false|||
-|`metrics_cache_refresh_interval`|integer|false|||
-|`notifications`|[codersdk.NotificationsConfig](#codersdknotificationsconfig)|false|||
-|`oauth2`|[codersdk.OAuth2Config](#codersdkoauth2config)|false|||
-|`oidc`|[codersdk.OIDCConfig](#codersdkoidcconfig)|false|||
-|`pg_auth`|string|false|||
-|`pg_conn_max_idle`|string|false|||
-|`pg_conn_max_open`|integer|false|||
-|`pg_connection_url`|string|false|||
-|`pprof`|[codersdk.PprofConfig](#codersdkpprofconfig)|false|||
-|`prometheus`|[codersdk.PrometheusConfig](#codersdkprometheusconfig)|false|||
-|`provisioner`|[codersdk.ProvisionerConfig](#codersdkprovisionerconfig)|false|||
-|`proxy_health_status_interval`|integer|false|||
-|`proxy_trusted_headers`|array of string|false|||
-|`proxy_trusted_origins`|array of string|false|||
-|`rate_limit`|[codersdk.RateLimitConfig](#codersdkratelimitconfig)|false|||
-|`redirect_to_access_url`|boolean|false|||
-|`retention`|[codersdk.RetentionConfig](#codersdkretentionconfig)|false|||
-|`scim_api_key`|string|false|||
-|`scim_use_legacy`|boolean|false|||
-|`session_lifetime`|[codersdk.SessionLifetime](#codersdksessionlifetime)|false|||
-|`ssh_keygen_algorithm`|string|false|||
-|`stats_collection`|[codersdk.StatsCollectionConfig](#codersdkstatscollectionconfig)|false|||
-|`strict_transport_security`|integer|false|||
-|`strict_transport_security_options`|array of string|false|||
-|`support`|[codersdk.SupportConfig](#codersdksupportconfig)|false|||
-|`swagger`|[codersdk.SwaggerConfig](#codersdkswaggerconfig)|false|||
-|`telemetry`|[codersdk.TelemetryConfig](#codersdktelemetryconfig)|false|||
-|`template_builder`|[codersdk.TemplateBuilderConfig](#codersdktemplatebuilderconfig)|false|||
-|`terms_of_service_url`|string|false|||
-|`tls`|[codersdk.TLSConfig](#codersdktlsconfig)|false|||
-|`trace`|[codersdk.TraceConfig](#codersdktraceconfig)|false|||
-|`update_check`|boolean|false|||
-|`user_quiet_hours_schedule`|[codersdk.UserQuietHoursScheduleConfig](#codersdkuserquiethoursscheduleconfig)|false|||
-|`verbose`|boolean|false|||
-|`web_terminal_renderer`|string|false|||
-|`wgtunnel_host`|string|false|||
-|`wildcard_access_url`|string|false|||
-|`workspace_hostname_suffix`|string|false|||
-|`workspace_prebuilds`|[codersdk.PrebuildsConfig](#codersdkprebuildsconfig)|false|||
-|`write_config`|boolean|false|||
+| Name                                           | Type                                                                                                 | Required | Restrictions | Description                                                        |
+|------------------------------------------------|------------------------------------------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------------|
+| `access_url`                                   | [serpent.URL](#serpenturl)                                                                           | false    |              |                                                                    |
+| `additional_csp_policy`                        | array of string                                                                                      | false    |              |                                                                    |
+| `address`                                      | [serpent.HostPort](#serpenthostport)                                                                 | false    |              | Deprecated: Use HTTPAddress or TLS.Address instead.                |
+| `agent_fallback_troubleshooting_url`           | [serpent.URL](#serpenturl)                                                                           | false    |              |                                                                    |
+| `agent_stat_refresh_interval`                  | integer                                                                                              | false    |              |                                                                    |
+| `ai`                                           | [codersdk.AIConfig](#codersdkaiconfig)                                                               | false    |              |                                                                    |
+| `allow_workspace_renames`                      | boolean                                                                                              | false    |              |                                                                    |
+| `autobuild_poll_interval`                      | integer                                                                                              | false    |              |                                                                    |
+| `browser_only`                                 | boolean                                                                                              | false    |              |                                                                    |
+| `cache_directory`                              | string                                                                                               | false    |              |                                                                    |
+| `cli_upgrade_message`                          | string                                                                                               | false    |              |                                                                    |
+| `cluster`                                      | [codersdk.ClusterConfig](#codersdkclusterconfig)                                                     | false    |              |                                                                    |
+| `config`                                       | string                                                                                               | false    |              |                                                                    |
+| `config_ssh`                                   | [codersdk.SSHConfig](#codersdksshconfig)                                                             | false    |              |                                                                    |
+| `dangerous`                                    | [codersdk.DangerousConfig](#codersdkdangerousconfig)                                                 | false    |              |                                                                    |
+| `derp`                                         | [codersdk.DERP](#codersdkderp)                                                                       | false    |              |                                                                    |
+| `disable_chat_sharing`                         | boolean                                                                                              | false    |              |                                                                    |
+| `disable_owner_workspace_exec`                 | boolean                                                                                              | false    |              |                                                                    |
+| `disable_password_auth`                        | boolean                                                                                              | false    |              |                                                                    |
+| `disable_path_apps`                            | boolean                                                                                              | false    |              |                                                                    |
+| `disable_workspace_sharing`                    | boolean                                                                                              | false    |              |                                                                    |
+| `docs_url`                                     | [serpent.URL](#serpenturl)                                                                           | false    |              |                                                                    |
+| `enable_authz_recording`                       | boolean                                                                                              | false    |              |                                                                    |
+| `enable_terraform_debug_mode`                  | boolean                                                                                              | false    |              |                                                                    |
+| `ephemeral_deployment`                         | boolean                                                                                              | false    |              |                                                                    |
+| `experiments`                                  | array of string                                                                                      | false    |              |                                                                    |
+| `external_auth`                                | [serpent.Struct-array_codersdk_ExternalAuthConfig](#serpentstruct-array_codersdk_externalauthconfig) | false    |              |                                                                    |
+| `external_auth_github_default_provider_enable` | boolean                                                                                              | false    |              |                                                                    |
+| `external_token_encryption_keys`               | array of string                                                                                      | false    |              |                                                                    |
+| `healthcheck`                                  | [codersdk.HealthcheckConfig](#codersdkhealthcheckconfig)                                             | false    |              |                                                                    |
+| `hide_ai_tasks`                                | boolean                                                                                              | false    |              |                                                                    |
+| `http_address`                                 | string                                                                                               | false    |              | Http address is a string because it may be set to zero to disable. |
+| `http_cookies`                                 | [codersdk.HTTPCookieConfig](#codersdkhttpcookieconfig)                                               | false    |              |                                                                    |
+| `job_hang_detector_interval`                   | integer                                                                                              | false    |              |                                                                    |
+| `logging`                                      | [codersdk.LoggingConfig](#codersdkloggingconfig)                                                     | false    |              |                                                                    |
+| `metrics_cache_refresh_interval`               | integer                                                                                              | false    |              |                                                                    |
+| `notifications`                                | [codersdk.NotificationsConfig](#codersdknotificationsconfig)                                         | false    |              |                                                                    |
+| `oauth2`                                       | [codersdk.OAuth2Config](#codersdkoauth2config)                                                       | false    |              |                                                                    |
+| `oidc`                                         | [codersdk.OIDCConfig](#codersdkoidcconfig)                                                           | false    |              |                                                                    |
+| `pg_auth`                                      | string                                                                                               | false    |              |                                                                    |
+| `pg_conn_max_idle`                             | string                                                                                               | false    |              |                                                                    |
+| `pg_conn_max_open`                             | integer                                                                                              | false    |              |                                                                    |
+| `pg_connection_url`                            | string                                                                                               | false    |              |                                                                    |
+| `pprof`                                        | [codersdk.PprofConfig](#codersdkpprofconfig)                                                         | false    |              |                                                                    |
+| `prometheus`                                   | [codersdk.PrometheusConfig](#codersdkprometheusconfig)                                               | false    |              |                                                                    |
+| `provisioner`                                  | [codersdk.ProvisionerConfig](#codersdkprovisionerconfig)                                             | false    |              |                                                                    |
+| `proxy_health_status_interval`                 | integer                                                                                              | false    |              |                                                                    |
+| `proxy_trusted_headers`                        | array of string                                                                                      | false    |              |                                                                    |
+| `proxy_trusted_origins`                        | array of string                                                                                      | false    |              |                                                                    |
+| `rate_limit`                                   | [codersdk.RateLimitConfig](#codersdkratelimitconfig)                                                 | false    |              |                                                                    |
+| `redirect_to_access_url`                       | boolean                                                                                              | false    |              |                                                                    |
+| `retention`                                    | [codersdk.RetentionConfig](#codersdkretentionconfig)                                                 | false    |              |                                                                    |
+| `scim_api_key`                                 | string                                                                                               | false    |              |                                                                    |
+| `scim_use_legacy`                              | boolean                                                                                              | false    |              |                                                                    |
+| `session_lifetime`                             | [codersdk.SessionLifetime](#codersdksessionlifetime)                                                 | false    |              |                                                                    |
+| `ssh_keygen_algorithm`                         | string                                                                                               | false    |              |                                                                    |
+| `stats_collection`                             | [codersdk.StatsCollectionConfig](#codersdkstatscollectionconfig)                                     | false    |              |                                                                    |
+| `strict_transport_security`                    | integer                                                                                              | false    |              |                                                                    |
+| `strict_transport_security_options`            | array of string                                                                                      | false    |              |                                                                    |
+| `support`                                      | [codersdk.SupportConfig](#codersdksupportconfig)                                                     | false    |              |                                                                    |
+| `swagger`                                      | [codersdk.SwaggerConfig](#codersdkswaggerconfig)                                                     | false    |              |                                                                    |
+| `telemetry`                                    | [codersdk.TelemetryConfig](#codersdktelemetryconfig)                                                 | false    |              |                                                                    |
+| `template_builder`                             | [codersdk.TemplateBuilderConfig](#codersdktemplatebuilderconfig)                                     | false    |              |                                                                    |
+| `terms_of_service_url`                         | string                                                                                               | false    |              |                                                                    |
+| `tls`                                          | [codersdk.TLSConfig](#codersdktlsconfig)                                                             | false    |              |                                                                    |
+| `trace`                                        | [codersdk.TraceConfig](#codersdktraceconfig)                                                         | false    |              |                                                                    |
+| `update_check`                                 | boolean                                                                                              | false    |              |                                                                    |
+| `user_quiet_hours_schedule`                    | [codersdk.UserQuietHoursScheduleConfig](#codersdkuserquiethoursscheduleconfig)                       | false    |              |                                                                    |
+| `verbose`                                      | boolean                                                                                              | false    |              |                                                                    |
+| `web_terminal_renderer`                        | string                                                                                               | false    |              |                                                                    |
+| `wgtunnel_host`                                | string                                                                                               | false    |              |                                                                    |
+| `wildcard_access_url`                          | string                                                                                               | false    |              |                                                                    |
+| `workspace_hostname_suffix`                    | string                                                                                               | false    |              |                                                                    |
+| `workspace_prebuilds`                          | [codersdk.PrebuildsConfig](#codersdkprebuildsconfig)                                                 | false    |              |                                                                    |
+| `write_config`                                 | boolean                                                                                              | false    |              |                                                                    |
 
 ## codersdk.DiagnosticExtra
 
@@ -6817,9 +6817,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`code`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `code` | string | false    |              |             |
 
 ## codersdk.DiagnosticSeverityString
 
@@ -6831,9 +6831,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`error`, `warning`|
+| Value(s)           |
+|--------------------|
+| `error`, `warning` |
 
 ## codersdk.DisplayApp
 
@@ -6845,9 +6845,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`port_forwarding_helper`, `ssh_helper`, `vscode`, `vscode_insiders`, `web_terminal`|
+| Value(s)                                                                            |
+|-------------------------------------------------------------------------------------|
+| `port_forwarding_helper`, `ssh_helper`, `vscode`, `vscode_insiders`, `web_terminal` |
 
 ## codersdk.DynamicParametersRequest
 
@@ -6864,12 +6864,12 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|integer|false||ID identifies the request. The response contains the same ID so that the client can match it to the request.|
-|`inputs`|object|false|||
-|» `[any property]`|string|false|||
-|`owner_id`|string|false||Owner ID if uuid.Nil, it defaults to `codersdk.Me`|
+| Name               | Type    | Required | Restrictions | Description                                                                                                  |
+|--------------------|---------|----------|--------------|--------------------------------------------------------------------------------------------------------------|
+| `id`               | integer | false    |              | ID identifies the request. The response contains the same ID so that the client can match it to the request. |
+| `inputs`           | object  | false    |              |                                                                                                              |
+| » `[any property]` | string  | false    |              |                                                                                                              |
+| `owner_id`         | string  | false    |              | Owner ID if uuid.Nil, it defaults to `codersdk.Me`                                                           |
 
 ## codersdk.DynamicParametersResponse
 
@@ -6949,11 +6949,11 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`diagnostics`|array of [codersdk.FriendlyDiagnostic](#codersdkfriendlydiagnostic)|false|||
-|`id`|integer|false|||
-|`parameters`|array of [codersdk.PreviewParameter](#codersdkpreviewparameter)|false|||
+| Name          | Type                                                                | Required | Restrictions | Description |
+|---------------|---------------------------------------------------------------------|----------|--------------|-------------|
+| `diagnostics` | array of [codersdk.FriendlyDiagnostic](#codersdkfriendlydiagnostic) | false    |              |             |
+| `id`          | integer                                                             | false    |              |             |
+| `parameters`  | array of [codersdk.PreviewParameter](#codersdkpreviewparameter)     | false    |              |             |
 
 ## codersdk.DynamicTool
 
@@ -6969,11 +6969,11 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`input_schema`|array of integer|false||Input schema JSON key "input_schema" uses snake_case for SDK consistency, deviating from the camelCase "inputSchema" convention used by MCP.|
-|`name`|string|false|||
+| Name           | Type             | Required | Restrictions | Description                                                                                                                                  |
+|----------------|------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `description`  | string           | false    |              |                                                                                                                                              |
+| `input_schema` | array of integer | false    |              | Input schema JSON key "input_schema" uses snake_case for SDK consistency, deviating from the camelCase "inputSchema" convention used by MCP. |
+| `name`         | string           | false    |              |                                                                                                                                              |
 
 ## codersdk.EditChatMessageRequest
 
@@ -6997,11 +6997,11 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|array of [codersdk.ChatInputPart](#codersdkchatinputpart)|false|||
-|`model_config_id`|string|false||Model config ID when set, overrides the model used for the replacement user message and the assistant turn that follows. When nil the original message's model is preserved.|
-|`reasoning_effort`|string|false|||
+| Name               | Type                                                      | Required | Restrictions | Description                                                                                                                                                                  |
+|--------------------|-----------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `content`          | array of [codersdk.ChatInputPart](#codersdkchatinputpart) | false    |              |                                                                                                                                                                              |
+| `model_config_id`  | string                                                    | false    |              | Model config ID when set, overrides the model used for the replacement user message and the assistant turn that follows. When nil the original message's model is preserved. |
+| `reasoning_effort` | string                                                    | false    |              |                                                                                                                                                                              |
 
 ## codersdk.EditChatMessageResponse
 
@@ -7096,10 +7096,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|[codersdk.ChatMessage](#codersdkchatmessage)|false|||
-|`warnings`|array of string|false|||
+| Name       | Type                                         | Required | Restrictions | Description |
+|------------|----------------------------------------------|----------|--------------|-------------|
+| `message`  | [codersdk.ChatMessage](#codersdkchatmessage) | false    |              |             |
+| `warnings` | array of string                              | false    |              |             |
 
 ## codersdk.Entitlement
 
@@ -7111,9 +7111,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`entitled`, `grace_period`, `not_entitled`|
+| Value(s)                                   |
+|--------------------------------------------|
+| `entitled`, `grace_period`, `not_entitled` |
 
 ## codersdk.Entitlements
 
@@ -7158,16 +7158,16 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`errors`|array of string|false|||
-|`features`|object|false|||
-|» `[any property]`|[codersdk.Feature](#codersdkfeature)|false|||
-|`has_license`|boolean|false|||
-|`refreshed_at`|string|false|||
-|`require_telemetry`|boolean|false|||
-|`trial`|boolean|false|||
-|`warnings`|array of string|false|||
+| Name                | Type                                 | Required | Restrictions | Description |
+|---------------------|--------------------------------------|----------|--------------|-------------|
+| `errors`            | array of string                      | false    |              |             |
+| `features`          | object                               | false    |              |             |
+| » `[any property]`  | [codersdk.Feature](#codersdkfeature) | false    |              |             |
+| `has_license`       | boolean                              | false    |              |             |
+| `refreshed_at`      | string                               | false    |              |             |
+| `require_telemetry` | boolean                              | false    |              |             |
+| `trial`             | boolean                              | false    |              |             |
+| `warnings`          | array of string                      | false    |              |             |
 
 ## codersdk.Experiment
 
@@ -7179,9 +7179,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`ai-gateway-cost-control`, `auto-fill-parameters`, `chat-advisor`, `chat-virtual-desktop`, `example`, `mcp-server-http`, `minimum-implicit-member`, `nats_pubsub`, `notifications`, `oauth2`, `workspace-build-updates`, `workspace-usage`|
+| Value(s)                                                                                                                                                                                                                                   |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ai-gateway-cost-control`, `auto-fill-parameters`, `chat-advisor`, `chat-virtual-desktop`, `example`, `mcp-server-http`, `minimum-implicit-member`, `nats_pubsub`, `notifications`, `oauth2`, `workspace-build-updates`, `workspace-usage` |
 
 ## codersdk.ExternalAPIKeyScopes
 
@@ -7195,9 +7195,9 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`external`|array of [codersdk.APIKeyScope](#codersdkapikeyscope)|false|||
+| Name       | Type                                                  | Required | Restrictions | Description |
+|------------|-------------------------------------------------------|----------|--------------|-------------|
+| `external` | array of [codersdk.APIKeyScope](#codersdkapikeyscope) | false    |              |             |
 
 ## codersdk.ExternalAgentCredentials
 
@@ -7210,10 +7210,10 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_token`|string|false|||
-|`command`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `agent_token` | string | false    |              |             |
+| `command`     | string | false    |              |             |
 
 ## codersdk.ExternalAuth
 
@@ -7250,16 +7250,16 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`app_install_url`|string|false||App install URL is the URL to install the app.|
-|`app_installable`|boolean|false||App installable is true if the request for app installs was successful.|
-|`authenticated`|boolean|false|||
-|`device`|boolean|false|||
-|`display_name`|string|false|||
-|`installations`|array of [codersdk.ExternalAuthAppInstallation](#codersdkexternalauthappinstallation)|false||Installations are the installations that the user has access to.|
-|`supports_revocation`|boolean|false|||
-|`user`|[codersdk.ExternalAuthUser](#codersdkexternalauthuser)|false||User is the user that authenticated with the provider.|
+| Name                  | Type                                                                                  | Required | Restrictions | Description                                                             |
+|-----------------------|---------------------------------------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------|
+| `app_install_url`     | string                                                                                | false    |              | App install URL is the URL to install the app.                          |
+| `app_installable`     | boolean                                                                               | false    |              | App installable is true if the request for app installs was successful. |
+| `authenticated`       | boolean                                                                               | false    |              |                                                                         |
+| `device`              | boolean                                                                               | false    |              |                                                                         |
+| `display_name`        | string                                                                                | false    |              |                                                                         |
+| `installations`       | array of [codersdk.ExternalAuthAppInstallation](#codersdkexternalauthappinstallation) | false    |              | Installations are the installations that the user has access to.        |
+| `supports_revocation` | boolean                                                                               | false    |              |                                                                         |
+| `user`                | [codersdk.ExternalAuthUser](#codersdkexternalauthuser)                                | false    |              | User is the user that authenticated with the provider.                  |
 
 ## codersdk.ExternalAuthAppInstallation
 
@@ -7279,11 +7279,11 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`account`|[codersdk.ExternalAuthUser](#codersdkexternalauthuser)|false|||
-|`configure_url`|string|false|||
-|`id`|integer|false|||
+| Name            | Type                                                   | Required | Restrictions | Description |
+|-----------------|--------------------------------------------------------|----------|--------------|-------------|
+| `account`       | [codersdk.ExternalAuthUser](#codersdkexternalauthuser) | false    |              |             |
+| `configure_url` | string                                                 | false    |              |             |
+| `id`            | integer                                                | false    |              |             |
 
 ## codersdk.ExternalAuthConfig
 
@@ -7319,23 +7319,23 @@ CreateWorkspaceRequest provides options for creating a new workspace. Only one o
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_base_url`|string|false||Api base URL is the base URL for provider REST API calls (e.g., "https://api.github.com" for GitHub). Derived from defaults when not explicitly configured.|
-|`app_install_url`|string|false|||
-|`app_installations_url`|string|false|||
-|`auth_url`|string|false|||
-|`client_id`|string|false|||
-|`code_challenge_methods_supported`|array of string|false||Code challenge methods supported lists the PKCE code challenge methods The only one supported by Coder is "S256".|
-|`device_code_url`|string|false|||
-|`device_flow`|boolean|false|||
-|`display_icon`|string|false||Display icon is a URL to an icon to display in the UI.|
-|`display_name`|string|false||Display name is shown in the UI to identify the auth config.|
-|`id`|string|false||ID is a unique identifier for the auth config. It defaults to `type` when not provided.|
-|`mcp_tool_allow_regex`|string|false||Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.|
-|`mcp_tool_deny_regex`|string|false||Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.|
-|`mcp_url`|string|false||Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.|
-|`no_refresh`|boolean|false|||
+| Name                               | Type            | Required | Restrictions | Description                                                                                                                                                 |
+|------------------------------------|-----------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `api_base_url`                     | string          | false    |              | Api base URL is the base URL for provider REST API calls (e.g., "https://api.github.com" for GitHub). Derived from defaults when not explicitly configured. |
+| `app_install_url`                  | string          | false    |              |                                                                                                                                                             |
+| `app_installations_url`            | string          | false    |              |                                                                                                                                                             |
+| `auth_url`                         | string          | false    |              |                                                                                                                                                             |
+| `client_id`                        | string          | false    |              |                                                                                                                                                             |
+| `code_challenge_methods_supported` | array of string | false    |              | Code challenge methods supported lists the PKCE code challenge methods The only one supported by Coder is "S256".                                           |
+| `device_code_url`                  | string          | false    |              |                                                                                                                                                             |
+| `device_flow`                      | boolean         | false    |              |                                                                                                                                                             |
+| `display_icon`                     | string          | false    |              | Display icon is a URL to an icon to display in the UI.                                                                                                      |
+| `display_name`                     | string          | false    |              | Display name is shown in the UI to identify the auth config.                                                                                                |
+| `id`                               | string          | false    |              | ID is a unique identifier for the auth config. It defaults to `type` when not provided.                                                                     |
+| `mcp_tool_allow_regex`             | string          | false    |              | Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.                                                                |
+| `mcp_tool_deny_regex`              | string          | false    |              | Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.                                                                |
+| `mcp_url`                          | string          | false    |              | Deprecated: Injected MCP in AI Bridge is deprecated and will be removed in a future release.                                                                |
+| `no_refresh`                       | boolean         | false    |              |                                                                                                                                                             |
 |`regex`|string|false||Regex allows API requesters to match an auth config by a string (e.g. coder.com) instead of by it's type.
 Git clone makes use of this by parsing the URL from: 'Username for "https://github.com":' And sending it to the Coder server to match against the Regex.|
 |`revoke_url`|string|false|||
@@ -7358,13 +7358,13 @@ Git clone makes use of this by parsing the URL from: 'Username for "https://gith
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`device_code`|string|false|||
-|`expires_in`|integer|false|||
-|`interval`|integer|false|||
-|`user_code`|string|false|||
-|`verification_uri`|string|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `device_code`      | string  | false    |              |             |
+| `expires_in`       | integer | false    |              |             |
+| `interval`         | integer | false    |              |             |
+| `user_code`        | string  | false    |              |             |
+| `verification_uri` | string  | false    |              |             |
 
 ## codersdk.ExternalAuthLink
 
@@ -7382,15 +7382,15 @@ Git clone makes use of this by parsing the URL from: 'Username for "https://gith
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`authenticated`|boolean|false|||
-|`created_at`|string|false|||
-|`expires`|string|false|||
-|`has_refresh_token`|boolean|false|||
-|`provider_id`|string|false|||
-|`updated_at`|string|false|||
-|`validate_error`|string|false|||
+| Name                | Type    | Required | Restrictions | Description |
+|---------------------|---------|----------|--------------|-------------|
+| `authenticated`     | boolean | false    |              |             |
+| `created_at`        | string  | false    |              |             |
+| `expires`           | string  | false    |              |             |
+| `has_refresh_token` | boolean | false    |              |             |
+| `provider_id`       | string  | false    |              |             |
+| `updated_at`        | string  | false    |              |             |
+| `validate_error`    | string  | false    |              |             |
 
 ## codersdk.ExternalAuthUser
 
@@ -7406,13 +7406,13 @@ Git clone makes use of this by parsing the URL from: 'Username for "https://gith
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`id`|integer|false|||
-|`login`|string|false|||
-|`name`|string|false|||
-|`profile_url`|string|false|||
+| Name          | Type    | Required | Restrictions | Description |
+|---------------|---------|----------|--------------|-------------|
+| `avatar_url`  | string  | false    |              |             |
+| `id`          | integer | false    |              |             |
+| `login`       | string  | false    |              |             |
+| `name`        | string  | false    |              |             |
+| `profile_url` | string  | false    |              |             |
 
 ## codersdk.Feature
 
@@ -7432,12 +7432,12 @@ Git clone makes use of this by parsing the URL from: 'Username for "https://gith
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`actual`|integer|false|||
-|`enabled`|boolean|false|||
-|`entitlement`|[codersdk.Entitlement](#codersdkentitlement)|false|||
-|`limit`|integer|false|||
+| Name          | Type                                         | Required | Restrictions | Description |
+|---------------|----------------------------------------------|----------|--------------|-------------|
+| `actual`      | integer                                      | false    |              |             |
+| `enabled`     | boolean                                      | false    |              |             |
+| `entitlement` | [codersdk.Entitlement](#codersdkentitlement) | false    |              |             |
+| `limit`       | integer                                      | false    |              |             |
 |`usage_period`|[codersdk.UsagePeriod](#codersdkusageperiod)|false||Usage period denotes that the usage is a counter that accumulates over this period (and most likely resets with the issuance of the next license).
 These dates are determined from the license that this entitlement comes from, see enterprise/coderd/license/license.go.
 Only certain features set these fields: - FeatureManagedAgentLimit|
@@ -7457,12 +7457,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`detail`|string|false|||
-|`extra`|[codersdk.DiagnosticExtra](#codersdkdiagnosticextra)|false|||
-|`severity`|[codersdk.DiagnosticSeverityString](#codersdkdiagnosticseveritystring)|false|||
-|`summary`|string|false|||
+| Name       | Type                                                                   | Required | Restrictions | Description |
+|------------|------------------------------------------------------------------------|----------|--------------|-------------|
+| `detail`   | string                                                                 | false    |              |             |
+| `extra`    | [codersdk.DiagnosticExtra](#codersdkdiagnosticextra)                   | false    |              |             |
+| `severity` | [codersdk.DiagnosticSeverityString](#codersdkdiagnosticseveritystring) | false    |              |             |
+| `summary`  | string                                                                 | false    |              |             |
 
 ## codersdk.GenerateAPIKeyResponse
 
@@ -7474,9 +7474,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`key`|string|false|||
+| Name  | Type   | Required | Restrictions | Description |
+|-------|--------|----------|--------------|-------------|
+| `key` | string | false    |              |             |
 
 ## codersdk.GetInboxNotificationResponse
 
@@ -7507,10 +7507,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`notification`|[codersdk.InboxNotification](#codersdkinboxnotification)|false|||
-|`unread_count`|integer|false|||
+| Name           | Type                                                     | Required | Restrictions | Description |
+|----------------|----------------------------------------------------------|----------|--------------|-------------|
+| `notification` | [codersdk.InboxNotification](#codersdkinboxnotification) | false    |              |             |
+| `unread_count` | integer                                                  | false    |              |             |
 
 ## codersdk.GetUserStatusCountsResponse
 
@@ -7535,10 +7535,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`status_counts`|object|false|||
-|» `[any property]`|array of [codersdk.UserStatusChangeCount](#codersdkuserstatuschangecount)|false|||
+| Name               | Type                                                                      | Required | Restrictions | Description |
+|--------------------|---------------------------------------------------------------------------|----------|--------------|-------------|
+| `status_counts`    | object                                                                    | false    |              |             |
+| » `[any property]` | array of [codersdk.UserStatusChangeCount](#codersdkuserstatuschangecount) | false    |              |             |
 
 ## codersdk.GetUsersResponse
 
@@ -7577,10 +7577,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`users`|array of [codersdk.User](#codersdkuser)|false|||
+| Name    | Type                                    | Required | Restrictions | Description |
+|---------|-----------------------------------------|----------|--------------|-------------|
+| `count` | integer                                 | false    |              |             |
+| `users` | array of [codersdk.User](#codersdkuser) | false    |              |             |
 
 ## codersdk.GitSSHKey
 
@@ -7595,12 +7595,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`public_key`|string|false||Public key is the SSH public key in OpenSSH format. Example: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3OmYJvT7q1cF1azbybYy0OZ9yrXfA+M6Lr4vzX5zlp\n" Note: The key includes a trailing newline (\n).|
-|`updated_at`|string|false|||
-|`user_id`|string|false|||
+| Name         | Type   | Required | Restrictions | Description                                                                                                                                                                                       |
+|--------------|--------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `created_at` | string | false    |              |                                                                                                                                                                                                   |
+| `public_key` | string | false    |              | Public key is the SSH public key in OpenSSH format. Example: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3OmYJvT7q1cF1azbybYy0OZ9yrXfA+M6Lr4vzX5zlp\n" Note: The key includes a trailing newline (\n). |
+| `updated_at` | string | false    |              |                                                                                                                                                                                                   |
+| `user_id`    | string | false    |              |                                                                                                                                                                                                   |
 
 ## codersdk.GithubAuthMethod
 
@@ -7613,10 +7613,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_provider_configured`|boolean|false|||
-|`enabled`|boolean|false|||
+| Name                          | Type    | Required | Restrictions | Description |
+|-------------------------------|---------|----------|--------------|-------------|
+| `default_provider_configured` | boolean | false    |              |             |
+| `enabled`                     | boolean | false    |              |             |
 
 ## codersdk.Group
 
@@ -7653,19 +7653,19 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`members`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
-|`name`|string|false|||
-|`organization_display_name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`quota_allowance`|integer|false|||
-|`source`|[codersdk.GroupSource](#codersdkgroupsource)|false|||
-|`total_member_count`|integer|false||How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`.|
+| Name                        | Type                                                  | Required | Restrictions | Description                                                                                                                                                           |
+|-----------------------------|-------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avatar_url`                | string                                                | false    |              |                                                                                                                                                                       |
+| `display_name`              | string                                                | false    |              |                                                                                                                                                                       |
+| `id`                        | string                                                | false    |              |                                                                                                                                                                       |
+| `members`                   | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |                                                                                                                                                                       |
+| `name`                      | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_display_name` | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_id`           | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_name`         | string                                                | false    |              |                                                                                                                                                                       |
+| `quota_allowance`           | integer                                               | false    |              |                                                                                                                                                                       |
+| `source`                    | [codersdk.GroupSource](#codersdkgroupsource)          | false    |              |                                                                                                                                                                       |
+| `total_member_count`        | integer                                               | false    |              | How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`. |
 
 ## codersdk.GroupAIBudget
 
@@ -7680,12 +7680,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`group_id`|string|false|||
-|`spend_limit_micros`|integer|false|||
-|`updated_at`|string|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `created_at`         | string  | false    |              |             |
+| `group_id`           | string  | false    |              |             |
+| `spend_limit_micros` | integer | false    |              |             |
+| `updated_at`         | string  | false    |              |             |
 
 ## codersdk.GroupMembersResponse
 
@@ -7713,10 +7713,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`users`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
+| Name    | Type                                                  | Required | Restrictions | Description |
+|---------|-------------------------------------------------------|----------|--------------|-------------|
+| `count` | integer                                               | false    |              |             |
+| `users` | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |             |
 
 ## codersdk.GroupSource
 
@@ -7728,9 +7728,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`oidc`, `user`|
+| Value(s)       |
+|----------------|
+| `oidc`, `user` |
 
 ## codersdk.GroupSyncSettings
 
@@ -7756,15 +7756,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`auto_create_missing_groups`|boolean|false||Auto create missing groups controls whether groups returned by the OIDC provider are automatically created in Coder if they are missing.|
-|`field`|string|false||Field is the name of the claim field that specifies what groups a user should be in. If empty, no groups will be synced.|
-|`legacy_group_name_mapping`|object|false||Legacy group name mapping is deprecated. It remaps an IDP group name to a Coder group name. Since configuration is now done at runtime, group IDs are used to account for group renames. For legacy configurations, this config option has to remain. Deprecated: Use Mapping instead.|
-|» `[any property]`|string|false|||
-|`mapping`|object|false||Mapping is a map from OIDC groups to Coder group IDs|
-|» `[any property]`|array of string|false|||
-|`regex_filter`|[regexp.Regexp](#regexpregexp)|false||Regex filter is a regular expression that filters the groups returned by the OIDC provider. Any group not matched by this regex will be ignored. If the group filter is nil, then no group filtering will occur.|
+| Name                         | Type                           | Required | Restrictions | Description                                                                                                                                                                                                                                                                            |
+|------------------------------|--------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `auto_create_missing_groups` | boolean                        | false    |              | Auto create missing groups controls whether groups returned by the OIDC provider are automatically created in Coder if they are missing.                                                                                                                                               |
+| `field`                      | string                         | false    |              | Field is the name of the claim field that specifies what groups a user should be in. If empty, no groups will be synced.                                                                                                                                                               |
+| `legacy_group_name_mapping`  | object                         | false    |              | Legacy group name mapping is deprecated. It remaps an IDP group name to a Coder group name. Since configuration is now done at runtime, group IDs are used to account for group renames. For legacy configurations, this config option has to remain. Deprecated: Use Mapping instead. |
+| » `[any property]`           | string                         | false    |              |                                                                                                                                                                                                                                                                                        |
+| `mapping`                    | object                         | false    |              | Mapping is a map from OIDC groups to Coder group IDs                                                                                                                                                                                                                                   |
+| » `[any property]`           | array of string                | false    |              |                                                                                                                                                                                                                                                                                        |
+| `regex_filter`               | [regexp.Regexp](#regexpregexp) | false    |              | Regex filter is a regular expression that filters the groups returned by the OIDC provider. Any group not matched by this regex will be ignored. If the group filter is nil, then no group filtering will occur.                                                                       |
 
 ## codersdk.HTTPCookieConfig
 
@@ -7778,11 +7778,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`host_prefix`|boolean|false|||
-|`same_site`|string|false|||
-|`secure_auth_cookie`|boolean|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `host_prefix`        | boolean | false    |              |             |
+| `same_site`          | string  | false    |              |             |
+| `secure_auth_cookie` | boolean | false    |              |             |
 
 ## codersdk.Healthcheck
 
@@ -7796,11 +7796,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`interval`|integer|false||Interval specifies the seconds between each health check.|
-|`threshold`|integer|false||Threshold specifies the number of consecutive failed health checks before returning "unhealthy".|
-|`url`|string|false||URL specifies the endpoint to check for the app health.|
+| Name        | Type    | Required | Restrictions | Description                                                                                      |
+|-------------|---------|----------|--------------|--------------------------------------------------------------------------------------------------|
+| `interval`  | integer | false    |              | Interval specifies the seconds between each health check.                                        |
+| `threshold` | integer | false    |              | Threshold specifies the number of consecutive failed health checks before returning "unhealthy". |
+| `url`       | string  | false    |              | URL specifies the endpoint to check for the app health.                                          |
 
 ## codersdk.HealthcheckConfig
 
@@ -7813,10 +7813,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`refresh`|integer|false|||
-|`threshold_database`|integer|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `refresh`            | integer | false    |              |             |
+| `threshold_database` | integer | false    |              |             |
 
 ## codersdk.InboxNotification
 
@@ -7844,18 +7844,18 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`actions`|array of [codersdk.InboxNotificationAction](#codersdkinboxnotificationaction)|false|||
-|`content`|string|false|||
-|`created_at`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`read_at`|string|false|||
-|`targets`|array of string|false|||
-|`template_id`|string|false|||
-|`title`|string|false|||
-|`user_id`|string|false|||
+| Name          | Type                                                                          | Required | Restrictions | Description |
+|---------------|-------------------------------------------------------------------------------|----------|--------------|-------------|
+| `actions`     | array of [codersdk.InboxNotificationAction](#codersdkinboxnotificationaction) | false    |              |             |
+| `content`     | string                                                                        | false    |              |             |
+| `created_at`  | string                                                                        | false    |              |             |
+| `icon`        | string                                                                        | false    |              |             |
+| `id`          | string                                                                        | false    |              |             |
+| `read_at`     | string                                                                        | false    |              |             |
+| `targets`     | array of string                                                               | false    |              |             |
+| `template_id` | string                                                                        | false    |              |             |
+| `title`       | string                                                                        | false    |              |             |
+| `user_id`     | string                                                                        | false    |              |             |
 
 ## codersdk.InboxNotificationAction
 
@@ -7868,10 +7868,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`label`|string|false|||
-|`url`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `label` | string | false    |              |             |
+| `url`   | string | false    |              |             |
 
 ## codersdk.InsightsReportInterval
 
@@ -7883,9 +7883,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`day`, `week`|
+| Value(s)      |
+|---------------|
+| `day`, `week` |
 
 ## codersdk.InvalidatePresetsResponse
 
@@ -7903,9 +7903,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`invalidated`|array of [codersdk.InvalidatedPreset](#codersdkinvalidatedpreset)|false|||
+| Name          | Type                                                              | Required | Restrictions | Description |
+|---------------|-------------------------------------------------------------------|----------|--------------|-------------|
+| `invalidated` | array of [codersdk.InvalidatedPreset](#codersdkinvalidatedpreset) | false    |              |             |
 
 ## codersdk.InvalidatedPreset
 
@@ -7919,11 +7919,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`preset_name`|string|false|||
-|`template_name`|string|false|||
-|`template_version_name`|string|false|||
+| Name                    | Type   | Required | Restrictions | Description |
+|-------------------------|--------|----------|--------------|-------------|
+| `preset_name`           | string | false    |              |             |
+| `template_name`         | string | false    |              |             |
+| `template_version_name` | string | false    |              |             |
 
 ## codersdk.IssueReconnectingPTYSignedTokenRequest
 
@@ -7936,10 +7936,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agentID`|string|true|||
-|`url`|string|true||URL is the URL of the reconnecting-pty endpoint you are connecting to.|
+| Name      | Type   | Required | Restrictions | Description                                                            |
+|-----------|--------|----------|--------------|------------------------------------------------------------------------|
+| `agentID` | string | true     |              |                                                                        |
+| `url`     | string | true     |              | URL is the URL of the reconnecting-pty endpoint you are connecting to. |
 
 ## codersdk.IssueReconnectingPTYSignedTokenResponse
 
@@ -7951,9 +7951,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`signed_token`|string|false|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `signed_token` | string | false    |              |             |
 
 ## codersdk.JobErrorCode
 
@@ -7965,9 +7965,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES`|
+| Value(s)                                            |
+|-----------------------------------------------------|
+| `INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES` |
 
 ## codersdk.License
 
@@ -7982,12 +7982,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`claims`|object|false||Claims are the JWT claims asserted by the license.  Here we use a generic string map to ensure that all data from the server is parsed verbatim, not just the fields this version of Coder understands.|
-|`id`|integer|false|||
-|`uploaded_at`|string|false|||
-|`uuid`|string|false|||
+| Name          | Type    | Required | Restrictions | Description                                                                                                                                                                                             |
+|---------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `claims`      | object  | false    |              | Claims are the JWT claims asserted by the license.  Here we use a generic string map to ensure that all data from the server is parsed verbatim, not just the fields this version of Coder understands. |
+| `id`          | integer | false    |              |                                                                                                                                                                                                         |
+| `uploaded_at` | string  | false    |              |                                                                                                                                                                                                         |
+| `uuid`        | string  | false    |              |                                                                                                                                                                                                         |
 
 ## codersdk.LinkConfig
 
@@ -8002,19 +8002,19 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`icon`|string|false|||
-|`location`|string|false|||
-|`name`|string|false|||
-|`target`|string|false|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `icon`     | string | false    |              |             |
+| `location` | string | false    |              |             |
+| `name`     | string | false    |              |             |
+| `target`   | string | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`icon`|`bug`, `chat`, `docs`, `star`|
-|`location`|`dropdown`, `navbar`|
+| Property   | Value(s)                      |
+|------------|-------------------------------|
+| `icon`     | `bug`, `chat`, `docs`, `star` |
+| `location` | `dropdown`, `navbar`          |
 
 ## codersdk.ListInboxNotificationsResponse
 
@@ -8047,10 +8047,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`notifications`|array of [codersdk.InboxNotification](#codersdkinboxnotification)|false|||
-|`unread_count`|integer|false|||
+| Name            | Type                                                              | Required | Restrictions | Description |
+|-----------------|-------------------------------------------------------------------|----------|--------------|-------------|
+| `notifications` | array of [codersdk.InboxNotification](#codersdkinboxnotification) | false    |              |             |
+| `unread_count`  | integer                                                           | false    |              |             |
 
 ## codersdk.LogLevel
 
@@ -8062,9 +8062,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`debug`, `error`, `info`, `trace`, `warn`|
+| Value(s)                                  |
+|-------------------------------------------|
+| `debug`, `error`, `info`, `trace`, `warn` |
 
 ## codersdk.LogSource
 
@@ -8076,9 +8076,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`provisioner`, `provisioner_daemon`|
+| Value(s)                            |
+|-------------------------------------|
+| `provisioner`, `provisioner_daemon` |
 
 ## codersdk.LoggingConfig
 
@@ -8095,12 +8095,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`human`|string|false|||
-|`json`|string|false|||
-|`log_filter`|array of string|false|||
-|`stackdriver`|string|false|||
+| Name          | Type            | Required | Restrictions | Description |
+|---------------|-----------------|----------|--------------|-------------|
+| `human`       | string          | false    |              |             |
+| `json`        | string          | false    |              |             |
+| `log_filter`  | array of string | false    |              |             |
+| `stackdriver` | string          | false    |              |             |
 
 ## codersdk.LoginType
 
@@ -8112,9 +8112,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `github`, `none`, `oidc`, `password`, `token`|
+| Value(s)                                          |
+|---------------------------------------------------|
+| ``, `github`, `none`, `oidc`, `password`, `token` |
 
 ## codersdk.LoginWithPasswordRequest
 
@@ -8127,10 +8127,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`email`|string|true|||
-|`password`|string|true|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `email`    | string | true     |              |             |
+| `password` | string | true     |              |             |
 
 ## codersdk.LoginWithPasswordResponse
 
@@ -8142,9 +8142,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`session_token`|string|true|||
+| Name            | Type   | Required | Restrictions | Description |
+|-----------------|--------|----------|--------------|-------------|
+| `session_token` | string | true     |              |             |
 
 ## codersdk.MatchedProvisioners
 
@@ -8158,11 +8158,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`available`|integer|false||Available is the number of provisioner daemons that are available to take jobs. This may be less than the count if some provisioners are busy or have been stopped.|
-|`count`|integer|false||Count is the number of provisioner daemons that matched the given tags. If the count is 0, it means no provisioner daemons matched the requested tags.|
-|`most_recently_seen`|string|false||Most recently seen is the most recently seen time of the set of matched provisioners. If no provisioners matched, this field will be null.|
+| Name                 | Type    | Required | Restrictions | Description                                                                                                                                                         |
+|----------------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `available`          | integer | false    |              | Available is the number of provisioner daemons that are available to take jobs. This may be less than the count if some provisioners are busy or have been stopped. |
+| `count`              | integer | false    |              | Count is the number of provisioner daemons that matched the given tags. If the count is 0, it means no provisioner daemons matched the requested tags.              |
+| `most_recently_seen` | string  | false    |              | Most recently seen is the most recently seen time of the set of matched provisioners. If no provisioners matched, this field will be null.                          |
 
 ## codersdk.MinimalOrganization
 
@@ -8177,12 +8177,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`id`|string|true|||
-|`name`|string|false|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `display_name` | string | false    |              |             |
+| `icon`         | string | false    |              |             |
+| `id`           | string | true     |              |             |
+| `name`         | string | false    |              |             |
 
 ## codersdk.MinimalUser
 
@@ -8197,12 +8197,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`id`|string|true|||
-|`name`|string|false|||
-|`username`|string|true|||
+| Name         | Type   | Required | Restrictions | Description |
+|--------------|--------|----------|--------------|-------------|
+| `avatar_url` | string | false    |              |             |
+| `id`         | string | true     |              |             |
+| `name`       | string | false    |              |             |
+| `username`   | string | true     |              |             |
 
 ## codersdk.NotificationMethodsResponse
 
@@ -8217,10 +8217,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`available`|array of string|false|||
-|`default`|string|false|||
+| Name        | Type            | Required | Restrictions | Description |
+|-------------|-----------------|----------|--------------|-------------|
+| `available` | array of string | false    |              |             |
+| `default`   | string          | false    |              |             |
 
 ## codersdk.NotificationPreference
 
@@ -8234,11 +8234,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`disabled`|boolean|false|||
-|`id`|string|false|||
-|`updated_at`|string|false|||
+| Name         | Type    | Required | Restrictions | Description |
+|--------------|---------|----------|--------------|-------------|
+| `disabled`   | boolean | false    |              |             |
+| `id`         | string  | false    |              |             |
+| `updated_at` | string  | false    |              |             |
 
 ## codersdk.NotificationTemplate
 
@@ -8258,17 +8258,17 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`actions`|string|false|||
-|`body_template`|string|false|||
-|`enabled_by_default`|boolean|false|||
-|`group`|string|false|||
-|`id`|string|false|||
-|`kind`|string|false|||
-|`method`|string|false|||
-|`name`|string|false|||
-|`title_template`|string|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `actions`            | string  | false    |              |             |
+| `body_template`      | string  | false    |              |             |
+| `enabled_by_default` | boolean | false    |              |             |
+| `group`              | string  | false    |              |             |
+| `id`                 | string  | false    |              |             |
+| `kind`               | string  | false    |              |             |
+| `method`             | string  | false    |              |             |
+| `name`               | string  | false    |              |             |
+| `title_template`     | string  | false    |              |             |
 
 ## codersdk.NotificationsConfig
 
@@ -8326,20 +8326,20 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dispatch_timeout`|integer|false||How long to wait while a notification is being sent before giving up.|
-|`email`|[codersdk.NotificationsEmailConfig](#codersdknotificationsemailconfig)|false||Email settings.|
-|`fetch_interval`|integer|false||How often to query the database for queued notifications.|
-|`inbox`|[codersdk.NotificationsInboxConfig](#codersdknotificationsinboxconfig)|false||Inbox settings.|
-|`lease_count`|integer|false||How many notifications a notifier should lease per fetch interval.|
-|`lease_period`|integer|false||How long a notifier should lease a message. This is effectively how long a notification is 'owned' by a notifier, and once this period expires it will be available for lease by another notifier. Leasing is important in order for multiple running notifiers to not pick the same messages to deliver concurrently. This lease period will only expire if a notifier shuts down ungracefully; a dispatch of the notification releases the lease.|
-|`max_send_attempts`|integer|false||The upper limit of attempts to send a notification.|
-|`method`|string|false||Which delivery method to use (available options: 'smtp', 'webhook').|
-|`retry_interval`|integer|false||The minimum time between retries.|
-|`sync_buffer_size`|integer|false||The notifications system buffers message updates in memory to ease pressure on the database. This option controls how many updates are kept in memory. The lower this value the lower the change of state inconsistency in a non-graceful shutdown - but it also increases load on the database. It is recommended to keep this option at its default value.|
-|`sync_interval`|integer|false||The notifications system buffers message updates in memory to ease pressure on the database. This option controls how often it synchronizes its state with the database. The shorter this value the lower the change of state inconsistency in a non-graceful shutdown - but it also increases load on the database. It is recommended to keep this option at its default value.|
-|`webhook`|[codersdk.NotificationsWebhookConfig](#codersdknotificationswebhookconfig)|false||Webhook settings.|
+| Name                | Type                                                                       | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|---------------------|----------------------------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dispatch_timeout`  | integer                                                                    | false    |              | How long to wait while a notification is being sent before giving up.                                                                                                                                                                                                                                                                                                                                                                               |
+| `email`             | [codersdk.NotificationsEmailConfig](#codersdknotificationsemailconfig)     | false    |              | Email settings.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `fetch_interval`    | integer                                                                    | false    |              | How often to query the database for queued notifications.                                                                                                                                                                                                                                                                                                                                                                                           |
+| `inbox`             | [codersdk.NotificationsInboxConfig](#codersdknotificationsinboxconfig)     | false    |              | Inbox settings.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `lease_count`       | integer                                                                    | false    |              | How many notifications a notifier should lease per fetch interval.                                                                                                                                                                                                                                                                                                                                                                                  |
+| `lease_period`      | integer                                                                    | false    |              | How long a notifier should lease a message. This is effectively how long a notification is 'owned' by a notifier, and once this period expires it will be available for lease by another notifier. Leasing is important in order for multiple running notifiers to not pick the same messages to deliver concurrently. This lease period will only expire if a notifier shuts down ungracefully; a dispatch of the notification releases the lease. |
+| `max_send_attempts` | integer                                                                    | false    |              | The upper limit of attempts to send a notification.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `method`            | string                                                                     | false    |              | Which delivery method to use (available options: 'smtp', 'webhook').                                                                                                                                                                                                                                                                                                                                                                                |
+| `retry_interval`    | integer                                                                    | false    |              | The minimum time between retries.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `sync_buffer_size`  | integer                                                                    | false    |              | The notifications system buffers message updates in memory to ease pressure on the database. This option controls how many updates are kept in memory. The lower this value the lower the change of state inconsistency in a non-graceful shutdown - but it also increases load on the database. It is recommended to keep this option at its default value.                                                                                        |
+| `sync_interval`     | integer                                                                    | false    |              | The notifications system buffers message updates in memory to ease pressure on the database. This option controls how often it synchronizes its state with the database. The shorter this value the lower the change of state inconsistency in a non-graceful shutdown - but it also increases load on the database. It is recommended to keep this option at its default value.                                                                    |
+| `webhook`           | [codersdk.NotificationsWebhookConfig](#codersdknotificationswebhookconfig) | false    |              | Webhook settings.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## codersdk.NotificationsEmailAuthConfig
 
@@ -8354,12 +8354,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`identity`|string|false||Identity for PLAIN auth.|
-|`password`|string|false||Password for LOGIN/PLAIN auth.|
-|`password_file`|string|false||File from which to load the password for LOGIN/PLAIN auth.|
-|`username`|string|false||Username for LOGIN/PLAIN auth.|
+| Name            | Type   | Required | Restrictions | Description                                                |
+|-----------------|--------|----------|--------------|------------------------------------------------------------|
+| `identity`      | string | false    |              | Identity for PLAIN auth.                                   |
+| `password`      | string | false    |              | Password for LOGIN/PLAIN auth.                             |
+| `password_file` | string | false    |              | File from which to load the password for LOGIN/PLAIN auth. |
+| `username`      | string | false    |              | Username for LOGIN/PLAIN auth.                             |
 
 ## codersdk.NotificationsEmailConfig
 
@@ -8388,14 +8388,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`auth`|[codersdk.NotificationsEmailAuthConfig](#codersdknotificationsemailauthconfig)|false||Authentication details.|
-|`force_tls`|boolean|false||Force tls causes a TLS connection to be attempted.|
-|`from`|string|false||The sender's address.|
-|`hello`|string|false||The hostname identifying the SMTP server.|
-|`smarthost`|string|false||The intermediary SMTP host through which emails are sent (host:port).|
-|`tls`|[codersdk.NotificationsEmailTLSConfig](#codersdknotificationsemailtlsconfig)|false||Tls details.|
+| Name        | Type                                                                           | Required | Restrictions | Description                                                           |
+|-------------|--------------------------------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------|
+| `auth`      | [codersdk.NotificationsEmailAuthConfig](#codersdknotificationsemailauthconfig) | false    |              | Authentication details.                                               |
+| `force_tls` | boolean                                                                        | false    |              | Force tls causes a TLS connection to be attempted.                    |
+| `from`      | string                                                                         | false    |              | The sender's address.                                                 |
+| `hello`     | string                                                                         | false    |              | The hostname identifying the SMTP server.                             |
+| `smarthost` | string                                                                         | false    |              | The intermediary SMTP host through which emails are sent (host:port). |
+| `tls`       | [codersdk.NotificationsEmailTLSConfig](#codersdknotificationsemailtlsconfig)   | false    |              | Tls details.                                                          |
 
 ## codersdk.NotificationsEmailTLSConfig
 
@@ -8412,14 +8412,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`ca_file`|string|false||Ca file specifies the location of the CA certificate to use.|
-|`cert_file`|string|false||Cert file specifies the location of the certificate to use.|
-|`insecure_skip_verify`|boolean|false||Insecure skip verify skips target certificate validation.|
-|`key_file`|string|false||Key file specifies the location of the key to use.|
-|`server_name`|string|false||Server name to verify the hostname for the targets.|
-|`start_tls`|boolean|false||Start tls attempts to upgrade plain connections to TLS.|
+| Name                   | Type    | Required | Restrictions | Description                                                  |
+|------------------------|---------|----------|--------------|--------------------------------------------------------------|
+| `ca_file`              | string  | false    |              | Ca file specifies the location of the CA certificate to use. |
+| `cert_file`            | string  | false    |              | Cert file specifies the location of the certificate to use.  |
+| `insecure_skip_verify` | boolean | false    |              | Insecure skip verify skips target certificate validation.    |
+| `key_file`             | string  | false    |              | Key file specifies the location of the key to use.           |
+| `server_name`          | string  | false    |              | Server name to verify the hostname for the targets.          |
+| `start_tls`            | boolean | false    |              | Start tls attempts to upgrade plain connections to TLS.      |
 
 ## codersdk.NotificationsInboxConfig
 
@@ -8431,9 +8431,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enabled`|boolean|false|||
+| Name      | Type    | Required | Restrictions | Description |
+|-----------|---------|----------|--------------|-------------|
+| `enabled` | boolean | false    |              |             |
 
 ## codersdk.NotificationsSettings
 
@@ -8445,9 +8445,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`notifier_paused`|boolean|false|||
+| Name              | Type    | Required | Restrictions | Description |
+|-------------------|---------|----------|--------------|-------------|
+| `notifier_paused` | boolean | false    |              |             |
 
 ## codersdk.NotificationsWebhookConfig
 
@@ -8471,9 +8471,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`endpoint`|[serpent.URL](#serpenturl)|false||The URL to which the payload will be sent with an HTTP POST request.|
+| Name       | Type                       | Required | Restrictions | Description                                                          |
+|------------|----------------------------|----------|--------------|----------------------------------------------------------------------|
+| `endpoint` | [serpent.URL](#serpenturl) | false    |              | The URL to which the payload will be sent with an HTTP POST request. |
 
 ## codersdk.NullHCLString
 
@@ -8486,10 +8486,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`valid`|boolean|false|||
-|`value`|string|false|||
+| Name    | Type    | Required | Restrictions | Description |
+|---------|---------|----------|--------------|-------------|
+| `valid` | boolean | false    |              |             |
+| `value` | string  | false    |              |             |
 
 ## codersdk.OAuth2AppEndpoints
 
@@ -8504,12 +8504,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`authorization`|string|false|||
-|`device_authorization`|string|false||Device authorization is optional.|
-|`token`|string|false|||
-|`token_revoke`|string|false|||
+| Name                   | Type   | Required | Restrictions | Description                       |
+|------------------------|--------|----------|--------------|-----------------------------------|
+| `authorization`        | string | false    |              |                                   |
+| `device_authorization` | string | false    |              | Device authorization is optional. |
+| `token`                | string | false    |              |                                   |
+| `token_revoke`         | string | false    |              |                                   |
 
 ## codersdk.OAuth2AuthorizationServerMetadata
 
@@ -8540,18 +8540,18 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`authorization_endpoint`|string|false|||
-|`code_challenge_methods_supported`|array of [codersdk.OAuth2PKCECodeChallengeMethod](#codersdkoauth2pkcecodechallengemethod)|false|||
-|`grant_types_supported`|array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)|false|||
-|`issuer`|string|false|||
-|`registration_endpoint`|string|false|||
-|`response_types_supported`|array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype)|false|||
-|`revocation_endpoint`|string|false|||
-|`scopes_supported`|array of string|false|||
-|`token_endpoint`|string|false|||
-|`token_endpoint_auth_methods_supported`|array of [codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)|false|||
+| Name                                    | Type                                                                                      | Required | Restrictions | Description |
+|-----------------------------------------|-------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `authorization_endpoint`                | string                                                                                    | false    |              |             |
+| `code_challenge_methods_supported`      | array of [codersdk.OAuth2PKCECodeChallengeMethod](#codersdkoauth2pkcecodechallengemethod) | false    |              |             |
+| `grant_types_supported`                 | array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)             | false    |              |             |
+| `issuer`                                | string                                                                                    | false    |              |             |
+| `registration_endpoint`                 | string                                                                                    | false    |              |             |
+| `response_types_supported`              | array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype)       | false    |              |             |
+| `revocation_endpoint`                   | string                                                                                    | false    |              |             |
+| `scopes_supported`                      | array of string                                                                           | false    |              |             |
+| `token_endpoint`                        | string                                                                                    | false    |              |             |
+| `token_endpoint_auth_methods_supported` | array of [codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod) | false    |              |             |
 
 ## codersdk.OAuth2ClientConfiguration
 
@@ -8590,28 +8590,28 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_id`|string|false|||
-|`client_id_issued_at`|integer|false|||
-|`client_name`|string|false|||
-|`client_secret_expires_at`|integer|false|||
-|`client_uri`|string|false|||
-|`contacts`|array of string|false|||
-|`grant_types`|array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)|false|||
-|`jwks`|object|false|||
-|`jwks_uri`|string|false|||
-|`logo_uri`|string|false|||
-|`policy_uri`|string|false|||
-|`redirect_uris`|array of string|false|||
-|`registration_access_token`|string|false|||
-|`registration_client_uri`|string|false|||
-|`response_types`|array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype)|false|||
-|`scope`|string|false|||
-|`software_id`|string|false|||
-|`software_version`|string|false|||
-|`token_endpoint_auth_method`|[codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)|false|||
-|`tos_uri`|string|false|||
+| Name                         | Type                                                                                | Required | Restrictions | Description |
+|------------------------------|-------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `client_id`                  | string                                                                              | false    |              |             |
+| `client_id_issued_at`        | integer                                                                             | false    |              |             |
+| `client_name`                | string                                                                              | false    |              |             |
+| `client_secret_expires_at`   | integer                                                                             | false    |              |             |
+| `client_uri`                 | string                                                                              | false    |              |             |
+| `contacts`                   | array of string                                                                     | false    |              |             |
+| `grant_types`                | array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)       | false    |              |             |
+| `jwks`                       | object                                                                              | false    |              |             |
+| `jwks_uri`                   | string                                                                              | false    |              |             |
+| `logo_uri`                   | string                                                                              | false    |              |             |
+| `policy_uri`                 | string                                                                              | false    |              |             |
+| `redirect_uris`              | array of string                                                                     | false    |              |             |
+| `registration_access_token`  | string                                                                              | false    |              |             |
+| `registration_client_uri`    | string                                                                              | false    |              |             |
+| `response_types`             | array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype) | false    |              |             |
+| `scope`                      | string                                                                              | false    |              |             |
+| `software_id`                | string                                                                              | false    |              |             |
+| `software_version`           | string                                                                              | false    |              |             |
+| `token_endpoint_auth_method` | [codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)    | false    |              |             |
+| `tos_uri`                    | string                                                                              | false    |              |             |
 
 ## codersdk.OAuth2ClientRegistrationRequest
 
@@ -8646,24 +8646,24 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_name`|string|false|||
-|`client_uri`|string|false|||
-|`contacts`|array of string|false|||
-|`grant_types`|array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)|false|||
-|`jwks`|object|false|||
-|`jwks_uri`|string|false|||
-|`logo_uri`|string|false|||
-|`policy_uri`|string|false|||
-|`redirect_uris`|array of string|false|||
-|`response_types`|array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype)|false|||
-|`scope`|string|false|||
-|`software_id`|string|false|||
-|`software_statement`|string|false|||
-|`software_version`|string|false|||
-|`token_endpoint_auth_method`|[codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)|false|||
-|`tos_uri`|string|false|||
+| Name                         | Type                                                                                | Required | Restrictions | Description |
+|------------------------------|-------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `client_name`                | string                                                                              | false    |              |             |
+| `client_uri`                 | string                                                                              | false    |              |             |
+| `contacts`                   | array of string                                                                     | false    |              |             |
+| `grant_types`                | array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)       | false    |              |             |
+| `jwks`                       | object                                                                              | false    |              |             |
+| `jwks_uri`                   | string                                                                              | false    |              |             |
+| `logo_uri`                   | string                                                                              | false    |              |             |
+| `policy_uri`                 | string                                                                              | false    |              |             |
+| `redirect_uris`              | array of string                                                                     | false    |              |             |
+| `response_types`             | array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype) | false    |              |             |
+| `scope`                      | string                                                                              | false    |              |             |
+| `software_id`                | string                                                                              | false    |              |             |
+| `software_statement`         | string                                                                              | false    |              |             |
+| `software_version`           | string                                                                              | false    |              |             |
+| `token_endpoint_auth_method` | [codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)    | false    |              |             |
+| `tos_uri`                    | string                                                                              | false    |              |             |
 
 ## codersdk.OAuth2ClientRegistrationResponse
 
@@ -8703,29 +8703,29 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_id`|string|false|||
-|`client_id_issued_at`|integer|false|||
-|`client_name`|string|false|||
-|`client_secret`|string|false|||
-|`client_secret_expires_at`|integer|false|||
-|`client_uri`|string|false|||
-|`contacts`|array of string|false|||
-|`grant_types`|array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)|false|||
-|`jwks`|object|false|||
-|`jwks_uri`|string|false|||
-|`logo_uri`|string|false|||
-|`policy_uri`|string|false|||
-|`redirect_uris`|array of string|false|||
-|`registration_access_token`|string|false|||
-|`registration_client_uri`|string|false|||
-|`response_types`|array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype)|false|||
-|`scope`|string|false|||
-|`software_id`|string|false|||
-|`software_version`|string|false|||
-|`token_endpoint_auth_method`|[codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)|false|||
-|`tos_uri`|string|false|||
+| Name                         | Type                                                                                | Required | Restrictions | Description |
+|------------------------------|-------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `client_id`                  | string                                                                              | false    |              |             |
+| `client_id_issued_at`        | integer                                                                             | false    |              |             |
+| `client_name`                | string                                                                              | false    |              |             |
+| `client_secret`              | string                                                                              | false    |              |             |
+| `client_secret_expires_at`   | integer                                                                             | false    |              |             |
+| `client_uri`                 | string                                                                              | false    |              |             |
+| `contacts`                   | array of string                                                                     | false    |              |             |
+| `grant_types`                | array of [codersdk.OAuth2ProviderGrantType](#codersdkoauth2providergranttype)       | false    |              |             |
+| `jwks`                       | object                                                                              | false    |              |             |
+| `jwks_uri`                   | string                                                                              | false    |              |             |
+| `logo_uri`                   | string                                                                              | false    |              |             |
+| `policy_uri`                 | string                                                                              | false    |              |             |
+| `redirect_uris`              | array of string                                                                     | false    |              |             |
+| `registration_access_token`  | string                                                                              | false    |              |             |
+| `registration_client_uri`    | string                                                                              | false    |              |             |
+| `response_types`             | array of [codersdk.OAuth2ProviderResponseType](#codersdkoauth2providerresponsetype) | false    |              |             |
+| `scope`                      | string                                                                              | false    |              |             |
+| `software_id`                | string                                                                              | false    |              |             |
+| `software_version`           | string                                                                              | false    |              |             |
+| `token_endpoint_auth_method` | [codersdk.OAuth2TokenEndpointAuthMethod](#codersdkoauth2tokenendpointauthmethod)    | false    |              |             |
+| `tos_uri`                    | string                                                                              | false    |              |             |
 
 ## codersdk.OAuth2Config
 
@@ -8751,9 +8751,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`github`|[codersdk.OAuth2GithubConfig](#codersdkoauth2githubconfig)|false|||
+| Name     | Type                                                       | Required | Restrictions | Description |
+|----------|------------------------------------------------------------|----------|--------------|-------------|
+| `github` | [codersdk.OAuth2GithubConfig](#codersdkoauth2githubconfig) | false    |              |             |
 
 ## codersdk.OAuth2GithubConfig
 
@@ -8777,17 +8777,17 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_everyone`|boolean|false|||
-|`allow_signups`|boolean|false|||
-|`allowed_orgs`|array of string|false|||
-|`allowed_teams`|array of string|false|||
-|`client_id`|string|false|||
-|`client_secret`|string|false|||
-|`default_provider_enable`|boolean|false|||
-|`device_flow`|boolean|false|||
-|`enterprise_base_url`|string|false|||
+| Name                      | Type            | Required | Restrictions | Description |
+|---------------------------|-----------------|----------|--------------|-------------|
+| `allow_everyone`          | boolean         | false    |              |             |
+| `allow_signups`           | boolean         | false    |              |             |
+| `allowed_orgs`            | array of string | false    |              |             |
+| `allowed_teams`           | array of string | false    |              |             |
+| `client_id`               | string          | false    |              |             |
+| `client_secret`           | string          | false    |              |             |
+| `default_provider_enable` | boolean         | false    |              |             |
+| `device_flow`             | boolean         | false    |              |             |
+| `enterprise_base_url`     | string          | false    |              |             |
 
 ## codersdk.OAuth2PKCECodeChallengeMethod
 
@@ -8799,9 +8799,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`S256`, `plain`|
+| Value(s)        |
+|-----------------|
+| `S256`, `plain` |
 
 ## codersdk.OAuth2ProtectedResourceMetadata
 
@@ -8822,12 +8822,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`authorization_servers`|array of string|false|||
-|`bearer_methods_supported`|array of string|false|||
-|`resource`|string|false|||
-|`scopes_supported`|array of string|false|||
+| Name                       | Type            | Required | Restrictions | Description |
+|----------------------------|-----------------|----------|--------------|-------------|
+| `authorization_servers`    | array of string | false    |              |             |
+| `bearer_methods_supported` | array of string | false    |              |             |
+| `resource`                 | string          | false    |              |             |
+| `scopes_supported`         | array of string | false    |              |             |
 
 ## codersdk.OAuth2ProviderApp
 
@@ -8848,13 +8848,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`callback_url`|string|false|||
-|`endpoints`|[codersdk.OAuth2AppEndpoints](#codersdkoauth2appendpoints)|false||Endpoints are included in the app response for easier discovery. The OAuth2 spec does not have a defined place to find these (for comparison, OIDC has a '/.well-known/openid-configuration' endpoint).|
-|`icon`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
+| Name           | Type                                                       | Required | Restrictions | Description                                                                                                                                                                                             |
+|----------------|------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `callback_url` | string                                                     | false    |              |                                                                                                                                                                                                         |
+| `endpoints`    | [codersdk.OAuth2AppEndpoints](#codersdkoauth2appendpoints) | false    |              | Endpoints are included in the app response for easier discovery. The OAuth2 spec does not have a defined place to find these (for comparison, OIDC has a '/.well-known/openid-configuration' endpoint). |
+| `icon`         | string                                                     | false    |              |                                                                                                                                                                                                         |
+| `id`           | string                                                     | false    |              |                                                                                                                                                                                                         |
+| `name`         | string                                                     | false    |              |                                                                                                                                                                                                         |
 
 ## codersdk.OAuth2ProviderAppSecret
 
@@ -8868,11 +8868,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_secret_truncated`|string|false|||
-|`id`|string|false|||
-|`last_used_at`|string|false|||
+| Name                      | Type   | Required | Restrictions | Description |
+|---------------------------|--------|----------|--------------|-------------|
+| `client_secret_truncated` | string | false    |              |             |
+| `id`                      | string | false    |              |             |
+| `last_used_at`            | string | false    |              |             |
 
 ## codersdk.OAuth2ProviderAppSecretFull
 
@@ -8885,10 +8885,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`client_secret_full`|string|false|||
-|`id`|string|false|||
+| Name                 | Type   | Required | Restrictions | Description |
+|----------------------|--------|----------|--------------|-------------|
+| `client_secret_full` | string | false    |              |             |
+| `id`                 | string | false    |              |             |
 
 ## codersdk.OAuth2ProviderGrantType
 
@@ -8900,9 +8900,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`authorization_code`, `client_credentials`, `implicit`, `password`, `refresh_token`|
+| Value(s)                                                                            |
+|-------------------------------------------------------------------------------------|
+| `authorization_code`, `client_credentials`, `implicit`, `password`, `refresh_token` |
 
 ## codersdk.OAuth2ProviderResponseType
 
@@ -8914,9 +8914,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`code`, `token`|
+| Value(s)        |
+|-----------------|
+| `code`, `token` |
 
 ## codersdk.OAuth2TokenEndpointAuthMethod
 
@@ -8928,9 +8928,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`client_secret_basic`, `client_secret_post`, `none`|
+| Value(s)                                            |
+|-----------------------------------------------------|
+| `client_secret_basic`, `client_secret_post`, `none` |
 
 ## codersdk.OAuthConversionResponse
 
@@ -8945,12 +8945,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`expires_at`|string|false|||
-|`state_string`|string|false|||
-|`to_type`|[codersdk.LoginType](#codersdklogintype)|false|||
-|`user_id`|string|false|||
+| Name           | Type                                     | Required | Restrictions | Description |
+|----------------|------------------------------------------|----------|--------------|-------------|
+| `expires_at`   | string                                   | false    |              |             |
+| `state_string` | string                                   | false    |              |             |
+| `to_type`      | [codersdk.LoginType](#codersdklogintype) | false    |              |             |
+| `user_id`      | string                                   | false    |              |             |
 
 ## codersdk.OIDCAuthMethod
 
@@ -8964,11 +8964,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enabled`|boolean|false|||
-|`iconUrl`|string|false|||
-|`signInText`|string|false|||
+| Name         | Type    | Required | Restrictions | Description |
+|--------------|---------|----------|--------------|-------------|
+| `enabled`    | boolean | false    |              |             |
+| `iconUrl`    | string  | false    |              |             |
+| `signInText` | string  | false    |              |             |
 
 ## codersdk.OIDCClaimsResponse
 
@@ -8980,9 +8980,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`claims`|object|false||Claims are the merged claims from the OIDC provider. These are the union of the ID token claims and the userinfo claims, where userinfo claims take precedence on conflict.|
+| Name     | Type   | Required | Restrictions | Description                                                                                                                                                                 |
+|----------|--------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `claims` | object | false    |              | Claims are the merged claims from the OIDC provider. These are the union of the ID token claims and the userinfo claims, where userinfo claims take precedence on conflict. |
 
 ## codersdk.OIDCConfig
 
@@ -9061,42 +9061,42 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_signups`|boolean|false|||
-|`auth_url_params`|object|false|||
-|`auto_repair_links`|boolean|false|||
-|`client_cert_file`|string|false|||
-|`client_id`|string|false|||
-|`client_key_file`|string|false||Client key file & ClientCertFile are used in place of ClientSecret for PKI auth.|
-|`client_secret`|string|false|||
-|`email_domain`|array of string|false|||
-|`email_fallback`|boolean|false||Email fallback allows OIDC logins to fall back to email-based matching when the `linked_id` (issuer+subject) does not match an existing user link. INSECURE: weakens the linked_id check. It exists for IdP brokers that do not issue a stable `sub` for the same user across connections.|
-|`email_field`|string|false|||
-|`group_allow_list`|array of string|false|||
-|`group_auto_create`|boolean|false|||
-|`group_mapping`|object|false|||
-|`group_regex_filter`|[serpent.Regexp](#serpentregexp)|false|||
-|`groups_field`|string|false|||
-|`icon_url`|[serpent.URL](#serpenturl)|false|||
-|`ignore_email_verified`|boolean|false|||
-|`ignore_user_info`|boolean|false||Ignore user info & UserInfoFromAccessToken are mutually exclusive. Only 1 can be set to true. Ideally this would be an enum with 3 states, ['none', 'userinfo', 'access_token']. However, for backward compatibility, `ignore_user_info` must remain. And `access_token` is a niche, non-spec compliant edge case. So it's use is rare, and should not be advised.|
-|`issuer_url`|string|false|||
-|`name_field`|string|false|||
-|`organization_assign_default`|boolean|false|||
-|`organization_field`|string|false|||
-|`organization_mapping`|object|false|||
-|`redirect_allowed_hosts`|array of string|false||Redirect allowed hosts is an allowlist of hostnames that may be used as the host of the OIDC redirect_uri. When non-empty, the redirect_uri is constructed from the incoming request's Host header (validated against this list) instead of from AccessURL. Every listed host must also be registered as a valid redirect URI in the OIDC provider. This setting is mutually exclusive with RedirectURL: if RedirectURL is set, this allowlist is ignored.|
-|`redirect_url`|[serpent.URL](#serpenturl)|false||Redirect URL is optional, defaulting to 'ACCESS_URL'. Only useful in niche situations where the OIDC callback domain is different from the ACCESS_URL domain.|
-|`scopes`|array of string|false|||
-|`sign_in_text`|string|false|||
-|`signups_disabled_text`|string|false|||
-|`skip_issuer_checks`|boolean|false|||
-|`source_user_info_from_access_token`|boolean|false||Source user info from access token as mentioned above is an edge case. This allows sourcing the user_info from the access token itself instead of a user_info endpoint. This assumes the access token is a valid JWT with a set of claims to be merged with the id_token.|
-|`user_role_field`|string|false|||
-|`user_role_mapping`|object|false|||
-|`user_roles_default`|array of string|false|||
-|`username_field`|string|false|||
+| Name                                 | Type                             | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|--------------------------------------|----------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `allow_signups`                      | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `auth_url_params`                    | object                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `auto_repair_links`                  | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `client_cert_file`                   | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `client_id`                          | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `client_key_file`                    | string                           | false    |              | Client key file & ClientCertFile are used in place of ClientSecret for PKI auth.                                                                                                                                                                                                                                                                                                                                                                           |
+| `client_secret`                      | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `email_domain`                       | array of string                  | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `email_fallback`                     | boolean                          | false    |              | Email fallback allows OIDC logins to fall back to email-based matching when the `linked_id` (issuer+subject) does not match an existing user link. INSECURE: weakens the linked_id check. It exists for IdP brokers that do not issue a stable `sub` for the same user across connections.                                                                                                                                                                 |
+| `email_field`                        | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `group_allow_list`                   | array of string                  | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `group_auto_create`                  | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `group_mapping`                      | object                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `group_regex_filter`                 | [serpent.Regexp](#serpentregexp) | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `groups_field`                       | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `icon_url`                           | [serpent.URL](#serpenturl)       | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `ignore_email_verified`              | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `ignore_user_info`                   | boolean                          | false    |              | Ignore user info & UserInfoFromAccessToken are mutually exclusive. Only 1 can be set to true. Ideally this would be an enum with 3 states, ['none', 'userinfo', 'access_token']. However, for backward compatibility, `ignore_user_info` must remain. And `access_token` is a niche, non-spec compliant edge case. So it's use is rare, and should not be advised.                                                                                         |
+| `issuer_url`                         | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `name_field`                         | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `organization_assign_default`        | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `organization_field`                 | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `organization_mapping`               | object                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `redirect_allowed_hosts`             | array of string                  | false    |              | Redirect allowed hosts is an allowlist of hostnames that may be used as the host of the OIDC redirect_uri. When non-empty, the redirect_uri is constructed from the incoming request's Host header (validated against this list) instead of from AccessURL. Every listed host must also be registered as a valid redirect URI in the OIDC provider. This setting is mutually exclusive with RedirectURL: if RedirectURL is set, this allowlist is ignored. |
+| `redirect_url`                       | [serpent.URL](#serpenturl)       | false    |              | Redirect URL is optional, defaulting to 'ACCESS_URL'. Only useful in niche situations where the OIDC callback domain is different from the ACCESS_URL domain.                                                                                                                                                                                                                                                                                              |
+| `scopes`                             | array of string                  | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `sign_in_text`                       | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `signups_disabled_text`              | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `skip_issuer_checks`                 | boolean                          | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `source_user_info_from_access_token` | boolean                          | false    |              | Source user info from access token as mentioned above is an edge case. This allows sourcing the user_info from the access token itself instead of a user_info endpoint. This assumes the access token is a valid JWT with a set of claims to be merged with the id_token.                                                                                                                                                                                  |
+| `user_role_field`                    | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `user_role_mapping`                  | object                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `user_roles_default`                 | array of string                  | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `username_field`                     | string                           | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## codersdk.OptionType
 
@@ -9108,9 +9108,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`bool`, `list(string)`, `number`, `string`|
+| Value(s)                                   |
+|--------------------------------------------|
+| `bool`, `list(string)`, `number`, `string` |
 
 ## codersdk.Organization
 
@@ -9132,17 +9132,17 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|true|||
-|`default_org_member_roles`|array of string|false||Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request.|
-|`description`|string|false|||
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`id`|string|true|||
-|`is_default`|boolean|true|||
-|`name`|string|false|||
-|`updated_at`|string|true|||
+| Name                       | Type            | Required | Restrictions | Description                                                                                                                                     |
+|----------------------------|-----------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `created_at`               | string          | true     |              |                                                                                                                                                 |
+| `default_org_member_roles` | array of string | false    |              | Default org member roles are unioned into every member's effective roles at request time. Changes propagate to all members on the next request. |
+| `description`              | string          | false    |              |                                                                                                                                                 |
+| `display_name`             | string          | false    |              |                                                                                                                                                 |
+| `icon`                     | string          | false    |              |                                                                                                                                                 |
+| `id`                       | string          | true     |              |                                                                                                                                                 |
+| `is_default`               | boolean         | true     |              |                                                                                                                                                 |
+| `name`                     | string          | false    |              |                                                                                                                                                 |
+| `updated_at`               | string          | true     |              |                                                                                                                                                 |
 
 ## codersdk.OrganizationMember
 
@@ -9164,13 +9164,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`organization_id`|string|false|||
-|`roles`|array of [codersdk.SlimRole](#codersdkslimrole)|false|||
-|`updated_at`|string|false|||
-|`user_id`|string|false|||
+| Name              | Type                                            | Required | Restrictions | Description |
+|-------------------|-------------------------------------------------|----------|--------------|-------------|
+| `created_at`      | string                                          | false    |              |             |
+| `organization_id` | string                                          | false    |              |             |
+| `roles`           | array of [codersdk.SlimRole](#codersdkslimrole) | false    |              |             |
+| `updated_at`      | string                                          | false    |              |             |
+| `user_id`         | string                                          | false    |              |             |
 
 ## codersdk.OrganizationMemberWithUserData
 
@@ -9210,31 +9210,31 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`created_at`|string|false|||
-|`email`|string|false|||
-|`global_roles`|array of [codersdk.SlimRole](#codersdkslimrole)|false|||
-|`has_ai_seat`|boolean|false||Has ai seat intentionally omits omitempty so the API always includes the field, even when false.|
-|`is_service_account`|boolean|false|||
-|`last_seen_at`|string|false|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`roles`|array of [codersdk.SlimRole](#codersdkslimrole)|false|||
-|`status`|[codersdk.UserStatus](#codersdkuserstatus)|false|||
-|`updated_at`|string|false|||
-|`user_created_at`|string|false|||
-|`user_id`|string|false|||
-|`user_updated_at`|string|false|||
-|`username`|string|false|||
+| Name                 | Type                                            | Required | Restrictions | Description                                                                                      |
+|----------------------|-------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------|
+| `avatar_url`         | string                                          | false    |              |                                                                                                  |
+| `created_at`         | string                                          | false    |              |                                                                                                  |
+| `email`              | string                                          | false    |              |                                                                                                  |
+| `global_roles`       | array of [codersdk.SlimRole](#codersdkslimrole) | false    |              |                                                                                                  |
+| `has_ai_seat`        | boolean                                         | false    |              | Has ai seat intentionally omits omitempty so the API always includes the field, even when false. |
+| `is_service_account` | boolean                                         | false    |              |                                                                                                  |
+| `last_seen_at`       | string                                          | false    |              |                                                                                                  |
+| `login_type`         | [codersdk.LoginType](#codersdklogintype)        | false    |              |                                                                                                  |
+| `name`               | string                                          | false    |              |                                                                                                  |
+| `organization_id`    | string                                          | false    |              |                                                                                                  |
+| `roles`              | array of [codersdk.SlimRole](#codersdkslimrole) | false    |              |                                                                                                  |
+| `status`             | [codersdk.UserStatus](#codersdkuserstatus)      | false    |              |                                                                                                  |
+| `updated_at`         | string                                          | false    |              |                                                                                                  |
+| `user_created_at`    | string                                          | false    |              |                                                                                                  |
+| `user_id`            | string                                          | false    |              |                                                                                                  |
+| `user_updated_at`    | string                                          | false    |              |                                                                                                  |
+| `username`           | string                                          | false    |              |                                                                                                  |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`active`, `suspended`|
+| Property | Value(s)              |
+|----------|-----------------------|
+| `status` | `active`, `suspended` |
 
 ## codersdk.OrganizationSyncSettings
 
@@ -9255,12 +9255,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`field`|string|false||Field selects the claim field to be used as the created user's organizations. If the field is the empty string, then no organization updates will ever come from the OIDC provider.|
-|`mapping`|object|false||Mapping maps from an OIDC claim --> Coder organization uuid|
-|» `[any property]`|array of string|false|||
-|`organization_assign_default`|boolean|false||Organization assign default will ensure the default org is always included for every user, regardless of their claims. This preserves legacy behavior.|
+| Name                          | Type            | Required | Restrictions | Description                                                                                                                                                                         |
+|-------------------------------|-----------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `field`                       | string          | false    |              | Field selects the claim field to be used as the created user's organizations. If the field is the empty string, then no organization updates will ever come from the OIDC provider. |
+| `mapping`                     | object          | false    |              | Mapping maps from an OIDC claim --> Coder organization uuid                                                                                                                         |
+| » `[any property]`            | array of string | false    |              |                                                                                                                                                                                     |
+| `organization_assign_default` | boolean         | false    |              | Organization assign default will ensure the default org is always included for every user, regardless of their claims. This preserves legacy behavior.                              |
 
 ## codersdk.PaginatedMembersResponse
 
@@ -9305,10 +9305,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`members`|array of [codersdk.OrganizationMemberWithUserData](#codersdkorganizationmemberwithuserdata)|false|||
+| Name      | Type                                                                                        | Required | Restrictions | Description |
+|-----------|---------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `count`   | integer                                                                                     | false    |              |             |
+| `members` | array of [codersdk.OrganizationMemberWithUserData](#codersdkorganizationmemberwithuserdata) | false    |              |             |
 
 ## codersdk.ParameterFormType
 
@@ -9320,9 +9320,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `checkbox`, `dropdown`, `error`, `input`, `multi-select`, `radio`, `slider`, `switch`, `tag-select`, `textarea`|
+| Value(s)                                                                                                            |
+|---------------------------------------------------------------------------------------------------------------------|
+| ``, `checkbox`, `dropdown`, `error`, `input`, `multi-select`, `radio`, `slider`, `switch`, `tag-select`, `textarea` |
 
 ## codersdk.PatchGroupIDPSyncConfigRequest
 
@@ -9336,11 +9336,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`auto_create_missing_groups`|boolean|false|||
-|`field`|string|false|||
-|`regex_filter`|[regexp.Regexp](#regexpregexp)|false|||
+| Name                         | Type                           | Required | Restrictions | Description |
+|------------------------------|--------------------------------|----------|--------------|-------------|
+| `auto_create_missing_groups` | boolean                        | false    |              |             |
+| `field`                      | string                         | false    |              |             |
+| `regex_filter`               | [regexp.Regexp](#regexpregexp) | false    |              |             |
 
 ## codersdk.PatchGroupIDPSyncMappingRequest
 
@@ -9363,14 +9363,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`add`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
-|`remove`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
+| Name      | Type            | Required | Restrictions | Description                                              |
+|-----------|-----------------|----------|--------------|----------------------------------------------------------|
+| `add`     | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
+| `remove`  | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
 
 ## codersdk.PatchGroupRequest
 
@@ -9391,14 +9391,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`add_users`|array of string|false|||
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`quota_allowance`|integer|false|||
-|`remove_users`|array of string|false|||
+| Name              | Type            | Required | Restrictions | Description |
+|-------------------|-----------------|----------|--------------|-------------|
+| `add_users`       | array of string | false    |              |             |
+| `avatar_url`      | string          | false    |              |             |
+| `display_name`    | string          | false    |              |             |
+| `name`            | string          | false    |              |             |
+| `quota_allowance` | integer         | false    |              |             |
+| `remove_users`    | array of string | false    |              |             |
 
 ## codersdk.PatchOrganizationIDPSyncConfigRequest
 
@@ -9411,10 +9411,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`assign_default`|boolean|false|||
-|`field`|string|false|||
+| Name             | Type    | Required | Restrictions | Description |
+|------------------|---------|----------|--------------|-------------|
+| `assign_default` | boolean | false    |              |             |
+| `field`          | string  | false    |              |             |
 
 ## codersdk.PatchOrganizationIDPSyncMappingRequest
 
@@ -9437,14 +9437,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`add`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
-|`remove`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
+| Name      | Type            | Required | Restrictions | Description                                              |
+|-----------|-----------------|----------|--------------|----------------------------------------------------------|
+| `add`     | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
+| `remove`  | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
 
 ## codersdk.PatchRoleIDPSyncConfigRequest
 
@@ -9456,9 +9456,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`field`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `field` | string | false    |              |             |
 
 ## codersdk.PatchRoleIDPSyncMappingRequest
 
@@ -9481,14 +9481,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`add`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
-|`remove`|array of object|false|||
-|`» gets`|string|false||The ID of the Coder resource the user should be added to|
-|`» given`|string|false||The IdP claim the user has|
+| Name      | Type            | Required | Restrictions | Description                                              |
+|-----------|-----------------|----------|--------------|----------------------------------------------------------|
+| `add`     | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
+| `remove`  | array of object | false    |              |                                                          |
+| `» gets`  | string          | false    |              | The ID of the Coder resource the user should be added to |
+| `» given` | string          | false    |              | The IdP claim the user has                               |
 
 ## codersdk.PatchTemplateVersionRequest
 
@@ -9501,10 +9501,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|string|false|||
-|`name`|string|false|||
+| Name      | Type   | Required | Restrictions | Description |
+|-----------|--------|----------|--------------|-------------|
+| `message` | string | false    |              |             |
+| `name`    | string | false    |              |             |
 
 ## codersdk.PatchWorkspaceProxy
 
@@ -9520,13 +9520,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|true|||
-|`icon`|string|true|||
-|`id`|string|true|||
-|`name`|string|true|||
-|`regenerate_token`|boolean|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `display_name`     | string  | true     |              |             |
+| `icon`             | string  | true     |              |             |
+| `id`               | string  | true     |              |             |
+| `name`             | string  | true     |              |             |
+| `regenerate_token` | boolean | false    |              |             |
 
 ## codersdk.PauseTaskResponse
 
@@ -9746,9 +9746,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`workspace_build`|[codersdk.WorkspaceBuild](#codersdkworkspacebuild)|false|||
+| Name              | Type                                               | Required | Restrictions | Description |
+|-------------------|----------------------------------------------------|----------|--------------|-------------|
+| `workspace_build` | [codersdk.WorkspaceBuild](#codersdkworkspacebuild) | false    |              |             |
 
 ## codersdk.Permission
 
@@ -9762,11 +9762,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action`|[codersdk.RBACAction](#codersdkrbacaction)|false|||
-|`negate`|boolean|false||Negate makes this a negative permission|
-|`resource_type`|[codersdk.RBACResource](#codersdkrbacresource)|false|||
+| Name            | Type                                           | Required | Restrictions | Description                             |
+|-----------------|------------------------------------------------|----------|--------------|-----------------------------------------|
+| `action`        | [codersdk.RBACAction](#codersdkrbacaction)     | false    |              |                                         |
+| `negate`        | boolean                                        | false    |              | Negate makes this a negative permission |
+| `resource_type` | [codersdk.RBACResource](#codersdkrbacresource) | false    |              |                                         |
 
 ## codersdk.PostOAuth2ProviderAppRequest
 
@@ -9780,11 +9780,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`callback_url`|string|true|||
-|`icon`|string|false|||
-|`name`|string|true|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `callback_url` | string | true     |              |             |
+| `icon`         | string | false    |              |             |
+| `name`         | string | true     |              |             |
 
 ## codersdk.PostWorkspaceUsageRequest
 
@@ -9797,10 +9797,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_id`|string|false|||
-|`app_name`|[codersdk.UsageAppName](#codersdkusageappname)|false|||
+| Name       | Type                                           | Required | Restrictions | Description |
+|------------|------------------------------------------------|----------|--------------|-------------|
+| `agent_id` | string                                         | false    |              |             |
+| `app_name` | [codersdk.UsageAppName](#codersdkusageappname) | false    |              |             |
 
 ## codersdk.PprofConfig
 
@@ -9816,10 +9816,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`address`|[serpent.HostPort](#serpenthostport)|false|||
-|`enable`|boolean|false|||
+| Name      | Type                                 | Required | Restrictions | Description |
+|-----------|--------------------------------------|----------|--------------|-------------|
+| `address` | [serpent.HostPort](#serpenthostport) | false    |              |             |
+| `enable`  | boolean                              | false    |              |             |
 
 ## codersdk.PrebuildsConfig
 
@@ -9834,12 +9834,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`failure_hard_limit`|integer|false||Failure hard limit defines the maximum number of consecutive failed prebuild attempts allowed before a preset is considered to be in a hard limit state. When a preset hits this limit, no new prebuilds will be created until the limit is reset. FailureHardLimit is disabled when set to zero.|
-|`reconciliation_backoff_interval`|integer|false||Reconciliation backoff interval specifies the amount of time to increase the backoff interval when errors occur during reconciliation.|
-|`reconciliation_backoff_lookback`|integer|false||Reconciliation backoff lookback determines the time window to look back when calculating the number of failed prebuilds, which influences the backoff strategy.|
-|`reconciliation_interval`|integer|false||Reconciliation interval defines how often the workspace prebuilds state should be reconciled.|
+| Name                              | Type    | Required | Restrictions | Description                                                                                                                                                                                                                                                                                       |
+|-----------------------------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `failure_hard_limit`              | integer | false    |              | Failure hard limit defines the maximum number of consecutive failed prebuild attempts allowed before a preset is considered to be in a hard limit state. When a preset hits this limit, no new prebuilds will be created until the limit is reset. FailureHardLimit is disabled when set to zero. |
+| `reconciliation_backoff_interval` | integer | false    |              | Reconciliation backoff interval specifies the amount of time to increase the backoff interval when errors occur during reconciliation.                                                                                                                                                            |
+| `reconciliation_backoff_lookback` | integer | false    |              | Reconciliation backoff lookback determines the time window to look back when calculating the number of failed prebuilds, which influences the backoff strategy.                                                                                                                                   |
+| `reconciliation_interval`         | integer | false    |              | Reconciliation interval defines how often the workspace prebuilds state should be reconciled.                                                                                                                                                                                                     |
 
 ## codersdk.PrebuildsSettings
 
@@ -9851,9 +9851,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`reconciliation_paused`|boolean|false|||
+| Name                    | Type    | Required | Restrictions | Description |
+|-------------------------|---------|----------|--------------|-------------|
+| `reconciliation_paused` | boolean | false    |              |             |
 
 ## codersdk.Preset
 
@@ -9876,15 +9876,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default`|boolean|false|||
-|`description`|string|false|||
-|`desiredPrebuildInstances`|integer|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`parameters`|array of [codersdk.PresetParameter](#codersdkpresetparameter)|false|||
+| Name                       | Type                                                          | Required | Restrictions | Description |
+|----------------------------|---------------------------------------------------------------|----------|--------------|-------------|
+| `default`                  | boolean                                                       | false    |              |             |
+| `description`              | string                                                        | false    |              |             |
+| `desiredPrebuildInstances` | integer                                                       | false    |              |             |
+| `icon`                     | string                                                        | false    |              |             |
+| `id`                       | string                                                        | false    |              |             |
+| `name`                     | string                                                        | false    |              |             |
+| `parameters`               | array of [codersdk.PresetParameter](#codersdkpresetparameter) | false    |              |             |
 
 ## codersdk.PresetParameter
 
@@ -9897,10 +9897,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|false|||
-|`value`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `name`  | string | false    |              |             |
+| `value` | string | false    |              |             |
 
 ## codersdk.PreviewParameter
 
@@ -9965,24 +9965,24 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_value`|[codersdk.NullHCLString](#codersdknullhclstring)|false|||
-|`description`|string|false|||
-|`diagnostics`|array of [codersdk.FriendlyDiagnostic](#codersdkfriendlydiagnostic)|false|||
-|`display_name`|string|false|||
-|`ephemeral`|boolean|false|||
-|`form_type`|[codersdk.ParameterFormType](#codersdkparameterformtype)|false|||
-|`icon`|string|false|||
-|`mutable`|boolean|false|||
-|`name`|string|false|||
-|`options`|array of [codersdk.PreviewParameterOption](#codersdkpreviewparameteroption)|false|||
-|`order`|integer|false||legacy_variable_name was removed (= 14)|
-|`required`|boolean|false|||
-|`styling`|[codersdk.PreviewParameterStyling](#codersdkpreviewparameterstyling)|false|||
-|`type`|[codersdk.OptionType](#codersdkoptiontype)|false|||
-|`validations`|array of [codersdk.PreviewParameterValidation](#codersdkpreviewparametervalidation)|false|||
-|`value`|[codersdk.NullHCLString](#codersdknullhclstring)|false|||
+| Name            | Type                                                                                | Required | Restrictions | Description                             |
+|-----------------|-------------------------------------------------------------------------------------|----------|--------------|-----------------------------------------|
+| `default_value` | [codersdk.NullHCLString](#codersdknullhclstring)                                    | false    |              |                                         |
+| `description`   | string                                                                              | false    |              |                                         |
+| `diagnostics`   | array of [codersdk.FriendlyDiagnostic](#codersdkfriendlydiagnostic)                 | false    |              |                                         |
+| `display_name`  | string                                                                              | false    |              |                                         |
+| `ephemeral`     | boolean                                                                             | false    |              |                                         |
+| `form_type`     | [codersdk.ParameterFormType](#codersdkparameterformtype)                            | false    |              |                                         |
+| `icon`          | string                                                                              | false    |              |                                         |
+| `mutable`       | boolean                                                                             | false    |              |                                         |
+| `name`          | string                                                                              | false    |              |                                         |
+| `options`       | array of [codersdk.PreviewParameterOption](#codersdkpreviewparameteroption)         | false    |              |                                         |
+| `order`         | integer                                                                             | false    |              | legacy_variable_name was removed (= 14) |
+| `required`      | boolean                                                                             | false    |              |                                         |
+| `styling`       | [codersdk.PreviewParameterStyling](#codersdkpreviewparameterstyling)                | false    |              |                                         |
+| `type`          | [codersdk.OptionType](#codersdkoptiontype)                                          | false    |              |                                         |
+| `validations`   | array of [codersdk.PreviewParameterValidation](#codersdkpreviewparametervalidation) | false    |              |                                         |
+| `value`         | [codersdk.NullHCLString](#codersdknullhclstring)                                    | false    |              |                                         |
 
 ## codersdk.PreviewParameterOption
 
@@ -10000,12 +10000,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`icon`|string|false|||
-|`name`|string|false|||
-|`value`|[codersdk.NullHCLString](#codersdknullhclstring)|false|||
+| Name          | Type                                             | Required | Restrictions | Description |
+|---------------|--------------------------------------------------|----------|--------------|-------------|
+| `description` | string                                           | false    |              |             |
+| `icon`        | string                                           | false    |              |             |
+| `name`        | string                                           | false    |              |             |
+| `value`       | [codersdk.NullHCLString](#codersdknullhclstring) | false    |              |             |
 
 ## codersdk.PreviewParameterStyling
 
@@ -10020,12 +10020,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`disabled`|boolean|false|||
-|`label`|string|false|||
-|`mask_input`|boolean|false|||
-|`placeholder`|string|false|||
+| Name          | Type    | Required | Restrictions | Description |
+|---------------|---------|----------|--------------|-------------|
+| `disabled`    | boolean | false    |              |             |
+| `label`       | string  | false    |              |             |
+| `mask_input`  | boolean | false    |              |             |
+| `placeholder` | string  | false    |              |             |
 
 ## codersdk.PreviewParameterValidation
 
@@ -10041,13 +10041,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`validation_error`|string|false|||
-|`validation_max`|integer|false|||
-|`validation_min`|integer|false|||
-|`validation_monotonic`|string|false|||
-|`validation_regex`|string|false||All validation attributes are optional.|
+| Name                   | Type    | Required | Restrictions | Description                             |
+|------------------------|---------|----------|--------------|-----------------------------------------|
+| `validation_error`     | string  | false    |              |                                         |
+| `validation_max`       | integer | false    |              |                                         |
+| `validation_min`       | integer | false    |              |                                         |
+| `validation_monotonic` | string  | false    |              |                                         |
+| `validation_regex`     | string  | false    |              | All validation attributes are optional. |
 
 ## codersdk.PrometheusConfig
 
@@ -10068,13 +10068,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`address`|[serpent.HostPort](#serpenthostport)|false|||
-|`aggregate_agent_stats_by`|array of string|false|||
-|`collect_agent_stats`|boolean|false|||
-|`collect_db_metrics`|boolean|false|||
-|`enable`|boolean|false|||
+| Name                       | Type                                 | Required | Restrictions | Description |
+|----------------------------|--------------------------------------|----------|--------------|-------------|
+| `address`                  | [serpent.HostPort](#serpenthostport) | false    |              |             |
+| `aggregate_agent_stats_by` | array of string                      | false    |              |             |
+| `collect_agent_stats`      | boolean                              | false    |              |             |
+| `collect_db_metrics`       | boolean                              | false    |              |             |
+| `enable`                   | boolean                              | false    |              |             |
 
 ## codersdk.ProvisionerConfig
 
@@ -10093,14 +10093,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`daemon_poll_interval`|integer|false|||
-|`daemon_poll_jitter`|integer|false|||
-|`daemon_psk`|string|false|||
-|`daemon_types`|array of string|false|||
-|`daemons`|integer|false||Daemons is the number of built-in terraform provisioners.|
-|`force_cancel_interval`|integer|false|||
+| Name                    | Type            | Required | Restrictions | Description                                               |
+|-------------------------|-----------------|----------|--------------|-----------------------------------------------------------|
+| `daemon_poll_interval`  | integer         | false    |              |                                                           |
+| `daemon_poll_jitter`    | integer         | false    |              |                                                           |
+| `daemon_psk`            | string          | false    |              |                                                           |
+| `daemon_types`          | array of string | false    |              |                                                           |
+| `daemons`               | integer         | false    |              | Daemons is the number of built-in terraform provisioners. |
+| `force_cancel_interval` | integer         | false    |              |                                                           |
 
 ## codersdk.ProvisionerDaemon
 
@@ -10142,29 +10142,29 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_version`|string|false|||
-|`created_at`|string|false|||
-|`current_job`|[codersdk.ProvisionerDaemonJob](#codersdkprovisionerdaemonjob)|false|||
-|`id`|string|false|||
-|`key_id`|string|false|||
-|`key_name`|string|false||Optional fields.|
-|`last_seen_at`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`previous_job`|[codersdk.ProvisionerDaemonJob](#codersdkprovisionerdaemonjob)|false|||
-|`provisioners`|array of string|false|||
-|`status`|[codersdk.ProvisionerDaemonStatus](#codersdkprovisionerdaemonstatus)|false|||
-|`tags`|object|false|||
-|» `[any property]`|string|false|||
-|`version`|string|false|||
+| Name               | Type                                                                 | Required | Restrictions | Description      |
+|--------------------|----------------------------------------------------------------------|----------|--------------|------------------|
+| `api_version`      | string                                                               | false    |              |                  |
+| `created_at`       | string                                                               | false    |              |                  |
+| `current_job`      | [codersdk.ProvisionerDaemonJob](#codersdkprovisionerdaemonjob)       | false    |              |                  |
+| `id`               | string                                                               | false    |              |                  |
+| `key_id`           | string                                                               | false    |              |                  |
+| `key_name`         | string                                                               | false    |              | Optional fields. |
+| `last_seen_at`     | string                                                               | false    |              |                  |
+| `name`             | string                                                               | false    |              |                  |
+| `organization_id`  | string                                                               | false    |              |                  |
+| `previous_job`     | [codersdk.ProvisionerDaemonJob](#codersdkprovisionerdaemonjob)       | false    |              |                  |
+| `provisioners`     | array of string                                                      | false    |              |                  |
+| `status`           | [codersdk.ProvisionerDaemonStatus](#codersdkprovisionerdaemonstatus) | false    |              |                  |
+| `tags`             | object                                                               | false    |              |                  |
+| » `[any property]` | string                                                               | false    |              |                  |
+| `version`          | string                                                               | false    |              |                  |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`busy`, `idle`, `offline`|
+| Property | Value(s)                  |
+|----------|---------------------------|
+| `status` | `busy`, `idle`, `offline` |
 
 ## codersdk.ProvisionerDaemonJob
 
@@ -10180,19 +10180,19 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|false|||
-|`status`|[codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus)|false|||
-|`template_display_name`|string|false|||
-|`template_icon`|string|false|||
-|`template_name`|string|false|||
+| Name                    | Type                                                           | Required | Restrictions | Description |
+|-------------------------|----------------------------------------------------------------|----------|--------------|-------------|
+| `id`                    | string                                                         | false    |              |             |
+| `status`                | [codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus) | false    |              |             |
+| `template_display_name` | string                                                         | false    |              |             |
+| `template_icon`         | string                                                         | false    |              |             |
+| `template_name`         | string                                                         | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`|
+| Property | Value(s)                                                             |
+|----------|----------------------------------------------------------------------|
+| `status` | `canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded` |
 
 ## codersdk.ProvisionerDaemonStatus
 
@@ -10204,9 +10204,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`busy`, `idle`, `offline`|
+| Value(s)                  |
+|---------------------------|
+| `busy`, `idle`, `offline` |
 
 ## codersdk.ProvisionerJob
 
@@ -10256,37 +10256,37 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`available_workers`|array of string|false|||
-|`canceled_at`|string|false|||
-|`completed_at`|string|false|||
-|`created_at`|string|false|||
-|`error`|string|false|||
-|`error_code`|[codersdk.JobErrorCode](#codersdkjoberrorcode)|false|||
-|`file_id`|string|false|||
-|`id`|string|false|||
-|`initiator_id`|string|false|||
-|`input`|[codersdk.ProvisionerJobInput](#codersdkprovisionerjobinput)|false|||
-|`logs_overflowed`|boolean|false|||
-|`metadata`|[codersdk.ProvisionerJobMetadata](#codersdkprovisionerjobmetadata)|false|||
-|`organization_id`|string|false|||
-|`queue_position`|integer|false|||
-|`queue_size`|integer|false|||
-|`started_at`|string|false|||
-|`status`|[codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus)|false|||
-|`tags`|object|false|||
-|» `[any property]`|string|false|||
-|`type`|[codersdk.ProvisionerJobType](#codersdkprovisionerjobtype)|false|||
-|`worker_id`|string|false|||
-|`worker_name`|string|false|||
+| Name                | Type                                                               | Required | Restrictions | Description |
+|---------------------|--------------------------------------------------------------------|----------|--------------|-------------|
+| `available_workers` | array of string                                                    | false    |              |             |
+| `canceled_at`       | string                                                             | false    |              |             |
+| `completed_at`      | string                                                             | false    |              |             |
+| `created_at`        | string                                                             | false    |              |             |
+| `error`             | string                                                             | false    |              |             |
+| `error_code`        | [codersdk.JobErrorCode](#codersdkjoberrorcode)                     | false    |              |             |
+| `file_id`           | string                                                             | false    |              |             |
+| `id`                | string                                                             | false    |              |             |
+| `initiator_id`      | string                                                             | false    |              |             |
+| `input`             | [codersdk.ProvisionerJobInput](#codersdkprovisionerjobinput)       | false    |              |             |
+| `logs_overflowed`   | boolean                                                            | false    |              |             |
+| `metadata`          | [codersdk.ProvisionerJobMetadata](#codersdkprovisionerjobmetadata) | false    |              |             |
+| `organization_id`   | string                                                             | false    |              |             |
+| `queue_position`    | integer                                                            | false    |              |             |
+| `queue_size`        | integer                                                            | false    |              |             |
+| `started_at`        | string                                                             | false    |              |             |
+| `status`            | [codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus)     | false    |              |             |
+| `tags`              | object                                                             | false    |              |             |
+| » `[any property]`  | string                                                             | false    |              |             |
+| `type`              | [codersdk.ProvisionerJobType](#codersdkprovisionerjobtype)         | false    |              |             |
+| `worker_id`         | string                                                             | false    |              |             |
+| `worker_name`       | string                                                             | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`error_code`|`INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES`|
-|`status`|`canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`|
+| Property     | Value(s)                                                             |
+|--------------|----------------------------------------------------------------------|
+| `error_code` | `INSUFFICIENT_QUOTA`, `REQUIRED_TEMPLATE_VARIABLES`                  |
+| `status`     | `canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded` |
 
 ## codersdk.ProvisionerJobInput
 
@@ -10300,11 +10300,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`error`|string|false|||
-|`template_version_id`|string|false|||
-|`workspace_build_id`|string|false|||
+| Name                  | Type   | Required | Restrictions | Description |
+|-----------------------|--------|----------|--------------|-------------|
+| `error`               | string | false    |              |             |
+| `template_version_id` | string | false    |              |             |
+| `workspace_build_id`  | string | false    |              |             |
 
 ## codersdk.ProvisionerJobLog
 
@@ -10321,20 +10321,20 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|integer|false|||
-|`log_level`|[codersdk.LogLevel](#codersdkloglevel)|false|||
-|`log_source`|[codersdk.LogSource](#codersdklogsource)|false|||
-|`output`|string|false|||
-|`stage`|string|false|||
+| Name         | Type                                     | Required | Restrictions | Description |
+|--------------|------------------------------------------|----------|--------------|-------------|
+| `created_at` | string                                   | false    |              |             |
+| `id`         | integer                                  | false    |              |             |
+| `log_level`  | [codersdk.LogLevel](#codersdkloglevel)   | false    |              |             |
+| `log_source` | [codersdk.LogSource](#codersdklogsource) | false    |              |             |
+| `output`     | string                                   | false    |              |             |
+| `stage`      | string                                   | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`log_level`|`debug`, `error`, `info`, `trace`, `warn`|
+| Property    | Value(s)                                  |
+|-------------|-------------------------------------------|
+| `log_level` | `debug`, `error`, `info`, `trace`, `warn` |
 
 ## codersdk.ProvisionerJobMetadata
 
@@ -10353,16 +10353,16 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`template_display_name`|string|false|||
-|`template_icon`|string|false|||
-|`template_id`|string|false|||
-|`template_name`|string|false|||
-|`template_version_name`|string|false|||
-|`workspace_build_transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|false|||
-|`workspace_id`|string|false|||
-|`workspace_name`|string|false|||
+| Name                         | Type                                                         | Required | Restrictions | Description |
+|------------------------------|--------------------------------------------------------------|----------|--------------|-------------|
+| `template_display_name`      | string                                                       | false    |              |             |
+| `template_icon`              | string                                                       | false    |              |             |
+| `template_id`                | string                                                       | false    |              |             |
+| `template_name`              | string                                                       | false    |              |             |
+| `template_version_name`      | string                                                       | false    |              |             |
+| `workspace_build_transition` | [codersdk.WorkspaceTransition](#codersdkworkspacetransition) | false    |              |             |
+| `workspace_id`               | string                                                       | false    |              |             |
+| `workspace_name`             | string                                                       | false    |              |             |
 
 ## codersdk.ProvisionerJobStatus
 
@@ -10374,9 +10374,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`, `unknown`|
+| Value(s)                                                                        |
+|---------------------------------------------------------------------------------|
+| `canceled`, `canceling`, `failed`, `pending`, `running`, `succeeded`, `unknown` |
 
 ## codersdk.ProvisionerJobType
 
@@ -10388,9 +10388,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`template_version_dry_run`, `template_version_import`, `workspace_build`|
+| Value(s)                                                                 |
+|--------------------------------------------------------------------------|
+| `template_version_dry_run`, `template_version_import`, `workspace_build` |
 
 ## codersdk.ProvisionerKey
 
@@ -10409,13 +10409,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`organization`|string|false|||
-|`tags`|[codersdk.ProvisionerKeyTags](#codersdkprovisionerkeytags)|false|||
+| Name           | Type                                                       | Required | Restrictions | Description |
+|----------------|------------------------------------------------------------|----------|--------------|-------------|
+| `created_at`   | string                                                     | false    |              |             |
+| `id`           | string                                                     | false    |              |             |
+| `name`         | string                                                     | false    |              |             |
+| `organization` | string                                                     | false    |              |             |
+| `tags`         | [codersdk.ProvisionerKeyTags](#codersdkprovisionerkeytags) | false    |              |             |
 
 ## codersdk.ProvisionerKeyDaemons
 
@@ -10471,10 +10471,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`daemons`|array of [codersdk.ProvisionerDaemon](#codersdkprovisionerdaemon)|false|||
-|`key`|[codersdk.ProvisionerKey](#codersdkprovisionerkey)|false|||
+| Name      | Type                                                              | Required | Restrictions | Description |
+|-----------|-------------------------------------------------------------------|----------|--------------|-------------|
+| `daemons` | array of [codersdk.ProvisionerDaemon](#codersdkprovisionerdaemon) | false    |              |             |
+| `key`     | [codersdk.ProvisionerKey](#codersdkprovisionerkey)                | false    |              |             |
 
 ## codersdk.ProvisionerKeyTags
 
@@ -10487,9 +10487,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`[any property]`|string|false|||
+| Name             | Type   | Required | Restrictions | Description |
+|------------------|--------|----------|--------------|-------------|
+| `[any property]` | string | false    |              |             |
 
 ## codersdk.ProvisionerLogLevel
 
@@ -10501,9 +10501,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`debug`|
+| Value(s) |
+|----------|
+| `debug`  |
 
 ## codersdk.ProvisionerStorageMethod
 
@@ -10515,9 +10515,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`file`|
+| Value(s) |
+|----------|
+| `file`   |
 
 ## codersdk.ProvisionerTiming
 
@@ -10535,15 +10535,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`action`|string|false|||
-|`ended_at`|string|false|||
-|`job_id`|string|false|||
-|`resource`|string|false|||
-|`source`|string|false|||
-|`stage`|[codersdk.TimingStage](#codersdktimingstage)|false|||
-|`started_at`|string|false|||
+| Name         | Type                                         | Required | Restrictions | Description |
+|--------------|----------------------------------------------|----------|--------------|-------------|
+| `action`     | string                                       | false    |              |             |
+| `ended_at`   | string                                       | false    |              |             |
+| `job_id`     | string                                       | false    |              |             |
+| `resource`   | string                                       | false    |              |             |
+| `source`     | string                                       | false    |              |             |
+| `stage`      | [codersdk.TimingStage](#codersdktimingstage) | false    |              |             |
+| `started_at` | string                                       | false    |              |             |
 
 ## codersdk.ProxyHealthReport
 
@@ -10560,10 +10560,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`errors`|array of string|false||Errors are problems that prevent the workspace proxy from being healthy|
-|`warnings`|array of string|false||Warnings do not prevent the workspace proxy from being healthy, but should be addressed.|
+| Name       | Type            | Required | Restrictions | Description                                                                              |
+|------------|-----------------|----------|--------------|------------------------------------------------------------------------------------------|
+| `errors`   | array of string | false    |              | Errors are problems that prevent the workspace proxy from being healthy                  |
+| `warnings` | array of string | false    |              | Warnings do not prevent the workspace proxy from being healthy, but should be addressed. |
 
 ## codersdk.ProxyHealthStatus
 
@@ -10575,9 +10575,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`ok`, `unhealthy`, `unreachable`, `unregistered`|
+| Value(s)                                         |
+|--------------------------------------------------|
+| `ok`, `unhealthy`, `unreachable`, `unregistered` |
 
 ## codersdk.PutExtendWorkspaceRequest
 
@@ -10589,9 +10589,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`deadline`|string|true|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `deadline` | string | true     |              |             |
 
 ## codersdk.PutOAuth2ProviderAppRequest
 
@@ -10605,11 +10605,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`callback_url`|string|true|||
-|`icon`|string|false|||
-|`name`|string|true|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `callback_url` | string | true     |              |             |
+| `icon`         | string | false    |              |             |
+| `name`         | string | true     |              |             |
 
 ## codersdk.RBACAction
 
@@ -10621,9 +10621,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`application_connect`, `assign`, `create`, `create_agent`, `delete`, `delete_agent`, `read`, `read_personal`, `share`, `ssh`, `start`, `stop`, `unassign`, `update`, `update_agent`, `update_personal`, `use`, `view_insights`|
+| Value(s)                                                                                                                                                                                                                       |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `application_connect`, `assign`, `create`, `create_agent`, `delete`, `delete_agent`, `read`, `read_personal`, `share`, `ssh`, `start`, `stop`, `unassign`, `update`, `update_agent`, `update_personal`, `use`, `view_insights` |
 
 ## codersdk.RBACResource
 
@@ -10635,9 +10635,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`*`, `ai_gateway_key`, `ai_model_price`, `ai_provider`, `ai_seat`, `aibridge_interception`, `api_key`, `assign_org_role`, `assign_role`, `audit_log`, `boundary_log`, `boundary_usage`, `chat`, `connection_log`, `crypto_key`, `debug_info`, `deployment_config`, `deployment_stats`, `file`, `group`, `group_member`, `idpsync_settings`, `inbox_notification`, `license`, `notification_message`, `notification_preference`, `notification_template`, `oauth2_app`, `oauth2_app_code_token`, `oauth2_app_secret`, `organization`, `organization_member`, `prebuilt_workspace`, `provisioner_daemon`, `provisioner_jobs`, `replicas`, `system`, `tailnet_coordinator`, `task`, `template`, `usage_event`, `user`, `user_secret`, `user_skill`, `webpush_subscription`, `workspace`, `workspace_agent_devcontainers`, `workspace_agent_resource_monitor`, `workspace_build_orchestration`, `workspace_dormant`, `workspace_proxy`|
+| Value(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `*`, `ai_gateway_key`, `ai_model_price`, `ai_provider`, `ai_seat`, `aibridge_interception`, `api_key`, `assign_org_role`, `assign_role`, `audit_log`, `boundary_log`, `boundary_usage`, `chat`, `connection_log`, `crypto_key`, `debug_info`, `deployment_config`, `deployment_stats`, `file`, `group`, `group_member`, `idpsync_settings`, `inbox_notification`, `license`, `notification_message`, `notification_preference`, `notification_template`, `oauth2_app`, `oauth2_app_code_token`, `oauth2_app_secret`, `organization`, `organization_member`, `prebuilt_workspace`, `provisioner_daemon`, `provisioner_jobs`, `replicas`, `system`, `tailnet_coordinator`, `task`, `template`, `usage_event`, `user`, `user_secret`, `user_skill`, `webpush_subscription`, `workspace`, `workspace_agent_devcontainers`, `workspace_agent_resource_monitor`, `workspace_build_orchestration`, `workspace_dormant`, `workspace_proxy` |
 
 ## codersdk.RateLimitConfig
 
@@ -10650,10 +10650,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api`|integer|false|||
-|`disable_all`|boolean|false|||
+| Name          | Type    | Required | Restrictions | Description |
+|---------------|---------|----------|--------------|-------------|
+| `api`         | integer | false    |              |             |
+| `disable_all` | boolean | false    |              |             |
 
 ## codersdk.ReducedUser
 
@@ -10676,26 +10676,26 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`created_at`|string|true|||
-|`email`|string|true|||
-|`id`|string|true|||
-|`is_service_account`|boolean|false|||
-|`last_seen_at`|string|false|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false|||
-|`name`|string|false|||
-|`status`|[codersdk.UserStatus](#codersdkuserstatus)|false|||
-|`theme_preference`|string|false||Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead.|
-|`updated_at`|string|false|||
-|`username`|string|true|||
+| Name                 | Type                                       | Required | Restrictions | Description                                                                                |
+|----------------------|--------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------|
+| `avatar_url`         | string                                     | false    |              |                                                                                            |
+| `created_at`         | string                                     | true     |              |                                                                                            |
+| `email`              | string                                     | true     |              |                                                                                            |
+| `id`                 | string                                     | true     |              |                                                                                            |
+| `is_service_account` | boolean                                    | false    |              |                                                                                            |
+| `last_seen_at`       | string                                     | false    |              |                                                                                            |
+| `login_type`         | [codersdk.LoginType](#codersdklogintype)   | false    |              |                                                                                            |
+| `name`               | string                                     | false    |              |                                                                                            |
+| `status`             | [codersdk.UserStatus](#codersdkuserstatus) | false    |              |                                                                                            |
+| `theme_preference`   | string                                     | false    |              | Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead. |
+| `updated_at`         | string                                     | false    |              |                                                                                            |
+| `username`           | string                                     | true     |              |                                                                                            |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`active`, `suspended`|
+| Property | Value(s)              |
+|----------|-----------------------|
+| `status` | `active`, `suspended` |
 
 ## codersdk.Region
 
@@ -10713,15 +10713,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`healthy`|boolean|false|||
-|`icon_url`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`path_app_url`|string|false||Path app URL is the URL to the base path for path apps. Optional unless wildcard_hostname is set. E.g. https://us.example.com|
-|`wildcard_hostname`|string|false||Wildcard hostname is the wildcard hostname for subdomain apps. E.g. *.us.example.com E.g. *--suffix.au.example.com Optional. Does not need to be on the same domain as PathAppURL.|
+| Name                | Type    | Required | Restrictions | Description                                                                                                                                                                       |
+|---------------------|---------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `display_name`      | string  | false    |              |                                                                                                                                                                                   |
+| `healthy`           | boolean | false    |              |                                                                                                                                                                                   |
+| `icon_url`          | string  | false    |              |                                                                                                                                                                                   |
+| `id`                | string  | false    |              |                                                                                                                                                                                   |
+| `name`              | string  | false    |              |                                                                                                                                                                                   |
+| `path_app_url`      | string  | false    |              | Path app URL is the URL to the base path for path apps. Optional unless wildcard_hostname is set. E.g. https://us.example.com                                                     |
+| `wildcard_hostname` | string  | false    |              | Wildcard hostname is the wildcard hostname for subdomain apps. E.g. *.us.example.com E.g.*--suffix.au.example.com Optional. Does not need to be on the same domain as PathAppURL. |
 
 ## codersdk.RegionsResponse-codersdk_Region
 
@@ -10743,9 +10743,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`regions`|array of [codersdk.Region](#codersdkregion)|false|||
+| Name      | Type                                        | Required | Restrictions | Description |
+|-----------|---------------------------------------------|----------|--------------|-------------|
+| `regions` | array of [codersdk.Region](#codersdkregion) | false    |              |             |
 
 ## codersdk.RegionsResponse-codersdk_WorkspaceProxy
 
@@ -10785,9 +10785,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`regions`|array of [codersdk.WorkspaceProxy](#codersdkworkspaceproxy)|false|||
+| Name      | Type                                                        | Required | Restrictions | Description |
+|-----------|-------------------------------------------------------------|----------|--------------|-------------|
+| `regions` | array of [codersdk.WorkspaceProxy](#codersdkworkspaceproxy) | false    |              |             |
 
 ## codersdk.Replica
 
@@ -10805,15 +10805,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false||Created at is the timestamp when the replica was first seen.|
-|`database_latency`|integer|false||Database latency is the latency in microseconds to the database.|
-|`error`|string|false||Error is the replica error.|
-|`hostname`|string|false||Hostname is the hostname of the replica.|
-|`id`|string|false||ID is the unique identifier for the replica.|
-|`region_id`|integer|false||Region ID is the region of the replica.|
-|`relay_address`|string|false||Relay address is the accessible address to relay DERP connections.|
+| Name               | Type    | Required | Restrictions | Description                                                        |
+|--------------------|---------|----------|--------------|--------------------------------------------------------------------|
+| `created_at`       | string  | false    |              | Created at is the timestamp when the replica was first seen.       |
+| `database_latency` | integer | false    |              | Database latency is the latency in microseconds to the database.   |
+| `error`            | string  | false    |              | Error is the replica error.                                        |
+| `hostname`         | string  | false    |              | Hostname is the hostname of the replica.                           |
+| `id`               | string  | false    |              | ID is the unique identifier for the replica.                       |
+| `region_id`        | integer | false    |              | Region ID is the region of the replica.                            |
+| `relay_address`    | string  | false    |              | Relay address is the accessible address to relay DERP connections. |
 
 ## codersdk.RequestOneTimePasscodeRequest
 
@@ -10825,9 +10825,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`email`|string|true|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `email` | string | true     |              |             |
 
 ## codersdk.ResolveAutostartResponse
 
@@ -10839,9 +10839,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`parameter_mismatch`|boolean|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `parameter_mismatch` | boolean | false    |              |             |
 
 ## codersdk.ResourceType
 
@@ -10853,9 +10853,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`ai_gateway_key`, `ai_provider`, `ai_provider_key`, `ai_seat`, `api_key`, `chat`, `convert_login`, `custom_role`, `git_ssh_key`, `group`, `group_ai_budget`, `health_settings`, `idp_sync_settings_group`, `idp_sync_settings_organization`, `idp_sync_settings_role`, `license`, `notification_template`, `notifications_settings`, `oauth2_provider_app`, `oauth2_provider_app_secret`, `organization`, `organization_member`, `prebuilds_settings`, `task`, `template`, `template_version`, `user`, `user_ai_budget_override`, `user_secret`, `user_skill`, `workspace`, `workspace_agent`, `workspace_app`, `workspace_build`, `workspace_proxy`|
+| Value(s)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ai_gateway_key`, `ai_provider`, `ai_provider_key`, `ai_seat`, `api_key`, `chat`, `convert_login`, `custom_role`, `git_ssh_key`, `group`, `group_ai_budget`, `health_settings`, `idp_sync_settings_group`, `idp_sync_settings_organization`, `idp_sync_settings_role`, `license`, `notification_template`, `notifications_settings`, `oauth2_provider_app`, `oauth2_provider_app_secret`, `organization`, `organization_member`, `prebuilds_settings`, `task`, `template`, `template_version`, `user`, `user_ai_budget_override`, `user_secret`, `user_skill`, `workspace`, `workspace_agent`, `workspace_app`, `workspace_build`, `workspace_proxy` |
 
 ## codersdk.Response
 
@@ -10874,11 +10874,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`detail`|string|false||Detail is a debug message that provides further insight into why the action failed. This information can be technical and a regular golang err.Error() text. - "database: too many open connections" - "stat: too many open files"|
-|`message`|string|false||Message is an actionable message that depicts actions the request took. These messages should be fully formed sentences with proper punctuation. Examples: - "A user has been created." - "Failed to create a user."|
-|`validations`|array of [codersdk.ValidationError](#codersdkvalidationerror)|false||Validations are form field-specific friendly error messages. They will be shown on a form field in the UI. These can also be used to add additional context if there is a set of errors in the primary 'Message'.|
+| Name          | Type                                                          | Required | Restrictions | Description                                                                                                                                                                                                                        |
+|---------------|---------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `detail`      | string                                                        | false    |              | Detail is a debug message that provides further insight into why the action failed. This information can be technical and a regular golang err.Error() text. - "database: too many open connections" - "stat: too many open files" |
+| `message`     | string                                                        | false    |              | Message is an actionable message that depicts actions the request took. These messages should be fully formed sentences with proper punctuation. Examples: - "A user has been created." - "Failed to create a user."               |
+| `validations` | array of [codersdk.ValidationError](#codersdkvalidationerror) | false    |              | Validations are form field-specific friendly error messages. They will be shown on a form field in the UI. These can also be used to add additional context if there is a set of errors in the primary 'Message'.                  |
 
 ## codersdk.ResumeTaskResponse
 
@@ -11098,9 +11098,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`workspace_build`|[codersdk.WorkspaceBuild](#codersdkworkspacebuild)|false|||
+| Name              | Type                                               | Required | Restrictions | Description |
+|-------------------|----------------------------------------------------|----------|--------------|-------------|
+| `workspace_build` | [codersdk.WorkspaceBuild](#codersdkworkspacebuild) | false    |              |             |
 
 ## codersdk.RetentionConfig
 
@@ -11116,13 +11116,13 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_keys`|integer|false||Api keys controls how long expired API keys are retained before being deleted. Keys are only deleted if they have been expired for at least this duration. Defaults to 7 days to preserve existing behavior.|
-|`audit_logs`|integer|false||Audit logs controls how long audit log entries are retained. Set to 0 to disable (keep indefinitely).|
-|`boundary_logs`|integer|false||Boundary logs controls how long boundary audit log entries are retained. Boundary logs record every HTTP request processed by a Boundary confinement proxy. Set to 0 to disable automatic deletion (keep indefinitely). Adjust to match your organization's regulatory requirements.|
-|`connection_logs`|integer|false||Connection logs controls how long connection log entries are retained. Set to 0 to disable (keep indefinitely).|
-|`workspace_agent_logs`|integer|false||Workspace agent logs controls how long workspace agent logs are retained. Logs are deleted if the agent hasn't connected within this period. Logs from the latest build are always retained regardless of age. Defaults to 7 days to preserve existing behavior.|
+| Name                   | Type    | Required | Restrictions | Description                                                                                                                                                                                                                                                                          |
+|------------------------|---------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `api_keys`             | integer | false    |              | Api keys controls how long expired API keys are retained before being deleted. Keys are only deleted if they have been expired for at least this duration. Defaults to 7 days to preserve existing behavior.                                                                         |
+| `audit_logs`           | integer | false    |              | Audit logs controls how long audit log entries are retained. Set to 0 to disable (keep indefinitely).                                                                                                                                                                                |
+| `boundary_logs`        | integer | false    |              | Boundary logs controls how long boundary audit log entries are retained. Boundary logs record every HTTP request processed by a Boundary confinement proxy. Set to 0 to disable automatic deletion (keep indefinitely). Adjust to match your organization's regulatory requirements. |
+| `connection_logs`      | integer | false    |              | Connection logs controls how long connection log entries are retained. Set to 0 to disable (keep indefinitely).                                                                                                                                                                      |
+| `workspace_agent_logs` | integer | false    |              | Workspace agent logs controls how long workspace agent logs are retained. Logs are deleted if the agent hasn't connected within this period. Logs from the latest build are always retained regardless of age. Defaults to 7 days to preserve existing behavior.                     |
 
 ## codersdk.Role
 
@@ -11164,15 +11164,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_member_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization member permissions are specific for the organization in the field 'OrganizationID' above.|
-|`organization_permissions`|array of [codersdk.Permission](#codersdkpermission)|false||Organization permissions are specific for the organization in the field 'OrganizationID' above.|
-|`site_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
-|`user_permissions`|array of [codersdk.Permission](#codersdkpermission)|false|||
+| Name                              | Type                                                | Required | Restrictions | Description                                                                                            |
+|-----------------------------------|-----------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------|
+| `display_name`                    | string                                              | false    |              |                                                                                                        |
+| `name`                            | string                                              | false    |              |                                                                                                        |
+| `organization_id`                 | string                                              | false    |              |                                                                                                        |
+| `organization_member_permissions` | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization member permissions are specific for the organization in the field 'OrganizationID' above. |
+| `organization_permissions`        | array of [codersdk.Permission](#codersdkpermission) | false    |              | Organization permissions are specific for the organization in the field 'OrganizationID' above.        |
+| `site_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                                        |
+| `user_permissions`                | array of [codersdk.Permission](#codersdkpermission) | false    |              |                                                                                                        |
 
 ## codersdk.RoleSyncSettings
 
@@ -11192,11 +11192,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`field`|string|false||Field is the name of the claim field that specifies what organization roles a user should be given. If empty, no roles will be synced.|
-|`mapping`|object|false||Mapping is a map from OIDC groups to Coder organization roles.|
-|» `[any property]`|array of string|false|||
+| Name               | Type            | Required | Restrictions | Description                                                                                                                            |
+|--------------------|-----------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| `field`            | string          | false    |              | Field is the name of the claim field that specifies what organization roles a user should be given. If empty, no roles will be synced. |
+| `mapping`          | object          | false    |              | Mapping is a map from OIDC groups to Coder organization roles.                                                                         |
+| » `[any property]` | array of string | false    |              |                                                                                                                                        |
 
 ## codersdk.SSHConfig
 
@@ -11211,10 +11211,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`deploymentName`|string|false||Deploymentname is the config-ssh Hostname prefix|
-|`sshconfigOptions`|array of string|false||Sshconfigoptions are additional options to add to the ssh config file. This will override defaults.|
+| Name               | Type            | Required | Restrictions | Description                                                                                         |
+|--------------------|-----------------|----------|--------------|-----------------------------------------------------------------------------------------------------|
+| `deploymentName`   | string          | false    |              | Deploymentname is the config-ssh Hostname prefix                                                    |
+| `sshconfigOptions` | array of string | false    |              | Sshconfigoptions are additional options to add to the ssh config file. This will override defaults. |
 
 ## codersdk.SSHConfigResponse
 
@@ -11231,12 +11231,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`hostname_prefix`|string|false||Hostname prefix is the prefix we append to workspace names for SSH hostnames. Deprecated: use HostnameSuffix instead.|
-|`hostname_suffix`|string|false||Hostname suffix is the suffix to append to workspace names for SSH hostnames.|
-|`ssh_config_options`|object|false|||
-|» `[any property]`|string|false|||
+| Name                 | Type   | Required | Restrictions | Description                                                                                                           |
+|----------------------|--------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------|
+| `hostname_prefix`    | string | false    |              | Hostname prefix is the prefix we append to workspace names for SSH hostnames. Deprecated: use HostnameSuffix instead. |
+| `hostname_suffix`    | string | false    |              | Hostname suffix is the suffix to append to workspace names for SSH hostnames.                                         |
+| `ssh_config_options` | object | false    |              |                                                                                                                       |
+| » `[any property]`   | string | false    |              |                                                                                                                       |
 
 ## codersdk.ServerSentEvent
 
@@ -11249,10 +11249,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`data`|any|false|||
-|`type`|[codersdk.ServerSentEventType](#codersdkserversenteventtype)|false|||
+| Name   | Type                                                         | Required | Restrictions | Description |
+|--------|--------------------------------------------------------------|----------|--------------|-------------|
+| `data` | any                                                          | false    |              |             |
+| `type` | [codersdk.ServerSentEventType](#codersdkserversenteventtype) | false    |              |             |
 
 ## codersdk.ServerSentEventType
 
@@ -11264,9 +11264,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`data`, `error`, `ping`|
+| Value(s)                |
+|-------------------------|
+| `data`, `error`, `ping` |
 
 ## codersdk.SessionCountDeploymentStats
 
@@ -11281,12 +11281,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`jetbrains`|integer|false|||
-|`reconnecting_pty`|integer|false|||
-|`ssh`|integer|false|||
-|`vscode`|integer|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `jetbrains`        | integer | false    |              |             |
+| `reconnecting_pty` | integer | false    |              |             |
+| `ssh`              | integer | false    |              |             |
+| `vscode`           | integer | false    |              |             |
 
 ## codersdk.SessionLifetime
 
@@ -11303,14 +11303,14 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_duration`|integer|false||Default duration is only for browser, workspace app and oauth sessions.|
-|`default_token_lifetime`|integer|false|||
-|`disable_expiry_refresh`|boolean|false||Disable expiry refresh will disable automatically refreshing api keys when they are used from the api. This means the api key lifetime at creation is the lifetime of the api key.|
-|`max_admin_token_lifetime`|integer|false|||
-|`max_token_lifetime`|integer|false|||
-|`refresh_default_duration`|integer|false||Refresh default duration is the default lifetime for OAuth2 refresh tokens. This should generally be longer than access token lifetimes to allow refreshing after access token expiry.|
+| Name                       | Type    | Required | Restrictions | Description                                                                                                                                                                            |
+|----------------------------|---------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `default_duration`         | integer | false    |              | Default duration is only for browser, workspace app and oauth sessions.                                                                                                                |
+| `default_token_lifetime`   | integer | false    |              |                                                                                                                                                                                        |
+| `disable_expiry_refresh`   | boolean | false    |              | Disable expiry refresh will disable automatically refreshing api keys when they are used from the api. This means the api key lifetime at creation is the lifetime of the api key.     |
+| `max_admin_token_lifetime` | integer | false    |              |                                                                                                                                                                                        |
+| `max_token_lifetime`       | integer | false    |              |                                                                                                                                                                                        |
+| `refresh_default_duration` | integer | false    |              | Refresh default duration is the default lifetime for OAuth2 refresh tokens. This should generally be longer than access token lifetimes to allow refreshing after access token expiry. |
 
 ## codersdk.ShareableWorkspaceOwners
 
@@ -11322,9 +11322,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`everyone`, `none`, `service_accounts`|
+| Value(s)                               |
+|----------------------------------------|
+| `everyone`, `none`, `service_accounts` |
 
 ## codersdk.SharedWorkspaceActor
 
@@ -11342,19 +11342,19 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`actor_type`|[codersdk.SharedWorkspaceActorType](#codersdksharedworkspaceactortype)|false|||
-|`avatar_url`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`roles`|array of [codersdk.WorkspaceRole](#codersdkworkspacerole)|false|||
+| Name         | Type                                                                   | Required | Restrictions | Description |
+|--------------|------------------------------------------------------------------------|----------|--------------|-------------|
+| `actor_type` | [codersdk.SharedWorkspaceActorType](#codersdksharedworkspaceactortype) | false    |              |             |
+| `avatar_url` | string                                                                 | false    |              |             |
+| `id`         | string                                                                 | false    |              |             |
+| `name`       | string                                                                 | false    |              |             |
+| `roles`      | array of [codersdk.WorkspaceRole](#codersdkworkspacerole)              | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`actor_type`|`group`, `user`|
+| Property     | Value(s)        |
+|--------------|-----------------|
+| `actor_type` | `group`, `user` |
 
 ## codersdk.SharedWorkspaceActorType
 
@@ -11366,9 +11366,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`group`, `user`|
+| Value(s)        |
+|-----------------|
+| `group`, `user` |
 
 ## codersdk.SlimRole
 
@@ -11382,11 +11382,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
+| Name              | Type   | Required | Restrictions | Description |
+|-------------------|--------|----------|--------------|-------------|
+| `display_name`    | string | false    |              |             |
+| `name`            | string | false    |              |             |
+| `organization_id` | string | false    |              |             |
 
 ## codersdk.StatsCollectionConfig
 
@@ -11400,9 +11400,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`usage_stats`|[codersdk.UsageStatsConfig](#codersdkusagestatsconfig)|false|||
+| Name          | Type                                                   | Required | Restrictions | Description |
+|---------------|--------------------------------------------------------|----------|--------------|-------------|
+| `usage_stats` | [codersdk.UsageStatsConfig](#codersdkusagestatsconfig) | false    |              |             |
 
 ## codersdk.SupportConfig
 
@@ -11423,9 +11423,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`links`|[serpent.Struct-array_codersdk_LinkConfig](#serpentstruct-array_codersdk_linkconfig)|false|||
+| Name    | Type                                                                                 | Required | Restrictions | Description |
+|---------|--------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `links` | [serpent.Struct-array_codersdk_LinkConfig](#serpentstruct-array_codersdk_linkconfig) | false    |              |             |
 
 ## codersdk.SwaggerConfig
 
@@ -11437,9 +11437,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enable`|boolean|false|||
+| Name     | Type    | Required | Restrictions | Description |
+|----------|---------|----------|--------------|-------------|
+| `enable` | boolean | false    |              |             |
 
 ## codersdk.TLSConfig
 
@@ -11471,20 +11471,20 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`address`|[serpent.HostPort](#serpenthostport)|false|||
-|`allow_insecure_ciphers`|boolean|false|||
-|`cert_file`|array of string|false|||
-|`client_auth`|string|false|||
-|`client_ca_file`|string|false|||
-|`client_cert_file`|string|false|||
-|`client_key_file`|string|false|||
-|`enable`|boolean|false|||
-|`key_file`|array of string|false|||
-|`min_version`|string|false|||
-|`redirect_http`|boolean|false|||
-|`supported_ciphers`|array of string|false|||
+| Name                     | Type                                 | Required | Restrictions | Description |
+|--------------------------|--------------------------------------|----------|--------------|-------------|
+| `address`                | [serpent.HostPort](#serpenthostport) | false    |              |             |
+| `allow_insecure_ciphers` | boolean                              | false    |              |             |
+| `cert_file`              | array of string                      | false    |              |             |
+| `client_auth`            | string                               | false    |              |             |
+| `client_ca_file`         | string                               | false    |              |             |
+| `client_cert_file`       | string                               | false    |              |             |
+| `client_key_file`        | string                               | false    |              |             |
+| `enable`                 | boolean                              | false    |              |             |
+| `key_file`               | array of string                      | false    |              |             |
+| `min_version`            | string                               | false    |              |             |
+| `redirect_http`          | boolean                              | false    |              |             |
+| `supported_ciphers`      | array of string                      | false    |              |             |
 
 ## codersdk.Task
 
@@ -11537,40 +11537,40 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`current_state`|[codersdk.TaskStateEntry](#codersdktaskstateentry)|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`initial_prompt`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`owner_avatar_url`|string|false|||
-|`owner_id`|string|false|||
-|`owner_name`|string|false|||
-|`status`|[codersdk.TaskStatus](#codersdktaskstatus)|false|||
-|`template_display_name`|string|false|||
-|`template_icon`|string|false|||
-|`template_id`|string|false|||
-|`template_name`|string|false|||
-|`template_version_id`|string|false|||
-|`updated_at`|string|false|||
-|`workspace_agent_health`|[codersdk.WorkspaceAgentHealth](#codersdkworkspaceagenthealth)|false|||
-|`workspace_agent_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`workspace_agent_lifecycle`|[codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle)|false|||
-|`workspace_app_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`workspace_build_number`|integer|false|||
-|`workspace_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`workspace_name`|string|false|||
-|`workspace_status`|[codersdk.WorkspaceStatus](#codersdkworkspacestatus)|false|||
+| Name                        | Type                                                                 | Required | Restrictions | Description |
+|-----------------------------|----------------------------------------------------------------------|----------|--------------|-------------|
+| `created_at`                | string                                                               | false    |              |             |
+| `current_state`             | [codersdk.TaskStateEntry](#codersdktaskstateentry)                   | false    |              |             |
+| `display_name`              | string                                                               | false    |              |             |
+| `id`                        | string                                                               | false    |              |             |
+| `initial_prompt`            | string                                                               | false    |              |             |
+| `name`                      | string                                                               | false    |              |             |
+| `organization_id`           | string                                                               | false    |              |             |
+| `owner_avatar_url`          | string                                                               | false    |              |             |
+| `owner_id`                  | string                                                               | false    |              |             |
+| `owner_name`                | string                                                               | false    |              |             |
+| `status`                    | [codersdk.TaskStatus](#codersdktaskstatus)                           | false    |              |             |
+| `template_display_name`     | string                                                               | false    |              |             |
+| `template_icon`             | string                                                               | false    |              |             |
+| `template_id`               | string                                                               | false    |              |             |
+| `template_name`             | string                                                               | false    |              |             |
+| `template_version_id`       | string                                                               | false    |              |             |
+| `updated_at`                | string                                                               | false    |              |             |
+| `workspace_agent_health`    | [codersdk.WorkspaceAgentHealth](#codersdkworkspaceagenthealth)       | false    |              |             |
+| `workspace_agent_id`        | [uuid.NullUUID](#uuidnulluuid)                                       | false    |              |             |
+| `workspace_agent_lifecycle` | [codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle) | false    |              |             |
+| `workspace_app_id`          | [uuid.NullUUID](#uuidnulluuid)                                       | false    |              |             |
+| `workspace_build_number`    | integer                                                              | false    |              |             |
+| `workspace_id`              | [uuid.NullUUID](#uuidnulluuid)                                       | false    |              |             |
+| `workspace_name`            | string                                                               | false    |              |             |
+| `workspace_status`          | [codersdk.WorkspaceStatus](#codersdkworkspacestatus)                 | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`active`, `error`, `initializing`, `paused`, `pending`, `unknown`|
-|`workspace_status`|`canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping`|
+| Property           | Value(s)                                                                                                          |
+|--------------------|-------------------------------------------------------------------------------------------------------------------|
+| `status`           | `active`, `error`, `initializing`, `paused`, `pending`, `unknown`                                                 |
+| `workspace_status` | `canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping` |
 
 ## codersdk.TaskLogEntry
 
@@ -11585,12 +11585,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|string|false|||
-|`id`|integer|false|||
-|`time`|string|false|||
-|`type`|[codersdk.TaskLogType](#codersdktasklogtype)|false|||
+| Name      | Type                                         | Required | Restrictions | Description |
+|-----------|----------------------------------------------|----------|--------------|-------------|
+| `content` | string                                       | false    |              |             |
+| `id`      | integer                                      | false    |              |             |
+| `time`    | string                                       | false    |              |             |
+| `type`    | [codersdk.TaskLogType](#codersdktasklogtype) | false    |              |             |
 
 ## codersdk.TaskLogType
 
@@ -11602,9 +11602,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`input`, `output`|
+| Value(s)          |
+|-------------------|
+| `input`, `output` |
 
 ## codersdk.TaskLogsResponse
 
@@ -11625,11 +11625,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`logs`|array of [codersdk.TaskLogEntry](#codersdktasklogentry)|false|||
-|`snapshot`|boolean|false|||
-|`snapshot_at`|string|false|||
+| Name          | Type                                                    | Required | Restrictions | Description |
+|---------------|---------------------------------------------------------|----------|--------------|-------------|
+| `logs`        | array of [codersdk.TaskLogEntry](#codersdktasklogentry) | false    |              |             |
+| `snapshot`    | boolean                                                 | false    |              |             |
+| `snapshot_at` | string                                                  | false    |              |             |
 
 ## codersdk.TaskSendRequest
 
@@ -11641,9 +11641,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`input`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `input` | string | false    |              |             |
 
 ## codersdk.TaskState
 
@@ -11655,9 +11655,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`complete`, `failed`, `idle`, `working`|
+| Value(s)                                |
+|-----------------------------------------|
+| `complete`, `failed`, `idle`, `working` |
 
 ## codersdk.TaskStateEntry
 
@@ -11672,12 +11672,12 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|string|false|||
-|`state`|[codersdk.TaskState](#codersdktaskstate)|false|||
-|`timestamp`|string|false|||
-|`uri`|string|false|||
+| Name        | Type                                     | Required | Restrictions | Description |
+|-------------|------------------------------------------|----------|--------------|-------------|
+| `message`   | string                                   | false    |              |             |
+| `state`     | [codersdk.TaskState](#codersdktaskstate) | false    |              |             |
+| `timestamp` | string                                   | false    |              |             |
+| `uri`       | string                                   | false    |              |             |
 
 ## codersdk.TaskStatus
 
@@ -11689,9 +11689,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`active`, `error`, `initializing`, `paused`, `pending`, `unknown`|
+| Value(s)                                                          |
+|-------------------------------------------------------------------|
+| `active`, `error`, `initializing`, `paused`, `pending`, `unknown` |
 
 ## codersdk.TasksListResponse
 
@@ -11749,10 +11749,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`tasks`|array of [codersdk.Task](#codersdktask)|false|||
+| Name    | Type                                    | Required | Restrictions | Description |
+|---------|-----------------------------------------|----------|--------------|-------------|
+| `count` | integer                                 | false    |              |             |
+| `tasks` | array of [codersdk.Task](#codersdktask) | false    |              |             |
 
 ## codersdk.TelemetryConfig
 
@@ -11778,11 +11778,11 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enable`|boolean|false|||
-|`trace`|boolean|false|||
-|`url`|[serpent.URL](#serpenturl)|false|||
+| Name     | Type                       | Required | Restrictions | Description |
+|----------|----------------------------|----------|--------------|-------------|
+| `enable` | boolean                    | false    |              |             |
+| `trace`  | boolean                    | false    |              |             |
+| `url`    | [serpent.URL](#serpenturl) | false    |              |             |
 
 ## codersdk.Template
 
@@ -11847,50 +11847,50 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`active_user_count`|integer|false||Active user count is set to -1 when loading.|
-|`active_version_id`|string|false|||
-|`activity_bump_ms`|integer|false|||
-|`allow_user_autostart`|boolean|false||Allow user autostart and AllowUserAutostop are enterprise-only. Their values are only used if your license is entitled to use the advanced template scheduling feature.|
-|`allow_user_autostop`|boolean|false|||
-|`allow_user_cancel_workspace_jobs`|boolean|false|||
-|`autostart_requirement`|[codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement)|false|||
-|`autostop_requirement`|[codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)|false||Autostop requirement and AutostartRequirement are enterprise features. Its value is only used if your license is entitled to use the advanced template scheduling feature.|
-|`build_time_stats`|[codersdk.TemplateBuildTimeStats](#codersdktemplatebuildtimestats)|false|||
-|`cors_behavior`|[codersdk.CORSBehavior](#codersdkcorsbehavior)|false|||
-|`created_at`|string|false|||
-|`created_by_id`|string|false|||
-|`created_by_name`|string|false|||
-|`default_ttl_ms`|integer|false|||
-|`deleted`|boolean|false|||
-|`deprecated`|boolean|false|||
-|`deprecation_message`|string|false|||
-|`description`|string|false|||
-|`disable_module_cache`|boolean|false||Disable module cache disables the use of cached Terraform modules during provisioning.|
-|`display_name`|string|false|||
-|`failure_ttl_ms`|integer|false||Failure ttl ms TimeTilDormantMillis, and TimeTilDormantAutoDeleteMillis are enterprise-only. Their values are used if your license is entitled to use the advanced template scheduling feature.|
-|`icon`|string|false|||
-|`id`|string|false|||
-|`max_port_share_level`|[codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)|false|||
-|`name`|string|false|||
-|`organization_display_name`|string|false|||
-|`organization_icon`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`provisioner`|string|false|||
-|`require_active_version`|boolean|false||Require active version mandates that workspaces are built with the active template version.|
-|`time_til_autostop_notify_ms`|integer|false||Time til autostop notify ms is the duration before the workspace's autostop deadline at which a reminder notification is sent. 0 disables the notification.|
-|`time_til_dormant_autodelete_ms`|integer|false|||
-|`time_til_dormant_ms`|integer|false|||
-|`updated_at`|string|false|||
-|`use_classic_parameter_flow`|boolean|false|||
+| Name                               | Type                                                                           | Required | Restrictions | Description                                                                                                                                                                                     |
+|------------------------------------|--------------------------------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `active_user_count`                | integer                                                                        | false    |              | Active user count is set to -1 when loading.                                                                                                                                                    |
+| `active_version_id`                | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `activity_bump_ms`                 | integer                                                                        | false    |              |                                                                                                                                                                                                 |
+| `allow_user_autostart`             | boolean                                                                        | false    |              | Allow user autostart and AllowUserAutostop are enterprise-only. Their values are only used if your license is entitled to use the advanced template scheduling feature.                         |
+| `allow_user_autostop`              | boolean                                                                        | false    |              |                                                                                                                                                                                                 |
+| `allow_user_cancel_workspace_jobs` | boolean                                                                        | false    |              |                                                                                                                                                                                                 |
+| `autostart_requirement`            | [codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement) | false    |              |                                                                                                                                                                                                 |
+| `autostop_requirement`             | [codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)   | false    |              | Autostop requirement and AutostartRequirement are enterprise features. Its value is only used if your license is entitled to use the advanced template scheduling feature.                      |
+| `build_time_stats`                 | [codersdk.TemplateBuildTimeStats](#codersdktemplatebuildtimestats)             | false    |              |                                                                                                                                                                                                 |
+| `cors_behavior`                    | [codersdk.CORSBehavior](#codersdkcorsbehavior)                                 | false    |              |                                                                                                                                                                                                 |
+| `created_at`                       | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `created_by_id`                    | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `created_by_name`                  | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `default_ttl_ms`                   | integer                                                                        | false    |              |                                                                                                                                                                                                 |
+| `deleted`                          | boolean                                                                        | false    |              |                                                                                                                                                                                                 |
+| `deprecated`                       | boolean                                                                        | false    |              |                                                                                                                                                                                                 |
+| `deprecation_message`              | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `description`                      | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `disable_module_cache`             | boolean                                                                        | false    |              | Disable module cache disables the use of cached Terraform modules during provisioning.                                                                                                          |
+| `display_name`                     | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `failure_ttl_ms`                   | integer                                                                        | false    |              | Failure ttl ms TimeTilDormantMillis, and TimeTilDormantAutoDeleteMillis are enterprise-only. Their values are used if your license is entitled to use the advanced template scheduling feature. |
+| `icon`                             | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `id`                               | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `max_port_share_level`             | [codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel) | false    |              |                                                                                                                                                                                                 |
+| `name`                             | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `organization_display_name`        | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `organization_icon`                | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `organization_id`                  | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `organization_name`                | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `provisioner`                      | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `require_active_version`           | boolean                                                                        | false    |              | Require active version mandates that workspaces are built with the active template version.                                                                                                     |
+| `time_til_autostop_notify_ms`      | integer                                                                        | false    |              | Time til autostop notify ms is the duration before the workspace's autostop deadline at which a reminder notification is sent. 0 disables the notification.                                     |
+| `time_til_dormant_autodelete_ms`   | integer                                                                        | false    |              |                                                                                                                                                                                                 |
+| `time_til_dormant_ms`              | integer                                                                        | false    |              |                                                                                                                                                                                                 |
+| `updated_at`                       | string                                                                         | false    |              |                                                                                                                                                                                                 |
+| `use_classic_parameter_flow`       | boolean                                                                        | false    |              |                                                                                                                                                                                                 |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`provisioner`|`terraform`|
+| Property      | Value(s)    |
+|---------------|-------------|
+| `provisioner` | `terraform` |
 
 ## codersdk.TemplateACL
 
@@ -11960,10 +11960,10 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group`|array of [codersdk.TemplateGroup](#codersdktemplategroup)|false|||
-|`users`|array of [codersdk.TemplateUser](#codersdktemplateuser)|false|||
+| Name    | Type                                                      | Required | Restrictions | Description |
+|---------|-----------------------------------------------------------|----------|--------------|-------------|
+| `group` | array of [codersdk.TemplateGroup](#codersdktemplategroup) | false    |              |             |
+| `users` | array of [codersdk.TemplateUser](#codersdktemplateuser)   | false    |              |             |
 
 ## codersdk.TemplateAppUsage
 
@@ -11983,15 +11983,15 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`seconds`|integer|false|||
-|`slug`|string|false|||
-|`template_ids`|array of string|false|||
-|`times_used`|integer|false|||
-|`type`|[codersdk.TemplateAppsType](#codersdktemplateappstype)|false|||
+| Name           | Type                                                   | Required | Restrictions | Description |
+|----------------|--------------------------------------------------------|----------|--------------|-------------|
+| `display_name` | string                                                 | false    |              |             |
+| `icon`         | string                                                 | false    |              |             |
+| `seconds`      | integer                                                | false    |              |             |
+| `slug`         | string                                                 | false    |              |             |
+| `template_ids` | array of string                                        | false    |              |             |
+| `times_used`   | integer                                                | false    |              |             |
+| `type`         | [codersdk.TemplateAppsType](#codersdktemplateappstype) | false    |              |             |
 
 ## codersdk.TemplateAppsType
 
@@ -12003,9 +12003,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`app`, `builtin`|
+| Value(s)         |
+|------------------|
+| `app`, `builtin` |
 
 ## codersdk.TemplateAutostartRequirement
 
@@ -12019,9 +12019,9 @@ Only certain features set these fields: - FeatureManagedAgentLimit|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`days_of_week`|array of string|false||Days of week is a list of days of the week in which autostart is allowed to happen. If no days are specified, autostart is not allowed.|
+| Name           | Type            | Required | Restrictions | Description                                                                                                                             |
+|----------------|-----------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `days_of_week` | array of string | false    |              | Days of week is a list of days of the week in which autostart is allowed to happen. If no days are specified, autostart is not allowed. |
 
 ## codersdk.TemplateAutostopRequirement
 
@@ -12059,9 +12059,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`[any property]`|[codersdk.TransitionStats](#codersdktransitionstats)|false|||
+| Name             | Type                                                 | Required | Restrictions | Description |
+|------------------|------------------------------------------------------|----------|--------------|-------------|
+| `[any property]` | [codersdk.TransitionStats](#codersdktransitionstats) | false    |              |             |
 
 ## codersdk.TemplateBuilderBase
 
@@ -12090,15 +12090,15 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`os`|string|false|||
-|`prerequisites`|string|false|||
-|`variables`|array of [codersdk.TemplateBuilderModuleVariable](#codersdktemplatebuildermodulevariable)|false|||
+| Name            | Type                                                                                      | Required | Restrictions | Description |
+|-----------------|-------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `description`   | string                                                                                    | false    |              |             |
+| `icon`          | string                                                                                    | false    |              |             |
+| `id`            | string                                                                                    | false    |              |             |
+| `name`          | string                                                                                    | false    |              |             |
+| `os`            | string                                                                                    | false    |              |             |
+| `prerequisites` | string                                                                                    | false    |              |             |
+| `variables`     | array of [codersdk.TemplateBuilderModuleVariable](#codersdktemplatebuildermodulevariable) | false    |              |             |
 
 ## codersdk.TemplateBuilderBasesResponse
 
@@ -12131,9 +12131,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`bases`|array of [codersdk.TemplateBuilderBase](#codersdktemplatebuilderbase)|false|||
+| Name    | Type                                                                  | Required | Restrictions | Description |
+|---------|-----------------------------------------------------------------------|----------|--------------|-------------|
+| `bases` | array of [codersdk.TemplateBuilderBase](#codersdktemplatebuilderbase) | false    |              |             |
 
 ## codersdk.TemplateBuilderComposeModule
 
@@ -12149,11 +12149,11 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|false|||
-|`variables`|object|false|||
-|» `[any property]`|string|false|||
+| Name               | Type   | Required | Restrictions | Description |
+|--------------------|--------|----------|--------------|-------------|
+| `id`               | string | false    |              |             |
+| `variables`        | object | false    |              |             |
+| » `[any property]` | string | false    |              |             |
 
 ## codersdk.TemplateBuilderComposeRequest
 
@@ -12178,12 +12178,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`base_template_id`|string|false|||
-|`base_variable_values`|object|false|||
-|» `[any property]`|string|false|||
-|`modules`|array of [codersdk.TemplateBuilderComposeModule](#codersdktemplatebuildercomposemodule)|false|||
+| Name                   | Type                                                                                    | Required | Restrictions | Description |
+|------------------------|-----------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `base_template_id`     | string                                                                                  | false    |              |             |
+| `base_variable_values` | object                                                                                  | false    |              |             |
+| » `[any property]`     | string                                                                                  | false    |              |             |
+| `modules`              | array of [codersdk.TemplateBuilderComposeModule](#codersdktemplatebuildercomposemodule) | false    |              |             |
 
 ## codersdk.TemplateBuilderConfig
 
@@ -12196,10 +12196,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`disabled`|boolean|false|||
-|`registry_url`|string|false|||
+| Name           | Type    | Required | Restrictions | Description |
+|----------------|---------|----------|--------------|-------------|
+| `disabled`     | boolean | false    |              |             |
+| `registry_url` | string  | false    |              |             |
 
 ## codersdk.TemplateBuilderCreateTemplateRequest
 
@@ -12233,19 +12233,19 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`base_template_id`|string|false|||
-|`base_variable_values`|object|false|||
-|» `[any property]`|string|false|||
-|`description`|string|false|||
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`modules`|array of [codersdk.TemplateBuilderComposeModule](#codersdktemplatebuildercomposemodule)|false|||
-|`name`|string|true|||
-|`organization_id`|string|true|||
-|`provisioner_tags`|object|false|||
-|» `[any property]`|string|false|||
+| Name                   | Type                                                                                    | Required | Restrictions | Description |
+|------------------------|-----------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `base_template_id`     | string                                                                                  | false    |              |             |
+| `base_variable_values` | object                                                                                  | false    |              |             |
+| » `[any property]`     | string                                                                                  | false    |              |             |
+| `description`          | string                                                                                  | false    |              |             |
+| `display_name`         | string                                                                                  | false    |              |             |
+| `icon`                 | string                                                                                  | false    |              |             |
+| `modules`              | array of [codersdk.TemplateBuilderComposeModule](#codersdktemplatebuildercomposemodule) | false    |              |             |
+| `name`                 | string                                                                                  | true     |              |             |
+| `organization_id`      | string                                                                                  | true     |              |             |
+| `provisioner_tags`     | object                                                                                  | false    |              |             |
+| » `[any property]`     | string                                                                                  | false    |              |             |
 
 ## codersdk.TemplateBuilderCreateTemplateResponse
 
@@ -12312,9 +12312,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`template`|[codersdk.Template](#codersdktemplate)|false|||
+| Name       | Type                                   | Required | Restrictions | Description |
+|------------|----------------------------------------|----------|--------------|-------------|
+| `template` | [codersdk.Template](#codersdktemplate) | false    |              |             |
 
 ## codersdk.TemplateBuilderModule
 
@@ -12349,17 +12349,17 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`category`|string|false|||
-|`compatible_os`|array of string|false|||
-|`conflicts_with`|array of string|false|||
-|`description`|string|false|||
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`variables`|array of [codersdk.TemplateBuilderModuleVariable](#codersdktemplatebuildermodulevariable)|false|||
-|`version`|string|false|||
+| Name             | Type                                                                                      | Required | Restrictions | Description |
+|------------------|-------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `category`       | string                                                                                    | false    |              |             |
+| `compatible_os`  | array of string                                                                           | false    |              |             |
+| `conflicts_with` | array of string                                                                           | false    |              |             |
+| `description`    | string                                                                                    | false    |              |             |
+| `display_name`   | string                                                                                    | false    |              |             |
+| `icon`           | string                                                                                    | false    |              |             |
+| `id`             | string                                                                                    | false    |              |             |
+| `variables`      | array of [codersdk.TemplateBuilderModuleVariable](#codersdktemplatebuildermodulevariable) | false    |              |             |
+| `version`        | string                                                                                    | false    |              |             |
 
 ## codersdk.TemplateBuilderModuleVariable
 
@@ -12378,14 +12378,14 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default`|array of integer|false|||
-|`description`|string|false|||
-|`name`|string|false|||
-|`required`|boolean|false|||
-|`sensitive`|boolean|false|||
-|`type`|[codersdk.TemplateBuilderVariableType](#codersdktemplatebuildervariabletype)|false|||
+| Name          | Type                                                                         | Required | Restrictions | Description |
+|---------------|------------------------------------------------------------------------------|----------|--------------|-------------|
+| `default`     | array of integer                                                             | false    |              |             |
+| `description` | string                                                                       | false    |              |             |
+| `name`        | string                                                                       | false    |              |             |
+| `required`    | boolean                                                                      | false    |              |             |
+| `sensitive`   | boolean                                                                      | false    |              |             |
+| `type`        | [codersdk.TemplateBuilderVariableType](#codersdktemplatebuildervariabletype) | false    |              |             |
 
 ## codersdk.TemplateBuilderModulesResponse
 
@@ -12424,9 +12424,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`modules`|array of [codersdk.TemplateBuilderModule](#codersdktemplatebuildermodule)|false|||
+| Name      | Type                                                                      | Required | Restrictions | Description |
+|-----------|---------------------------------------------------------------------------|----------|--------------|-------------|
+| `modules` | array of [codersdk.TemplateBuilderModule](#codersdktemplatebuildermodule) | false    |              |             |
 
 ## codersdk.TemplateBuilderVariableType
 
@@ -12438,9 +12438,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`bool`, `number`, `string`|
+| Value(s)                   |
+|----------------------------|
+| `bool`, `number`, `string` |
 
 ## codersdk.TemplateExample
 
@@ -12460,15 +12460,15 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`markdown`|string|false|||
-|`name`|string|false|||
-|`tags`|array of string|false|||
-|`url`|string|false|||
+| Name          | Type            | Required | Restrictions | Description |
+|---------------|-----------------|----------|--------------|-------------|
+| `description` | string          | false    |              |             |
+| `icon`        | string          | false    |              |             |
+| `id`          | string          | false    |              |             |
+| `markdown`    | string          | false    |              |             |
+| `name`        | string          | false    |              |             |
+| `tags`        | array of string | false    |              |             |
+| `url`         | string          | false    |              |             |
 
 ## codersdk.TemplateGroup
 
@@ -12506,26 +12506,26 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`members`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
-|`name`|string|false|||
-|`organization_display_name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`quota_allowance`|integer|false|||
-|`role`|[codersdk.TemplateRole](#codersdktemplaterole)|false|||
-|`source`|[codersdk.GroupSource](#codersdkgroupsource)|false|||
-|`total_member_count`|integer|false||How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`.|
+| Name                        | Type                                                  | Required | Restrictions | Description                                                                                                                                                           |
+|-----------------------------|-------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avatar_url`                | string                                                | false    |              |                                                                                                                                                                       |
+| `display_name`              | string                                                | false    |              |                                                                                                                                                                       |
+| `id`                        | string                                                | false    |              |                                                                                                                                                                       |
+| `members`                   | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |                                                                                                                                                                       |
+| `name`                      | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_display_name` | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_id`           | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_name`         | string                                                | false    |              |                                                                                                                                                                       |
+| `quota_allowance`           | integer                                               | false    |              |                                                                                                                                                                       |
+| `role`                      | [codersdk.TemplateRole](#codersdktemplaterole)        | false    |              |                                                                                                                                                                       |
+| `source`                    | [codersdk.GroupSource](#codersdkgroupsource)          | false    |              |                                                                                                                                                                       |
+| `total_member_count`        | integer                                               | false    |              | How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`. |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`admin`, `use`|
+| Property | Value(s)       |
+|----------|----------------|
+| `role`   | `admin`, `use` |
 
 ## codersdk.TemplateInsightsIntervalReport
 
@@ -12543,13 +12543,13 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`active_users`|integer|false|||
-|`end_time`|string|false|||
-|`interval`|[codersdk.InsightsReportInterval](#codersdkinsightsreportinterval)|false|||
-|`start_time`|string|false|||
-|`template_ids`|array of string|false|||
+| Name           | Type                                                               | Required | Restrictions | Description |
+|----------------|--------------------------------------------------------------------|----------|--------------|-------------|
+| `active_users` | integer                                                            | false    |              |             |
+| `end_time`     | string                                                             | false    |              |             |
+| `interval`     | [codersdk.InsightsReportInterval](#codersdkinsightsreportinterval) | false    |              |             |
+| `start_time`   | string                                                             | false    |              |             |
+| `template_ids` | array of string                                                    | false    |              |             |
 
 ## codersdk.TemplateInsightsReport
 
@@ -12604,14 +12604,14 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`active_users`|integer|false|||
-|`apps_usage`|array of [codersdk.TemplateAppUsage](#codersdktemplateappusage)|false|||
-|`end_time`|string|false|||
-|`parameters_usage`|array of [codersdk.TemplateParameterUsage](#codersdktemplateparameterusage)|false|||
-|`start_time`|string|false|||
-|`template_ids`|array of string|false|||
+| Name               | Type                                                                        | Required | Restrictions | Description |
+|--------------------|-----------------------------------------------------------------------------|----------|--------------|-------------|
+| `active_users`     | integer                                                                     | false    |              |             |
+| `apps_usage`       | array of [codersdk.TemplateAppUsage](#codersdktemplateappusage)             | false    |              |             |
+| `end_time`         | string                                                                      | false    |              |             |
+| `parameters_usage` | array of [codersdk.TemplateParameterUsage](#codersdktemplateparameterusage) | false    |              |             |
+| `start_time`       | string                                                                      | false    |              |             |
+| `template_ids`     | array of string                                                             | false    |              |             |
 
 ## codersdk.TemplateInsightsResponse
 
@@ -12679,10 +12679,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`interval_reports`|array of [codersdk.TemplateInsightsIntervalReport](#codersdktemplateinsightsintervalreport)|false|||
-|`report`|[codersdk.TemplateInsightsReport](#codersdktemplateinsightsreport)|false|||
+| Name               | Type                                                                                        | Required | Restrictions | Description |
+|--------------------|---------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `interval_reports` | array of [codersdk.TemplateInsightsIntervalReport](#codersdktemplateinsightsintervalreport) | false    |              |             |
+| `report`           | [codersdk.TemplateInsightsReport](#codersdktemplateinsightsreport)                          | false    |              |             |
 
 ## codersdk.TemplateParameterUsage
 
@@ -12714,15 +12714,15 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`display_name`|string|false|||
-|`name`|string|false|||
-|`options`|array of [codersdk.TemplateVersionParameterOption](#codersdktemplateversionparameteroption)|false|||
-|`template_ids`|array of string|false|||
-|`type`|string|false|||
-|`values`|array of [codersdk.TemplateParameterValue](#codersdktemplateparametervalue)|false|||
+| Name           | Type                                                                                        | Required | Restrictions | Description |
+|----------------|---------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `description`  | string                                                                                      | false    |              |             |
+| `display_name` | string                                                                                      | false    |              |             |
+| `name`         | string                                                                                      | false    |              |             |
+| `options`      | array of [codersdk.TemplateVersionParameterOption](#codersdktemplateversionparameteroption) | false    |              |             |
+| `template_ids` | array of string                                                                             | false    |              |             |
+| `type`         | string                                                                                      | false    |              |             |
+| `values`       | array of [codersdk.TemplateParameterValue](#codersdktemplateparametervalue)                 | false    |              |             |
 
 ## codersdk.TemplateParameterValue
 
@@ -12735,10 +12735,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`value`|string|false|||
+| Name    | Type    | Required | Restrictions | Description |
+|---------|---------|----------|--------------|-------------|
+| `count` | integer | false    |              |             |
+| `value` | string  | false    |              |             |
 
 ## codersdk.TemplateRole
 
@@ -12750,9 +12750,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `admin`, `use`|
+| Value(s)           |
+|--------------------|
+| ``, `admin`, `use` |
 
 ## codersdk.TemplateUser
 
@@ -12787,31 +12787,31 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`created_at`|string|true|||
-|`email`|string|true|||
-|`has_ai_seat`|boolean|false||Has ai seat intentionally omits omitempty so the API always includes the field, even when false.|
-|`id`|string|true|||
-|`is_service_account`|boolean|false|||
-|`last_seen_at`|string|false|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false|||
-|`name`|string|false|||
-|`organization_ids`|array of string|false|||
-|`role`|[codersdk.TemplateRole](#codersdktemplaterole)|false|||
-|`roles`|array of [codersdk.SlimRole](#codersdkslimrole)|false|||
-|`status`|[codersdk.UserStatus](#codersdkuserstatus)|false|||
-|`theme_preference`|string|false||Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead.|
-|`updated_at`|string|false|||
-|`username`|string|true|||
+| Name                 | Type                                            | Required | Restrictions | Description                                                                                      |
+|----------------------|-------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------|
+| `avatar_url`         | string                                          | false    |              |                                                                                                  |
+| `created_at`         | string                                          | true     |              |                                                                                                  |
+| `email`              | string                                          | true     |              |                                                                                                  |
+| `has_ai_seat`        | boolean                                         | false    |              | Has ai seat intentionally omits omitempty so the API always includes the field, even when false. |
+| `id`                 | string                                          | true     |              |                                                                                                  |
+| `is_service_account` | boolean                                         | false    |              |                                                                                                  |
+| `last_seen_at`       | string                                          | false    |              |                                                                                                  |
+| `login_type`         | [codersdk.LoginType](#codersdklogintype)        | false    |              |                                                                                                  |
+| `name`               | string                                          | false    |              |                                                                                                  |
+| `organization_ids`   | array of string                                 | false    |              |                                                                                                  |
+| `role`               | [codersdk.TemplateRole](#codersdktemplaterole)  | false    |              |                                                                                                  |
+| `roles`              | array of [codersdk.SlimRole](#codersdkslimrole) | false    |              |                                                                                                  |
+| `status`             | [codersdk.UserStatus](#codersdkuserstatus)      | false    |              |                                                                                                  |
+| `theme_preference`   | string                                          | false    |              | Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead.       |
+| `updated_at`         | string                                          | false    |              |                                                                                                  |
+| `username`           | string                                          | true     |              |                                                                                                  |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`admin`, `use`|
-|`status`|`active`, `suspended`|
+| Property | Value(s)              |
+|----------|-----------------------|
+| `role`   | `admin`, `use`        |
+| `status` | `active`, `suspended` |
 
 ## codersdk.TemplateVersion
 
@@ -12887,22 +12887,22 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`archived`|boolean|false|||
-|`created_at`|string|false|||
-|`created_by`|[codersdk.MinimalUser](#codersdkminimaluser)|false|||
-|`has_external_agent`|boolean|false|||
-|`id`|string|false|||
-|`job`|[codersdk.ProvisionerJob](#codersdkprovisionerjob)|false|||
-|`matched_provisioners`|[codersdk.MatchedProvisioners](#codersdkmatchedprovisioners)|false|||
-|`message`|string|false|||
-|`name`|string|false|||
-|`organization_id`|string|false|||
-|`readme`|string|false|||
-|`template_id`|string|false|||
-|`updated_at`|string|false|||
-|`warnings`|array of [codersdk.TemplateVersionWarning](#codersdktemplateversionwarning)|false|||
+| Name                   | Type                                                                        | Required | Restrictions | Description |
+|------------------------|-----------------------------------------------------------------------------|----------|--------------|-------------|
+| `archived`             | boolean                                                                     | false    |              |             |
+| `created_at`           | string                                                                      | false    |              |             |
+| `created_by`           | [codersdk.MinimalUser](#codersdkminimaluser)                                | false    |              |             |
+| `has_external_agent`   | boolean                                                                     | false    |              |             |
+| `id`                   | string                                                                      | false    |              |             |
+| `job`                  | [codersdk.ProvisionerJob](#codersdkprovisionerjob)                          | false    |              |             |
+| `matched_provisioners` | [codersdk.MatchedProvisioners](#codersdkmatchedprovisioners)                | false    |              |             |
+| `message`              | string                                                                      | false    |              |             |
+| `name`                 | string                                                                      | false    |              |             |
+| `organization_id`      | string                                                                      | false    |              |             |
+| `readme`               | string                                                                      | false    |              |             |
+| `template_id`          | string                                                                      | false    |              |             |
+| `updated_at`           | string                                                                      | false    |              |             |
+| `warnings`             | array of [codersdk.TemplateVersionWarning](#codersdktemplateversionwarning) | false    |              |             |
 
 ## codersdk.TemplateVersionExternalAuth
 
@@ -12920,15 +12920,15 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`authenticate_url`|string|false|||
-|`authenticated`|boolean|false|||
-|`display_icon`|string|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`optional`|boolean|false|||
-|`type`|string|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `authenticate_url` | string  | false    |              |             |
+| `authenticated`    | boolean | false    |              |             |
+| `display_icon`     | string  | false    |              |             |
+| `display_name`     | string  | false    |              |             |
+| `id`               | string  | false    |              |             |
+| `optional`         | boolean | false    |              |             |
+| `type`             | string  | false    |              |             |
 
 ## codersdk.TemplateVersionParameter
 
@@ -12963,33 +12963,33 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_value`|string|false|||
-|`description`|string|false|||
-|`description_plaintext`|string|false|||
-|`display_name`|string|false|||
-|`ephemeral`|boolean|false|||
-|`form_type`|string|false||Form type has an enum value of empty string, `""`. Keep the leading comma in the enums struct tag.|
-|`icon`|string|false|||
-|`mutable`|boolean|false|||
-|`name`|string|false|||
-|`options`|array of [codersdk.TemplateVersionParameterOption](#codersdktemplateversionparameteroption)|false|||
-|`required`|boolean|false|||
-|`type`|string|false|||
-|`validation_error`|string|false|||
-|`validation_max`|integer|false|||
-|`validation_min`|integer|false|||
-|`validation_monotonic`|[codersdk.ValidationMonotonicOrder](#codersdkvalidationmonotonicorder)|false|||
-|`validation_regex`|string|false|||
+| Name                    | Type                                                                                        | Required | Restrictions | Description                                                                                        |
+|-------------------------|---------------------------------------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------|
+| `default_value`         | string                                                                                      | false    |              |                                                                                                    |
+| `description`           | string                                                                                      | false    |              |                                                                                                    |
+| `description_plaintext` | string                                                                                      | false    |              |                                                                                                    |
+| `display_name`          | string                                                                                      | false    |              |                                                                                                    |
+| `ephemeral`             | boolean                                                                                     | false    |              |                                                                                                    |
+| `form_type`             | string                                                                                      | false    |              | Form type has an enum value of empty string, `""`. Keep the leading comma in the enums struct tag. |
+| `icon`                  | string                                                                                      | false    |              |                                                                                                    |
+| `mutable`               | boolean                                                                                     | false    |              |                                                                                                    |
+| `name`                  | string                                                                                      | false    |              |                                                                                                    |
+| `options`               | array of [codersdk.TemplateVersionParameterOption](#codersdktemplateversionparameteroption) | false    |              |                                                                                                    |
+| `required`              | boolean                                                                                     | false    |              |                                                                                                    |
+| `type`                  | string                                                                                      | false    |              |                                                                                                    |
+| `validation_error`      | string                                                                                      | false    |              |                                                                                                    |
+| `validation_max`        | integer                                                                                     | false    |              |                                                                                                    |
+| `validation_min`        | integer                                                                                     | false    |              |                                                                                                    |
+| `validation_monotonic`  | [codersdk.ValidationMonotonicOrder](#codersdkvalidationmonotonicorder)                      | false    |              |                                                                                                    |
+| `validation_regex`      | string                                                                                      | false    |              |                                                                                                    |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`form_type`|``, `checkbox`, `dropdown`, `error`, `input`, `multi-select`, `radio`, `slider`, `switch`, `tag-select`, `textarea`|
-|`type`|`bool`, `list(string)`, `number`, `string`|
-|`validation_monotonic`|`decreasing`, `increasing`|
+| Property               | Value(s)                                                                                                            |
+|------------------------|---------------------------------------------------------------------------------------------------------------------|
+| `form_type`            | ``, `checkbox`, `dropdown`, `error`, `input`, `multi-select`, `radio`, `slider`, `switch`, `tag-select`, `textarea` |
+| `type`                 | `bool`, `list(string)`, `number`, `string`                                                                          |
+| `validation_monotonic` | `decreasing`, `increasing`                                                                                          |
 
 ## codersdk.TemplateVersionParameterOption
 
@@ -13004,12 +13004,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`icon`|string|false|||
-|`name`|string|false|||
-|`value`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `description` | string | false    |              |             |
+| `icon`        | string | false    |              |             |
+| `name`        | string | false    |              |             |
+| `value`       | string | false    |              |             |
 
 ## codersdk.TemplateVersionVariable
 
@@ -13027,21 +13027,21 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_value`|string|false|||
-|`description`|string|false|||
-|`name`|string|false|||
-|`required`|boolean|false|||
-|`sensitive`|boolean|false|||
-|`type`|string|false|||
-|`value`|string|false|||
+| Name            | Type    | Required | Restrictions | Description |
+|-----------------|---------|----------|--------------|-------------|
+| `default_value` | string  | false    |              |             |
+| `description`   | string  | false    |              |             |
+| `name`          | string  | false    |              |             |
+| `required`      | boolean | false    |              |             |
+| `sensitive`     | boolean | false    |              |             |
+| `type`          | string  | false    |              |             |
+| `value`         | string  | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`type`|`bool`, `number`, `string`|
+| Property | Value(s)                   |
+|----------|----------------------------|
+| `type`   | `bool`, `number`, `string` |
 
 ## codersdk.TemplateVersionWarning
 
@@ -13053,9 +13053,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`UNSUPPORTED_WORKSPACES`|
+| Value(s)                 |
+|--------------------------|
+| `UNSUPPORTED_WORKSPACES` |
 
 ## codersdk.TerminalFontName
 
@@ -13067,9 +13067,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `fira-code`, `geist-mono`, `ibm-plex-mono`, `jetbrains-mono`, `source-code-pro`|
+| Value(s)                                                                            |
+|-------------------------------------------------------------------------------------|
+| ``, `fira-code`, `geist-mono`, `ibm-plex-mono`, `jetbrains-mono`, `source-code-pro` |
 
 ## codersdk.ThemeMode
 
@@ -13081,9 +13081,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `single`, `sync`|
+| Value(s)             |
+|----------------------|
+| ``, `single`, `sync` |
 
 ## codersdk.ThinkingDisplayMode
 
@@ -13095,9 +13095,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`always_collapsed`, `always_expanded`, `auto`, `preview`|
+| Value(s)                                                 |
+|----------------------------------------------------------|
+| `always_collapsed`, `always_expanded`, `auto`, `preview` |
 
 ## codersdk.TimingStage
 
@@ -13109,9 +13109,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`apply`, `connect`, `cron`, `graph`, `init`, `plan`, `start`, `stop`|
+| Value(s)                                                             |
+|----------------------------------------------------------------------|
+| `apply`, `connect`, `cron`, `graph`, `init`, `plan`, `start`, `stop` |
 
 ## codersdk.TokenConfig
 
@@ -13123,9 +13123,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`max_token_lifetime`|integer|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `max_token_lifetime` | integer | false    |              |             |
 
 ## codersdk.TraceConfig
 
@@ -13140,12 +13140,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`capture_logs`|boolean|false|||
-|`data_dog`|boolean|false|||
-|`enable`|boolean|false|||
-|`honeycomb_api_key`|string|false|||
+| Name                | Type    | Required | Restrictions | Description |
+|---------------------|---------|----------|--------------|-------------|
+| `capture_logs`      | boolean | false    |              |             |
+| `data_dog`          | boolean | false    |              |             |
+| `enable`            | boolean | false    |              |             |
+| `honeycomb_api_key` | string  | false    |              |             |
 
 ## codersdk.TransitionStats
 
@@ -13158,10 +13158,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`p50`|integer|false|||
-|`p95`|integer|false|||
+| Name  | Type    | Required | Restrictions | Description |
+|-------|---------|----------|--------------|-------------|
+| `p50` | integer | false    |              |             |
+| `p95` | integer | false    |              |             |
 
 ## codersdk.UpdateAIProviderRequest
 
@@ -13183,14 +13183,14 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_keys`|array of [codersdk.AIProviderKeyMutation](#codersdkaiproviderkeymutation)|false|||
-|`base_url`|string|false|||
-|`display_name`|string|false|||
-|`enabled`|boolean|false|||
-|`icon`|string|false|||
-|`settings`|[codersdk.AIProviderSettings](#codersdkaiprovidersettings)|false|||
+| Name           | Type                                                                      | Required | Restrictions | Description |
+|----------------|---------------------------------------------------------------------------|----------|--------------|-------------|
+| `api_keys`     | array of [codersdk.AIProviderKeyMutation](#codersdkaiproviderkeymutation) | false    |              |             |
+| `base_url`     | string                                                                    | false    |              |             |
+| `display_name` | string                                                                    | false    |              |             |
+| `enabled`      | boolean                                                                   | false    |              |             |
+| `icon`         | string                                                                    | false    |              |             |
+| `settings`     | [codersdk.AIProviderSettings](#codersdkaiprovidersettings)                | false    |              |             |
 
 ## codersdk.UpdateActiveTemplateVersion
 
@@ -13202,9 +13202,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|true|||
+| Name | Type   | Required | Restrictions | Description |
+|------|--------|----------|--------------|-------------|
+| `id` | string | true     |              |             |
 
 ## codersdk.UpdateAppearanceConfig
 
@@ -13229,12 +13229,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`announcement_banners`|array of [codersdk.BannerConfig](#codersdkbannerconfig)|false|||
-|`application_name`|string|false|||
-|`logo_url`|string|false|||
-|`service_banner`|[codersdk.BannerConfig](#codersdkbannerconfig)|false||Deprecated: ServiceBanner has been replaced by AnnouncementBanners.|
+| Name                   | Type                                                    | Required | Restrictions | Description                                                         |
+|------------------------|---------------------------------------------------------|----------|--------------|---------------------------------------------------------------------|
+| `announcement_banners` | array of [codersdk.BannerConfig](#codersdkbannerconfig) | false    |              |                                                                     |
+| `application_name`     | string                                                  | false    |              |                                                                     |
+| `logo_url`             | string                                                  | false    |              |                                                                     |
+| `service_banner`       | [codersdk.BannerConfig](#codersdkbannerconfig)          | false    |              | Deprecated: ServiceBanner has been replaced by AnnouncementBanners. |
 
 ## codersdk.UpdateChatACL
 
@@ -13253,12 +13253,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group_roles`|object|false|||
-|» `[any property]`|[codersdk.ChatRole](#codersdkchatrole)|false|||
-|`user_roles`|object|false|||
-|» `[any property]`|[codersdk.ChatRole](#codersdkchatrole)|false|||
+| Name               | Type                                   | Required | Restrictions | Description |
+|--------------------|----------------------------------------|----------|--------------|-------------|
+| `group_roles`      | object                                 | false    |              |             |
+| » `[any property]` | [codersdk.ChatRole](#codersdkchatrole) | false    |              |             |
+| `user_roles`       | object                                 | false    |              |             |
+| » `[any property]` | [codersdk.ChatRole](#codersdkchatrole) | false    |              |             |
 
 ## codersdk.UpdateChatRequest
 
@@ -13278,15 +13278,15 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`archived`|boolean|false|||
-|`labels`|object|false|||
-|» `[any property]`|string|false|||
-|`pin_order`|integer|false||Pin order controls the chat's pinned state and position. - nil: no change to pin state. - 0: unpin the chat. - >0 (chat is unpinned): pin the chat, appending it to   the end of the pinned list. The specific value is   ignored; the server assigns the next available position. - >0 (chat is already pinned): move the chat to the   requested position, shifting neighbors as needed. The   value is clamped to [1, pinned_count].|
-|`plan_mode`|[codersdk.ChatPlanMode](#codersdkchatplanmode)|false||Plan mode switches the chat's persistent plan mode. nil: no change, ptr to "plan": enable, ptr to "": clear.|
-|`title`|string|false|||
-|`workspace_id`|string|false|||
+| Name               | Type                                           | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|--------------------|------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `archived`         | boolean                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `labels`           | object                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| » `[any property]` | string                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `pin_order`        | integer                                        | false    |              | Pin order controls the chat's pinned state and position. - nil: no change to pin state. - 0: unpin the chat. - >0 (chat is unpinned): pin the chat, appending it to   the end of the pinned list. The specific value is   ignored; the server assigns the next available position. - >0 (chat is already pinned): move the chat to the   requested position, shifting neighbors as needed. The   value is clamped to [1, pinned_count]. |
+| `plan_mode`        | [codersdk.ChatPlanMode](#codersdkchatplanmode) | false    |              | Plan mode switches the chat's persistent plan mode. nil: no change, ptr to "plan": enable, ptr to "": clear.                                                                                                                                                                                                                                                                                                                            |
+| `title`            | string                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `workspace_id`     | string                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## codersdk.UpdateChatRetentionDaysRequest
 
@@ -13298,9 +13298,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`retention_days`|integer|false|||
+| Name             | Type    | Required | Restrictions | Description |
+|------------------|---------|----------|--------------|-------------|
+| `retention_days` | integer | false    |              |             |
 
 ## codersdk.UpdateCheckResponse
 
@@ -13314,11 +13314,11 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`current`|boolean|false||Current indicates whether the server version is the same as the latest.|
-|`url`|string|false||URL to download the latest release of Coder.|
-|`version`|string|false||Version is the semantic version for the latest release of Coder.|
+| Name      | Type    | Required | Restrictions | Description                                                             |
+|-----------|---------|----------|--------------|-------------------------------------------------------------------------|
+| `current` | boolean | false    |              | Current indicates whether the server version is the same as the latest. |
+| `url`     | string  | false    |              | URL to download the latest release of Coder.                            |
+| `version` | string  | false    |              | Version is the semantic version for the latest release of Coder.        |
 
 ## codersdk.UpdateOrganizationRequest
 
@@ -13336,13 +13336,13 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`default_org_member_roles`|array of string|false||Default org member roles when non-nil, replaces the org's default member roles.|
-|`description`|string|false|||
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`name`|string|false|||
+| Name                       | Type            | Required | Restrictions | Description                                                                     |
+|----------------------------|-----------------|----------|--------------|---------------------------------------------------------------------------------|
+| `default_org_member_roles` | array of string | false    |              | Default org member roles when non-nil, replaces the org's default member roles. |
+| `description`              | string          | false    |              |                                                                                 |
+| `display_name`             | string          | false    |              |                                                                                 |
+| `icon`                     | string          | false    |              |                                                                                 |
+| `name`                     | string          | false    |              |                                                                                 |
 
 ## codersdk.UpdateRoles
 
@@ -13356,9 +13356,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`roles`|array of string|false|||
+| Name    | Type            | Required | Restrictions | Description |
+|---------|-----------------|----------|--------------|-------------|
+| `roles` | array of string | false    |              |             |
 
 ## codersdk.UpdateTaskInputRequest
 
@@ -13370,9 +13370,9 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`input`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `input` | string | false    |              |             |
 
 ## codersdk.UpdateTemplateACL
 
@@ -13391,12 +13391,12 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group_perms`|object|false||Group perms is a mapping from valid group UUIDs to the template role they should be granted. To remove a group from the template, use "" as the role (available as a constant named codersdk.TemplateRoleDeleted)|
-|» `[any property]`|[codersdk.TemplateRole](#codersdktemplaterole)|false|||
-|`user_perms`|object|false||User perms is a mapping from valid user UUIDs to the template role they should be granted. To remove a user from the template, use "" as the role (available as a constant named codersdk.TemplateRoleDeleted)|
-|» `[any property]`|[codersdk.TemplateRole](#codersdktemplaterole)|false|||
+| Name               | Type                                           | Required | Restrictions | Description                                                                                                                                                                                                       |
+|--------------------|------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `group_perms`      | object                                         | false    |              | Group perms is a mapping from valid group UUIDs to the template role they should be granted. To remove a group from the template, use "" as the role (available as a constant named codersdk.TemplateRoleDeleted) |
+| » `[any property]` | [codersdk.TemplateRole](#codersdktemplaterole) | false    |              |                                                                                                                                                                                                                   |
+| `user_perms`       | object                                         | false    |              | User perms is a mapping from valid user UUIDs to the template role they should be granted. To remove a user from the template, use "" as the role (available as a constant named codersdk.TemplateRoleDeleted)    |
+| » `[any property]` | [codersdk.TemplateRole](#codersdktemplaterole) | false    |              |                                                                                                                                                                                                                   |
 
 ## codersdk.UpdateTemplateMeta
 
@@ -13440,32 +13440,32 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`activity_bump_ms`|integer|false||Activity bump ms allows optionally specifying the activity bump duration for all workspaces created from this template. Defaults to 1h but can be set to 0 to disable activity bumping.|
-|`allow_user_autostart`|boolean|false|||
-|`allow_user_autostop`|boolean|false|||
-|`allow_user_cancel_workspace_jobs`|boolean|false|||
-|`autostart_requirement`|[codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement)|false|||
-|`autostop_requirement`|[codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)|false||Autostop requirement and AutostartRequirement can only be set if your license includes the advanced template scheduling feature. If you attempt to set this value while unlicensed, it will be ignored.|
-|`cors_behavior`|[codersdk.CORSBehavior](#codersdkcorsbehavior)|false|||
-|`default_ttl_ms`|integer|false|||
-|`deprecation_message`|string|false||Deprecation message if set, will mark the template as deprecated and block any new workspaces from using this template. If passed an empty string, will remove the deprecated message, making the template usable for new workspaces again.|
-|`description`|string|false|||
-|`disable_everyone_group_access`|boolean|false||Disable everyone group access allows optionally disabling the default behavior of granting the 'everyone' group access to use the template. If this is set to true, the template will not be available to all users, and must be explicitly granted to users or groups in the permissions settings of the template.|
-|`disable_module_cache`|boolean|false||Disable module cache disables the using of cached Terraform modules during provisioning. It is recommended not to disable this.|
-|`display_name`|string|false|||
-|`failure_ttl_ms`|integer|false|||
-|`icon`|string|false|||
-|`max_port_share_level`|[codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)|false|||
-|`name`|string|false|||
-|`require_active_version`|boolean|false||Require active version mandates workspaces built using this template use the active version of the template. This option has no effect on template admins.|
-|`time_til_autostop_notify_ms`|integer|false||Time til autostop notify ms allows optionally specifying the duration before the autostop deadline at which a reminder notification is sent for workspaces created from this template. Defaults to 0 (disabled). Omitting the field keeps the existing value.|
-|`time_til_dormant_autodelete_ms`|integer|false|||
-|`time_til_dormant_ms`|integer|false|||
-|`update_workspace_dormant_at`|boolean|false||Update workspace dormant at updates the dormant_at field of workspaces spawned from the template. This is useful for preventing dormant workspaces being immediately deleted when updating the dormant_ttl field to a new, shorter value.|
-|`update_workspace_last_used_at`|boolean|false||Update workspace last used at updates the last_used_at field of workspaces spawned from the template. This is useful for preventing workspaces being immediately locked when updating the inactivity_ttl field to a new, shorter value.|
-|`use_classic_parameter_flow`|boolean|false||Use classic parameter flow is a flag that switches the default behavior to use the classic parameter flow when creating a workspace. This only affects deployments with the experiment "dynamic-parameters" enabled. This setting will live for a period after the experiment is made the default. An "opt-out" is present in case the new feature breaks some existing templates.|
+| Name                               | Type                                                                           | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                                                        |
+|------------------------------------|--------------------------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `activity_bump_ms`                 | integer                                                                        | false    |              | Activity bump ms allows optionally specifying the activity bump duration for all workspaces created from this template. Defaults to 1h but can be set to 0 to disable activity bumping.                                                                                                                                                                                            |
+| `allow_user_autostart`             | boolean                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `allow_user_autostop`              | boolean                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `allow_user_cancel_workspace_jobs` | boolean                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `autostart_requirement`            | [codersdk.TemplateAutostartRequirement](#codersdktemplateautostartrequirement) | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `autostop_requirement`             | [codersdk.TemplateAutostopRequirement](#codersdktemplateautostoprequirement)   | false    |              | Autostop requirement and AutostartRequirement can only be set if your license includes the advanced template scheduling feature. If you attempt to set this value while unlicensed, it will be ignored.                                                                                                                                                                            |
+| `cors_behavior`                    | [codersdk.CORSBehavior](#codersdkcorsbehavior)                                 | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `default_ttl_ms`                   | integer                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `deprecation_message`              | string                                                                         | false    |              | Deprecation message if set, will mark the template as deprecated and block any new workspaces from using this template. If passed an empty string, will remove the deprecated message, making the template usable for new workspaces again.                                                                                                                                        |
+| `description`                      | string                                                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `disable_everyone_group_access`    | boolean                                                                        | false    |              | Disable everyone group access allows optionally disabling the default behavior of granting the 'everyone' group access to use the template. If this is set to true, the template will not be available to all users, and must be explicitly granted to users or groups in the permissions settings of the template.                                                                |
+| `disable_module_cache`             | boolean                                                                        | false    |              | Disable module cache disables the using of cached Terraform modules during provisioning. It is recommended not to disable this.                                                                                                                                                                                                                                                    |
+| `display_name`                     | string                                                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `failure_ttl_ms`                   | integer                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `icon`                             | string                                                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `max_port_share_level`             | [codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel) | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `name`                             | string                                                                         | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `require_active_version`           | boolean                                                                        | false    |              | Require active version mandates workspaces built using this template use the active version of the template. This option has no effect on template admins.                                                                                                                                                                                                                         |
+| `time_til_autostop_notify_ms`      | integer                                                                        | false    |              | Time til autostop notify ms allows optionally specifying the duration before the autostop deadline at which a reminder notification is sent for workspaces created from this template. Defaults to 0 (disabled). Omitting the field keeps the existing value.                                                                                                                      |
+| `time_til_dormant_autodelete_ms`   | integer                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `time_til_dormant_ms`              | integer                                                                        | false    |              |                                                                                                                                                                                                                                                                                                                                                                                    |
+| `update_workspace_dormant_at`      | boolean                                                                        | false    |              | Update workspace dormant at updates the dormant_at field of workspaces spawned from the template. This is useful for preventing dormant workspaces being immediately deleted when updating the dormant_ttl field to a new, shorter value.                                                                                                                                          |
+| `update_workspace_last_used_at`    | boolean                                                                        | false    |              | Update workspace last used at updates the last_used_at field of workspaces spawned from the template. This is useful for preventing workspaces being immediately locked when updating the inactivity_ttl field to a new, shorter value.                                                                                                                                            |
+| `use_classic_parameter_flow`       | boolean                                                                        | false    |              | Use classic parameter flow is a flag that switches the default behavior to use the classic parameter flow when creating a workspace. This only affects deployments with the experiment "dynamic-parameters" enabled. This setting will live for a period after the experiment is made the default. An "opt-out" is present in case the new feature breaks some existing templates. |
 
 ## codersdk.UpdateUserAppearanceSettingsRequest
 
@@ -13481,21 +13481,21 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`terminal_font`|[codersdk.TerminalFontName](#codersdkterminalfontname)|true|||
-|`theme_dark`|string|false||Theme dark is required when ThemeMode is "sync". In "single" mode an empty value means "preserve the previously persisted slot" rather than "clear the slot", so partial updates that send only one slot keep the other intact.|
-|`theme_light`|string|false||Theme light is required when ThemeMode is "sync". In "single" mode an empty value means "preserve the previously persisted slot" rather than "clear the slot", so partial updates that send only one slot keep the other intact.|
-|`theme_mode`|[codersdk.ThemeMode](#codersdkthememode)|false||Theme mode is optional for backward compatibility. When empty, the server leaves theme_mode, theme_light, and theme_dark unchanged so older CLI clients do not erase sync-mode settings. Legacy auto preferences are the exception: they clear theme_mode so clients can migrate the old sync-with-system setting.|
-|`theme_preference`|string|true|||
+| Name               | Type                                                   | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                        |
+|--------------------|--------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `terminal_font`    | [codersdk.TerminalFontName](#codersdkterminalfontname) | true     |              |                                                                                                                                                                                                                                                                                                                    |
+| `theme_dark`       | string                                                 | false    |              | Theme dark is required when ThemeMode is "sync". In "single" mode an empty value means "preserve the previously persisted slot" rather than "clear the slot", so partial updates that send only one slot keep the other intact.                                                                                    |
+| `theme_light`      | string                                                 | false    |              | Theme light is required when ThemeMode is "sync". In "single" mode an empty value means "preserve the previously persisted slot" rather than "clear the slot", so partial updates that send only one slot keep the other intact.                                                                                   |
+| `theme_mode`       | [codersdk.ThemeMode](#codersdkthememode)               | false    |              | Theme mode is optional for backward compatibility. When empty, the server leaves theme_mode, theme_light, and theme_dark unchanged so older CLI clients do not erase sync-mode settings. Legacy auto preferences are the exception: they clear theme_mode so clients can migrate the old sync-with-system setting. |
+| `theme_preference` | string                                                 | true     |              |                                                                                                                                                                                                                                                                                                                    |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`theme_dark`|`dark`, `dark-protan-deuter`, `dark-tritan`, `light`, `light-protan-deuter`, `light-tritan`|
-|`theme_light`|`dark`, `dark-protan-deuter`, `dark-tritan`, `light`, `light-protan-deuter`, `light-tritan`|
-|`theme_mode`|`single`, `sync`|
+| Property      | Value(s)                                                                                    |
+|---------------|---------------------------------------------------------------------------------------------|
+| `theme_dark`  | `dark`, `dark-protan-deuter`, `dark-tritan`, `light`, `light-protan-deuter`, `light-tritan` |
+| `theme_light` | `dark`, `dark-protan-deuter`, `dark-tritan`, `light`, `light-protan-deuter`, `light-tritan` |
+| `theme_mode`  | `single`, `sync`                                                                            |
 
 ## codersdk.UpdateUserNotificationPreferences
 
@@ -13510,10 +13510,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`template_disabled_map`|object|false|||
-|» `[any property]`|boolean|false|||
+| Name                    | Type    | Required | Restrictions | Description |
+|-------------------------|---------|----------|--------------|-------------|
+| `template_disabled_map` | object  | false    |              |             |
+| » `[any property]`      | boolean | false    |              |             |
 
 ## codersdk.UpdateUserPasswordRequest
 
@@ -13526,10 +13526,10 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`old_password`|string|false|||
-|`password`|string|true|||
+| Name           | Type   | Required | Restrictions | Description |
+|----------------|--------|----------|--------------|-------------|
+| `old_password` | string | false    |              |             |
+| `password`     | string | true     |              |             |
 
 ## codersdk.UpdateUserPreferenceSettingsRequest
 
@@ -13545,13 +13545,13 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_chat_send_shortcut`|[codersdk.AgentChatSendShortcut](#codersdkagentchatsendshortcut)|false|||
-|`code_diff_display_mode`|[codersdk.AgentDisplayMode](#codersdkagentdisplaymode)|false|||
-|`shell_tool_display_mode`|[codersdk.AgentDisplayMode](#codersdkagentdisplaymode)|false|||
-|`task_notification_alert_dismissed`|boolean|false|||
-|`thinking_display_mode`|[codersdk.ThinkingDisplayMode](#codersdkthinkingdisplaymode)|false|||
+| Name                                | Type                                                             | Required | Restrictions | Description |
+|-------------------------------------|------------------------------------------------------------------|----------|--------------|-------------|
+| `agent_chat_send_shortcut`          | [codersdk.AgentChatSendShortcut](#codersdkagentchatsendshortcut) | false    |              |             |
+| `code_diff_display_mode`            | [codersdk.AgentDisplayMode](#codersdkagentdisplaymode)           | false    |              |             |
+| `shell_tool_display_mode`           | [codersdk.AgentDisplayMode](#codersdkagentdisplaymode)           | false    |              |             |
+| `task_notification_alert_dismissed` | boolean                                                          | false    |              |             |
+| `thinking_display_mode`             | [codersdk.ThinkingDisplayMode](#codersdkthinkingdisplaymode)     | false    |              |             |
 
 ## codersdk.UpdateUserProfileRequest
 
@@ -13565,11 +13565,11 @@ Restarts will only happen on weekdays in this list on weeks which line up with W
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false||Avatar URL is only applied for users whose login type is password or none. For other login types the avatar is synced from the identity provider on login, so a submitted value is ignored.|
-|`name`|string|false|||
-|`username`|string|true|||
+| Name         | Type   | Required | Restrictions | Description                                                                                                                                                                                 |
+|--------------|--------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avatar_url` | string | false    |              | Avatar URL is only applied for users whose login type is password or none. For other login types the avatar is synced from the identity provider on login, so a submitted value is ignored. |
+| `name`       | string | false    |              |                                                                                                                                                                                             |
+| `username`   | string | true     |              |                                                                                                                                                                                             |
 
 ## codersdk.UpdateUserQuietHoursScheduleRequest
 
@@ -13600,12 +13600,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`env_name`|string|false|||
-|`file_path`|string|false|||
-|`value`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `description` | string | false    |              |             |
+| `env_name`    | string | false    |              |             |
+| `file_path`   | string | false    |              |             |
+| `value`       | string | false    |              |             |
 
 ## codersdk.UpdateUserSkillRequest
 
@@ -13617,9 +13617,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|string|false||Content must be SKILL.md-format Markdown with YAML frontmatter. The frontmatter must include name, may include description, and must be followed by a non-empty body.|
+| Name      | Type   | Required | Restrictions | Description                                                                                                                                                           |
+|-----------|--------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `content` | string | false    |              | Content must be SKILL.md-format Markdown with YAML frontmatter. The frontmatter must include name, may include description, and must be followed by a non-empty body. |
 
 ## codersdk.UpdateWorkspaceACL
 
@@ -13638,12 +13638,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group_roles`|object|false||Group roles is a mapping from valid group UUIDs to the workspace role they should be granted. To remove a group from the workspace, use "" as the role (available as a constant named codersdk.WorkspaceRoleDeleted)|
-|» `[any property]`|[codersdk.WorkspaceRole](#codersdkworkspacerole)|false|||
-|`user_roles`|object|false||User roles is a mapping from valid user UUIDs to the workspace role they should be granted. To remove a user from the workspace, use "" as the role (available as a constant named codersdk.WorkspaceRoleDeleted)|
-|» `[any property]`|[codersdk.WorkspaceRole](#codersdkworkspacerole)|false|||
+| Name               | Type                                             | Required | Restrictions | Description                                                                                                                                                                                                          |
+|--------------------|--------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `group_roles`      | object                                           | false    |              | Group roles is a mapping from valid group UUIDs to the workspace role they should be granted. To remove a group from the workspace, use "" as the role (available as a constant named codersdk.WorkspaceRoleDeleted) |
+| » `[any property]` | [codersdk.WorkspaceRole](#codersdkworkspacerole) | false    |              |                                                                                                                                                                                                                      |
+| `user_roles`       | object                                           | false    |              | User roles is a mapping from valid user UUIDs to the workspace role they should be granted. To remove a user from the workspace, use "" as the role (available as a constant named codersdk.WorkspaceRoleDeleted)    |
+| » `[any property]` | [codersdk.WorkspaceRole](#codersdkworkspacerole) | false    |              |                                                                                                                                                                                                                      |
 
 ## codersdk.UpdateWorkspaceAutomaticUpdatesRequest
 
@@ -13655,9 +13655,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`automatic_updates`|[codersdk.AutomaticUpdates](#codersdkautomaticupdates)|false|||
+| Name                | Type                                                   | Required | Restrictions | Description |
+|---------------------|--------------------------------------------------------|----------|--------------|-------------|
+| `automatic_updates` | [codersdk.AutomaticUpdates](#codersdkautomaticupdates) | false    |              |             |
 
 ## codersdk.UpdateWorkspaceAutostartRequest
 
@@ -13669,9 +13669,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`schedule`|string|false||Schedule is expected to be of the form `CRON_TZ=<IANA Timezone> <min> <hour> * * <dow>` Example: `CRON_TZ=US/Central 30 9 * * 1-5` represents 0930 in the timezone US/Central on weekdays (Mon-Fri). `CRON_TZ` defaults to UTC if not present.|
+| Name       | Type   | Required | Restrictions | Description                                                                                                                                                                                                                                    |
+|------------|--------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `schedule` | string | false    |              | Schedule is expected to be of the form `CRON_TZ=<IANA Timezone> <min> <hour> * * <dow>` Example: `CRON_TZ=US/Central 30 9 * * 1-5` represents 0930 in the timezone US/Central on weekdays (Mon-Fri). `CRON_TZ` defaults to UTC if not present. |
 
 ## codersdk.UpdateWorkspaceBuildStateRequest
 
@@ -13685,9 +13685,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`state`|array of integer|false|||
+| Name    | Type             | Required | Restrictions | Description |
+|---------|------------------|----------|--------------|-------------|
+| `state` | array of integer | false    |              |             |
 
 ## codersdk.UpdateWorkspaceDormancy
 
@@ -13699,9 +13699,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dormant`|boolean|false|||
+| Name      | Type    | Required | Restrictions | Description |
+|-----------|---------|----------|--------------|-------------|
+| `dormant` | boolean | false    |              |             |
 
 ## codersdk.UpdateWorkspaceRequest
 
@@ -13713,9 +13713,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `name` | string | false    |              |             |
 
 ## codersdk.UpdateWorkspaceSharingSettingsRequest
 
@@ -13728,16 +13728,16 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`shareable_workspace_owners`|[codersdk.ShareableWorkspaceOwners](#codersdkshareableworkspaceowners)|false||Shareable workspace owners controls whose workspaces can be shared within the organization.|
-|`sharing_disabled`|boolean|false||Sharing disabled is deprecated and left for backward compatibility purposes. Deprecated: use `ShareableWorkspaceOwners` instead|
+| Name                         | Type                                                                   | Required | Restrictions | Description                                                                                                                     |
+|------------------------------|------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `shareable_workspace_owners` | [codersdk.ShareableWorkspaceOwners](#codersdkshareableworkspaceowners) | false    |              | Shareable workspace owners controls whose workspaces can be shared within the organization.                                     |
+| `sharing_disabled`           | boolean                                                                | false    |              | Sharing disabled is deprecated and left for backward compatibility purposes. Deprecated: use `ShareableWorkspaceOwners` instead |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`shareable_workspace_owners`|`everyone`, `none`, `service_accounts`|
+| Property                     | Value(s)                               |
+|------------------------------|----------------------------------------|
+| `shareable_workspace_owners` | `everyone`, `none`, `service_accounts` |
 
 ## codersdk.UpdateWorkspaceTTLRequest
 
@@ -13749,9 +13749,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`ttl_ms`|integer|false|||
+| Name     | Type    | Required | Restrictions | Description |
+|----------|---------|----------|--------------|-------------|
+| `ttl_ms` | integer | false    |              |             |
 
 ## codersdk.UploadChatFileResponse
 
@@ -13763,9 +13763,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|false|||
+| Name | Type   | Required | Restrictions | Description |
+|------|--------|----------|--------------|-------------|
+| `id` | string | false    |              |             |
 
 ## codersdk.UploadResponse
 
@@ -13777,9 +13777,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`hash`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `hash` | string | false    |              |             |
 
 ## codersdk.UpsertGroupAIBudgetRequest
 
@@ -13791,9 +13791,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`spend_limit_micros`|integer|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `spend_limit_micros` | integer | false    |              |             |
 
 ## codersdk.UpsertUserAIBudgetOverrideRequest
 
@@ -13806,10 +13806,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group_id`|string|true||Group ID is the group the user's spend is attributed to. The user must be a member of this group.|
-|`spend_limit_micros`|integer|false|||
+| Name                 | Type    | Required | Restrictions | Description                                                                                       |
+|----------------------|---------|----------|--------------|---------------------------------------------------------------------------------------------------|
+| `group_id`           | string  | true     |              | Group ID is the group the user's spend is attributed to. The user must be a member of this group. |
+| `spend_limit_micros` | integer | false    |              |                                                                                                   |
 
 ## codersdk.UpsertWorkspaceAgentPortShareRequest
 
@@ -13824,19 +13824,19 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false|||
-|`port`|integer|false|||
-|`protocol`|[codersdk.WorkspaceAgentPortShareProtocol](#codersdkworkspaceagentportshareprotocol)|false|||
-|`share_level`|[codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)|false|||
+| Name          | Type                                                                                 | Required | Restrictions | Description |
+|---------------|--------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `agent_name`  | string                                                                               | false    |              |             |
+| `port`        | integer                                                                              | false    |              |             |
+| `protocol`    | [codersdk.WorkspaceAgentPortShareProtocol](#codersdkworkspaceagentportshareprotocol) | false    |              |             |
+| `share_level` | [codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)       | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`protocol`|`http`, `https`|
-|`share_level`|`authenticated`, `organization`, `owner`, `public`|
+| Property      | Value(s)                                           |
+|---------------|----------------------------------------------------|
+| `protocol`    | `http`, `https`                                    |
+| `share_level` | `authenticated`, `organization`, `owner`, `public` |
 
 ## codersdk.UsageAppName
 
@@ -13848,9 +13848,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`jetbrains`, `reconnecting-pty`, `ssh`, `vscode`|
+| Value(s)                                         |
+|--------------------------------------------------|
+| `jetbrains`, `reconnecting-pty`, `ssh`, `vscode` |
 
 ## codersdk.UsagePeriod
 
@@ -13864,11 +13864,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`end`|string|false|||
-|`issued_at`|string|false|||
-|`start`|string|false|||
+| Name        | Type   | Required | Restrictions | Description |
+|-------------|--------|----------|--------------|-------------|
+| `end`       | string | false    |              |             |
+| `issued_at` | string | false    |              |             |
+| `start`     | string | false    |              |             |
 
 ## codersdk.UsageStatsConfig
 
@@ -13880,9 +13880,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`enable`|boolean|false|||
+| Name     | Type    | Required | Restrictions | Description |
+|----------|---------|----------|--------------|-------------|
+| `enable` | boolean | false    |              |             |
 
 ## codersdk.User
 
@@ -13916,29 +13916,29 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`created_at`|string|true|||
-|`email`|string|true|||
-|`has_ai_seat`|boolean|false||Has ai seat intentionally omits omitempty so the API always includes the field, even when false.|
-|`id`|string|true|||
-|`is_service_account`|boolean|false|||
-|`last_seen_at`|string|false|||
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false|||
-|`name`|string|false|||
-|`organization_ids`|array of string|false|||
-|`roles`|array of [codersdk.SlimRole](#codersdkslimrole)|false|||
-|`status`|[codersdk.UserStatus](#codersdkuserstatus)|false|||
-|`theme_preference`|string|false||Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead.|
-|`updated_at`|string|false|||
-|`username`|string|true|||
+| Name                 | Type                                            | Required | Restrictions | Description                                                                                      |
+|----------------------|-------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------|
+| `avatar_url`         | string                                          | false    |              |                                                                                                  |
+| `created_at`         | string                                          | true     |              |                                                                                                  |
+| `email`              | string                                          | true     |              |                                                                                                  |
+| `has_ai_seat`        | boolean                                         | false    |              | Has ai seat intentionally omits omitempty so the API always includes the field, even when false. |
+| `id`                 | string                                          | true     |              |                                                                                                  |
+| `is_service_account` | boolean                                         | false    |              |                                                                                                  |
+| `last_seen_at`       | string                                          | false    |              |                                                                                                  |
+| `login_type`         | [codersdk.LoginType](#codersdklogintype)        | false    |              |                                                                                                  |
+| `name`               | string                                          | false    |              |                                                                                                  |
+| `organization_ids`   | array of string                                 | false    |              |                                                                                                  |
+| `roles`              | array of [codersdk.SlimRole](#codersdkslimrole) | false    |              |                                                                                                  |
+| `status`             | [codersdk.UserStatus](#codersdkuserstatus)      | false    |              |                                                                                                  |
+| `theme_preference`   | string                                          | false    |              | Deprecated: this value should be retrieved from `codersdk.UserPreferenceSettings` instead.       |
+| `updated_at`         | string                                          | false    |              |                                                                                                  |
+| `username`           | string                                          | true     |              |                                                                                                  |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`status`|`active`, `suspended`|
+| Property | Value(s)              |
+|----------|-----------------------|
+| `status` | `active`, `suspended` |
 
 ## codersdk.UserAIBudgetOverride
 
@@ -13954,13 +13954,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`group_id`|string|false|||
-|`spend_limit_micros`|integer|false|||
-|`updated_at`|string|false|||
-|`user_id`|string|false|||
+| Name                 | Type    | Required | Restrictions | Description |
+|----------------------|---------|----------|--------------|-------------|
+| `created_at`         | string  | false    |              |             |
+| `group_id`           | string  | false    |              |             |
+| `spend_limit_micros` | integer | false    |              |             |
+| `updated_at`         | string  | false    |              |             |
+| `user_id`            | string  | false    |              |             |
 
 ## codersdk.UserAISpendStatus
 
@@ -13978,15 +13978,15 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`current_spend_micros`|integer|false||Current spend micros is the user's spend on their effective group over the current budget period.|
-|`effective_group_id`|string|false||Effective group ID is the group the spend is attributed to. Null when no budget applies.|
-|`limit_source`|[codersdk.AIBudgetLimitSource](#codersdkaibudgetlimitsource)|false||Limit source identifies which tier produced the limit. Null when no budget applies.|
-|`period_end`|string|false||Period end is the exclusive upper bound of the current budget period.|
-|`period_start`|string|false||Period start is the inclusive lower bound of the current budget period.|
-|`spend_limit_micros`|integer|false||Spend limit micros is the effective spend limit in micro-units. Null when no budget applies to the user (unlimited).|
-|`user_id`|string|false|||
+| Name                   | Type                                                         | Required | Restrictions | Description                                                                                                          |
+|------------------------|--------------------------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------|
+| `current_spend_micros` | integer                                                      | false    |              | Current spend micros is the user's spend on their effective group over the current budget period.                    |
+| `effective_group_id`   | string                                                       | false    |              | Effective group ID is the group the spend is attributed to. Null when no budget applies.                             |
+| `limit_source`         | [codersdk.AIBudgetLimitSource](#codersdkaibudgetlimitsource) | false    |              | Limit source identifies which tier produced the limit. Null when no budget applies.                                  |
+| `period_end`           | string                                                       | false    |              | Period end is the exclusive upper bound of the current budget period.                                                |
+| `period_start`         | string                                                       | false    |              | Period start is the inclusive lower bound of the current budget period.                                              |
+| `spend_limit_micros`   | integer                                                      | false    |              | Spend limit micros is the effective spend limit in micro-units. Null when no budget applies to the user (unlimited). |
+| `user_id`              | string                                                       | false    |              |                                                                                                                      |
 
 ## codersdk.UserActivity
 
@@ -14004,13 +14004,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`seconds`|integer|false|||
-|`template_ids`|array of string|false|||
-|`user_id`|string|false|||
-|`username`|string|false|||
+| Name           | Type            | Required | Restrictions | Description |
+|----------------|-----------------|----------|--------------|-------------|
+| `avatar_url`   | string          | false    |              |             |
+| `seconds`      | integer         | false    |              |             |
+| `template_ids` | array of string | false    |              |             |
+| `user_id`      | string          | false    |              |             |
+| `username`     | string          | false    |              |             |
 
 ## codersdk.UserActivityInsightsReport
 
@@ -14037,12 +14037,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`end_time`|string|false|||
-|`start_time`|string|false|||
-|`template_ids`|array of string|false|||
-|`users`|array of [codersdk.UserActivity](#codersdkuseractivity)|false|||
+| Name           | Type                                                    | Required | Restrictions | Description |
+|----------------|---------------------------------------------------------|----------|--------------|-------------|
+| `end_time`     | string                                                  | false    |              |             |
+| `start_time`   | string                                                  | false    |              |             |
+| `template_ids` | array of string                                         | false    |              |             |
+| `users`        | array of [codersdk.UserActivity](#codersdkuseractivity) | false    |              |             |
 
 ## codersdk.UserActivityInsightsResponse
 
@@ -14071,9 +14071,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`report`|[codersdk.UserActivityInsightsReport](#codersdkuseractivityinsightsreport)|false|||
+| Name     | Type                                                                       | Required | Restrictions | Description |
+|----------|----------------------------------------------------------------------------|----------|--------------|-------------|
+| `report` | [codersdk.UserActivityInsightsReport](#codersdkuseractivityinsightsreport) | false    |              |             |
 
 ## codersdk.UserAppearanceSettings
 
@@ -14089,13 +14089,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`terminal_font`|[codersdk.TerminalFontName](#codersdkterminalfontname)|false|||
-|`theme_dark`|string|false||Ignored when ThemeMode is "single"|
-|`theme_light`|string|false||Ignored when ThemeMode is "single"|
-|`theme_mode`|[codersdk.ThemeMode](#codersdkthememode)|false|||
-|`theme_preference`|string|false||Theme preference is the legacy single-field appearance setting. In "single" mode it mirrors the active theme. In "sync" mode modern clients normally mirror the active OS slot, but older clients can update only this field, so it may diverge from ThemeLight or ThemeDark until a modern client saves the full appearance state again.|
+| Name               | Type                                                   | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                               |
+|--------------------|--------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `terminal_font`    | [codersdk.TerminalFontName](#codersdkterminalfontname) | false    |              |                                                                                                                                                                                                                                                                                                                                           |
+| `theme_dark`       | string                                                 | false    |              | Ignored when ThemeMode is "single"                                                                                                                                                                                                                                                                                                        |
+| `theme_light`      | string                                                 | false    |              | Ignored when ThemeMode is "single"                                                                                                                                                                                                                                                                                                        |
+| `theme_mode`       | [codersdk.ThemeMode](#codersdkthememode)               | false    |              |                                                                                                                                                                                                                                                                                                                                           |
+| `theme_preference` | string                                                 | false    |              | Theme preference is the legacy single-field appearance setting. In "single" mode it mirrors the active theme. In "sync" mode modern clients normally mirror the active OS slot, but older clients can update only this field, so it may diverge from ThemeLight or ThemeDark until a modern client saves the full appearance state again. |
 
 ## codersdk.UserLatency
 
@@ -14116,13 +14116,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`latency_ms`|[codersdk.ConnectionLatency](#codersdkconnectionlatency)|false|||
-|`template_ids`|array of string|false|||
-|`user_id`|string|false|||
-|`username`|string|false|||
+| Name           | Type                                                     | Required | Restrictions | Description |
+|----------------|----------------------------------------------------------|----------|--------------|-------------|
+| `avatar_url`   | string                                                   | false    |              |             |
+| `latency_ms`   | [codersdk.ConnectionLatency](#codersdkconnectionlatency) | false    |              |             |
+| `template_ids` | array of string                                          | false    |              |             |
+| `user_id`      | string                                                   | false    |              |             |
+| `username`     | string                                                   | false    |              |             |
 
 ## codersdk.UserLatencyInsightsReport
 
@@ -14152,12 +14152,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`end_time`|string|false|||
-|`start_time`|string|false|||
-|`template_ids`|array of string|false|||
-|`users`|array of [codersdk.UserLatency](#codersdkuserlatency)|false|||
+| Name           | Type                                                  | Required | Restrictions | Description |
+|----------------|-------------------------------------------------------|----------|--------------|-------------|
+| `end_time`     | string                                                | false    |              |             |
+| `start_time`   | string                                                | false    |              |             |
+| `template_ids` | array of string                                       | false    |              |             |
+| `users`        | array of [codersdk.UserLatency](#codersdkuserlatency) | false    |              |             |
 
 ## codersdk.UserLatencyInsightsResponse
 
@@ -14189,9 +14189,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`report`|[codersdk.UserLatencyInsightsReport](#codersdkuserlatencyinsightsreport)|false|||
+| Name     | Type                                                                     | Required | Restrictions | Description |
+|----------|--------------------------------------------------------------------------|----------|--------------|-------------|
+| `report` | [codersdk.UserLatencyInsightsReport](#codersdkuserlatencyinsightsreport) | false    |              |             |
 
 ## codersdk.UserLoginType
 
@@ -14203,9 +14203,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`login_type`|[codersdk.LoginType](#codersdklogintype)|false|||
+| Name         | Type                                     | Required | Restrictions | Description |
+|--------------|------------------------------------------|----------|--------------|-------------|
+| `login_type` | [codersdk.LoginType](#codersdklogintype) | false    |              |             |
 
 ## codersdk.UserParameter
 
@@ -14218,10 +14218,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|false|||
-|`value`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `name`  | string | false    |              |             |
+| `value` | string | false    |              |             |
 
 ## codersdk.UserPreferenceSettings
 
@@ -14237,13 +14237,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_chat_send_shortcut`|[codersdk.AgentChatSendShortcut](#codersdkagentchatsendshortcut)|false|||
-|`code_diff_display_mode`|[codersdk.AgentDisplayMode](#codersdkagentdisplaymode)|false|||
-|`shell_tool_display_mode`|[codersdk.AgentDisplayMode](#codersdkagentdisplaymode)|false|||
-|`task_notification_alert_dismissed`|boolean|false|||
-|`thinking_display_mode`|[codersdk.ThinkingDisplayMode](#codersdkthinkingdisplaymode)|false|||
+| Name                                | Type                                                             | Required | Restrictions | Description |
+|-------------------------------------|------------------------------------------------------------------|----------|--------------|-------------|
+| `agent_chat_send_shortcut`          | [codersdk.AgentChatSendShortcut](#codersdkagentchatsendshortcut) | false    |              |             |
+| `code_diff_display_mode`            | [codersdk.AgentDisplayMode](#codersdkagentdisplaymode)           | false    |              |             |
+| `shell_tool_display_mode`           | [codersdk.AgentDisplayMode](#codersdkagentdisplaymode)           | false    |              |             |
+| `task_notification_alert_dismissed` | boolean                                                          | false    |              |             |
+| `thinking_display_mode`             | [codersdk.ThinkingDisplayMode](#codersdkthinkingdisplaymode)     | false    |              |             |
 
 ## codersdk.UserQuietHoursScheduleConfig
 
@@ -14256,10 +14256,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_user_custom`|boolean|false|||
-|`default_schedule`|string|false|||
+| Name                | Type    | Required | Restrictions | Description |
+|---------------------|---------|----------|--------------|-------------|
+| `allow_user_custom` | boolean | false    |              |             |
+| `default_schedule`  | string  | false    |              |             |
 
 ## codersdk.UserQuietHoursScheduleResponse
 
@@ -14276,14 +14276,14 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`next`|string|false||Next is the next time that the quiet hours window will start.|
-|`raw_schedule`|string|false|||
-|`time`|string|false||Time is the time of day that the quiet hours window starts in the given Timezone each day.|
-|`timezone`|string|false||raw format from the cron expression, UTC if unspecified|
-|`user_can_set`|boolean|false||User can set is true if the user is allowed to set their own quiet hours schedule. If false, the user cannot set a custom schedule and the default schedule will always be used.|
-|`user_set`|boolean|false||User set is true if the user has set their own quiet hours schedule. If false, the user is using the default schedule.|
+| Name           | Type    | Required | Restrictions | Description                                                                                                                                                                      |
+|----------------|---------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `next`         | string  | false    |              | Next is the next time that the quiet hours window will start.                                                                                                                    |
+| `raw_schedule` | string  | false    |              |                                                                                                                                                                                  |
+| `time`         | string  | false    |              | Time is the time of day that the quiet hours window starts in the given Timezone each day.                                                                                       |
+| `timezone`     | string  | false    |              | raw format from the cron expression, UTC if unspecified                                                                                                                          |
+| `user_can_set` | boolean | false    |              | User can set is true if the user is allowed to set their own quiet hours schedule. If false, the user cannot set a custom schedule and the default schedule will always be used. |
+| `user_set`     | boolean | false    |              | User set is true if the user has set their own quiet hours schedule. If false, the user is using the default schedule.                                                           |
 
 ## codersdk.UserSecret
 
@@ -14301,15 +14301,15 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`description`|string|false|||
-|`env_name`|string|false|||
-|`file_path`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`updated_at`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `created_at`  | string | false    |              |             |
+| `description` | string | false    |              |             |
+| `env_name`    | string | false    |              |             |
+| `file_path`   | string | false    |              |             |
+| `id`          | string | false    |              |             |
+| `name`        | string | false    |              |             |
+| `updated_at`  | string | false    |              |             |
 
 ## codersdk.UserSkill
 
@@ -14326,14 +14326,14 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`content`|string|false|||
-|`created_at`|string|false|||
-|`description`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`updated_at`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `content`     | string | false    |              |             |
+| `created_at`  | string | false    |              |             |
+| `description` | string | false    |              |             |
+| `id`          | string | false    |              |             |
+| `name`        | string | false    |              |             |
+| `updated_at`  | string | false    |              |             |
 
 ## codersdk.UserSkillMetadata
 
@@ -14349,13 +14349,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`description`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`updated_at`|string|false|||
+| Name          | Type   | Required | Restrictions | Description |
+|---------------|--------|----------|--------------|-------------|
+| `created_at`  | string | false    |              |             |
+| `description` | string | false    |              |             |
+| `id`          | string | false    |              |             |
+| `name`        | string | false    |              |             |
+| `updated_at`  | string | false    |              |             |
 
 ## codersdk.UserStatus
 
@@ -14367,9 +14367,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`active`, `dormant`, `suspended`|
+| Value(s)                         |
+|----------------------------------|
+| `active`, `dormant`, `suspended` |
 
 ## codersdk.UserStatusChangeCount
 
@@ -14382,10 +14382,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`date`|string|false|||
+| Name    | Type    | Required | Restrictions | Description |
+|---------|---------|----------|--------------|-------------|
+| `count` | integer | false    |              |             |
+| `date`  | string  | false    |              |             |
 
 ## codersdk.ValidateUserPasswordRequest
 
@@ -14397,9 +14397,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`password`|string|true|||
+| Name       | Type   | Required | Restrictions | Description |
+|------------|--------|----------|--------------|-------------|
+| `password` | string | true     |              |             |
 
 ## codersdk.ValidateUserPasswordResponse
 
@@ -14412,10 +14412,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`details`|string|false|||
-|`valid`|boolean|false|||
+| Name      | Type    | Required | Restrictions | Description |
+|-----------|---------|----------|--------------|-------------|
+| `details` | string  | false    |              |             |
+| `valid`   | boolean | false    |              |             |
 
 ## codersdk.ValidationError
 
@@ -14428,10 +14428,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`detail`|string|true|||
-|`field`|string|true|||
+| Name     | Type   | Required | Restrictions | Description |
+|----------|--------|----------|--------------|-------------|
+| `detail` | string | true     |              |             |
+| `field`  | string | true     |              |             |
 
 ## codersdk.ValidationMonotonicOrder
 
@@ -14443,9 +14443,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`decreasing`, `increasing`|
+| Value(s)                   |
+|----------------------------|
+| `decreasing`, `increasing` |
 
 ## codersdk.VariableValue
 
@@ -14458,10 +14458,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|false|||
-|`value`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `name`  | string | false    |              |             |
+| `value` | string | false    |              |             |
 
 ## codersdk.WebpushSubscription
 
@@ -14475,11 +14475,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`auth_key`|string|false|||
-|`endpoint`|string|false|||
-|`p256dh_key`|string|false|||
+| Name         | Type   | Required | Restrictions | Description |
+|--------------|--------|----------|--------------|-------------|
+| `auth_key`   | string | false    |              |             |
+| `endpoint`   | string | false    |              |             |
+| `p256dh_key` | string | false    |              |             |
 
 ## codersdk.Workspace
 
@@ -14760,47 +14760,47 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`allow_renames`|boolean|false|||
-|`automatic_updates`|[codersdk.AutomaticUpdates](#codersdkautomaticupdates)|false|||
-|`autostart_schedule`|string|false|||
-|`created_at`|string|false|||
-|`deleting_at`|string|false||Deleting at indicates the time at which the workspace will be permanently deleted. A workspace is eligible for deletion if it is dormant (a non-nil dormant_at value) and a value has been specified for time_til_dormant_autodelete on its template.|
-|`dormant_at`|string|false||Dormant at being non-nil indicates a workspace that is dormant. A dormant workspace is no longer accessible must be activated. It is subject to deletion if it breaches the duration of the time_til_ field on its template.|
-|`favorite`|boolean|false|||
-|`health`|[codersdk.WorkspaceHealth](#codersdkworkspacehealth)|false||Health shows the health of the workspace and information about what is causing an unhealthy status.|
-|`id`|string|false|||
-|`is_prebuild`|boolean|false||Is prebuild indicates whether the workspace is a prebuilt workspace. Prebuilt workspaces are owned by the prebuilds system user and have specific behavior, such as being managed differently from regular workspaces. Once a prebuilt workspace is claimed by a user, it transitions to a regular workspace, and IsPrebuild returns false.|
-|`last_used_at`|string|false|||
-|`latest_app_status`|[codersdk.WorkspaceAppStatus](#codersdkworkspaceappstatus)|false|||
-|`latest_build`|[codersdk.WorkspaceBuild](#codersdkworkspacebuild)|false|||
-|`name`|string|false|||
-|`next_start_at`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`outdated`|boolean|false|||
-|`owner_avatar_url`|string|false|||
-|`owner_id`|string|false|||
-|`owner_name`|string|false||Owner name is the username of the owner of the workspace.|
-|`shared_with`|array of [codersdk.SharedWorkspaceActor](#codersdksharedworkspaceactor)|false|||
-|`task_id`|[uuid.NullUUID](#uuidnulluuid)|false||Task ID if set, indicates that the workspace is relevant to the given codersdk.Task.|
-|`template_active_version_id`|string|false|||
-|`template_allow_user_cancel_workspace_jobs`|boolean|false|||
-|`template_display_name`|string|false|||
-|`template_icon`|string|false|||
-|`template_id`|string|false|||
-|`template_name`|string|false|||
-|`template_require_active_version`|boolean|false|||
-|`template_use_classic_parameter_flow`|boolean|false|||
-|`ttl_ms`|integer|false|||
-|`updated_at`|string|false|||
+| Name                                        | Type                                                                    | Required | Restrictions | Description                                                                                                                                                                                                                                                                                                                                 |
+|---------------------------------------------|-------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `allow_renames`                             | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `automatic_updates`                         | [codersdk.AutomaticUpdates](#codersdkautomaticupdates)                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `autostart_schedule`                        | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `created_at`                                | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `deleting_at`                               | string                                                                  | false    |              | Deleting at indicates the time at which the workspace will be permanently deleted. A workspace is eligible for deletion if it is dormant (a non-nil dormant_at value) and a value has been specified for time_til_dormant_autodelete on its template.                                                                                       |
+| `dormant_at`                                | string                                                                  | false    |              | Dormant at being non-nil indicates a workspace that is dormant. A dormant workspace is no longer accessible must be activated. It is subject to deletion if it breaches the duration of the time_til_ field on its template.                                                                                                                |
+| `favorite`                                  | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `health`                                    | [codersdk.WorkspaceHealth](#codersdkworkspacehealth)                    | false    |              | Health shows the health of the workspace and information about what is causing an unhealthy status.                                                                                                                                                                                                                                         |
+| `id`                                        | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `is_prebuild`                               | boolean                                                                 | false    |              | Is prebuild indicates whether the workspace is a prebuilt workspace. Prebuilt workspaces are owned by the prebuilds system user and have specific behavior, such as being managed differently from regular workspaces. Once a prebuilt workspace is claimed by a user, it transitions to a regular workspace, and IsPrebuild returns false. |
+| `last_used_at`                              | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `latest_app_status`                         | [codersdk.WorkspaceAppStatus](#codersdkworkspaceappstatus)              | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `latest_build`                              | [codersdk.WorkspaceBuild](#codersdkworkspacebuild)                      | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `name`                                      | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `next_start_at`                             | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `organization_id`                           | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `organization_name`                         | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `outdated`                                  | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `owner_avatar_url`                          | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `owner_id`                                  | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `owner_name`                                | string                                                                  | false    |              | Owner name is the username of the owner of the workspace.                                                                                                                                                                                                                                                                                   |
+| `shared_with`                               | array of [codersdk.SharedWorkspaceActor](#codersdksharedworkspaceactor) | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `task_id`                                   | [uuid.NullUUID](#uuidnulluuid)                                          | false    |              | Task ID if set, indicates that the workspace is relevant to the given codersdk.Task.                                                                                                                                                                                                                                                        |
+| `template_active_version_id`                | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_allow_user_cancel_workspace_jobs` | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_display_name`                     | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_icon`                             | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_id`                               | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_name`                             | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_require_active_version`           | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `template_use_classic_parameter_flow`       | boolean                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `ttl_ms`                                    | integer                                                                 | false    |              |                                                                                                                                                                                                                                                                                                                                             |
+| `updated_at`                                | string                                                                  | false    |              |                                                                                                                                                                                                                                                                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`automatic_updates`|`always`, `never`|
+| Property            | Value(s)          |
+|---------------------|-------------------|
+| `automatic_updates` | `always`, `never` |
 
 ## codersdk.WorkspaceACL
 
@@ -14851,10 +14851,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`group`|array of [codersdk.WorkspaceGroup](#codersdkworkspacegroup)|false|||
-|`users`|array of [codersdk.WorkspaceUser](#codersdkworkspaceuser)|false|||
+| Name    | Type                                                        | Required | Restrictions | Description |
+|---------|-------------------------------------------------------------|----------|--------------|-------------|
+| `group` | array of [codersdk.WorkspaceGroup](#codersdkworkspacegroup) | false    |              |             |
+| `users` | array of [codersdk.WorkspaceUser](#codersdkworkspaceuser)   | false    |              |             |
 
 ## codersdk.WorkspaceAgent
 
@@ -14980,43 +14980,43 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`api_version`|string|false|||
-|`apps`|array of [codersdk.WorkspaceApp](#codersdkworkspaceapp)|false|||
-|`architecture`|string|false|||
-|`connection_timeout_seconds`|integer|false|||
-|`created_at`|string|false|||
-|`directory`|string|false|||
-|`disconnected_at`|string|false|||
-|`display_apps`|array of [codersdk.DisplayApp](#codersdkdisplayapp)|false|||
-|`environment_variables`|object|false|||
-|» `[any property]`|string|false|||
-|`expanded_directory`|string|false|||
-|`first_connected_at`|string|false|||
-|`health`|[codersdk.WorkspaceAgentHealth](#codersdkworkspaceagenthealth)|false||Health reports the health of the agent.|
-|`id`|string|false|||
-|`instance_id`|string|false|||
-|`last_connected_at`|string|false|||
-|`latency`|object|false||Latency is mapped by region name (e.g. "New York City", "Seattle").|
-|» `[any property]`|[codersdk.DERPRegion](#codersdkderpregion)|false|||
-|`lifecycle_state`|[codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle)|false|||
-|`log_sources`|array of [codersdk.WorkspaceAgentLogSource](#codersdkworkspaceagentlogsource)|false|||
-|`logs_length`|integer|false|||
-|`logs_overflowed`|boolean|false|||
-|`name`|string|false|||
-|`operating_system`|string|false|||
-|`parent_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`ready_at`|string|false|||
-|`resource_id`|string|false|||
-|`scripts`|array of [codersdk.WorkspaceAgentScript](#codersdkworkspaceagentscript)|false|||
-|`started_at`|string|false|||
-|`startup_script_behavior`|[codersdk.WorkspaceAgentStartupScriptBehavior](#codersdkworkspaceagentstartupscriptbehavior)|false||Startup script behavior is a legacy field that is deprecated in favor of the `coder_script` resource. It's only referenced by old clients. Deprecated: Remove in the future!|
-|`status`|[codersdk.WorkspaceAgentStatus](#codersdkworkspaceagentstatus)|false|||
-|`subsystems`|array of [codersdk.AgentSubsystem](#codersdkagentsubsystem)|false|||
-|`troubleshooting_url`|string|false|||
-|`updated_at`|string|false|||
-|`version`|string|false|||
+| Name                         | Type                                                                                         | Required | Restrictions | Description                                                                                                                                                                  |
+|------------------------------|----------------------------------------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `api_version`                | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `apps`                       | array of [codersdk.WorkspaceApp](#codersdkworkspaceapp)                                      | false    |              |                                                                                                                                                                              |
+| `architecture`               | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `connection_timeout_seconds` | integer                                                                                      | false    |              |                                                                                                                                                                              |
+| `created_at`                 | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `directory`                  | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `disconnected_at`            | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `display_apps`               | array of [codersdk.DisplayApp](#codersdkdisplayapp)                                          | false    |              |                                                                                                                                                                              |
+| `environment_variables`      | object                                                                                       | false    |              |                                                                                                                                                                              |
+| » `[any property]`           | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `expanded_directory`         | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `first_connected_at`         | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `health`                     | [codersdk.WorkspaceAgentHealth](#codersdkworkspaceagenthealth)                               | false    |              | Health reports the health of the agent.                                                                                                                                      |
+| `id`                         | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `instance_id`                | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `last_connected_at`          | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `latency`                    | object                                                                                       | false    |              | Latency is mapped by region name (e.g. "New York City", "Seattle").                                                                                                          |
+| » `[any property]`           | [codersdk.DERPRegion](#codersdkderpregion)                                                   | false    |              |                                                                                                                                                                              |
+| `lifecycle_state`            | [codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle)                         | false    |              |                                                                                                                                                                              |
+| `log_sources`                | array of [codersdk.WorkspaceAgentLogSource](#codersdkworkspaceagentlogsource)                | false    |              |                                                                                                                                                                              |
+| `logs_length`                | integer                                                                                      | false    |              |                                                                                                                                                                              |
+| `logs_overflowed`            | boolean                                                                                      | false    |              |                                                                                                                                                                              |
+| `name`                       | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `operating_system`           | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `parent_id`                  | [uuid.NullUUID](#uuidnulluuid)                                                               | false    |              |                                                                                                                                                                              |
+| `ready_at`                   | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `resource_id`                | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `scripts`                    | array of [codersdk.WorkspaceAgentScript](#codersdkworkspaceagentscript)                      | false    |              |                                                                                                                                                                              |
+| `started_at`                 | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `startup_script_behavior`    | [codersdk.WorkspaceAgentStartupScriptBehavior](#codersdkworkspaceagentstartupscriptbehavior) | false    |              | Startup script behavior is a legacy field that is deprecated in favor of the `coder_script` resource. It's only referenced by old clients. Deprecated: Remove in the future! |
+| `status`                     | [codersdk.WorkspaceAgentStatus](#codersdkworkspaceagentstatus)                               | false    |              |                                                                                                                                                                              |
+| `subsystems`                 | array of [codersdk.AgentSubsystem](#codersdkagentsubsystem)                                  | false    |              |                                                                                                                                                                              |
+| `troubleshooting_url`        | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `updated_at`                 | string                                                                                       | false    |              |                                                                                                                                                                              |
+| `version`                    | string                                                                                       | false    |              |                                                                                                                                                                              |
 
 ## codersdk.WorkspaceAgentContainer
 
@@ -15049,19 +15049,19 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false||Created at is the time the container was created.|
-|`id`|string|false||ID is the unique identifier of the container.|
-|`image`|string|false||Image is the name of the container image.|
-|`labels`|object|false||Labels is a map of key-value pairs of container labels.|
-|» `[any property]`|string|false|||
-|`name`|string|false||Name is the human-readable name of the container.|
-|`ports`|array of [codersdk.WorkspaceAgentContainerPort](#codersdkworkspaceagentcontainerport)|false||Ports includes ports exposed by the container.|
-|`running`|boolean|false||Running is true if the container is currently running.|
-|`status`|string|false||Status is the current status of the container. This is somewhat implementation-dependent, but should generally be a human-readable string.|
-|`volumes`|object|false||Volumes is a map of "things" mounted into the container. Again, this is somewhat implementation-dependent.|
-|» `[any property]`|string|false|||
+| Name               | Type                                                                                  | Required | Restrictions | Description                                                                                                                                |
+|--------------------|---------------------------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `created_at`       | string                                                                                | false    |              | Created at is the time the container was created.                                                                                          |
+| `id`               | string                                                                                | false    |              | ID is the unique identifier of the container.                                                                                              |
+| `image`            | string                                                                                | false    |              | Image is the name of the container image.                                                                                                  |
+| `labels`           | object                                                                                | false    |              | Labels is a map of key-value pairs of container labels.                                                                                    |
+| » `[any property]` | string                                                                                | false    |              |                                                                                                                                            |
+| `name`             | string                                                                                | false    |              | Name is the human-readable name of the container.                                                                                          |
+| `ports`            | array of [codersdk.WorkspaceAgentContainerPort](#codersdkworkspaceagentcontainerport) | false    |              | Ports includes ports exposed by the container.                                                                                             |
+| `running`          | boolean                                                                               | false    |              | Running is true if the container is currently running.                                                                                     |
+| `status`           | string                                                                                | false    |              | Status is the current status of the container. This is somewhat implementation-dependent, but should generally be a human-readable string. |
+| `volumes`          | object                                                                                | false    |              | Volumes is a map of "things" mounted into the container. Again, this is somewhat implementation-dependent.                                 |
+| » `[any property]` | string                                                                                | false    |              |                                                                                                                                            |
 
 ## codersdk.WorkspaceAgentContainerPort
 
@@ -15076,12 +15076,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`host_ip`|string|false||Host ip is the IP address of the host interface to which the port is bound. Note that this can be an IPv4 or IPv6 address.|
-|`host_port`|integer|false||Host port is the port number *outside* the container.|
-|`network`|string|false||Network is the network protocol used by the port (tcp, udp, etc).|
-|`port`|integer|false||Port is the port number *inside* the container.|
+| Name        | Type    | Required | Restrictions | Description                                                                                                                |
+|-------------|---------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------|
+| `host_ip`   | string  | false    |              | Host ip is the IP address of the host interface to which the port is bound. Note that this can be an IPv4 or IPv6 address. |
+| `host_port` | integer | false    |              | Host port is the port number *outside* the container.                                                                      |
+| `network`   | string  | false    |              | Network is the network protocol used by the port (tcp, udp, etc).                                                          |
+| `port`      | integer | false    |              | Port is the port number *inside* the container.                                                                            |
 
 ## codersdk.WorkspaceAgentDevcontainer
 
@@ -15132,18 +15132,18 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent`|[codersdk.WorkspaceAgentDevcontainerAgent](#codersdkworkspaceagentdevcontaineragent)|false|||
-|`config_path`|string|false|||
-|`container`|[codersdk.WorkspaceAgentContainer](#codersdkworkspaceagentcontainer)|false|||
-|`dirty`|boolean|false|||
-|`error`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`status`|[codersdk.WorkspaceAgentDevcontainerStatus](#codersdkworkspaceagentdevcontainerstatus)|false||Additional runtime fields.|
-|`subagent_id`|[uuid.NullUUID](#uuidnulluuid)|false|||
-|`workspace_folder`|string|false|||
+| Name               | Type                                                                                   | Required | Restrictions | Description                |
+|--------------------|----------------------------------------------------------------------------------------|----------|--------------|----------------------------|
+| `agent`            | [codersdk.WorkspaceAgentDevcontainerAgent](#codersdkworkspaceagentdevcontaineragent)   | false    |              |                            |
+| `config_path`      | string                                                                                 | false    |              |                            |
+| `container`        | [codersdk.WorkspaceAgentContainer](#codersdkworkspaceagentcontainer)                   | false    |              |                            |
+| `dirty`            | boolean                                                                                | false    |              |                            |
+| `error`            | string                                                                                 | false    |              |                            |
+| `id`               | string                                                                                 | false    |              |                            |
+| `name`             | string                                                                                 | false    |              |                            |
+| `status`           | [codersdk.WorkspaceAgentDevcontainerStatus](#codersdkworkspaceagentdevcontainerstatus) | false    |              | Additional runtime fields. |
+| `subagent_id`      | [uuid.NullUUID](#uuidnulluuid)                                                         | false    |              |                            |
+| `workspace_folder` | string                                                                                 | false    |              |                            |
 
 ## codersdk.WorkspaceAgentDevcontainerAgent
 
@@ -15157,11 +15157,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`directory`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
+| Name        | Type   | Required | Restrictions | Description |
+|-------------|--------|----------|--------------|-------------|
+| `directory` | string | false    |              |             |
+| `id`        | string | false    |              |             |
+| `name`      | string | false    |              |             |
 
 ## codersdk.WorkspaceAgentDevcontainerStatus
 
@@ -15173,9 +15173,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`deleting`, `error`, `running`, `starting`, `stopped`, `stopping`|
+| Value(s)                                                          |
+|-------------------------------------------------------------------|
+| `deleting`, `error`, `running`, `starting`, `stopped`, `stopping` |
 
 ## codersdk.WorkspaceAgentGitServerMessage
 
@@ -15198,12 +15198,12 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`message`|string|false|||
-|`repositories`|array of [codersdk.WorkspaceAgentRepoChanges](#codersdkworkspaceagentrepochanges)|false|||
-|`scanned_at`|string|false|||
-|`type`|[codersdk.WorkspaceAgentGitServerMessageType](#codersdkworkspaceagentgitservermessagetype)|false|||
+| Name           | Type                                                                                       | Required | Restrictions | Description |
+|----------------|--------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `message`      | string                                                                                     | false    |              |             |
+| `repositories` | array of [codersdk.WorkspaceAgentRepoChanges](#codersdkworkspaceagentrepochanges)          | false    |              |             |
+| `scanned_at`   | string                                                                                     | false    |              |             |
+| `type`         | [codersdk.WorkspaceAgentGitServerMessageType](#codersdkworkspaceagentgitservermessagetype) | false    |              |             |
 
 ## codersdk.WorkspaceAgentGitServerMessageType
 
@@ -15215,9 +15215,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`changes`, `error`|
+| Value(s)           |
+|--------------------|
+| `changes`, `error` |
 
 ## codersdk.WorkspaceAgentHealth
 
@@ -15230,10 +15230,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`healthy`|boolean|false||Healthy is true if the agent is healthy.|
-|`reason`|string|false||Reason is a human-readable explanation of the agent's health. It is empty if Healthy is true.|
+| Name      | Type    | Required | Restrictions | Description                                                                                   |
+|-----------|---------|----------|--------------|-----------------------------------------------------------------------------------------------|
+| `healthy` | boolean | false    |              | Healthy is true if the agent is healthy.                                                      |
+| `reason`  | string  | false    |              | Reason is a human-readable explanation of the agent's health. It is empty if Healthy is true. |
 
 ## codersdk.WorkspaceAgentLifecycle
 
@@ -15245,9 +15245,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`created`, `off`, `ready`, `shutdown_error`, `shutdown_timeout`, `shutting_down`, `start_error`, `start_timeout`, `starting`|
+| Value(s)                                                                                                                     |
+|------------------------------------------------------------------------------------------------------------------------------|
+| `created`, `off`, `ready`, `shutdown_error`, `shutdown_timeout`, `shutting_down`, `start_error`, `start_timeout`, `starting` |
 
 ## codersdk.WorkspaceAgentListContainersResponse
 
@@ -15331,11 +15331,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`containers`|array of [codersdk.WorkspaceAgentContainer](#codersdkworkspaceagentcontainer)|false||Containers is a list of containers visible to the workspace agent.|
-|`devcontainers`|array of [codersdk.WorkspaceAgentDevcontainer](#codersdkworkspaceagentdevcontainer)|false||Devcontainers is a list of devcontainers visible to the workspace agent.|
-|`warnings`|array of string|false||Warnings is a list of warnings that may have occurred during the process of listing containers. This should not include fatal errors.|
+| Name            | Type                                                                                | Required | Restrictions | Description                                                                                                                           |
+|-----------------|-------------------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `containers`    | array of [codersdk.WorkspaceAgentContainer](#codersdkworkspaceagentcontainer)       | false    |              | Containers is a list of containers visible to the workspace agent.                                                                    |
+| `devcontainers` | array of [codersdk.WorkspaceAgentDevcontainer](#codersdkworkspaceagentdevcontainer) | false    |              | Devcontainers is a list of devcontainers visible to the workspace agent.                                                              |
+| `warnings`      | array of string                                                                     | false    |              | Warnings is a list of warnings that may have occurred during the process of listing containers. This should not include fatal errors. |
 
 ## codersdk.WorkspaceAgentListeningPort
 
@@ -15349,11 +15349,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`network`|string|false||only "tcp" at the moment|
-|`port`|integer|false|||
-|`process_name`|string|false||may be empty|
+| Name           | Type    | Required | Restrictions | Description              |
+|----------------|---------|----------|--------------|--------------------------|
+| `network`      | string  | false    |              | only "tcp" at the moment |
+| `port`         | integer | false    |              |                          |
+| `process_name` | string  | false    |              | may be empty             |
 
 ## codersdk.WorkspaceAgentListeningPortsResponse
 
@@ -15371,9 +15371,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`ports`|array of [codersdk.WorkspaceAgentListeningPort](#codersdkworkspaceagentlisteningport)|false||If there are no ports in the list, nothing should be displayed in the UI. There must not be a "no ports available" message or anything similar, as there will always be no ports displayed on platforms where our port detection logic is unsupported.|
+| Name    | Type                                                                                  | Required | Restrictions | Description                                                                                                                                                                                                                                            |
+|---------|---------------------------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ports` | array of [codersdk.WorkspaceAgentListeningPort](#codersdkworkspaceagentlisteningport) | false    |              | If there are no ports in the list, nothing should be displayed in the UI. There must not be a "no ports available" message or anything similar, as there will always be no ports displayed on platforms where our port detection logic is unsupported. |
 
 ## codersdk.WorkspaceAgentLog
 
@@ -15389,13 +15389,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`id`|integer|false|||
-|`level`|[codersdk.LogLevel](#codersdkloglevel)|false|||
-|`output`|string|false|||
-|`source_id`|string|false|||
+| Name         | Type                                   | Required | Restrictions | Description |
+|--------------|----------------------------------------|----------|--------------|-------------|
+| `created_at` | string                                 | false    |              |             |
+| `id`         | integer                                | false    |              |             |
+| `level`      | [codersdk.LogLevel](#codersdkloglevel) | false    |              |             |
+| `output`     | string                                 | false    |              |             |
+| `source_id`  | string                                 | false    |              |             |
 
 ## codersdk.WorkspaceAgentLogSource
 
@@ -15411,13 +15411,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`display_name`|string|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`workspace_agent_id`|string|false|||
+| Name                 | Type   | Required | Restrictions | Description |
+|----------------------|--------|----------|--------------|-------------|
+| `created_at`         | string | false    |              |             |
+| `display_name`       | string | false    |              |             |
+| `icon`               | string | false    |              |             |
+| `id`                 | string | false    |              |             |
+| `workspace_agent_id` | string | false    |              |             |
 
 ## codersdk.WorkspaceAgentPortShare
 
@@ -15433,20 +15433,20 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_name`|string|false|||
-|`port`|integer|false|||
-|`protocol`|[codersdk.WorkspaceAgentPortShareProtocol](#codersdkworkspaceagentportshareprotocol)|false|||
-|`share_level`|[codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)|false|||
-|`workspace_id`|string|false|||
+| Name           | Type                                                                                 | Required | Restrictions | Description |
+|----------------|--------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `agent_name`   | string                                                                               | false    |              |             |
+| `port`         | integer                                                                              | false    |              |             |
+| `protocol`     | [codersdk.WorkspaceAgentPortShareProtocol](#codersdkworkspaceagentportshareprotocol) | false    |              |             |
+| `share_level`  | [codersdk.WorkspaceAgentPortShareLevel](#codersdkworkspaceagentportsharelevel)       | false    |              |             |
+| `workspace_id` | string                                                                               | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`protocol`|`http`, `https`|
-|`share_level`|`authenticated`, `organization`, `owner`, `public`|
+| Property      | Value(s)                                           |
+|---------------|----------------------------------------------------|
+| `protocol`    | `http`, `https`                                    |
+| `share_level` | `authenticated`, `organization`, `owner`, `public` |
 
 ## codersdk.WorkspaceAgentPortShareLevel
 
@@ -15458,9 +15458,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`authenticated`, `organization`, `owner`, `public`|
+| Value(s)                                           |
+|----------------------------------------------------|
+| `authenticated`, `organization`, `owner`, `public` |
 
 ## codersdk.WorkspaceAgentPortShareProtocol
 
@@ -15472,9 +15472,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`http`, `https`|
+| Value(s)        |
+|-----------------|
+| `http`, `https` |
 
 ## codersdk.WorkspaceAgentPortShares
 
@@ -15494,9 +15494,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`shares`|array of [codersdk.WorkspaceAgentPortShare](#codersdkworkspaceagentportshare)|false|||
+| Name     | Type                                                                          | Required | Restrictions | Description |
+|----------|-------------------------------------------------------------------------------|----------|--------------|-------------|
+| `shares` | array of [codersdk.WorkspaceAgentPortShare](#codersdkworkspaceagentportshare) | false    |              |             |
 
 ## codersdk.WorkspaceAgentRepoChanges
 
@@ -15512,13 +15512,13 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`branch`|string|false|||
-|`remote_origin`|string|false|||
-|`removed`|boolean|false|||
-|`repo_root`|string|false|||
-|`unified_diff`|string|false|||
+| Name            | Type    | Required | Restrictions | Description |
+|-----------------|---------|----------|--------------|-------------|
+| `branch`        | string  | false    |              |             |
+| `remote_origin` | string  | false    |              |             |
+| `removed`       | boolean | false    |              |             |
+| `repo_root`     | string  | false    |              |             |
+| `unified_diff`  | string  | false    |              |             |
 
 ## codersdk.WorkspaceAgentScript
 
@@ -15541,20 +15541,20 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`cron`|string|false|||
-|`display_name`|string|false|||
-|`exit_code`|integer|false|||
-|`id`|string|false|||
-|`log_path`|string|false|||
-|`log_source_id`|string|false|||
-|`run_on_start`|boolean|false|||
-|`run_on_stop`|boolean|false|||
-|`script`|string|false|||
-|`start_blocks_login`|boolean|false|||
-|`status`|[codersdk.WorkspaceAgentScriptStatus](#codersdkworkspaceagentscriptstatus)|false|||
-|`timeout`|integer|false|||
+| Name                 | Type                                                                       | Required | Restrictions | Description |
+|----------------------|----------------------------------------------------------------------------|----------|--------------|-------------|
+| `cron`               | string                                                                     | false    |              |             |
+| `display_name`       | string                                                                     | false    |              |             |
+| `exit_code`          | integer                                                                    | false    |              |             |
+| `id`                 | string                                                                     | false    |              |             |
+| `log_path`           | string                                                                     | false    |              |             |
+| `log_source_id`      | string                                                                     | false    |              |             |
+| `run_on_start`       | boolean                                                                    | false    |              |             |
+| `run_on_stop`        | boolean                                                                    | false    |              |             |
+| `script`             | string                                                                     | false    |              |             |
+| `start_blocks_login` | boolean                                                                    | false    |              |             |
+| `status`             | [codersdk.WorkspaceAgentScriptStatus](#codersdkworkspaceagentscriptstatus) | false    |              |             |
+| `timeout`            | integer                                                                    | false    |              |             |
 
 ## codersdk.WorkspaceAgentScriptStatus
 
@@ -15566,9 +15566,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`exit_failure`, `ok`, `pipes_left_open`, `timed_out`|
+| Value(s)                                             |
+|------------------------------------------------------|
+| `exit_failure`, `ok`, `pipes_left_open`, `timed_out` |
 
 ## codersdk.WorkspaceAgentStartupScriptBehavior
 
@@ -15580,9 +15580,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`blocking`, `non-blocking`|
+| Value(s)                   |
+|----------------------------|
+| `blocking`, `non-blocking` |
 
 ## codersdk.WorkspaceAgentStatus
 
@@ -15594,9 +15594,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`connected`, `connecting`, `disconnected`, `timeout`|
+| Value(s)                                             |
+|------------------------------------------------------|
+| `connected`, `connecting`, `disconnected`, `timeout` |
 
 ## codersdk.WorkspaceApp
 
@@ -15641,31 +15641,31 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`command`|string|false|||
-|`display_name`|string|false||Display name is a friendly name for the app.|
-|`external`|boolean|false||External specifies whether the URL should be opened externally on the client or not.|
-|`group`|string|false|||
-|`health`|[codersdk.WorkspaceAppHealth](#codersdkworkspaceapphealth)|false|||
-|`healthcheck`|[codersdk.Healthcheck](#codersdkhealthcheck)|false||Healthcheck specifies the configuration for checking app health.|
-|`hidden`|boolean|false|||
-|`icon`|string|false||Icon is a relative path or external URL that specifies an icon to be displayed in the dashboard.|
-|`id`|string|false|||
-|`open_in`|[codersdk.WorkspaceAppOpenIn](#codersdkworkspaceappopenin)|false|||
-|`sharing_level`|[codersdk.WorkspaceAppSharingLevel](#codersdkworkspaceappsharinglevel)|false|||
-|`slug`|string|false||Slug is a unique identifier within the agent.|
-|`statuses`|array of [codersdk.WorkspaceAppStatus](#codersdkworkspaceappstatus)|false||Statuses is a list of statuses for the app.|
-|`subdomain`|boolean|false||Subdomain denotes whether the app should be accessed via a path on the `coder server` or via a hostname-based dev URL. If this is set to true and there is no app wildcard configured on the server, the app will not be accessible in the UI.|
-|`subdomain_name`|string|false||Subdomain name is the application domain exposed on the `coder server`.|
-|`tooltip`|string|false||Tooltip is an optional markdown supported field that is displayed when hovering over workspace apps in the UI.|
-|`url`|string|false||URL is the address being proxied to inside the workspace. If external is specified, this will be opened on the client.|
+| Name             | Type                                                                   | Required | Restrictions | Description                                                                                                                                                                                                                                    |
+|------------------|------------------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `command`        | string                                                                 | false    |              |                                                                                                                                                                                                                                                |
+| `display_name`   | string                                                                 | false    |              | Display name is a friendly name for the app.                                                                                                                                                                                                   |
+| `external`       | boolean                                                                | false    |              | External specifies whether the URL should be opened externally on the client or not.                                                                                                                                                           |
+| `group`          | string                                                                 | false    |              |                                                                                                                                                                                                                                                |
+| `health`         | [codersdk.WorkspaceAppHealth](#codersdkworkspaceapphealth)             | false    |              |                                                                                                                                                                                                                                                |
+| `healthcheck`    | [codersdk.Healthcheck](#codersdkhealthcheck)                           | false    |              | Healthcheck specifies the configuration for checking app health.                                                                                                                                                                               |
+| `hidden`         | boolean                                                                | false    |              |                                                                                                                                                                                                                                                |
+| `icon`           | string                                                                 | false    |              | Icon is a relative path or external URL that specifies an icon to be displayed in the dashboard.                                                                                                                                               |
+| `id`             | string                                                                 | false    |              |                                                                                                                                                                                                                                                |
+| `open_in`        | [codersdk.WorkspaceAppOpenIn](#codersdkworkspaceappopenin)             | false    |              |                                                                                                                                                                                                                                                |
+| `sharing_level`  | [codersdk.WorkspaceAppSharingLevel](#codersdkworkspaceappsharinglevel) | false    |              |                                                                                                                                                                                                                                                |
+| `slug`           | string                                                                 | false    |              | Slug is a unique identifier within the agent.                                                                                                                                                                                                  |
+| `statuses`       | array of [codersdk.WorkspaceAppStatus](#codersdkworkspaceappstatus)    | false    |              | Statuses is a list of statuses for the app.                                                                                                                                                                                                    |
+| `subdomain`      | boolean                                                                | false    |              | Subdomain denotes whether the app should be accessed via a path on the `coder server` or via a hostname-based dev URL. If this is set to true and there is no app wildcard configured on the server, the app will not be accessible in the UI. |
+| `subdomain_name` | string                                                                 | false    |              | Subdomain name is the application domain exposed on the `coder server`.                                                                                                                                                                        |
+| `tooltip`        | string                                                                 | false    |              | Tooltip is an optional markdown supported field that is displayed when hovering over workspace apps in the UI.                                                                                                                                 |
+| `url`            | string                                                                 | false    |              | URL is the address being proxied to inside the workspace. If external is specified, this will be opened on the client.                                                                                                                         |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`sharing_level`|`authenticated`, `organization`, `owner`, `public`|
+| Property        | Value(s)                                           |
+|-----------------|----------------------------------------------------|
+| `sharing_level` | `authenticated`, `organization`, `owner`, `public` |
 
 ## codersdk.WorkspaceAppHealth
 
@@ -15677,9 +15677,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`disabled`, `healthy`, `initializing`, `unhealthy`|
+| Value(s)                                           |
+|----------------------------------------------------|
+| `disabled`, `healthy`, `initializing`, `unhealthy` |
 
 ## codersdk.WorkspaceAppOpenIn
 
@@ -15691,9 +15691,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`slim-window`, `tab`|
+| Value(s)             |
+|----------------------|
+| `slim-window`, `tab` |
 
 ## codersdk.WorkspaceAppSharingLevel
 
@@ -15705,9 +15705,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`authenticated`, `organization`, `owner`, `public`|
+| Value(s)                                           |
+|----------------------------------------------------|
+| `authenticated`, `organization`, `owner`, `public` |
 
 ## codersdk.WorkspaceAppStatus
 
@@ -15728,18 +15728,18 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_id`|string|false|||
-|`app_id`|string|false|||
-|`created_at`|string|false|||
-|`icon`|string|false||Deprecated: This field is unused and will be removed in a future version. Icon is an external URL to an icon that will be rendered in the UI.|
-|`id`|string|false|||
-|`message`|string|false|||
-|`needs_user_attention`|boolean|false||Deprecated: This field is unused and will be removed in a future version. NeedsUserAttention specifies whether the status needs user attention.|
-|`state`|[codersdk.WorkspaceAppStatusState](#codersdkworkspaceappstatusstate)|false|||
-|`uri`|string|false||Uri is the URI of the resource that the status is for. e.g. https://github.com/org/repo/pull/123 e.g. file:///path/to/file|
-|`workspace_id`|string|false|||
+| Name                   | Type                                                                 | Required | Restrictions | Description                                                                                                                                     |
+|------------------------|----------------------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `agent_id`             | string                                                               | false    |              |                                                                                                                                                 |
+| `app_id`               | string                                                               | false    |              |                                                                                                                                                 |
+| `created_at`           | string                                                               | false    |              |                                                                                                                                                 |
+| `icon`                 | string                                                               | false    |              | Deprecated: This field is unused and will be removed in a future version. Icon is an external URL to an icon that will be rendered in the UI.   |
+| `id`                   | string                                                               | false    |              |                                                                                                                                                 |
+| `message`              | string                                                               | false    |              |                                                                                                                                                 |
+| `needs_user_attention` | boolean                                                              | false    |              | Deprecated: This field is unused and will be removed in a future version. NeedsUserAttention specifies whether the status needs user attention. |
+| `state`                | [codersdk.WorkspaceAppStatusState](#codersdkworkspaceappstatusstate) | false    |              |                                                                                                                                                 |
+| `uri`                  | string                                                               | false    |              | Uri is the URI of the resource that the status is for. e.g. https://github.com/org/repo/pull/123 e.g. file:///path/to/file                      |
+| `workspace_id`         | string                                                               | false    |              |                                                                                                                                                 |
 
 ## codersdk.WorkspaceAppStatusState
 
@@ -15751,9 +15751,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`complete`, `failure`, `idle`, `working`|
+| Value(s)                                 |
+|------------------------------------------|
+| `complete`, `failure`, `idle`, `working` |
 
 ## codersdk.WorkspaceBuild
 
@@ -15971,41 +15971,41 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`build_number`|integer|false|||
-|`created_at`|string|false|||
-|`daily_cost`|integer|false|||
-|`deadline`|string|false|||
-|`has_ai_task`|boolean|false||Deprecated: This field has been deprecated in favor of Task WorkspaceID.|
-|`has_external_agent`|boolean|false|||
-|`id`|string|false|||
-|`initiator_id`|string|false|||
-|`initiator_name`|string|false|||
-|`job`|[codersdk.ProvisionerJob](#codersdkprovisionerjob)|false|||
-|`matched_provisioners`|[codersdk.MatchedProvisioners](#codersdkmatchedprovisioners)|false|||
-|`max_deadline`|string|false|||
-|`reason`|[codersdk.BuildReason](#codersdkbuildreason)|false|||
-|`resources`|array of [codersdk.WorkspaceResource](#codersdkworkspaceresource)|false|||
-|`status`|[codersdk.WorkspaceStatus](#codersdkworkspacestatus)|false|||
-|`template_version_id`|string|false|||
-|`template_version_name`|string|false|||
-|`template_version_preset_id`|string|false|||
-|`transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|false|||
-|`updated_at`|string|false|||
-|`workspace_id`|string|false|||
-|`workspace_name`|string|false|||
-|`workspace_owner_avatar_url`|string|false|||
-|`workspace_owner_id`|string|false|||
-|`workspace_owner_name`|string|false||Workspace owner name is the username of the owner of the workspace.|
+| Name                         | Type                                                              | Required | Restrictions | Description                                                              |
+|------------------------------|-------------------------------------------------------------------|----------|--------------|--------------------------------------------------------------------------|
+| `build_number`               | integer                                                           | false    |              |                                                                          |
+| `created_at`                 | string                                                            | false    |              |                                                                          |
+| `daily_cost`                 | integer                                                           | false    |              |                                                                          |
+| `deadline`                   | string                                                            | false    |              |                                                                          |
+| `has_ai_task`                | boolean                                                           | false    |              | Deprecated: This field has been deprecated in favor of Task WorkspaceID. |
+| `has_external_agent`         | boolean                                                           | false    |              |                                                                          |
+| `id`                         | string                                                            | false    |              |                                                                          |
+| `initiator_id`               | string                                                            | false    |              |                                                                          |
+| `initiator_name`             | string                                                            | false    |              |                                                                          |
+| `job`                        | [codersdk.ProvisionerJob](#codersdkprovisionerjob)                | false    |              |                                                                          |
+| `matched_provisioners`       | [codersdk.MatchedProvisioners](#codersdkmatchedprovisioners)      | false    |              |                                                                          |
+| `max_deadline`               | string                                                            | false    |              |                                                                          |
+| `reason`                     | [codersdk.BuildReason](#codersdkbuildreason)                      | false    |              |                                                                          |
+| `resources`                  | array of [codersdk.WorkspaceResource](#codersdkworkspaceresource) | false    |              |                                                                          |
+| `status`                     | [codersdk.WorkspaceStatus](#codersdkworkspacestatus)              | false    |              |                                                                          |
+| `template_version_id`        | string                                                            | false    |              |                                                                          |
+| `template_version_name`      | string                                                            | false    |              |                                                                          |
+| `template_version_preset_id` | string                                                            | false    |              |                                                                          |
+| `transition`                 | [codersdk.WorkspaceTransition](#codersdkworkspacetransition)      | false    |              |                                                                          |
+| `updated_at`                 | string                                                            | false    |              |                                                                          |
+| `workspace_id`               | string                                                            | false    |              |                                                                          |
+| `workspace_name`             | string                                                            | false    |              |                                                                          |
+| `workspace_owner_avatar_url` | string                                                            | false    |              |                                                                          |
+| `workspace_owner_id`         | string                                                            | false    |              |                                                                          |
+| `workspace_owner_name`       | string                                                            | false    |              | Workspace owner name is the username of the owner of the workspace.      |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`reason`|`autostart`, `autostop`, `initiator`|
-|`status`|`canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping`|
-|`transition`|`delete`, `start`, `stop`|
+| Property     | Value(s)                                                                                                          |
+|--------------|-------------------------------------------------------------------------------------------------------------------|
+| `reason`     | `autostart`, `autostop`, `initiator`                                                                              |
+| `status`     | `canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping` |
+| `transition` | `delete`, `start`, `stop`                                                                                         |
 
 ## codersdk.WorkspaceBuildParameter
 
@@ -16018,10 +16018,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`name`|string|false|||
-|`value`|string|false|||
+| Name    | Type   | Required | Restrictions | Description |
+|---------|--------|----------|--------------|-------------|
+| `name`  | string | false    |              |             |
+| `value` | string | false    |              |             |
 
 ## codersdk.WorkspaceBuildTimings
 
@@ -16064,11 +16064,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_connection_timings`|array of [codersdk.AgentConnectionTiming](#codersdkagentconnectiontiming)|false|||
-|`agent_script_timings`|array of [codersdk.AgentScriptTiming](#codersdkagentscripttiming)|false||Agent script timings Consolidate agent-related timing metrics into a single struct when updating the API version|
-|`provisioner_timings`|array of [codersdk.ProvisionerTiming](#codersdkprovisionertiming)|false|||
+| Name                       | Type                                                                      | Required | Restrictions | Description                                                                                                      |
+|----------------------------|---------------------------------------------------------------------------|----------|--------------|------------------------------------------------------------------------------------------------------------------|
+| `agent_connection_timings` | array of [codersdk.AgentConnectionTiming](#codersdkagentconnectiontiming) | false    |              |                                                                                                                  |
+| `agent_script_timings`     | array of [codersdk.AgentScriptTiming](#codersdkagentscripttiming)         | false    |              | Agent script timings Consolidate agent-related timing metrics into a single struct when updating the API version |
+| `provisioner_timings`      | array of [codersdk.ProvisionerTiming](#codersdkprovisionertiming)         | false    |              |                                                                                                                  |
 
 ## codersdk.WorkspaceConnectionLatencyMS
 
@@ -16081,10 +16081,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`p50`|number|false|||
-|`p95`|number|false|||
+| Name  | Type   | Required | Restrictions | Description |
+|-------|--------|----------|--------------|-------------|
+| `p50` | number | false    |              |             |
+| `p95` | number | false    |              |             |
 
 ## codersdk.WorkspaceDeploymentStats
 
@@ -16106,16 +16106,16 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`building`|integer|false|||
-|`connection_latency_ms`|[codersdk.WorkspaceConnectionLatencyMS](#codersdkworkspaceconnectionlatencyms)|false|||
-|`failed`|integer|false|||
-|`pending`|integer|false|||
-|`running`|integer|false|||
-|`rx_bytes`|integer|false|||
-|`stopped`|integer|false|||
-|`tx_bytes`|integer|false|||
+| Name                    | Type                                                                           | Required | Restrictions | Description |
+|-------------------------|--------------------------------------------------------------------------------|----------|--------------|-------------|
+| `building`              | integer                                                                        | false    |              |             |
+| `connection_latency_ms` | [codersdk.WorkspaceConnectionLatencyMS](#codersdkworkspaceconnectionlatencyms) | false    |              |             |
+| `failed`                | integer                                                                        | false    |              |             |
+| `pending`               | integer                                                                        | false    |              |             |
+| `running`               | integer                                                                        | false    |              |             |
+| `rx_bytes`              | integer                                                                        | false    |              |             |
+| `stopped`               | integer                                                                        | false    |              |             |
+| `tx_bytes`              | integer                                                                        | false    |              |             |
 
 ## codersdk.WorkspaceGroup
 
@@ -16153,26 +16153,26 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`display_name`|string|false|||
-|`id`|string|false|||
-|`members`|array of [codersdk.ReducedUser](#codersdkreduceduser)|false|||
-|`name`|string|false|||
-|`organization_display_name`|string|false|||
-|`organization_id`|string|false|||
-|`organization_name`|string|false|||
-|`quota_allowance`|integer|false|||
-|`role`|[codersdk.WorkspaceRole](#codersdkworkspacerole)|false|||
-|`source`|[codersdk.GroupSource](#codersdkgroupsource)|false|||
-|`total_member_count`|integer|false||How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`.|
+| Name                        | Type                                                  | Required | Restrictions | Description                                                                                                                                                           |
+|-----------------------------|-------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avatar_url`                | string                                                | false    |              |                                                                                                                                                                       |
+| `display_name`              | string                                                | false    |              |                                                                                                                                                                       |
+| `id`                        | string                                                | false    |              |                                                                                                                                                                       |
+| `members`                   | array of [codersdk.ReducedUser](#codersdkreduceduser) | false    |              |                                                                                                                                                                       |
+| `name`                      | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_display_name` | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_id`           | string                                                | false    |              |                                                                                                                                                                       |
+| `organization_name`         | string                                                | false    |              |                                                                                                                                                                       |
+| `quota_allowance`           | integer                                               | false    |              |                                                                                                                                                                       |
+| `role`                      | [codersdk.WorkspaceRole](#codersdkworkspacerole)      | false    |              |                                                                                                                                                                       |
+| `source`                    | [codersdk.GroupSource](#codersdkgroupsource)          | false    |              |                                                                                                                                                                       |
+| `total_member_count`        | integer                                               | false    |              | How many members are in this group. Shows the total count, even if the user is not authorized to read group member details. May be greater than `len(Group.Members)`. |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`admin`, `use`|
+| Property | Value(s)       |
+|----------|----------------|
+| `role`   | `admin`, `use` |
 
 ## codersdk.WorkspaceHealth
 
@@ -16187,10 +16187,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`failing_agents`|array of string|false||Failing agents lists the IDs of the agents that are failing, if any.|
-|`healthy`|boolean|false||Healthy is true if the workspace is healthy.|
+| Name             | Type            | Required | Restrictions | Description                                                          |
+|------------------|-----------------|----------|--------------|----------------------------------------------------------------------|
+| `failing_agents` | array of string | false    |              | Failing agents lists the IDs of the agents that are failing, if any. |
+| `healthy`        | boolean         | false    |              | Healthy is true if the workspace is healthy.                         |
 
 ## codersdk.WorkspaceProxy
 
@@ -16226,22 +16226,22 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`created_at`|string|false|||
-|`deleted`|boolean|false|||
-|`derp_enabled`|boolean|false|||
-|`derp_only`|boolean|false|||
-|`display_name`|string|false|||
-|`healthy`|boolean|false|||
-|`icon_url`|string|false|||
-|`id`|string|false|||
-|`name`|string|false|||
-|`path_app_url`|string|false||Path app URL is the URL to the base path for path apps. Optional unless wildcard_hostname is set. E.g. https://us.example.com|
-|`status`|[codersdk.WorkspaceProxyStatus](#codersdkworkspaceproxystatus)|false||Status is the latest status check of the proxy. This will be empty for deleted proxies. This value can be used to determine if a workspace proxy is healthy and ready to use.|
-|`updated_at`|string|false|||
-|`version`|string|false|||
-|`wildcard_hostname`|string|false||Wildcard hostname is the wildcard hostname for subdomain apps. E.g. *.us.example.com E.g. *--suffix.au.example.com Optional. Does not need to be on the same domain as PathAppURL.|
+| Name                | Type                                                           | Required | Restrictions | Description                                                                                                                                                                       |
+|---------------------|----------------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `created_at`        | string                                                         | false    |              |                                                                                                                                                                                   |
+| `deleted`           | boolean                                                        | false    |              |                                                                                                                                                                                   |
+| `derp_enabled`      | boolean                                                        | false    |              |                                                                                                                                                                                   |
+| `derp_only`         | boolean                                                        | false    |              |                                                                                                                                                                                   |
+| `display_name`      | string                                                         | false    |              |                                                                                                                                                                                   |
+| `healthy`           | boolean                                                        | false    |              |                                                                                                                                                                                   |
+| `icon_url`          | string                                                         | false    |              |                                                                                                                                                                                   |
+| `id`                | string                                                         | false    |              |                                                                                                                                                                                   |
+| `name`              | string                                                         | false    |              |                                                                                                                                                                                   |
+| `path_app_url`      | string                                                         | false    |              | Path app URL is the URL to the base path for path apps. Optional unless wildcard_hostname is set. E.g. https://us.example.com                                                     |
+| `status`            | [codersdk.WorkspaceProxyStatus](#codersdkworkspaceproxystatus) | false    |              | Status is the latest status check of the proxy. This will be empty for deleted proxies. This value can be used to determine if a workspace proxy is healthy and ready to use.     |
+| `updated_at`        | string                                                         | false    |              |                                                                                                                                                                                   |
+| `version`           | string                                                         | false    |              |                                                                                                                                                                                   |
+| `wildcard_hostname` | string                                                         | false    |              | Wildcard hostname is the wildcard hostname for subdomain apps. E.g. *.us.example.com E.g.*--suffix.au.example.com Optional. Does not need to be on the same domain as PathAppURL. |
 
 ## codersdk.WorkspaceProxyStatus
 
@@ -16262,11 +16262,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`checked_at`|string|false|||
-|`report`|[codersdk.ProxyHealthReport](#codersdkproxyhealthreport)|false||Report provides more information about the health of the workspace proxy.|
-|`status`|[codersdk.ProxyHealthStatus](#codersdkproxyhealthstatus)|false|||
+| Name         | Type                                                     | Required | Restrictions | Description                                                               |
+|--------------|----------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------|
+| `checked_at` | string                                                   | false    |              |                                                                           |
+| `report`     | [codersdk.ProxyHealthReport](#codersdkproxyhealthreport) | false    |              | Report provides more information about the health of the workspace proxy. |
+| `status`     | [codersdk.ProxyHealthStatus](#codersdkproxyhealthstatus) | false    |              |                                                                           |
 
 ## codersdk.WorkspaceQuota
 
@@ -16279,10 +16279,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`budget`|integer|false|||
-|`credits_consumed`|integer|false|||
+| Name               | Type    | Required | Restrictions | Description |
+|--------------------|---------|----------|--------------|-------------|
+| `budget`           | integer | false    |              |             |
+| `credits_consumed` | integer | false    |              |             |
 
 ## codersdk.WorkspaceResource
 
@@ -16428,25 +16428,25 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agents`|array of [codersdk.WorkspaceAgent](#codersdkworkspaceagent)|false|||
-|`created_at`|string|false|||
-|`daily_cost`|integer|false|||
-|`hide`|boolean|false|||
-|`icon`|string|false|||
-|`id`|string|false|||
-|`job_id`|string|false|||
-|`metadata`|array of [codersdk.WorkspaceResourceMetadata](#codersdkworkspaceresourcemetadata)|false|||
-|`name`|string|false|||
-|`type`|string|false|||
-|`workspace_transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|false|||
+| Name                   | Type                                                                              | Required | Restrictions | Description |
+|------------------------|-----------------------------------------------------------------------------------|----------|--------------|-------------|
+| `agents`               | array of [codersdk.WorkspaceAgent](#codersdkworkspaceagent)                       | false    |              |             |
+| `created_at`           | string                                                                            | false    |              |             |
+| `daily_cost`           | integer                                                                           | false    |              |             |
+| `hide`                 | boolean                                                                           | false    |              |             |
+| `icon`                 | string                                                                            | false    |              |             |
+| `id`                   | string                                                                            | false    |              |             |
+| `job_id`               | string                                                                            | false    |              |             |
+| `metadata`             | array of [codersdk.WorkspaceResourceMetadata](#codersdkworkspaceresourcemetadata) | false    |              |             |
+| `name`                 | string                                                                            | false    |              |             |
+| `type`                 | string                                                                            | false    |              |             |
+| `workspace_transition` | [codersdk.WorkspaceTransition](#codersdkworkspacetransition)                      | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`workspace_transition`|`delete`, `start`, `stop`|
+| Property               | Value(s)                  |
+|------------------------|---------------------------|
+| `workspace_transition` | `delete`, `start`, `stop` |
 
 ## codersdk.WorkspaceResourceMetadata
 
@@ -16460,11 +16460,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`key`|string|false|||
-|`sensitive`|boolean|false|||
-|`value`|string|false|||
+| Name        | Type    | Required | Restrictions | Description |
+|-------------|---------|----------|--------------|-------------|
+| `key`       | string  | false    |              |             |
+| `sensitive` | boolean | false    |              |             |
+| `value`     | string  | false    |              |             |
 
 ## codersdk.WorkspaceRole
 
@@ -16476,9 +16476,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `admin`, `use`|
+| Value(s)           |
+|--------------------|
+| ``, `admin`, `use` |
 
 ## codersdk.WorkspaceSharingSettings
 
@@ -16492,17 +16492,17 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`shareable_workspace_owners`|[codersdk.ShareableWorkspaceOwners](#codersdkshareableworkspaceowners)|false||Shareable workspace owners controls whose workspaces can be shared within the organization.|
-|`sharing_disabled`|boolean|false||Sharing disabled is deprecated and left for backward compatibility purposes. Deprecated: use `ShareableWorkspaceOwners` instead|
-|`sharing_globally_disabled`|boolean|false||Sharing globally disabled is true if sharing has been disabled for this organization because of a deployment-wide setting.|
+| Name                         | Type                                                                   | Required | Restrictions | Description                                                                                                                     |
+|------------------------------|------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `shareable_workspace_owners` | [codersdk.ShareableWorkspaceOwners](#codersdkshareableworkspaceowners) | false    |              | Shareable workspace owners controls whose workspaces can be shared within the organization.                                     |
+| `sharing_disabled`           | boolean                                                                | false    |              | Sharing disabled is deprecated and left for backward compatibility purposes. Deprecated: use `ShareableWorkspaceOwners` instead |
+| `sharing_globally_disabled`  | boolean                                                                | false    |              | Sharing globally disabled is true if sharing has been disabled for this organization because of a deployment-wide setting.      |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`shareable_workspace_owners`|`everyone`, `none`, `service_accounts`|
+| Property                     | Value(s)                               |
+|------------------------------|----------------------------------------|
+| `shareable_workspace_owners` | `everyone`, `none`, `service_accounts` |
 
 ## codersdk.WorkspaceStatus
 
@@ -16514,9 +16514,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping`|
+| Value(s)                                                                                                          |
+|-------------------------------------------------------------------------------------------------------------------|
+| `canceled`, `canceling`, `deleted`, `deleting`, `failed`, `pending`, `running`, `starting`, `stopped`, `stopping` |
 
 ## codersdk.WorkspaceTransition
 
@@ -16528,9 +16528,9 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`delete`, `start`, `stop`|
+| Value(s)                  |
+|---------------------------|
+| `delete`, `start`, `stop` |
 
 ## codersdk.WorkspaceUser
 
@@ -16546,19 +16546,19 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avatar_url`|string|false|||
-|`id`|string|true|||
-|`name`|string|false|||
-|`role`|[codersdk.WorkspaceRole](#codersdkworkspacerole)|false|||
-|`username`|string|true|||
+| Name         | Type                                             | Required | Restrictions | Description |
+|--------------|--------------------------------------------------|----------|--------------|-------------|
+| `avatar_url` | string                                           | false    |              |             |
+| `id`         | string                                           | true     |              |             |
+| `name`       | string                                           | false    |              |             |
+| `role`       | [codersdk.WorkspaceRole](#codersdkworkspacerole) | false    |              |             |
+| `username`   | string                                           | true     |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`role`|`admin`, `use`|
+| Property | Value(s)       |
+|----------|----------------|
+| `role`   | `admin`, `use` |
 
 ## codersdk.WorkspacesResponse
 
@@ -16827,10 +16827,10 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`count`|integer|false|||
-|`workspaces`|array of [codersdk.Workspace](#codersdkworkspace)|false|||
+| Name         | Type                                              | Required | Restrictions | Description |
+|--------------|---------------------------------------------------|----------|--------------|-------------|
+| `count`      | integer                                           | false    |              |             |
+| `workspaces` | array of [codersdk.Workspace](#codersdkworkspace) | false    |              |             |
 
 ## derp.BytesSentRecv
 
@@ -16844,11 +16844,11 @@ If the schedule is empty, the user will be updated to use the default schedule.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`key`|[key.NodePublic](#keynodepublic)|false||Key is the public key of the client which sent/received these bytes.|
-|`recv`|integer|false|||
-|`sent`|integer|false|||
+| Name   | Type                             | Required | Restrictions | Description                                                          |
+|--------|----------------------------------|----------|--------------|----------------------------------------------------------------------|
+| `key`  | [key.NodePublic](#keynodepublic) | false    |              | Key is the public key of the client which sent/received these bytes. |
+| `recv` | integer                          | false    |              |                                                                      |
+| `sent` | integer                          | false    |              |                                                                      |
 
 ## derp.ServerInfoMessage
 
@@ -16878,9 +16878,9 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`EACS01`, `EACS02`, `EACS03`, `EACS04`, `EDB01`, `EDB02`, `EDERP01`, `EDERP02`, `EDERP03`, `EPD01`, `EPD02`, `EPD03`, `EUNKNOWN`, `EWP01`, `EWP02`, `EWP04`, `EWS01`, `EWS02`, `EWS03`|
+| Value(s)                                                                                                                                                                               |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EACS01`, `EACS02`, `EACS03`, `EACS04`, `EDB01`, `EDB02`, `EDERP01`, `EDERP02`, `EDERP03`, `EPD01`, `EPD02`, `EPD03`, `EUNKNOWN`, `EWP01`, `EWP02`, `EWP04`, `EWS01`, `EWS02`, `EWS03` |
 
 ## health.Message
 
@@ -16893,10 +16893,10 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`code`|[health.Code](#healthcode)|false|||
-|`message`|string|false|||
+| Name      | Type                       | Required | Restrictions | Description |
+|-----------|----------------------------|----------|--------------|-------------|
+| `code`    | [health.Code](#healthcode) | false    |              |             |
+| `message` | string                     | false    |              |             |
 
 ## health.Severity
 
@@ -16908,9 +16908,9 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`error`, `ok`, `warning`|
+| Value(s)                 |
+|--------------------------|
+| `error`, `ok`, `warning` |
 
 ## healthsdk.AccessURLReport
 
@@ -16935,23 +16935,23 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_url`|string|false|||
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`healthz_response`|string|false|||
-|`reachable`|boolean|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`status_code`|integer|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name               | Type                                      | Required | Restrictions | Description                                                                                 |
+|--------------------|-------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `access_url`       | string                                    | false    |              |                                                                                             |
+| `dismissed`        | boolean                                   | false    |              |                                                                                             |
+| `error`            | string                                    | false    |              |                                                                                             |
+| `healthy`          | boolean                                   | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `healthz_response` | string                                    | false    |              |                                                                                             |
+| `reachable`        | boolean                                   | false    |              |                                                                                             |
+| `severity`         | [health.Severity](#healthseverity)        | false    |              |                                                                                             |
+| `status_code`      | integer                                   | false    |              |                                                                                             |
+| `warnings`         | array of [health.Message](#healthmessage) | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.DERPHealthReport
 
@@ -17180,24 +17180,24 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`netcheck`|[netcheck.Report](#netcheckreport)|false|||
-|`netcheck_err`|string|false|||
-|`netcheck_logs`|array of string|false|||
-|`regions`|object|false|||
-|» `[any property]`|[healthsdk.DERPRegionReport](#healthsdkderpregionreport)|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name               | Type                                                     | Required | Restrictions | Description                                                                                 |
+|--------------------|----------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `dismissed`        | boolean                                                  | false    |              |                                                                                             |
+| `error`            | string                                                   | false    |              |                                                                                             |
+| `healthy`          | boolean                                                  | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `netcheck`         | [netcheck.Report](#netcheckreport)                       | false    |              |                                                                                             |
+| `netcheck_err`     | string                                                   | false    |              |                                                                                             |
+| `netcheck_logs`    | array of string                                          | false    |              |                                                                                             |
+| `regions`          | object                                                   | false    |              |                                                                                             |
+| » `[any property]` | [healthsdk.DERPRegionReport](#healthsdkderpregionreport) | false    |              |                                                                                             |
+| `severity`         | [health.Severity](#healthseverity)                       | false    |              |                                                                                             |
+| `warnings`         | array of [health.Message](#healthmessage)                | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.DERPNodeReport
 
@@ -17255,27 +17255,27 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`can_exchange_messages`|boolean|false|||
-|`client_errs`|array of array|false|||
-|`client_logs`|array of array|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`node`|[tailcfg.DERPNode](#tailcfgderpnode)|false|||
-|`node_info`|[derp.ServerInfoMessage](#derpserverinfomessage)|false|||
-|`round_trip_ping`|string|false|||
-|`round_trip_ping_ms`|integer|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`stun`|[healthsdk.STUNReport](#healthsdkstunreport)|false|||
-|`uses_websocket`|boolean|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name                    | Type                                             | Required | Restrictions | Description                                                                                 |
+|-------------------------|--------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `can_exchange_messages` | boolean                                          | false    |              |                                                                                             |
+| `client_errs`           | array of array                                   | false    |              |                                                                                             |
+| `client_logs`           | array of array                                   | false    |              |                                                                                             |
+| `error`                 | string                                           | false    |              |                                                                                             |
+| `healthy`               | boolean                                          | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `node`                  | [tailcfg.DERPNode](#tailcfgderpnode)             | false    |              |                                                                                             |
+| `node_info`             | [derp.ServerInfoMessage](#derpserverinfomessage) | false    |              |                                                                                             |
+| `round_trip_ping`       | string                                           | false    |              |                                                                                             |
+| `round_trip_ping_ms`    | integer                                          | false    |              |                                                                                             |
+| `severity`              | [health.Severity](#healthseverity)               | false    |              |                                                                                             |
+| `stun`                  | [healthsdk.STUNReport](#healthsdkstunreport)     | false    |              |                                                                                             |
+| `uses_websocket`        | boolean                                          | false    |              |                                                                                             |
+| `warnings`              | array of [health.Message](#healthmessage)        | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.DERPRegionReport
 
@@ -17370,20 +17370,20 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`node_reports`|array of [healthsdk.DERPNodeReport](#healthsdkderpnodereport)|false|||
-|`region`|[tailcfg.DERPRegion](#tailcfgderpregion)|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name           | Type                                                          | Required | Restrictions | Description                                                                                 |
+|----------------|---------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `error`        | string                                                        | false    |              |                                                                                             |
+| `healthy`      | boolean                                                       | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `node_reports` | array of [healthsdk.DERPNodeReport](#healthsdkderpnodereport) | false    |              |                                                                                             |
+| `region`       | [tailcfg.DERPRegion](#tailcfgderpregion)                      | false    |              |                                                                                             |
+| `severity`     | [health.Severity](#healthseverity)                            | false    |              |                                                                                             |
+| `warnings`     | array of [health.Message](#healthmessage)                     | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.DatabaseReport
 
@@ -17408,23 +17408,23 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`latency`|string|false|||
-|`latency_ms`|integer|false|||
-|`reachable`|boolean|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`threshold_ms`|integer|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name           | Type                                      | Required | Restrictions | Description                                                                                 |
+|----------------|-------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `dismissed`    | boolean                                   | false    |              |                                                                                             |
+| `error`        | string                                    | false    |              |                                                                                             |
+| `healthy`      | boolean                                   | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `latency`      | string                                    | false    |              |                                                                                             |
+| `latency_ms`   | integer                                   | false    |              |                                                                                             |
+| `reachable`    | boolean                                   | false    |              |                                                                                             |
+| `severity`     | [health.Severity](#healthseverity)        | false    |              |                                                                                             |
+| `threshold_ms` | integer                                   | false    |              |                                                                                             |
+| `warnings`     | array of [health.Message](#healthmessage) | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.HealthSection
 
@@ -17436,9 +17436,9 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`AccessURL`, `DERP`, `Database`, `ProvisionerDaemons`, `Websocket`, `WorkspaceProxy`|
+| Value(s)                                                                             |
+|--------------------------------------------------------------------------------------|
+| `AccessURL`, `DERP`, `Database`, `ProvisionerDaemons`, `Websocket`, `WorkspaceProxy` |
 
 ## healthsdk.HealthSettings
 
@@ -17452,9 +17452,9 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed_healthchecks`|array of [healthsdk.HealthSection](#healthsdkhealthsection)|false|||
+| Name                     | Type                                                        | Required | Restrictions | Description |
+|--------------------------|-------------------------------------------------------------|----------|--------------|-------------|
+| `dismissed_healthchecks` | array of [healthsdk.HealthSection](#healthsdkhealthsection) | false    |              |             |
 
 ## healthsdk.HealthcheckReport
 
@@ -17832,24 +17832,24 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_url`|[healthsdk.AccessURLReport](#healthsdkaccessurlreport)|false|||
-|`coder_version`|string|false||The Coder version of the server that the report was generated on.|
-|`database`|[healthsdk.DatabaseReport](#healthsdkdatabasereport)|false|||
-|`derp`|[healthsdk.DERPHealthReport](#healthsdkderphealthreport)|false|||
-|`healthy`|boolean|false||Healthy is true if the report returns no errors. Deprecated: use `Severity` instead|
-|`provisioner_daemons`|[healthsdk.ProvisionerDaemonsReport](#healthsdkprovisionerdaemonsreport)|false|||
-|`severity`|[health.Severity](#healthseverity)|false||Severity indicates the status of Coder health.|
-|`time`|string|false||Time is the time the report was generated at.|
-|`websocket`|[healthsdk.WebsocketReport](#healthsdkwebsocketreport)|false|||
-|`workspace_proxy`|[healthsdk.WorkspaceProxyReport](#healthsdkworkspaceproxyreport)|false|||
+| Name                  | Type                                                                     | Required | Restrictions | Description                                                                         |
+|-----------------------|--------------------------------------------------------------------------|----------|--------------|-------------------------------------------------------------------------------------|
+| `access_url`          | [healthsdk.AccessURLReport](#healthsdkaccessurlreport)                   | false    |              |                                                                                     |
+| `coder_version`       | string                                                                   | false    |              | The Coder version of the server that the report was generated on.                   |
+| `database`            | [healthsdk.DatabaseReport](#healthsdkdatabasereport)                     | false    |              |                                                                                     |
+| `derp`                | [healthsdk.DERPHealthReport](#healthsdkderphealthreport)                 | false    |              |                                                                                     |
+| `healthy`             | boolean                                                                  | false    |              | Healthy is true if the report returns no errors. Deprecated: use `Severity` instead |
+| `provisioner_daemons` | [healthsdk.ProvisionerDaemonsReport](#healthsdkprovisionerdaemonsreport) | false    |              |                                                                                     |
+| `severity`            | [health.Severity](#healthseverity)                                       | false    |              | Severity indicates the status of Coder health.                                      |
+| `time`                | string                                                                   | false    |              | Time is the time the report was generated at.                                       |
+| `websocket`           | [healthsdk.WebsocketReport](#healthsdkwebsocketreport)                   | false    |              |                                                                                     |
+| `workspace_proxy`     | [healthsdk.WorkspaceProxyReport](#healthsdkworkspaceproxyreport)         | false    |              |                                                                                     |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.ProvisionerDaemonsReport
 
@@ -17912,19 +17912,19 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`items`|array of [healthsdk.ProvisionerDaemonsReportItem](#healthsdkprovisionerdaemonsreportitem)|false|||
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name        | Type                                                                                      | Required | Restrictions | Description |
+|-------------|-------------------------------------------------------------------------------------------|----------|--------------|-------------|
+| `dismissed` | boolean                                                                                   | false    |              |             |
+| `error`     | string                                                                                    | false    |              |             |
+| `items`     | array of [healthsdk.ProvisionerDaemonsReportItem](#healthsdkprovisionerdaemonsreportitem) | false    |              |             |
+| `severity`  | [health.Severity](#healthseverity)                                                        | false    |              |             |
+| `warnings`  | array of [health.Message](#healthmessage)                                                 | false    |              |             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.ProvisionerDaemonsReportItem
 
@@ -17974,10 +17974,10 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`provisioner_daemon`|[codersdk.ProvisionerDaemon](#codersdkprovisionerdaemon)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name                 | Type                                                     | Required | Restrictions | Description |
+|----------------------|----------------------------------------------------------|----------|--------------|-------------|
+| `provisioner_daemon` | [codersdk.ProvisionerDaemon](#codersdkprovisionerdaemon) | false    |              |             |
+| `warnings`           | array of [health.Message](#healthmessage)                | false    |              |             |
 
 ## healthsdk.STUNReport
 
@@ -17991,11 +17991,11 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`canSTUN`|boolean|false|||
-|`enabled`|boolean|false|||
-|`error`|string|false|||
+| Name      | Type    | Required | Restrictions | Description |
+|-----------|---------|----------|--------------|-------------|
+| `canSTUN` | boolean | false    |              |             |
+| `enabled` | boolean | false    |              |             |
+| `error`   | string  | false    |              |             |
 
 ## healthsdk.UpdateHealthSettings
 
@@ -18009,9 +18009,9 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed_healthchecks`|array of [healthsdk.HealthSection](#healthsdkhealthsection)|false|||
+| Name                     | Type                                                        | Required | Restrictions | Description |
+|--------------------------|-------------------------------------------------------------|----------|--------------|-------------|
+| `dismissed_healthchecks` | array of [healthsdk.HealthSection](#healthsdkhealthsection) | false    |              |             |
 
 ## healthsdk.WebsocketReport
 
@@ -18034,21 +18034,21 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`body`|string|false|||
-|`code`|integer|false|||
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
+| Name        | Type                                      | Required | Restrictions | Description                                                                                 |
+|-------------|-------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `body`      | string                                    | false    |              |                                                                                             |
+| `code`      | integer                                   | false    |              |                                                                                             |
+| `dismissed` | boolean                                   | false    |              |                                                                                             |
+| `error`     | string                                    | false    |              |                                                                                             |
+| `healthy`   | boolean                                   | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `severity`  | [health.Severity](#healthseverity)        | false    |              |                                                                                             |
+| `warnings`  | array of [health.Message](#healthmessage) | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## healthsdk.WorkspaceProxyReport
 
@@ -18100,20 +18100,20 @@ Zero means unspecified. There might be a limit, but the client need not try to r
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`dismissed`|boolean|false|||
-|`error`|string|false|||
-|`healthy`|boolean|false||Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead.|
-|`severity`|[health.Severity](#healthseverity)|false|||
-|`warnings`|array of [health.Message](#healthmessage)|false|||
-|`workspace_proxies`|[codersdk.RegionsResponse-codersdk_WorkspaceProxy](#codersdkregionsresponse-codersdk_workspaceproxy)|false|||
+| Name                | Type                                                                                                 | Required | Restrictions | Description                                                                                 |
+|---------------------|------------------------------------------------------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------|
+| `dismissed`         | boolean                                                                                              | false    |              |                                                                                             |
+| `error`             | string                                                                                               | false    |              |                                                                                             |
+| `healthy`           | boolean                                                                                              | false    |              | Healthy is deprecated and left for backward compatibility purposes, use `Severity` instead. |
+| `severity`          | [health.Severity](#healthseverity)                                                                   | false    |              |                                                                                             |
+| `warnings`          | array of [health.Message](#healthmessage)                                                            | false    |              |                                                                                             |
+| `workspace_proxies` | [codersdk.RegionsResponse-codersdk_WorkspaceProxy](#codersdkregionsresponse-codersdk_workspaceproxy) | false    |              |                                                                                             |
 
 #### Enumerated Values
 
-|Property|Value(s)|
-|---|---|
-|`severity`|`error`, `ok`, `warning`|
+| Property   | Value(s)                 |
+|------------|--------------------------|
+| `severity` | `error`, `ok`, `warning` |
 
 ## key.NodePublic
 
@@ -18158,23 +18158,23 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`active`|boolean|false||Active is a ptr to prevent the empty value from being interpreted as false.|
-|`emails`|array of object|false|||
-|`» display`|string|false|||
-|`» primary`|boolean|false|||
-|`» type`|string|false|||
-|`» value`|string|false|||
-|`groups`|array of undefined|false|||
-|`id`|string|false|||
-|`meta`|object|false|||
-|`» resourceType`|string|false|||
-|`name`|object|false|||
-|`» familyName`|string|false|||
-|`» givenName`|string|false|||
-|`schemas`|array of string|false|||
-|`userName`|string|false|||
+| Name             | Type               | Required | Restrictions | Description                                                                 |
+|------------------|--------------------|----------|--------------|-----------------------------------------------------------------------------|
+| `active`         | boolean            | false    |              | Active is a ptr to prevent the empty value from being interpreted as false. |
+| `emails`         | array of object    | false    |              |                                                                             |
+| `» display`      | string             | false    |              |                                                                             |
+| `» primary`      | boolean            | false    |              |                                                                             |
+| `» type`         | string             | false    |              |                                                                             |
+| `» value`        | string             | false    |              |                                                                             |
+| `groups`         | array of undefined | false    |              |                                                                             |
+| `id`             | string             | false    |              |                                                                             |
+| `meta`           | object             | false    |              |                                                                             |
+| `» resourceType` | string             | false    |              |                                                                             |
+| `name`           | object             | false    |              |                                                                             |
+| `» familyName`   | string             | false    |              |                                                                             |
+| `» givenName`    | string             | false    |              |                                                                             |
+| `schemas`        | array of string    | false    |              |                                                                             |
+| `userName`       | string             | false    |              |                                                                             |
 
 ## netcheck.Report
 
@@ -18213,30 +18213,30 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`captivePortal`|string|false||Captiveportal is set when we think there's a captive portal that is intercepting HTTP traffic.|
-|`globalV4`|string|false||ip:port of global IPv4|
-|`globalV6`|string|false||[ip]:port of global IPv6|
-|`hairPinning`|string|false||Hairpinning is whether the router supports communicating between two local devices through the NATted public IP address (on IPv4).|
-|`icmpv4`|boolean|false||an ICMPv4 round trip completed|
-|`ipv4`|boolean|false||an IPv4 STUN round trip completed|
-|`ipv4CanSend`|boolean|false||an IPv4 packet was able to be sent|
-|`ipv6`|boolean|false||an IPv6 STUN round trip completed|
-|`ipv6CanSend`|boolean|false||an IPv6 packet was able to be sent|
-|`mappingVariesByDestIP`|string|false||Mappingvariesbydestip is whether STUN results depend which STUN server you're talking to (on IPv4).|
-|`oshasIPv6`|boolean|false||could bind a socket to ::1|
-|`pcp`|string|false||Pcp is whether PCP appears present on the LAN. Empty means not checked.|
-|`pmp`|string|false||Pmp is whether NAT-PMP appears present on the LAN. Empty means not checked.|
-|`preferredDERP`|integer|false||or 0 for unknown|
-|`regionLatency`|object|false||keyed by DERP Region ID|
-|» `[any property]`|integer|false|||
-|`regionV4Latency`|object|false||keyed by DERP Region ID|
-|» `[any property]`|integer|false|||
-|`regionV6Latency`|object|false||keyed by DERP Region ID|
-|» `[any property]`|integer|false|||
-|`udp`|boolean|false||a UDP STUN round trip completed|
-|`upnP`|string|false||Upnp is whether UPnP appears present on the LAN. Empty means not checked.|
+| Name                    | Type    | Required | Restrictions | Description                                                                                                                        |
+|-------------------------|---------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `captivePortal`         | string  | false    |              | Captiveportal is set when we think there's a captive portal that is intercepting HTTP traffic.                                     |
+| `globalV4`              | string  | false    |              | ip:port of global IPv4                                                                                                             |
+| `globalV6`              | string  | false    |              | [ip]:port of global IPv6                                                                                                           |
+| `hairPinning`           | string  | false    |              | Hairpinning is whether the router supports communicating between two local devices through the NATted public IP address (on IPv4). |
+| `icmpv4`                | boolean | false    |              | an ICMPv4 round trip completed                                                                                                     |
+| `ipv4`                  | boolean | false    |              | an IPv4 STUN round trip completed                                                                                                  |
+| `ipv4CanSend`           | boolean | false    |              | an IPv4 packet was able to be sent                                                                                                 |
+| `ipv6`                  | boolean | false    |              | an IPv6 STUN round trip completed                                                                                                  |
+| `ipv6CanSend`           | boolean | false    |              | an IPv6 packet was able to be sent                                                                                                 |
+| `mappingVariesByDestIP` | string  | false    |              | Mappingvariesbydestip is whether STUN results depend which STUN server you're talking to (on IPv4).                                |
+| `oshasIPv6`             | boolean | false    |              | could bind a socket to ::1                                                                                                         |
+| `pcp`                   | string  | false    |              | Pcp is whether PCP appears present on the LAN. Empty means not checked.                                                            |
+| `pmp`                   | string  | false    |              | Pmp is whether NAT-PMP appears present on the LAN. Empty means not checked.                                                        |
+| `preferredDERP`         | integer | false    |              | or 0 for unknown                                                                                                                   |
+| `regionLatency`         | object  | false    |              | keyed by DERP Region ID                                                                                                            |
+| » `[any property]`      | integer | false    |              |                                                                                                                                    |
+| `regionV4Latency`       | object  | false    |              | keyed by DERP Region ID                                                                                                            |
+| » `[any property]`      | integer | false    |              |                                                                                                                                    |
+| `regionV6Latency`       | object  | false    |              | keyed by DERP Region ID                                                                                                            |
+| » `[any property]`      | integer | false    |              |                                                                                                                                    |
+| `udp`                   | boolean | false    |              | a UDP STUN round trip completed                                                                                                    |
+| `upnP`                  | string  | false    |              | Upnp is whether UPnP appears present on the LAN. Empty means not checked.                                                          |
 
 ## oauth2.Token
 
@@ -18252,10 +18252,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_token`|string|false||Access token is the token that authorizes and authenticates the requests.|
-|`expires_in`|integer|false||Expires in is the OAuth2 wire format "expires_in" field, which specifies how many seconds later the token expires, relative to an unknown time base approximately around "now". It is the application's responsibility to populate `Expiry` from `ExpiresIn` when required.|
+| Name           | Type    | Required | Restrictions | Description                                                                                                                                                                                                                                                                 |
+|----------------|---------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `access_token` | string  | false    |              | Access token is the token that authorizes and authenticates the requests.                                                                                                                                                                                                   |
+| `expires_in`   | integer | false    |              | Expires in is the OAuth2 wire format "expires_in" field, which specifies how many seconds later the token expires, relative to an unknown time base approximately around "now". It is the application's responsibility to populate `Expiry` from `ExpiresIn` when required. |
 |`expiry`|string|false||Expiry is the optional expiration time of the access token.
 If zero, [TokenSource] implementations will reuse the same token forever and RefreshToken or equivalent mechanisms for that TokenSource will not be used.|
 |`refresh_token`|string|false||Refresh token is a token that's used by the application (as opposed to the user) to refresh the access token if it expires.|
@@ -18282,9 +18282,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`[any property]`|string|false|||
+| Name             | Type   | Required | Restrictions | Description |
+|------------------|--------|----------|--------------|-------------|
+| `[any property]` | string | false    |              |             |
 
 ## serpent.Group
 
@@ -18304,12 +18304,12 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`description`|string|false|||
-|`name`|string|false|||
-|`parent`|[serpent.Group](#serpentgroup)|false|||
-|`yaml`|string|false|||
+| Name          | Type                           | Required | Restrictions | Description |
+|---------------|--------------------------------|----------|--------------|-------------|
+| `description` | string                         | false    |              |             |
+| `name`        | string                         | false    |              |             |
+| `parent`      | [serpent.Group](#serpentgroup) | false    |              |             |
+| `yaml`        | string                         | false    |              |             |
 
 ## serpent.HostPort
 
@@ -18322,10 +18322,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`host`|string|false|||
-|`port`|string|false|||
+| Name   | Type   | Required | Restrictions | Description |
+|--------|--------|----------|--------------|-------------|
+| `host` | string | false    |              |             |
+| `port` | string | false    |              |             |
 
 ## serpent.Option
 
@@ -18393,22 +18393,22 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`annotations`|[serpent.Annotations](#serpentannotations)|false||Annotations enable extensions to serpent higher up in the stack. It's useful for help formatting and documentation generation.|
-|`default`|string|false||Default is parsed into Value if set. Must be `""` if `DefaultFn` != nil|
-|`description`|string|false|||
-|`env`|string|false||Env is the environment variable used to configure this option. If unset, environment configuring is disabled.|
-|`flag`|string|false||Flag is the long name of the flag used to configure this option. If unset, flag configuring is disabled.|
-|`flag_shorthand`|string|false||Flag shorthand is the one-character shorthand for the flag. If unset, no shorthand is used.|
-|`group`|[serpent.Group](#serpentgroup)|false||Group is a group hierarchy that helps organize this option in help, configs and other documentation.|
-|`hidden`|boolean|false|||
-|`name`|string|false|||
-|`required`|boolean|false||Required means this value must be set by some means. It requires `ValueSource != ValueSourceNone` If `Default` is set, then `Required` is ignored.|
-|`use_instead`|array of [serpent.Option](#serpentoption)|false||Use instead is a list of options that should be used instead of this one. The field is used to generate a deprecation warning.|
-|`value`|any|false||Value includes the types listed in values.go.|
-|`value_source`|[serpent.ValueSource](#serpentvaluesource)|false|||
-|`yaml`|string|false||Yaml is the YAML key used to configure this option. If unset, YAML configuring is disabled.|
+| Name             | Type                                       | Required | Restrictions | Description                                                                                                                                        |
+|------------------|--------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `annotations`    | [serpent.Annotations](#serpentannotations) | false    |              | Annotations enable extensions to serpent higher up in the stack. It's useful for help formatting and documentation generation.                     |
+| `default`        | string                                     | false    |              | Default is parsed into Value if set. Must be `""` if `DefaultFn` != nil                                                                            |
+| `description`    | string                                     | false    |              |                                                                                                                                                    |
+| `env`            | string                                     | false    |              | Env is the environment variable used to configure this option. If unset, environment configuring is disabled.                                      |
+| `flag`           | string                                     | false    |              | Flag is the long name of the flag used to configure this option. If unset, flag configuring is disabled.                                           |
+| `flag_shorthand` | string                                     | false    |              | Flag shorthand is the one-character shorthand for the flag. If unset, no shorthand is used.                                                        |
+| `group`          | [serpent.Group](#serpentgroup)             | false    |              | Group is a group hierarchy that helps organize this option in help, configs and other documentation.                                               |
+| `hidden`         | boolean                                    | false    |              |                                                                                                                                                    |
+| `name`           | string                                     | false    |              |                                                                                                                                                    |
+| `required`       | boolean                                    | false    |              | Required means this value must be set by some means. It requires `ValueSource != ValueSourceNone` If `Default` is set, then `Required` is ignored. |
+| `use_instead`    | array of [serpent.Option](#serpentoption)  | false    |              | Use instead is a list of options that should be used instead of this one. The field is used to generate a deprecation warning.                     |
+| `value`          | any                                        | false    |              | Value includes the types listed in values.go.                                                                                                      |
+| `value_source`   | [serpent.ValueSource](#serpentvaluesource) | false    |              |                                                                                                                                                    |
+| `yaml`           | string                                     | false    |              | Yaml is the YAML key used to configure this option. If unset, YAML configuring is disabled.                                                        |
 
 ## serpent.Regexp
 
@@ -18458,9 +18458,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`value`|array of [codersdk.ExternalAuthConfig](#codersdkexternalauthconfig)|false|||
+| Name    | Type                                                                | Required | Restrictions | Description |
+|---------|---------------------------------------------------------------------|----------|--------------|-------------|
+| `value` | array of [codersdk.ExternalAuthConfig](#codersdkexternalauthconfig) | false    |              |             |
 
 ## serpent.Struct-array_codersdk_LinkConfig
 
@@ -18479,9 +18479,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`value`|array of [codersdk.LinkConfig](#codersdklinkconfig)|false|||
+| Name    | Type                                                | Required | Restrictions | Description |
+|---------|-----------------------------------------------------|----------|--------------|-------------|
+| `value` | array of [codersdk.LinkConfig](#codersdklinkconfig) | false    |              |             |
 
 ## serpent.URL
 
@@ -18503,14 +18503,14 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`forceQuery`|boolean|false||Forcequery indicates whether the original URL contained a query ('?') character. When set, the String method will include a trailing '?', even when RawQuery is empty.|
-|`fragment`|string|false||fragment for references (without '#')|
-|`host`|string|false||"host" or "host:port" (see Hostname and Port methods)|
-|`omitHost`|boolean|false||Omithost indicates the URL has an empty host (authority). When set, the String method will not include the host when it is empty.|
-|`opaque`|string|false||encoded opaque data|
-|`path`|string|false||path (relative paths may omit leading slash)|
+| Name         | Type    | Required | Restrictions | Description                                                                                                                                                            |
+|--------------|---------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `forceQuery` | boolean | false    |              | Forcequery indicates whether the original URL contained a query ('?') character. When set, the String method will include a trailing '?', even when RawQuery is empty. |
+| `fragment`   | string  | false    |              | fragment for references (without '#')                                                                                                                                  |
+| `host`       | string  | false    |              | "host" or "host:port" (see Hostname and Port methods)                                                                                                                  |
+| `omitHost`   | boolean | false    |              | Omithost indicates the URL has an empty host (authority). When set, the String method will not include the host when it is empty.                                      |
+| `opaque`     | string  | false    |              | encoded opaque data                                                                                                                                                    |
+| `path`       | string  | false    |              | path (relative paths may omit leading slash)                                                                                                                           |
 |`rawFragment`|string|false||Rawfragment is an optional field containing an encoded fragment hint. See the EscapedFragment method for more details.
 In general, code should call EscapedFragment instead of reading RawFragment.|
 |`rawPath`|string|false||Rawpath is an optional field containing an encoded path hint. See the EscapedPath method for more details.
@@ -18529,9 +18529,9 @@ In general, code should call EscapedPath instead of reading RawPath.|
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|``, `default`, `env`, `flag`, `yaml`|
+| Value(s)                             |
+|--------------------------------------|
+| ``, `default`, `env`, `flag`, `yaml` |
 
 ## tailcfg.DERPHomeParams
 
@@ -18653,10 +18653,10 @@ The numbers are not necessarily contiguous.|
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`canPort80`|boolean|false||Canport80 specifies whether this DERP node is accessible over HTTP on port 80 specifically. This is used for captive portal checks.|
-|`certName`|string|false||Certname optionally specifies the expected TLS cert common name. If empty, HostName is used. If CertName is non-empty, HostName is only used for the TCP dial (if IPv4/IPv6 are not present) + TLS ClientHello.|
+| Name        | Type    | Required | Restrictions | Description                                                                                                                                                                                                     |
+|-------------|---------|----------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `canPort80` | boolean | false    |              | Canport80 specifies whether this DERP node is accessible over HTTP on port 80 specifically. This is used for captive portal checks.                                                                             |
+| `certName`  | string  | false    |              | Certname optionally specifies the expected TLS cert common name. If empty, HostName is used. If CertName is non-empty, HostName is only used for the TCP dial (if IPv4/IPv6 are not present) + TLS ClientHello. |
 |`derpport`|integer|false||Derpport optionally provides an alternate TLS port number for the DERP HTTPS server.
 If zero, 443 is used.|
 |`forceHTTP`|boolean|false||Forcehttp is used by unit tests to force HTTP. It should not be set by users.|
@@ -18702,10 +18702,10 @@ It is required but need not be unique; multiple nodes may have the same HostName
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`avoid`|boolean|false||Avoid is whether the client should avoid picking this as its home region. The region should only be used if a peer is there. Clients already using this region as their home should migrate away to a new region without Avoid set.|
-|`embeddedRelay`|boolean|false||Embeddedrelay is true when the region is bundled with the Coder control plane.|
+| Name            | Type    | Required | Restrictions | Description                                                                                                                                                                                                                         |
+|-----------------|---------|----------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `avoid`         | boolean | false    |              | Avoid is whether the client should avoid picking this as its home region. The region should only be used if a peer is there. Clients already using this region as their home should migrate away to a new region without Avoid set. |
+| `embeddedRelay` | boolean | false    |              | Embeddedrelay is true when the region is bundled with the Coder control plane.                                                                                                                                                      |
 |`nodes`|array of [tailcfg.DERPNode](#tailcfgderpnode)|false||Nodes are the DERP nodes running in this region, in priority order for the current client. Client TLS connections should ideally only go to the first entry (falling back to the second if necessary). STUN packets should go to the first 1 or 2.
 If nodes within a region route packets amongst themselves, but not to other regions. That said, each user/domain should get a the same preferred node order, so if all nodes for a user/network pick the first one (as they should, when things are healthy), the inter-cluster routing is minimal to zero.|
 |`regionCode`|string|false||Regioncode is a short name for the region. It's usually a popular city or airport code in the region: "nyc", "sf", "sin", "fra", etc.|
@@ -18736,10 +18736,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`uuid`|string|false|||
-|`valid`|boolean|false||Valid is true if UUID is not NULL|
+| Name    | Type    | Required | Restrictions | Description                       |
+|---------|---------|----------|--------------|-----------------------------------|
+| `uuid`  | string  | false    |              |                                   |
+| `valid` | boolean | false    |              | Valid is true if UUID is not NULL |
 
 ## workspaceapps.AccessMethod
 
@@ -18751,9 +18751,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`path`, `subdomain`, `terminal`|
+| Value(s)                        |
+|---------------------------------|
+| `path`, `subdomain`, `terminal` |
 
 ## workspaceapps.IssueTokenRequest
 
@@ -18778,14 +18778,14 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`app_hostname`|string|false||App hostname is the optional hostname for subdomain apps on the external proxy. It must start with an asterisk.|
-|`app_path`|string|false||App path is the path of the user underneath the app base path.|
-|`app_query`|string|false||App query is the query parameters the user provided in the app request.|
-|`app_request`|[workspaceapps.Request](#workspaceappsrequest)|false|||
-|`path_app_base_url`|string|false||Path app base URL is required.|
-|`session_token`|string|false||Session token is the session token provided by the user.|
+| Name                | Type                                           | Required | Restrictions | Description                                                                                                     |
+|---------------------|------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------------------------------|
+| `app_hostname`      | string                                         | false    |              | App hostname is the optional hostname for subdomain apps on the external proxy. It must start with an asterisk. |
+| `app_path`          | string                                         | false    |              | App path is the path of the user underneath the app base path.                                                  |
+| `app_query`         | string                                         | false    |              | App query is the query parameters the user provided in the app request.                                         |
+| `app_request`       | [workspaceapps.Request](#workspaceappsrequest) | false    |              |                                                                                                                 |
+| `path_app_base_url` | string                                         | false    |              | Path app base URL is required.                                                                                  |
+| `session_token`     | string                                         | false    |              | Session token is the session token provided by the user.                                                        |
 
 ## workspaceapps.Request
 
@@ -18803,15 +18803,15 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_method`|[workspaceapps.AccessMethod](#workspaceappsaccessmethod)|false|||
-|`agent_name_or_id`|string|false||Agent name or ID is not required if the workspace has only one agent.|
-|`app_prefix`|string|false||Prefix is the prefix of the subdomain app URL. Prefix should have a trailing "---" if set.|
-|`app_slug_or_port`|string|false|||
-|`base_path`|string|false||Base path of the app. For path apps, this is the path prefix in the router for this particular app. For subdomain apps, this should be "/". This is used for setting the cookie path.|
-|`username_or_id`|string|false||For the following fields, if the AccessMethod is AccessMethodTerminal, then only AgentNameOrID may be set and it must be a UUID. The other fields must be left blank.|
-|`workspace_name_or_id`|string|false|||
+| Name                   | Type                                                     | Required | Restrictions | Description                                                                                                                                                                           |
+|------------------------|----------------------------------------------------------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `access_method`        | [workspaceapps.AccessMethod](#workspaceappsaccessmethod) | false    |              |                                                                                                                                                                                       |
+| `agent_name_or_id`     | string                                                   | false    |              | Agent name or ID is not required if the workspace has only one agent.                                                                                                                 |
+| `app_prefix`           | string                                                   | false    |              | Prefix is the prefix of the subdomain app URL. Prefix should have a trailing "---" if set.                                                                                            |
+| `app_slug_or_port`     | string                                                   | false    |              |                                                                                                                                                                                       |
+| `base_path`            | string                                                   | false    |              | Base path of the app. For path apps, this is the path prefix in the router for this particular app. For subdomain apps, this should be "/". This is used for setting the cookie path. |
+| `username_or_id`       | string                                                   | false    |              | For the following fields, if the AccessMethod is AccessMethodTerminal, then only AgentNameOrID may be set and it must be a UUID. The other fields must be left blank.                 |
+| `workspace_name_or_id` | string                                                   | false    |              |                                                                                                                                                                                       |
 
 ## workspaceapps.StatsReport
 
@@ -18831,17 +18831,17 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_method`|[workspaceapps.AccessMethod](#workspaceappsaccessmethod)|false|||
-|`agent_id`|string|false|||
-|`requests`|integer|false|||
-|`session_ended_at`|string|false||Updated periodically while app is in use active and when the last connection is closed.|
-|`session_id`|string|false|||
-|`session_started_at`|string|false|||
-|`slug_or_port`|string|false|||
-|`user_id`|string|false|||
-|`workspace_id`|string|false|||
+| Name                 | Type                                                     | Required | Restrictions | Description                                                                             |
+|----------------------|----------------------------------------------------------|----------|--------------|-----------------------------------------------------------------------------------------|
+| `access_method`      | [workspaceapps.AccessMethod](#workspaceappsaccessmethod) | false    |              |                                                                                         |
+| `agent_id`           | string                                                   | false    |              |                                                                                         |
+| `requests`           | integer                                                  | false    |              |                                                                                         |
+| `session_ended_at`   | string                                                   | false    |              | Updated periodically while app is in use active and when the last connection is closed. |
+| `session_id`         | string                                                   | false    |              |                                                                                         |
+| `session_started_at` | string                                                   | false    |              |                                                                                         |
+| `slug_or_port`       | string                                                   | false    |              |                                                                                         |
+| `user_id`            | string                                                   | false    |              |                                                                                         |
+| `workspace_id`       | string                                                   | false    |              |                                                                                         |
 
 ## workspacesdk.AgentConnectionInfo
 
@@ -18914,12 +18914,12 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`derp_force_websockets`|boolean|false|||
-|`derp_map`|[tailcfg.DERPMap](#tailcfgderpmap)|false|||
-|`disable_direct_connections`|boolean|false|||
-|`hostname_suffix`|string|false|||
+| Name                         | Type                               | Required | Restrictions | Description |
+|------------------------------|------------------------------------|----------|--------------|-------------|
+| `derp_force_websockets`      | boolean                            | false    |              |             |
+| `derp_map`                   | [tailcfg.DERPMap](#tailcfgderpmap) | false    |              |             |
+| `disable_direct_connections` | boolean                            | false    |              |             |
+| `hostname_suffix`            | string                             | false    |              |             |
 
 ## workspacesdk.AgentUpdate
 
@@ -18932,10 +18932,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`id`|string|false|||
-|`lifecycle`|[codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle)|false|||
+| Name        | Type                                                                 | Required | Restrictions | Description |
+|-------------|----------------------------------------------------------------------|----------|--------------|-------------|
+| `id`        | string                                                               | false    |              |             |
+| `lifecycle` | [codersdk.WorkspaceAgentLifecycle](#codersdkworkspaceagentlifecycle) | false    |              |             |
 
 ## workspacesdk.BuildUpdate
 
@@ -18948,10 +18948,10 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`job_status`|[codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus)|false|||
-|`transition`|[codersdk.WorkspaceTransition](#codersdkworkspacetransition)|false|||
+| Name         | Type                                                           | Required | Restrictions | Description |
+|--------------|----------------------------------------------------------------|----------|--------------|-------------|
+| `job_status` | [codersdk.ProvisionerJobStatus](#codersdkprovisionerjobstatus) | false    |              |             |
+| `transition` | [codersdk.WorkspaceTransition](#codersdkworkspacetransition)   | false    |              |             |
 
 ## workspacesdk.ConnectionWatchEvent
 
@@ -18976,11 +18976,11 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`agent_update`|[workspacesdk.AgentUpdate](#workspacesdkagentupdate)|false|||
-|`build_update`|[workspacesdk.BuildUpdate](#workspacesdkbuildupdate)|false|||
-|`error`|[workspacesdk.WatchError](#workspacesdkwatcherror)|false|||
+| Name           | Type                                                 | Required | Restrictions | Description |
+|----------------|------------------------------------------------------|----------|--------------|-------------|
+| `agent_update` | [workspacesdk.AgentUpdate](#workspacesdkagentupdate) | false    |              |             |
+| `build_update` | [workspacesdk.BuildUpdate](#workspacesdkbuildupdate) | false    |              |             |
+| `error`        | [workspacesdk.WatchError](#workspacesdkwatcherror)   | false    |              |             |
 
 ## workspacesdk.WatchError
 
@@ -18995,12 +18995,12 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`code`|[workspacesdk.WatchErrorCode](#workspacesdkwatcherrorcode)|false|||
-|`details`|string|false|||
-|`message`|string|false|||
-|`retryable`|boolean|false|||
+| Name        | Type                                                       | Required | Restrictions | Description |
+|-------------|------------------------------------------------------------|----------|--------------|-------------|
+| `code`      | [workspacesdk.WatchErrorCode](#workspacesdkwatcherrorcode) | false    |              |             |
+| `details`   | string                                                     | false    |              |             |
+| `message`   | string                                                     | false    |              |             |
+| `retryable` | boolean                                                    | false    |              |             |
 
 ## workspacesdk.WatchErrorCode
 
@@ -19012,9 +19012,9 @@ None
 
 #### Enumerated Values
 
-|Value(s)|
-|---|
-|`0`, `1`, `2`, `3`, `4`, `5`, `6`|
+| Value(s)                          |
+|-----------------------------------|
+| `0`, `1`, `2`, `3`, `4`, `5`, `6` |
 
 ## wsproxysdk.CryptoKeysResponse
 
@@ -19034,9 +19034,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`crypto_keys`|array of [codersdk.CryptoKey](#codersdkcryptokey)|false|||
+| Name          | Type                                              | Required | Restrictions | Description |
+|---------------|---------------------------------------------------|----------|--------------|-------------|
+| `crypto_keys` | array of [codersdk.CryptoKey](#codersdkcryptokey) | false    |              |             |
 
 ## wsproxysdk.DeregisterWorkspaceProxyRequest
 
@@ -19048,9 +19048,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`replica_id`|string|false||Replica ID is a unique identifier for the replica of the proxy that is deregistering. It should be generated by the client on startup and should've already been passed to the register endpoint.|
+| Name         | Type   | Required | Restrictions | Description                                                                                                                                                                                       |
+|--------------|--------|----------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `replica_id` | string | false    |              | Replica ID is a unique identifier for the replica of the proxy that is deregistering. It should be generated by the client on startup and should've already been passed to the register endpoint. |
 
 ## wsproxysdk.IssueSignedAppTokenResponse
 
@@ -19062,9 +19062,9 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`signed_token_str`|string|false||Signed token str should be set as a cookie on the response.|
+| Name               | Type   | Required | Restrictions | Description                                                 |
+|--------------------|--------|----------|--------------|-------------------------------------------------------------|
+| `signed_token_str` | string | false    |              | Signed token str should be set as a cookie on the response. |
 
 ## wsproxysdk.RegisterWorkspaceProxyRequest
 
@@ -19084,12 +19084,12 @@ None
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`access_url`|string|false||Access URL that hits the workspace proxy api.|
-|`derp_enabled`|boolean|false||Derp enabled indicates whether the proxy should be included in the DERP map or not.|
-|`derp_only`|boolean|false||Derp only indicates whether the proxy should only be included in the DERP map and should not be used for serving apps.|
-|`hostname`|string|false||Hostname is the OS hostname of the machine that the proxy is running on.  This is only used for tracking purposes in the replicas table.|
+| Name           | Type    | Required | Restrictions | Description                                                                                                                              |
+|----------------|---------|----------|--------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `access_url`   | string  | false    |              | Access URL that hits the workspace proxy api.                                                                                            |
+| `derp_enabled` | boolean | false    |              | Derp enabled indicates whether the proxy should be included in the DERP map or not.                                                      |
+| `derp_only`    | boolean | false    |              | Derp only indicates whether the proxy should only be included in the DERP map and should not be used for serving apps.                   |
+| `hostname`     | string  | false    |              | Hostname is the OS hostname of the machine that the proxy is running on.  This is only used for tracking purposes in the replicas table. |
 |`replica_error`|string|false||Replica error is the error that the replica encountered when trying to dial it's peers. This is stored in the replicas table for debugging purposes but does not affect the proxy's ability to register.
 This value is only stored on subsequent requests to the register endpoint, not the first request.|
 |`replica_id`|string|false||Replica ID is a unique identifier for the replica of the proxy that is registering. It should be generated by the client on startup and persisted (in memory only) until the process is restarted.|
@@ -19179,13 +19179,13 @@ This value is only stored on subsequent requests to the register endpoint, not t
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`derp_force_websockets`|boolean|false|||
-|`derp_map`|[tailcfg.DERPMap](#tailcfgderpmap)|false|||
-|`derp_mesh_key`|string|false|||
-|`derp_region_id`|integer|false|||
-|`sibling_replicas`|array of [codersdk.Replica](#codersdkreplica)|false||Sibling replicas is a list of all other replicas of the proxy that have not timed out.|
+| Name                    | Type                                          | Required | Restrictions | Description                                                                            |
+|-------------------------|-----------------------------------------------|----------|--------------|----------------------------------------------------------------------------------------|
+| `derp_force_websockets` | boolean                                       | false    |              |                                                                                        |
+| `derp_map`              | [tailcfg.DERPMap](#tailcfgderpmap)            | false    |              |                                                                                        |
+| `derp_mesh_key`         | string                                        | false    |              |                                                                                        |
+| `derp_region_id`        | integer                                       | false    |              |                                                                                        |
+| `sibling_replicas`      | array of [codersdk.Replica](#codersdkreplica) | false    |              | Sibling replicas is a list of all other replicas of the proxy that have not timed out. |
 
 ## wsproxysdk.ReportAppStatsRequest
 
@@ -19209,7 +19209,6 @@ This value is only stored on subsequent requests to the register endpoint, not t
 
 ### Properties
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|`stats`|array of [workspaceapps.StatsReport](#workspaceappsstatsreport)|false|||
-
+| Name    | Type                                                            | Required | Restrictions | Description |
+|---------|-----------------------------------------------------------------|----------|--------------|-------------|
+| `stats` | array of [workspaceapps.StatsReport](#workspaceappsstatsreport) | false    |              |             |

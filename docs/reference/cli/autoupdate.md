@@ -3,23 +3,20 @@ title: autoupdate
 ---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
 
-
 Toggle auto-update policy for a workspace
 
-
-
-
 ## Usage
+
 ```console
 coder autoupdate [flags] <workspace> <always|never>
 ```
 
-
 ## Options
+
 ### -y, --yes
- 
-| | |
-| --- | --- |
+
+|      |                   |
+|------|-------------------|
 | Type | <code>bool</code> |
 
 Bypass confirmation prompts.

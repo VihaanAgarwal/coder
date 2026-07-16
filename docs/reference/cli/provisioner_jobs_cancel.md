@@ -3,24 +3,21 @@ title: provisioner jobs cancel
 ---
 <!-- DO NOT EDIT | GENERATED CONTENT -->
 
-
 Cancel a provisioner job
 
-
-
-
 ## Usage
+
 ```console
 coder provisioner jobs cancel [flags] <job_id>
 ```
 
-
 ## Options
+
 ### -O, --org
- 
-| | |
-| --- | --- |
-| Type | <code>string</code> |
+
+|             |                                  |
+|-------------|----------------------------------|
+| Type        | <code>string</code>              |
 | Environment | <code>$CODER_ORGANIZATION</code> |
 
 Select which organization (uuid or name) to use.
